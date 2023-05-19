@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BDDS | </title>
+
+    <!-- Bootstrap -->
+    <link href="{%static 'vendors/bootstrap/dist/css/bootstrap.min.css'%}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{%static '/vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{%static '/vendors/nprogress/nprogress.css' %}" rel="stylesheet'}">
+    <!-- Animate.css -->
+    <link href="{%static '/vendors/animate.css/animate.min.css'%}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{%static '/build/css/custom.min.css'%}" rel="stylesheet">
+  </head>
+
+  <body class="login">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+       <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form>
+              <h1>Login Form</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="Username" required="" id="user_name"/></div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" required="" id="user_pwd" />
+              </div>
+              <div>
+                <a class="btn btn-default submit" onclick="auth()">Log in</a>
+               
+              </div>
+               
+
+              <div class="clearfix"></div>
+
+              <div class="separator" id="msg">
+                <p>
+                </p>
+              </div>
+              <div class="clearfix"></div>
+                <br />
+
+                <div>
+                
+                  <h1><i class="fa fa-paw"></i>Gadchiroli  BDDS </h1>
+                  <p>©2016 All Rights Reserved Cluematrix Techanology Private Limited Privacy and Terms</p>
+                </div>
+              </div>
+          
+          </section>
+        </div>
+
+        <div id="register" class="animate form registration_form">
+          <section class="login_content">
+            <form>
+              <h1>Create Account</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="Username" required="" />
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Email" required="" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" required="" />
+              </div>
+             
+              <div>
+                <a class="btn btn-default submit" href="index.html">Submit</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">Already a member ?
+                  <a href="#signin" class="to_register"> Log in </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa-paw"></i>  Cluematrix Techanology Private Limited</h1>
+                  <p>©2016 All Rights Reserved cluematrix techanology private limited! Privacy and Terms</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+     <!-- jQuery -->
+    <script src="{%static  'vendors/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{%static  'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{%static  'vendors/fastclick/lib/fastclick.js' %}"></script>
+    <!-- NProgress -->
+    <script src="{%static  'vendors/nprogress/nprogress.js' %}"></script>
+    <!-- iCheck -->
+    <script src="{%static  'vendors/iCheck/icheck.min.js' %}"></script>
+    <!-- Datatables -->
+    <script src="{%static  'vendors/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{%static  'vendors/datatables.net-bs/js/dataTables.bootstrap.min.js' %}"></script>
+    <script src="{%static  'vendors/datatables.net-buttons/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{%static  'vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js' %}"></script>
+    <script src="{%static  'vendors/datatables.net-buttons/js/buttons.flash.min.js' %}"></script>
+    <script src="{%static  'vendors/datatables.net-buttons/js/buttons.html5.min.js' %}"></script>
+    <script src="{%static  'vendors/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
+    <script src="{%static  'vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js' %}"></script>
+    <script src="{%static  'vendors/datatables.net-keytable/js/dataTables.keyTable.min.js' %}"></script>
+    <script src="{%static  'vendors/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{%static  'vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js' %}"></script>
+    <script src="{%static  'vendors/datatables.net-scroller/js/dataTables.scroller.min.js' %}"></script>
+    <script src="{%static  'vendors/jszip/dist/jszip.min.js' %}"></script>
+    <script src="{%static  'vendors/pdfmake/build/pdfmake.min.js' %}"></script>
+    <script src="{%static  'vendors/pdfmake/build/vfs_fonts.js' %}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{%static  'build/js/custom.min.js' %}"></script>
+
+  </body>
+  <script>
+    function auth(){
+
+     var name= $("#user_name").val();
+     var pwd=  $("#user_pwd").val();
+     
+     console.log(name);
+      if(name==null || name=='' || name==undefined)
+     {
+         $("#msg").html("<span style='color: red;font-size:14px; margin-left: -37px'>please fill user name</span>");
+     }
+     else if(pwd==null || pwd=='' || pwd==undefined)
+     {
+        $("#msg").html("<span style='color: red;font-size:14px; margin-left: -37px'>please fill password</span>")
+     }
+     else{
+        $.ajax(
+    {
+        method:"POST",
+        url: "/index",
+       
+        data:{
+                 u_name: name,
+                 u_pwd:pwd,
+                 csrfmiddlewaretoken: '{{ csrf_token }}'
+        },
+        success:function(responce){
+          if(responce=="success"){
+            
+            window.location.href= "/logine_auth";
+          }
+          else{
+             $("#msg").html("<span style='color: red;font-size:14px; margin-left: -37px'>Invalied Credential</span>")
+          }
+        }
+    })
+     }
+
+}
+  </script>
+</html>

@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+     <title>BDDS | </title>
+
+     <!-- Bootstrap -->
+    <link href="{%static 'vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{%static 'vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{%static 'vendors/nprogress/nprogress.css' %}" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{%static 'vendors/iCheck/skins/flat/green.css' %}" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="{%static 'vendors/google-code-prettify/bin/prettify.min.css' %}" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="{%static 'vendors/select2/dist/css/select2.min.css' %}" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="{%static 'vendors/switchery/dist/switchery.min.css' %}" rel="stylesheet">
+    <!-- starrr -->
+    <link href="{%static 'vendors/starrr/dist/starrr.css' %}" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="{%static 'vendors/bootstrap-daterangepicker/daterangepicker.css' %}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{%static 'build/css/custom.min.css' %}" rel="stylesheet">
+    <style type="text/css"> 
+      .d-none{
+        display: none;
+      }
+      .border-margin{
+        border: 1px solid black;
+        margin: 10px auto;
+        padding: 10px;
+      }
+      .float-right{
+        float: right;
+      }
+    </style>
+
+    <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+#myModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+#img01 {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+</style>
+  
+  </head>
+
+    <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="/index" class="site_title"><i class="fa fa-paw"></i> <span>BDDS</span></a>
+               <hr style="margin-top: 3px;"></hr>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+             <div class="menu_section">
+
+               <ul class="nav side-menu">
+                 <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                   <ul class="nav child_menu">
+                     <li><a href="/logine_auth">Dashboard</a></li>
+
+                   </ul>
+                 </li>
+
+
+                 <li><a><i class="fa fa-table"></i> Master <span class="fa fa-chevron-down"></span></a>
+                   <ul class="nav child_menu">
+                     <li><a href="/tlocation">Type Of Location</a></li>
+                     <li><a href="/jrusdiction">Jurisdiction</a></li>
+                     <li><a href="incident">Type OF Incident</a></li>
+                     <li><a href="/weight">Weight</a></li>
+                     <li><a href="/explosive">Type Of Explosive</a></li>
+                     <li><a href="/a_status">Assused Current Status</a></li>
+                     <li><a href="/post">Post</a></li>
+                     <li><a href="/designation">Designation</a></li>
+                     <li><a href="/detection">Name of Detection</a></li>
+                     <li><a href="/dispose">How Disposed</a></li>
+                     <li><a href="/dalam">Dalam</a></li>
+                   </ul>
+                 </li>
+                 {% if user.is_superuser %}
+                 <li><a><i class="fa fa-desktop"></i> Authontication <span class="fa fa-chevron-down"></span></a>
+                   <ul class="nav child_menu">
+                     <li><a href="/clogin">Logine Creation</a></li>
+                     <li><a href="/spauthority">SP Authority</a></li>
+                     <li><a href="/users">Users</a></li>
+                   </ul>
+                 </li>
+                 {% endif %}
+                 <li><a href="/cdatabase"><i class="fa fa-laptop"></i>Form </a></li>
+                  <li><a href="/fdata"><i class="fa fa-laptop"></i>View </a></li>
+                </ul>
+             </div>
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+         <div class="top_nav">
+           <div class="nav_menu">
+             <nav>
+               <div class="nav toggle">
+                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+               </div>
+               {% if messages %}
+                 {% for message in messages %}
+                <div {% if message.tags %} class="alert alert-{{ message.tags }}" role="alert" {% endif %}>
+                <strong> {{ user.first_name}}!</strong> {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>{% endfor %}
+              </div>
+              {% endif %}
+
+               <ul class="nav navbar-nav navbar-right">
+                 <li class="">
+                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                       {{ user.first_name}}
+                     <span class=" fa fa-angle-down"></span>
+                   </a>
+                   <ul class="dropdown-menu dropdown-usermenu pull-right">
+                     
+                     <li><a href="/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                   </ul>
+                 </li>
+
+                  </ul>
+                 </li>
+               </ul>
+             </nav>
+           </div>
+         </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>BDDS Central Database System</h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Edit Form </h2>
+                    <div class="nav navbar-right panel_toolbox">
+                      {% for item1 in data1 %}
+                      <a href="updatefirst/{{item1.id}}"class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit</a>
+                      {% endfor %}
+                      
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  
+                  <div class="x_content" >
+                    <br />
+                    <div id="demo-form2" data-parsley-validate class="form-horizontal form-label-right" >
+                      {% for item1 in data1 %}
+                      <div class=" form-row">
+                        <div class="col-md-4 mb-3 ">
+                         <label  for="first-name">Incident/serial year <span class="required">*</span></label>
+                           <input  type="text" class="form-control mb-3"value="{{item1.fserial}}"readonly></input>
+                            </div>
+                            <input type="hidden" id="formid" value={{item1.id}}>
+                          <div class="col-md-4 mb-3">
+                         <label  for="last-name">Cr No OR Bomb Call  <span class="required">*</span></label>
+                         <input type="text" id="last-name" name="last-name" required="required" class="form-control" value="{{item1.d_bomb}}" readonly>
+                          </input>
+                          </div>
+                        <div class="col-md-4 mb-3">
+                        <label for="middle-name" >Date & Time</label>
+                       <input id="middle-name"   class="form-control" name="middle-name"value='{{item1.fdate}}' readonly></input>
+                       </div>
+                       </div>  
+                       
+                      <div class="form-row ">
+                        <div class=" col-md-4 mb-3">
+                        <label for="location">Location<span class="required">*</span>
+                        </label>
+                        <input id="birthday" class="form-control" required="required" type="text" value="{{item1.flocation}}" readonly></input>
+                        </div>
+                      <div class="col-md-4 mb-3">
+                      <label for="Type_of_location">Type Of Location<span class="required">*</span>
+                        </label>
+                      <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="select" value="  {{item1.l_location}}" readonly></input>
+                        </div>
+                      </div>
+
+                      <div class="form-row">
+                       <div class=" col-md-4 mb-3"> 
+                         <label for='destruction'>Destruction <span class="required">*</span></label>
+                    <input id="birthday" class="form-control" required="required" type="text" value="{{item1.radio_data}}"  readonly />
+                  </div>
+                     
+                    
+                      <div class="col-md-4 mb-3">
+                        <label for="juridiction">Jurisdiction<span class="required">*</span>
+                        </label>
+                        <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="  {{item1.l_juridiction}}" readonly>
+                        </input>
+                        </div>
+                      </div>
+
+                      <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                        <label class="type_of_incident">Type Of Incident<span class="required">*</span>
+                        </label>
+                       <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="{{item1.i_incident}}" readonly></label>
+                        </div>
+                     <div class="col-md-4 mb-3">
+                        <label for="explosive">Type Of Explosive<span class="required">*</span>
+                        </label>
+                        <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required"  type="text" value=' {{item1.e_explosive}}' readonly>
+                         </input>
+                        </div>
+                      </div>
+
+                        <div class="form-row">
+                         <div class="col-md-4 mb-3"> 
+                        <label  for="weight_label">Weight<span class="required">*</span>
+                        </label>
+                        <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required"  type="text" value=" {{item1.w_weight}}" readonly></input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                        <label for='detenotaor'>Detonator<span class="required">*</span>
+                        </label>
+                       <input id="birthday" class="form-control" required="required"  type="text" value="{{item1.fdetonator}}" readonly>
+                       </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Switch(mechanisem)<span class="required">*</span>
+                        </label>
+                        <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required"  type="text" value=" {{item1.fswitch}}" readonly />
+                        </div>
+                      </div>
+                      <div class='form-row'>
+                        <div class="col-md-4 mb-3"> 
+                    <label for="Assused_current_status">Assused Current Status <span class="required">*</span>
+                    </label>
+                    <input id="birthday" class="form-control" required="required"  type="text" value="{{item1.a_assused}}" readonly>
+                    </div>
+                    <div class="col-md-4 mb-3 ">
+                      <label for='dalam_value'>Dalam<span class="required">*</span>
+                        </label>
+                       <input id="birthday" class="form-control" required="required"  type="text" value="{{item1.d_dalam}}" readonly />
+                    </div>
+
+
+                      <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                        <label for="target_vehicle">Target(Personal/Vehicle)<span class="required">*</span>
+                        </label>
+                    <textarea class="form-control" required="required"  type="text" readonly>{{item1.ftarget}}</textarea>
+                        </div>
+                     <div class="col-md-4 mb-3">
+                        <label for='distruction_property'>Distruction Of Property<span class="required">*</span>
+                        </label>
+                <textarea  class="form-control" required="required"  type="textarea" readonly>{{item1.fdistruction}}</textarea>
+                        </div>
+                  
+
+
+                    <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                    <label for='assused_details'>Assused Details <span class="required">*</span></label>
+                    <textarea id="birthday" class="form-control" required="required"  type="text" readonly>{{item1.fassume}}</textarea>
+                      </div>
+                     
+                      <div class="col-md-4 mb-3">
+                        <label for='locattion_description'>Location Description<span class="required">*</span></label>
+                       <textarea id="birthday" class="form-control" required="required" type="text" readonly>{{item1.flocation_description}}</textarea>
+                   </div>
+                     
+                      <div class="col-md-4 mb-3 ">
+                        <label for='leraning_mistake'>Learning Mistakes<span class="required">*</span></label>
+                      <textarea id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required"  type="text" readonly>{{item1.flearning}}</textarea>
+                        </div>
+                      </div>
+                      </div>
+                      </div>
+                   {% endfor %}
+                  </div>
+                </div>
+              </div>
+                
+               
+     <!----death_person-------------->        
+
+            <div class="row">
+              <div class="col-md-6 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Death Person </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-pencil"></i>Edit</button>
+                     </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  
+                  <div class="x_content">
+                    <br />
+                    <form class="form-horizontal form-label-left input_mask">
+                      {% if data2 %}
+                      {% for item2 in data2 %}
+
+                      <div class="col-md-7 col-sm-7 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="First Name" 
+                        value="{{item2.death_name}}" readonly>
+                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span></input>
+                      </div>
+
+                        <div class="col-md-5 col-sm-5 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item2.death_contact}}" readonly>
+                        <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span></input>
+                      </div>
+                        {% endfor %}
+                        {% else %}
+                        <h4>----------------No Data Available-----------</h4>
+                        {% endif %}
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              <div class="row">
+              <div class="col-md-6 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Injured Person <small>different form elements</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      
+                      <li> <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#injuredModal"><i class="fa fa-pencil"></i>Edit</button>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  
+                  <div class="x_content">
+                    <br />
+                    <form class="form-horizontal form-label-left input_mask">
+                      {% if data3 %}
+                      {% for item3 in data3 %}
+                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="First Name" 
+                        value='{{item3.injured_name}}' readonly>
+                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span></input>
+                      </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value='{{item3.injured_contact}}' readonly>
+                        <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span></input>
+                      </div> 
+                        {% endfor %}
+                        {% else %}
+                        <h4>----------------No Data Available-----------</h4>
+                         {% endif %}
+                      </div>
+                      </div>
+                   </div>
+                 </form>
+               </div>
+             </div>
+                 
+          
+        
+     
+    
+    <!--------explode------------>
+     <div class="row">
+              <div class="col-md-6 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Exploded <small>different form elements</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li> <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#explodedModal"><i class="fa fa-pencil"></i>Edit</button>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                 
+                 <div class="x_content">
+                    <br />
+                    <form class="form-horizontal form-label-right input_mask">
+                       {% if data4 %}
+                       {% for item4 in data4 %}
+                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="First Name" 
+                        value='{{item4.exploded_name}}' readonly>
+                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span></input>
+                      </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item4.explode_contact}}" readonly>
+                        <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span></input>
+                     </div>
+                        {% endfor %}
+                        {% else %}
+                        <h4>----------------No Data Available-----------</h4>
+                        {% endif %}
+                    </div>
+                   
+                  </div>
+                </div>
+                 </form>
+
+                      
+      
+        <!---detcted------>
+               <div class="row">
+              <div class="col-md-6 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Detected <small>different form elements</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li> <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#disposedModal"><i class="fa fa-pencil"></i>Edit</button>
+                      </li>
+                     
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+               
+                  <div class="x_content">
+                    <br />
+                    
+                    {% for item1 in data1 %}
+                    {% if item1.mode_of_detection %}
+                   <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                    <label>Mode Of Detection:</label>
+                      </div>
+                       <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.d_ditection}}" readonly></input>
+                      </div> 
+                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                      <label>Description:</label>
+                      </div>
+                       <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                        <textarea type="text" class="form-control" id="inputSuccess5" readonly >{{item1.detected_description}}</textarea>
+                      </div>
+                      <div>
+                      <label><u> Detcted By Whome:</u></label>
+                      </div> 
+                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                    <label>Person Name</label>
+                      </div>
+                       <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.detected_pname}}" readonly>
+                        </input>
+                      </div> 
+                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                    <label>Contact:</label>
+                      </div>
+                       <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.detcted_contact}}" readonly></input>
+                      </div> 
+                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                    <label>How Dispose:</label>
+                      </div>
+                       <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.d_dispose}}" readonly></input>
+                      </div> 
+                      <div>
+                      <label><u> Dispose By Whome:</u></label>
+                      </div> 
+                       <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                    <label>Person Name:</label>
+                      </div>
+                       <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.dispose_name}}" readonly>
+                      </input>
+                      </div> 
+                       <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                    <label>Contact:</label>
+                      </div>
+                       <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.dispose_contact}}" readonly></input>
+                      </div>
+                      
+                      {% else %}
+                       <h4>-----------NO Data Available------------</h4>
+                        {% endif %}
+                         {% endfor %}
+                      </div><!-- ENd of x content---->
+                     </div><!-- ENd of x panel---->
+                       </div><!-- ENd of div x-6 content---->
+               
+</div> 
+
+     <!-- image------->          
+   
+       <!-- </div> -->
+          <!--------->
+          
+<div class="x_panel">
+              <div class="x_title">
+                <h2>Images<small>form input </small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#image_upload">Add Images</button>
+               </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              {% if data5 %}
+              <div class="x_content">
+                  <div class="row">
+                   {% for item5 in data5 %}
+                  <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                    <img id="{{item5.id}}" onclick=zoomimg('{{item5.id}}','{{item5.im_vi}}','{{item5.status}}')  src="/static/images/image1_folder/{{item5.im_vi}}"
+                    width="100" height="100"  style="border: solid;">
+                    <div>
+                    <button  type='button' class="btn btn-link a-btn-slide-text" 
+                    onclick="dltimg({{item5.id}},'{{item5.im_vi}}')">
+                     <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;"></span><span style="color:red"><strong>Delete</strong></span> 
+                  </div>   
+
+                  </div>
+                  {% endfor %}
+                  {% else %}
+                  <h4>-----------No Data Available---------</h4>
+                  {% endif %}
+                </div>
+            </div>
+          </div>
+    <!----------------------------------------------------->
+
+<div class="x_panel">
+              <div class="x_title">
+                <h2>Special Report<small>form input </small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                   <li>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#report_upload">Upload Reports</button>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              {% if data6 %}
+              <div class="x_content">
+                  <div class="row">
+                   {% for item6 in data6 %}
+                   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <a href="/static/images/image2_folder/{{item6.special_report}}"target="_blank"><i class="fa fa-file-pdf-o" style="font-size:48px;color:red">
+                  </a></i>
+                    <div>
+                    <button type="button" class="btn btn-link a-btn-slide-text" 
+                    onclick="dltspreport({{item6.id}},'{{item6.special_report}}')">
+                     <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;"></span><span style="color:red"><strong>Delete</strong></span> 
+                      
+                  </button>
+                </div>
+                  </div>
+                  {% endfor %}
+                  {% else %}
+                  <h4>-----------No Data Available---------</h4>
+                  {% endif %}
+                </div>
+            </div>
+          </div>
+
+           <!----------------------------------------------------->
+
+<div class="x_panel">
+              <div class="x_title">
+                <h2>Sketch Of Scence<small>form input </small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                 <li>
+                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sketch_upload">Upload Sketch</button>
+                 </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              {% if data7 %}
+              <div class="x_content">
+                  <div class="row">
+                   {% for item7 in data7 %}
+                  <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                    <img id="{{item7.id}}" onclick=zoomimg('{{item7.id}}','{{item7.Sketch_scence}}','{{0}}')  src="/static/images/image3_folder/{{item7.sketch_scence}}"
+                    width="100" height="100" alt="{{item7.sketch_scence}}">
+                    <div>
+                    <button type='button' class="btn btn-link a-btn-slide-text"
+                    onclick="dltsketch({{item7.id}},'{{item7.sketch_scence}}')">
+                     <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;"></span><span style="color:red"><strong>Delete</strong></span></button> 
+                  </div>
+                </div>
+                  {% endfor %}
+                  {% else %}
+                  <h4>-----------No Data Available---------</h4>
+                  {% endif %}
+                </div>
+            </div>
+          </div>
+    <!--------------------------------------------------------->
+
+</div>
+</div>
+</div>
+</div>  
+<!-- ENd of row    </div> ---->
+                
+
+ 
+
+
+      
+
+
+
+
+
+
+<!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Cluematrix Techanology Private Limite<a href="https://cluematrix.com">d</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+     <!-- jQuery -->
+    <script src="{%static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{%static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{%static 'vendors/fastclick/lib/fastclick.js' %}"></script>
+    <!-- NProgress -->
+    <script src="{%static 'vendors/nprogress/nprogress.js' %}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{%static 'vendors/bootstrap-progressbar/bootstrap-progressbar.min.js' %}"></script>
+    <!-- iCheck -->
+    <script src="{%static 'vendors/iCheck/icheck.min.js' %}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{%static 'vendors/moment/min/moment.min.js' %}"></script>
+    <script src="{%static 'vendors/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+    <!-- bootstrap-wysiwyg -->
+    <script src="{%static 'vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js' %}"></script>
+    <script src="{%static 'vendors/jquery.hotkeys/jquery.hotkeys.js' %}"></script>
+    <script src="{%static 'vendors/google-code-prettify/src/prettify.js' %}"></script>
+    <!-- jQuery Tags Input -->
+    <script src="{%static 'vendors/jquery.tagsinput/src/jquery.tagsinput.js' %}"></script>
+    <!-- Switchery -->
+    <script src="{%static 'vendors/switchery/dist/switchery.min.js' %}"></script>
+    <!-- Select2 -->
+    <script src="{%static 'vendors/select2/dist/js/select2.full.min.js' %}"></script>
+    <!-- Parsley -->
+    <script src="{%static 'vendors/parsleyjs/dist/parsley.min.js' %}"></script>
+    <!-- Autosize -->
+    <script src="{%static 'vendors/autosize/dist/autosize.min.js' %}"></script>
+    <!-- jQuery autocomplete -->
+    <script src="{%static 'vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js' %}"></script>
+    <!-- starrr -->
+    <script src="{%static 'vendors/starrr/dist/starrr.js' %}"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="{%static 'build/js/custom.min.js' %}"></script>
+<!------- death models------->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Death Person</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <a href="javascript:;" ><span style="color:blue ;text-decoration: underline"; class="Adddeath_dataDiv">Add Person
+      </div>
+      <form method='post' action="/upddeath"'>{% csrf_token %}
+      <div class="modal-body">
+         {% if  data2 %}
+      {% for item2 in data2 %}
+     
+    <div class="row">
+     <div class="col-md-6 mb-3">
+
+        <label for="validationDefault01">Person name</label>
+        <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="{{item2.death_name}}" name="death_name" required>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="validationDefault02">Person contacts</label>
+        <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="{{item2.death_contact}}" name="death_contacts" required>
+        <button type="button" class="btn btn-link a-btn-slide-text remdeath_dataDiv"
+        onclick="dlt_death({{item2.id}})"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button>
+      </div>
+    </div>
+    {% endfor %}
+      {% endif %}
+    {%for item1 in data1 %} <input type="hidden" name='form_id' value={{item1.id}}>{% endfor %}
+      <div class="death_dataDiv">
+        </div>  
+    
+      <div>
+      <div class="ln_solid"></div>
+      <div class="form-group" style="margin-left:186px">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary">update</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</form>
+</span>
+</div>
+<!----------------injure_Persone------------------>
+<div class="modal fade" id="injuredModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Injured Person</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+         <a href="javascript:;" ><span style="color:blue ;text-decoration: underline"; class="Addinjured_dataDiv">Add Person
+      </div>
+      <form method='post' action="/updinjured"'>{% csrf_token %}
+      <div class="modal-body">
+         {% if  data3 %}
+      {% for item3 in data3 %}
+    <div class="row">
+     <div class="col-md-6 mb-3">
+        <label for="validationDefault01">Person name</label>
+        <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="{{item3.injured_name}}" name="injured_name" >
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="validationDefault02">Person contacts</label>
+        <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="{{item3.injured_contact}}" name="injured_contacts" >
+         <button type="button" class="btn btn-link a-btn-slide-text remdeath_dataDiv"
+        onclick="dlt_injured({{item3.id}})"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button>
+       </div>
+       </div>
+      {% endfor %}
+      {% endif %}
+        {%for item1 in data1 %} <input type="hidden" name='form_id' value={{item1.id}}>{% endfor %}
+      <div class="injured_dataDiv">
+        </div>  
+      <div class="ln_solid"></div>
+      <div class="form-group" style="margin-left:186px">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary">update</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+</div>
+<!----------------------------------explode------------------------>
+<div class="modal fade" id="explodedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Exploded</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+         <a href="javascript:;" ><span style="color:blue ;text-decoration: underline"; class="Addexploded_dataDiv">Add Person
+      </div>
+      <form method='post' action="/updexploded"'>{% csrf_token %}
+      <div class="modal-body">
+         {% if  data4 %}
+      {% for item4 in data4 %}
+    <div class="row">
+     <div class="col-md-6 mb-3">
+        <label for="validationDefault01">Person name</label>
+        <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="{{item4.exploded_name}}" name="exploded_name" >
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="validationDefault02">Person contacts</label>
+        <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="{{item4.explode_contact}}" name="exploded_contacts" >
+         <button type="button" class="btn btn-link a-btn-slide-text"
+        onclick="dlt_exploded({{item4.id}})"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button>
+       </div>
+       </div>
+      {% endfor %}
+      {% endif %}
+        {%for item1 in data1 %} <input type="hidden" name='form_id' value={{item1.id}}>{% endfor %}
+      <div class="injured_dataDiv">
+        </div>  
+      <div class="ln_solid"></div>
+      <div class="form-group" style="margin-left:186px">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary">update</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+</div>
+</span>
+<!---------------------------dispose------------------------------>
+<div class="modal fade" id="disposedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Disposed</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+         
+      </div>
+      <form method='post' action="/updeatedispose"'>{% csrf_token %}
+      <div class="modal-body">
+         <div class="row">
+              
+                    {% if data1 %}
+                    {% for item1 in data1 %}
+                   <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                    <label>Mode Of Detection:</label>
+                      </div>
+                       <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                         <select type="text" id="first-name2" placeholder="Enter Mode of Detection" class="form-control col-md-7 col-xs-12" 
+                              name="mode_detection">
+                        <option value={{item1.mode_of_detection}}>{{item1.d_ditection}}</option>
+                              {% for item8 in data8 %}
+                              <option value={{item8.id}}>{{item8.d_ditection}}</option>
+                              {% endfor %}
+                              <option value=''>None</option>
+                            </select>
+                      </div> 
+                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                      <label>Description:</label>
+                      </div>
+                       <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                        <textarea type="text" class="form-control" id="inputSuccess5" name="detction_description" >{{item1.detected_description}}</textarea>
+                      </div>
+                      <input type="hidden" value="{{item1.id}}" name="form_id"></input>
+                      <div>
+                      <label><u> Detcted By Whome:</u></label>
+                      </div> 
+                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                    <label>Person Name</label>
+                      </div>
+                       <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Name" value='{{item1.detected_pname}}'name="detected_name"></input>
+                      </div> 
+                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                    <label>Contact:</label>
+                      </div>
+                       <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value='{{item1.detcted_contact}}' name="detected_contacts"></input>
+                      </div> 
+                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                      <label>How Dispose:</label>
+                      </div>
+                       <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                        <select  id="first-name2" placeholder="Enter Designation" class="form-control col-md-7 col-xs-12" 
+                              name="detected_despose">
+                              <option >{{item1.d_dispose}}</option>
+                              {% for item9 in data9 %}
+                              <option value="{{item9.id}}">{{item9.d_dispose}}</option>
+                              {% endfor %}
+                              <option value="">None</option>
+                              </select>
+                      </div> 
+                      <div>
+                      <label><u> Dispose By Whome:</u></label>
+                      </div> 
+                       <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                    <label>Person Name:</label>
+                      </div>
+                       <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Name" value="{{item1.dispose_name}}" name="dispose_name"></input>
+                      </div> 
+                       <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                    <label>Contact:</label>
+                      </div>
+                       <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value='{{item1.dispose_contact}}' 
+                        name='despose_contacts'></input>
+                      </div>
+                       {% endfor %}
+                      {% else %}
+                       <h4>-----------NO Data Available------------</h4>
+                        {% endif %}
+                      </div>
+                    </div>  
+      <div class="ln_solid"></div>
+      <div class="form-group" style="margin-left:186px">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary">update</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+</div>
+
+<!-----------image_upload_models---------------------->
+<div class="modal" id="image_upload" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Images</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post" action="/addimg" name='upload_form' id='upload_form' enctype="multipart/form-data" >{% csrf_token %}
+      <div class=" modal-body col-md-6 ">
+      {%  for item1 in data1 %}  
+      <input type="hidden" name='form_id' value={{item1.id}}>
+      {% endfor %}
+      <input class="form-control" type="file" id="formFileMultiple" name="image_name" multiple required />
+     </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" ><i class="bi bi-images">Upload</i></button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+<!---------------reports_add------------>
+  <div class="modal" id="report_upload" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Report</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post" action="/addreports" name='upload_form' id='upload_form' enctype="multipart/form-data" >{% csrf_token %}
+      <div class=" modal-body col-md-6 ">
+      {%  for item1 in data1 %}  
+      <input type="hidden" name='id' value={{item1.id}}>
+      {% endfor %}
+      <input class="form-control" type="file" id="formFileMultiple" name="reports_name" multiple  required />
+     </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Upload</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+<!---------------------sketch_images_add-------------------->
+  <div class="modal" id="sketch_upload" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Sketch</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post" action="/addsketch" name='upload_form' id='upload_form' enctype="multipart/form-data" >{% csrf_token %}
+      <div class=" modal-body col-md-6 ">
+      {%  for item1 in data1 %}  
+      <input type="hidden" name='id' value={{item1.id}}>
+      {% endfor %}
+      <input class="form-control" type="file" id="formFileMultiple" name="sketch_name" multiple  required />
+     </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Upload</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+
+
+
+
+
+
+<!----------------------->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+
+
+
+    <!-- Modal HTML -->
+    <div id="myModal_new_video" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Video</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe id="cartoonVideo" class="embed-responsive-item" width="560" height="315" src="" allowfullscreen></iframe>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+  
+
+
+  <script type="text/javascript">
+ // Get the modal
+function zoomimg(id,url,status) { 
+   var full_url= document.getElementById(id).src
+   //alert(c)
+  var modal = document.getElementById("myModal");
+   //full_url="/static/images/image1_folder/"+url
+   //alert(full_url)
+  if(status==0){
+  var modal = document.getElementById("myModal");
+  var img = document.getElementById(id);
+ var modalImg = document.getElementById("img01");
+ var captionText = document.getElementById("caption");
+ img.onclick = function(){
+  modal.style.display = "block";
+   modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+ }
+// Get the <span> element that closes the modal
+ var span = document.getElementsByClassName("close")[0];
+
+ // When the user clicks on <span> (x), close the modal
+ span.onclick = function() { 
+   modal.style.display = "none";
+ }
+}
+ else{
+  /* Get iframe src attribute value i.e. YouTube video url
+    and store it in a variable */
+    //var url = $("#cartoonVideo").attr('src');
+    //www.youtube.com/embed/YE7VzlLtp-4
+    var url = full_url;
+    /* Assign empty url value to the iframe src attribute when
+    modal hide, which stop the video playing */
+    $("#myModal_new_video").on('hide.bs.modal', function(){
+        $("#cartoonVideo").attr('src', '');
+    });
+    
+    /* Assign the initially stored url back to the iframe src
+    attribute when modal is displayed again */
+    $("#myModal_new_video").on('show.bs.modal', function(){
+
+    //alert(url);
+        $("#cartoonVideo").attr('src', full_url);
+    });
+    
+
+    $('#myModal_new_video').modal('show');
+    $('.modal-backdrop').css('z-index','0');
+}
+
+
+ }
+</script>
+<!--------delete_images---------->
+<script type="text/javascript">
+  function dltimg(id,img_path) {
+    //alert(img_path);
+    var x= document.getElementById("formid").value;
+    $.ajax({
+      method:'POST',
+      url:'/dltimg',
+      data:{
+        id:id,
+        img_path:img_path,
+         csrfmiddlewaretoken: '{{ csrf_token }}'
+      },
+      success:function(response){
+        //alert('success');
+         window.location.href= "/updfdata/"+x;
+      }
+
+    })
+  }
+
+function dltspreport(id,report_path){
+  var x= document.getElementById("formid").value;
+  $.ajax({
+    method:'POST',
+    url:'/dltreport',
+    data:{
+      id:id,
+      report_path,
+      csrfmiddlewaretoken: '{{csrf_token}}',
+    },
+    success:function(response){
+      if (response=='success'){
+         window.location.href= "/updfdata/"+x;
+      }
+    } 
+    
+  })
+}
+
+function dltsketch(id,sketch_path){
+  var x= document.getElementById("formid").value;
+  //alert(id+sketch_path)
+  $.ajax({
+    method:'POST',
+    url:'/dltsketch',
+    data:{
+      id:id,
+      sketch_path:sketch_path,
+      csrfmiddlewaretoken:'{{csrf_token}}'
+    },
+    success:function(response){
+      if(response=='success')
+        window.location.href= "/updfdata/"+x;
+    }
+  })
+}
+
+</script>
+<script type='text/javascript'>
+var x= document.getElementById("formid").value;  
+function dlt_death(id) {
+  $.ajax({
+    method:"POST",
+    url:"/dltdeath",
+    data:{
+      id:id,
+      csrfmiddlewaretoken:'{{csrf_token}}'
+    
+    },
+     success:function(response){
+       if(response =='success')
+        window.location.href= "/updfdata/"+x;
+    }
+  })
+} 
+</script>
+<script type='text/javascript'>
+var x= document.getElementById("formid").value;  
+function dlt_injured(id) {
+  
+  $.ajax({
+    method:"POST",
+    url:"/dltinjured",
+    data:{
+      id:id,
+      csrfmiddlewaretoken:'{{csrf_token}}'
+    
+    },
+     success:function(response){
+       if(response =='success')
+        window.location.href= "/updfdata/"+x;
+    }
+  })
+} 
+</script>
+<script type="text/javascript">
+  $(document).on('click','.Adddeath_dataDiv',function(){
+
+    $('.death_dataDiv').append('<div class="reminjuredDiv"><div class="row"> <div class="col-md-6 mb-3"><label for="validationDefault01">Person name</label><input type="text" class="form-control" id="validationDefault01" placeholder="First name"  name="death_name" required></div><div class="col-md-6 mb-3"><label for="validationDefault02">Person contacts</label><input type="text" class="form-control" id="validationDefault02" placeholder="Last name" name="death_contacts" required><button type="button" class="btn btn-link a-btn-slide-text remdeath_dataDiv"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button></div></div>');
+  });
+   $(document).on('click','.remdeath_dataDiv',function(){
+    if($('.reminjuredDiv').length){ $(this).closest('.reminjuredDiv').remove()}
+  });
+</script>
+<script type="text/javascript">
+  $(document).on('click','.Addinjured_dataDiv',function(){
+
+    $('.injured_dataDiv').append('<div class="reminjuredDiv"><div class="row"> <div class="col-md-6 mb-3"><label for="validationDefault01">Person name</label><input type="text" class="form-control" id="validationDefault01" placeholder="First name"  name="injured_name" ></div><div class="col-md-6 mb-3"><label for="validationDefault02">Person contacts</label><input type="text" class="form-control" id="validationDefault02" placeholder="Last name" name="injured_contacts" ><button type="button" class="btn btn-link a-btn-slide-text reminjured_dataDiv"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button></div></div>');
+  });
+   $(document).on('click','.reminjured_dataDiv',function(){
+    if($('.reminjuredDiv').length){ $(this).closest('.reminjuredDiv').remove()}
+  });
+
+</script> 
+<script type="text/javascript">
+  $(document).on('click','.Addexploded_dataDiv',function(){
+
+    $('.injured_dataDiv').append('<div class="reminjuredDiv"><div class="row"> <div class="col-md-6 mb-3"><label for="validationDefault01">Person name</label><input type="text" class="form-control" id="validationDefault01" placeholder="First name"  name="exploded_name" ></div><div class="col-md-6 mb-3"><label for="validationDefault02">Person contacts</label><input type="text" class="form-control" id="validationDefault02" placeholder="Last name" name="exploded_contacts" ><button type="button" class="btn btn-link a-btn-slide-text remexploded_dataDiv"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button></div></div>');
+  });
+   $(document).on('click','.remexploded_dataDiv',function(){
+    if($('.reminjuredDiv').length){ $(this).closest('.reminjuredDiv').remove()}
+  });
+  </script>
+  <script type='text/javascript'>
+var x= document.getElementById("formid").value;  
+function dlt_exploded(id) {
+ 
+  $.ajax({
+    method:"POST",
+    url:"/dltexploded",
+    data:{
+      id:id,
+      csrfmiddlewaretoken:'{{csrf_token}}'
+    
+    },
+     success:function(response){
+       if(response =='success')
+        window.location.href= "/updfdata/"+x;
+    }
+  })
+} 
+</script>
+</html>
+

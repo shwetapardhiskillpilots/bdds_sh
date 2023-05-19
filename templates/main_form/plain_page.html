@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>BDDS | </title>
+
+    <!-- Bootstrap -->
+    <link href="{%static 'vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{%static 'vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{%static 'vendors/nprogress/nprogress.css' %}" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{%static 'vendors/iCheck/skins/flat/green.css' %}" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="{%static 'vendors/google-code-prettify/bin/prettify.min.css' %}" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="{%static 'vendors/select2/dist/css/select2.min.css' %}" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="{%static 'vendors/switchery/dist/switchery.min.css' %}" rel="stylesheet">
+    <!-- starrr -->
+    <link href="{%static 'vendors/starrr/dist/starrr.css' %}" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="{%static 'vendors/bootstrap-daterangepicker/daterangepicker.css' %}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{%static 'build/css/custom.min.css' %}" rel="stylesheet">
+    <style type="text/css"> 
+      .d-none{
+        display: none;
+      }
+      .border-margin{
+        border: 1px solid black;
+        margin: 10px auto;
+        padding: 10px;
+      }
+      .float-right{
+        float: right;
+      }
+    </style>
+  </head>
+
+ <body class="nav-md">
+     <div class="container body">
+       <div class="main_container">
+         <div class="col-md-3 left_col">
+           <div class="left_col scroll-view">
+             <div class="navbar nav_title" style="border: 0;">
+               <a href="#" class="site_title"><i class="fa fa-paw"></i> <span>BDDS</span></a>
+                <hr style="margin-top: 3px;"></hr>
+             </div>
+
+             <div class="clearfix"></div>
+
+             <!-- menu profile quick info -->
+
+             <!-- /menu profile quick info -->
+
+             <br />
+            <!-- sidebar menu -->
+           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/logine_auth">Dashboard</a></li>
+
+                    </ul>
+                  </li>
+
+
+                  <li><a><i class="fa fa-table"></i> Master <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="tlocation">Type Of Location</a></li>
+                      <li><a href="/jrusdiction">Jurisdiction</a></li>
+                      <li><a href="incident">Type OF Incidence</a></li>
+                      <li><a href="/weight">Weight</a></li>
+                      <li><a href="/explosive">Type Of Explosive</a></li>
+                      <li><a href="/a_status">Assused Current Status</a></li>
+                      <li><a href="/post">Post</a></li>
+                      <li><a href="/designation">Designation</a></li>
+                      <li><a href="/detection">Name of Detection</a></li>
+                      <li><a href="/dispose">How Disposed</a></li>
+                      <li><a href="/dalam">Dalam</a></li>
+                    </ul>
+                  </li>
+                  {% if user.is_superuser %}
+                  <li><a><i class="fa fa-desktop"></i> Authontication <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/clogin">Logine Creation</a></li>
+                      <li><a href="/spauthority">SP Authority</a></li>
+                      <li><a href="/users">Users</a></li>
+                    </ul>
+                  </li>
+                  {% endif %}
+                  <li><a href="/cdatabase"><i class="fa fa-laptop"></i>Form </a></li>
+                   <li><a href="/fdata"><i class="fa fa-laptop"></i>View </a></li>
+                 </ul>
+              </div>
+             </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+          <!--  <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>-->
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+         <div class="nav_menu">
+           <nav>
+             <div class="nav toggle">
+               <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+             </div>
+               {% if messages %}
+                 {% for message in messages %}
+                <div {% if message.tags %} class="alert alert-{{ message.tags }}" role="alert" {% endif %}>
+                <strong> {{ user.first_name }}!</strong> {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>{% endfor %}
+              </div>
+              {% endif %}
+
+
+             <ul class="nav navbar-nav navbar-right">
+               <li class="">
+                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                     {{ user.first_name|upper }}
+                   <span class=" fa fa-angle-down"></span>
+                 </a>
+                 <ul class="dropdown-menu dropdown-usermenu pull-right">
+                  
+                   <li><a href="/profile"> Profile</a></li> 
+                   <li><a href="/"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                   
+                 </ul>
+               </li>
+
+                </ul>
+               </li>
+             </ul>
+           </nav>
+         </div>
+       </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>BDDS Form</h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>BDDS Form </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br />
+                    <form  action="/cdatabase" method="Post"   id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
+                     {% csrf_token %}
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >Incidence Serial/year <span class="required text-danger">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12" name="serial_value">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Cr No OR Bomb Call <span class="required text-danger">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="last-name" name="bomb_value" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Date & Time<span class="required text-danger">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="date" name="date&time" required="required">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Location<span class="required text-danger">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="location_value" required="required">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Type Of Location<span class="required text-danger">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                         <select id="middle-name" class="form-control col-md-7 col-xs-12"  name="location_data" required="required">
+                            <option value="">----------Select Type Of Location----------</option>
+                             {% for item in data1 %}
+                            <option value="{{item.id}}">{{item.l_location}}</option>
+                             {% endfor %}  
+                            </select>
+                         </div>
+                      </div>
+                        <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Location Description</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <textarea id="middle-name" class="form-control col-md-7 col-xs-12" type="textarea" rows="3" cols="20" name="location_description"></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Jurisdiction<span class="required text-danger">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                         <select id="middle-name" class="form-control col-md-7 col-xs-12"  name="jurisdiction_data" required="required">
+                          <option value=''>----------Select Type Of juridiction----------</option>
+                             {% for item2 in data2 %}
+                            <option value="{{item2.id}}">{{item2.l_juridiction}}</option>
+                             {% endfor %}  
+                          </select>
+                         </div>
+                        </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Type Of Incidence<span class="required text-danger">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select id="middle-name" class="form-control col-md-7 col-xs-12"  name="incident_data" required="required">
+                            <option value=''>------select Type Of Incidence-------</option>
+                            {% for item3 in data3 %}
+                            <option value="{{item3.id}}">{{item3.i_incident}}</option>
+                            {% endfor %}
+                           </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Weight<span class="required text-danger">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select id="middle-name"  class="form-control col-md-7 col-xs-12" name="weight_data" required="required">
+                            <option value="" >----select weight--------</option>
+                            {% for item4 in data4 %}
+                            <option value="{{item4.id}}">{{item4.w_weight}}</option>
+                            {% endfor %}
+                           </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Type Of Explosive<span class="required text-danger">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select id="middle-name" class="form-control col-md-7 col-xs-12" t name="explosive_data" required="required">
+                        <option value="">-------Select Type Of Explosive--------</option>
+                        {% for item5 in data5 %}
+                          <option value="{{item5.id}}">{{item5.e_explosive}}</option>
+                         {% endfor %} 
+                        </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Detonator</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="detonator_data">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Switch(mechanism)</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <textarea id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="switch_data"></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Target(Person/Vehicle)</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="target_data">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Death</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        
+                        
+                          <!-- <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg" ><span style="color:blue ;text-decoration: underline";>Add Name</span></a> -->
+                          <a href="javascript:;" ><span style="color:blue ;text-decoration: underline"; class="Adddeath_dataDiv">Add Name</span></a>
+                       <div class="death_dataDiv">
+                        
+                           
+                       </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Destruction Of Property</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <textarea id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="distruction_data"></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Injured</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                         <a href="javascript:;"  ><span style="color:blue ;text-decoration: underline"; class="AddinjuredDiv" >Add Name</span></a>
+                          <!-- data-toggle="modal" data-target=".bs-example-modal-lg" -->
+                          <div class="injured_dataDiv">
+                        
+                           
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Destruction </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                           <p style="margin: 8px 0 10px;">
+                        Exploded:
+                        <input type="radio"  name="i_data" id="exploded" value="Exploded"    />
+                        <!-- data-toggle="modal" data-target="#exploded" -->
+                         Detected:<input type="radio" id="detected"  name="i_data" id="genderM" value="Detected"   >
+                         <!-- data-toggle="modal" data-target="#Detected" -->
+                      </p>
+                        </div>
+                        
+                      </div>
+                      <p>
+                        <small data-toggle="collapse" href="#collapseExample" class="detectedBtn"></small>
+                        <small data-toggle="collapse" href="#collapseexploded" class="explodedBtn"></small>
+
+                      <div class=" detectedDiv d-none border-margin" id="collapseExample">
+                        <div class="card-body">
+                          <div class="form-group">
+                            <label class="control-label col-md-3" for="first-name">Mode Of Detection<span >*</span>
+                            </label>
+                            <div class="col-md-7">
+                              <select type="text" id="first-name2" placeholder="Enter Mode of Detection" class="form-control col-md-7 col-xs-12" 
+                              name="mode_detection">
+                              <option value="">-----select mode of detection------</option>
+                              {% for item in data9 %}
+                              <option value={{item.id}}>{{item.d_ditection}}</option>
+                              {% endfor %}
+                            </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3" for="first-name">Description<span >*</span>
+                            </label>
+                            <div class="col-md-7">
+                              <textarea type="textarea" id="first-name2"  placeholder=" description in 50 words" class="form-control col-md-7 col-xs-12" name="mode_description"></textarea>
+                            </div>
+                          </div>
+                          <label>Detected By Whome:</label>
+                          <div class="form-group">
+                            <label class="control-label col-md-3" for="first-name">Person Name<span >*</span>
+                            </label>
+                            <div class="col-md-7">
+                              <input type="text" id="first-name2"  placeholder="Enter Person Name" class="form-control col-md-7 col-xs-12" 
+                              name="detected_name">
+                            </div>
+                          </div>
+                           <div class="form-group">
+                            <label class="control-label col-md-3" for="first-name">Contact<span >*</span>
+                            </label>
+                            <div class="col-md-7">
+                              <input type="text" id="first-name2" placeholder="Enter Contact" class="form-control col-md-7 col-xs-12" 
+                              name="detected_contact">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3" for="first-name">How Disposed<span >*</span>
+                            </label>
+                            <div class="col-md-7">
+                              <select  id="first-name2" placeholder="Enter Designation" class="form-control col-md-7 col-xs-12" 
+                              name="detected_despose">
+                              <option value="">----select how disposed-----</option>
+                              {% for item in data8 %}
+                              <option value="{{item.id}}">{{item.d_dispose}}</option>
+                              {% endfor %}
+                              </select>
+                            </div>
+                          </div>
+                          <label>Disposed By Whome:</label>
+                          <div class="form-group">
+                            <label class="control-label col-md-3" for="first-name">Person Name<span >*</span>
+                            </label>
+                            <div class="col-md-7">
+                              <input type="text" id="first-name2"  placeholder="Enter Persone Name" class="form-control col-md-7 col-xs-12" 
+                              name="despose_name">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3" for="first-name">Contact<span >*</span>
+                            </label>
+                            <div class="col-md-7">
+                              <input type="text" id="first-name2"  placeholder="Enter Contact" class="form-control col-md-7 col-xs-12" 
+                              name="despose_contact">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" explodedDiv d-none border-margin" id="collapseexploded">
+                        <div class="card-body">
+                          <a href="javascript:;" class="text-primary float-right" id="addExplode">Add</a>
+                          <div class="appendExplode">
+                            <div class="form-group">
+                              <label class="control-label col-md-3" for="first-name">Name<span >*</span>
+                              </label>
+                              <div class="col-md-7">
+                                <input type="text" id="first-name2"  placeholder="Enter Name" class="form-control col-md-7 col-xs-12" 
+                                name="explode_name">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-3" for="first-name">Contact<span >*</span>
+                              </label>
+                              <div class="col-md-7">
+                                <input type="text" id="first-name2"  placeholder="Enter contact" class="form-control col-md-7 col-xs-12" 
+                                name="explode_contact">
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <small data-toggle="collapse" href="#collapseexploded" class="explodedBtn"></small>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Accused  Details </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <textarea id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="assume_data"></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Accused  Current Status<span class="required text-danger">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select id="middle-name" class="form-control col-md-7 col-xs-12" name="assume_status" required="required">
+                            <option value="">-------Select Accused Current Status------</option>
+                            {% for item6 in data6 %}
+                            <option value="{{item6.id}}">{{item6.a_assused}}</option>
+                            {% endfor %}    
+                       </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Dalame Involved </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="dalam_data">
+                          <option value="" >---------select dalam------</option>
+                              {% for item in data7 %}
+                            <option value="{{item.id}}">{{item.d_dalam}}</option>
+                            {% endfor %}
+                          </select>  
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Learning Mistakes</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <textarea id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="learning_data"></textarea>
+                        </div>
+                      </div>
+                       <div class="ln_solid"></div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Photo/Video 
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                         <input class="form-control" type="file" id="formFileMultiple" multiple name="incident_image" />
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Special Report
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                         <input class="form-control" type="file" id="formFileMultiple" multiple name="special_image" />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Sketch 
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                         <input class="form-control" type="file" id="formFileMultiple" multiple name="sketch_image" />
+                        </div>
+                      </div>
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-primary" onclick="history.back()" type="button">Back</button>
+                          <button class="btn btn-primary" type="reset">Reset</button>
+                          <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                      </div>
+                   </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
+          </div>
+        </div>
+        <!------Add death --------------->
+          <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Person Detail</h4>
+              </div>
+              <div class="modal-body">
+                <form action="/designation" method="POST" class="form-horizontal form-label-left">{% csrf_token %}
+                  <div class="form-group">
+                    <label class="control-label col-md-3" for="first-name">Name<span class="required">*</span>
+                    </label>
+                    <div class="col-md-7">
+                      <input type="text" id="first-name2" required="required" placeholder="Enter Designation" class="form-control col-md-7 col-xs-12" 
+                      name="designation_value">
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label class="control-label col-md-3" for="first-name">Contact<span class="required">*</span>
+                    </label>
+                    <div class="col-md-7">
+                      <input type="text" id="first-name2" required="required" placeholder="Enter Designation" class="form-control col-md-7 col-xs-12" 
+                      name="designation_value">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-md-3" for="first-name">Name<span class="required">*</span>
+                    </label>
+                    <div class="col-md-7">
+                      <input type="text" id="first-name2"  placeholder="Enter Designation" class="form-control col-md-7 col-xs-12" 
+                      name="designation_value">
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label class="control-label col-md-3" for="first-name">Contact<span class="required">*</span>
+                    </label>
+                    <div class="col-md-7">
+                      <input type="text" id="first-name2" required="required" placeholder="Enter Designation" class="form-control col-md-7 col-xs-12" 
+                      name="designation_value">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-md-3" for="first-name">Name<span class="required">*</span>
+                    </label>
+                    <div class="col-md-7">
+                      <input type="text" id="first-name2" required="required" placeholder="Enter Designation" class="form-control col-md-7 col-xs-12" 
+                      name="designation_value">
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label class="control-label col-md-3" for="first-name">Contact<span class="required">*</span>
+                    </label>
+                    <div class="col-md-7">
+                      <input type="text" id="first-name2" required="required" placeholder="Enter Designation" class="form-control col-md-7 col-xs-12" 
+                      name="designation_value">
+                    </div>
+                  </div>
+                </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!----------end death---------->
+       
+<!-------------------exploded-------------------->
+   <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-hidden="true" id="exploded">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">If Exploded</h4>
+              </div>
+              <div class="modal-body">
+                <form action="/designation" method="POST" class="form-horizontal form-label-left">{% csrf_token %}
+                  <div class="form-group">
+                    <label class="control-label col-md-3" for="first-name">Name<span class="required">*</span>
+                    </label>
+                    <div class="col-md-7">
+                      <input type="text" id="first-name2" required="required" placeholder="Enter Name" class="form-control col-md-7 col-xs-12" 
+                      name="designation_value">
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label class="control-label col-md-3" for="first-name">Contact<span class="required">*</span>
+                    </label>
+                    <div class="col-md-7">
+                      <input type="text" id="first-name2" required="required" placeholder="Enter contact" class="form-control col-md-7 col-xs-12" 
+                      name="designation_value">
+                    </div>
+                  </div>
+                </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+             
+           
+           
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+           <a href="https://cluematrix.com">Cluematrix Technologies Private Limited</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{%static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{%static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{%static 'vendors/fastclick/lib/fastclick.js' %}"></script>
+    <!-- NProgress -->
+    <script src="{%static 'vendors/nprogress/nprogress.js' %}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{%static 'vendors/bootstrap-progressbar/bootstrap-progressbar.min.js' %}"></script>
+    <!-- iCheck -->
+    <script src="{%static 'vendors/iCheck/icheck.min.js' %}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{%static 'vendors/moment/min/moment.min.js' %}"></script>
+    <script src="{%static 'vendors/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+    <!-- bootstrap-wysiwyg -->
+    <script src="{%static 'vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js' %}"></script>
+    <script src="{%static 'vendors/jquery.hotkeys/jquery.hotkeys.js' %}"></script>
+    <script src="{%static 'vendors/google-code-prettify/src/prettify.js' %}"></script>
+    <!-- jQuery Tags Input -->
+    <script src="{%static 'vendors/jquery.tagsinput/src/jquery.tagsinput.js' %}"></script>
+    <!-- Switchery -->
+    <script src="{%static 'vendors/switchery/dist/switchery.min.js' %}"></script>
+    <!-- Select2 -->
+    <script src="{%static 'vendors/select2/dist/js/select2.full.min.js' %}"></script>
+    <!-- Parsley -->
+    <script src="{%static 'vendors/parsleyjs/dist/parsley.min.js' %}"></script>
+    <!-- Autosize -->
+    <script src="{%static 'vendors/autosize/dist/autosize.min.js' %}"></script>
+    <!-- jQuery autocomplete -->
+    <script src="{%static 'vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js' %}"></script>
+    <!-- starrr -->
+    <script src="{%static 'vendors/starrr/dist/starrr.js' %}"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="{%static 'build/js/custom.min.js' %}"></script>
+  
+  </body>
+  <script type="text/javascript">
+    function ShowHideDiv(name) {
+    var d=document.getElementById('genderM');
+    alert(name);
+  }
+
+  $(document).on('click','.Adddeath_dataDiv',function(){
+
+    $('.death_dataDiv').append('<div class="remDiv"> <div class="form-group"><label class="control-label col-md-3" for="first-name">Name<span>*</span></label><div class="col-md-7"><input type="text" id="first-name2"  placeholder="Enter Name" class="form-control col-md-7 col-xs-12" name="death_value"></div></div><div class="form-group " style="float:right"><a class="text-info remdeath_dataDiv" href="javascript:;">Remove</a></div><div class="form-group"><label class="control-label col-md-3" for="first-name">Contact<span >*</span></label><div class="col-md-7"><input type="text" id="first-name2"  placeholder="Enter death contact" class="form-control col-md-7 col-xs-12" name="death_contact"></div></div></div>');
+  });
+
+  $(document).on('click','.remdeath_dataDiv',function(){
+    if($('.remDiv').length){ $(this).closest('.remDiv').remove()}
+  });
+
+$(document).on('click','#detected',function(){
+  // $('.detectedBtn').click();
+   $('.detectedDiv').removeClass('d-none');
+   $('.explodedDiv').addClass('d-none');
+});
+
+$(document).on('click','#exploded',function(){
+  // $('.explodedBtn').click();
+    $('.explodedDiv').removeClass('d-none');
+     $('.detectedDiv').addClass('d-none');
+});
+
+
+ $(document).on('click','#addExplode',function(){
+  $('.appendExplode').append('<div class="reminjuredDiv"> <div class="form-group"><label class="control-label col-md-3" for="first-name">Name<span >*</span></label><div class="col-md-7"><input type="text" id="first-name2"  placeholder="Enter Data" class="form-control col-md-7 col-xs-12" name="explode_name"></div></div><div class="form-group " style="float:right"><a class="text-info reminjured" href="javascript:;">Remove</a></div><div class="form-group"><label class="control-label col-md-3" for="first-name">Contact<span >*</span></label><div class="col-md-7"><input type="text"  value="None"  id="first-name2" placeholder="Enter Number" class="form-control col-md-7 col-xs-12" name="explode_contact"></div></div></div>');
+
+
+ });
+
+   $(document).on('click','.remExplode',function(){
+    if($('.removeExplode').length){ $(this).closest('.removeExplode').remove()}
+  });
+
+  $(document).on('click','.AddinjuredDiv',function(){
+    $('.injured_dataDiv').append('<div class="reminjuredDiv"> <div class="form-group"><label class="control-label col-md-3" for="first-name">Name<span >*</span></label><div class="col-md-7"><input type="text" id="first-name2"  placeholder="Enter Data" class="form-control col-md-7 col-xs-12" name="injured_value"></div></div><div class="form-group " style="float:right"><a class="text-info reminjured" href="javascript:;">Remove</a></div><div class="form-group"><label class="control-label col-md-3" for="first-name">Contact<span >*</span></label><div class="col-md-7"><input type="text"    id="first-name2" placeholder="Enter Number" class="form-control col-md-7 col-xs-12" name="injured_contact"></div></div></div>');
+  });
+
+  $(document).on('click','.reminjured',function(){
+    if($('.reminjuredDiv').length){ $(this).closest('.reminjuredDiv').remove()}
+  });
+  </script>
+</html>

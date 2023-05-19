@@ -1,0 +1,16 @@
+1> designation -http://127.0.0.1:8000/serdesignation
+2> location  -  http://127.0.0.1:8000/apilocation
+3> juridiction- http://127.0.0.1:8000/apijuridiction
+4> incident -   http://127.0.0.1:8000/apiincident
+5> weight -     http://127.0.0.1:8000/apiweight
+6> assused-     http://127.0.0.1:8000/master/assusedapi
+7> post-        http://127.0.0.1:8000/master/postapi
+8> detection   http://127.0.0.1:8000/master/ditectionapi
+9> despose     http://127.0.0.1:8000/master/despose
+10>dalam       http://127.0.0.1:8000/master/dalam
+11> explosive http://127.0.0.1:8000/master/apiexplosive
+12> logout http://127.0.0.1:8000/logoutapi
+13> logine http://127.0.0.1:8000/logine/
+
+
+XjM3sNCP6Tk82#S

@@ -1,0 +1,12 @@
+[workspace]
+restore_data_on_startup = True
+save_data_on_exit = True
+save_history = True
+save_non_project_files = False
+project_type = 'empty-project-type'
+recent_files = ['bdds_dashboard\\models.py', 'BDDS\\settings.py', 'bdds_dashboard\\serilizers.py', 'bdds_dashboard\\urls.py', 'BDDS\\urls.py', 'bdds_dashboard\\image_store.py', 'newfile.log', 'bdds_dashboard\\views.py', 'C:\\Users\\JMS\\anaconda3\\lib\\site-packages\\django\\http\\response.py']
+
+[main]
+version = 0.2.0
+recent_files = []
+
