@@ -1241,9 +1241,8 @@ def update_form_first(request,id):
                 fdetonator=detonator_uvalue,fswitch=switch_uvalue,ftarget=target_uvalue,
                 fdistruction=distruction_uvalue,fassume=assused_uvalue,fdalam=dalam_uvalue,
                 fassume_status_new=assused_status_uvalue,flearning=mistake_uvalue,radio_data=i_data,
-                mode_of_detection=mode_detection,detected_description=mode_description,detected_pname=detcted_name,
-                detcted_contact=detected_contact,detected_dispose=detcted_despose,dispose_name=despose_contact)
-            messages.success(request,"form submited successfully")
+              )
+            messages.success(request,"form update successfully")
     view_details= join_all_data(id)
     ty_location= N_location.objects.all()
     t_jurisdiction=N_juridiction.objects.all()

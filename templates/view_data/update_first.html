@@ -297,32 +297,32 @@ body {font-family: Arial, Helvetica, sans-serif;}
                      
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="first-name">Incident/serial year <span class="required">*</span></label>
-                <input type="text" class="form-control" value="{{item1.fserial}}" name="serial_uvalue">
+                <label for="first-name">Incident/serial year <span class="required text-danger">*</span></label>
+                <input type="text" class="form-control" value="{{item1.fserial}}" name="serial_uvalue" required>
               </div>
               <div class="form-group col-md-6">
-                <label for="inputPassword4">Cr No OR Bomb Call</label>
+                <label for="inputPassword4">Cr No OR Bomb Call <span class="required text-danger">*</span></label>
                 <input type="text" class="form-control" value="{{item1.d_bomb}}"
-                name="bomb_uvalue" >
+                name="bomb_uvalue" required>
               </div>
             
               <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">Date & Time</label>
+                <label for="inputEmail4">Date & Time <span class="required text-danger">*</span></label>
                 <input type="date" class="form-control" name="date_uvalue" 
-                value='{{item1.fdate}}'>
+                value='{{item1.fdate}}' required>
               </div>
               <div class="form-group col-md-6">
-                <label for="inputPassword4">Location</label>
+                <label for="inputPassword4">Location<span class="required">*</span></label>
                 <input type="text" class="form-control" value="{{item1.flocation}}" 
-                name="loacation_uvalue">
+                name="loacation_uvalue" required>
               </div>
             </div>
               <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">Type Of Location</label>
+                <label for="inputEmail4">Type Of Location<span class="required text-danger">*</span></label>
                 <select type="text" class="form-control" name='location_ty_uvalue'>
-                   <option value={{item1.flocation_type}} selected>             {{item1.l_location}} </option>
+                   <option value={{item1.flocation_type}} selected>{{item1.l_location}} </option>
                            {%for item2 in data2 %}
                     <option value={{item2.id}}>{{item2.l_location}}</option>
                           {% endfor %}
@@ -336,7 +336,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
             </div>
               <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">Jurisdiction</label>
+                <label for="inputEmail4">Jurisdiction <span class="required text-danger">*</span></label>
                 <select type="select" class="form-control" id="inputEmail4" name="juridiction_uvalue">
                   <option value={{item1.fjuridiction}}>{{item1.l_juridiction}}
                   </option>
@@ -347,7 +347,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 </select>
               </div>
               <div class="form-group col-md-6">
-                <label for="inputPassword4">Type Of Incident</label>
+                <label for="inputPassword4">Type Of Incident<span class="required text-danger">*</span></label>
                 <select type="text" class="form-control" value='{{item1.i_incident}}' 
                 name="incident_uvalue">
                 <option value={{item1.fincident}} selected>{{item1.i_incident}}</option>
@@ -360,7 +360,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
             </div>
               <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">Type Of Explosive</label>
+                <label for="inputEmail4">Type Of Explosive <span class="required text-danger">*</span></label>
                 <select type="select" class="form-control" name="explosive_uvalue">
                   <option value={{item1.fexplosive}}>{{item1.e_explosive}}</option>
                   {% for item5 in data5 %}
@@ -370,7 +370,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   </select>
               </div>
               <div class="form-group col-md-6">
-                <label for="inputPassword4">Weight</label>
+                <label for="inputPassword4">Weight<span class="required text-danger">*</span></label>
                 <select type="password" class="form-control" name="weight_uvalue">
                 <option value={{item1.fweight_data}} selected>{{item1.w_weight}}</option>
                           {% for item6 in data6 %}
@@ -396,7 +396,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       <div class="row">
                        <div class="form-group col-md-6">
                         <label for='target_vehicle'>Target(Person/Vehicle)</label>
-                        <textarea id="birthday" class="form-control" required="required"  type="text" value="{{item1.ftarget}}" name="target_uvalue">{{item1.ftarget}} </textarea>
+                        <textarea id="birthday" class="form-control"   type="text" value="{{item1.ftarget}}" name="target_uvalue">{{item1.ftarget}} </textarea>
                         </div>
                       <div class="form-group col-md-6">
                         <label for="destruction property">Distruction Of Property<span class="required"></label>
@@ -427,14 +427,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
                        
                        <div class="form-group col-md-6">
                         <label for="assused">Accused Details</label>
-                      <textarea id="birthday" class="form-control" required="required" type="text" value='{{item1.fassume}}' name="assused_uvalue">{{item1.fassume}}</textarea>
+                      <textarea id="birthday" class="form-control"  type="text" value='{{item1.fassume}}' name="assused_uvalue">{{item1.fassume}}</textarea>
                         </div>
                       </div>
                       <div class="row">
                       <div class="form-group col-md-6">
-                        <label for='assused_current_status'>Accused Current Status</label>
+                        <label for='assused_current_status'>Accused Current Status <span class="required text-danger" >*</span></label>
                         <select id="birthday" class="form-control" required="required"  type="text" 
-                          value='{{item1.a_assused}}' name="assused_status_uvalue">
+                          value='{{item1.a_assused}}' name="assused_status_uvalue" required>
                             <option value={{item1.fassume_status_new}}>{{item1.a_assused}}</option>
                             {% for item7 in data7 %}
                             <option {{item7.id}}>{{item7.a_assused}}</option>
@@ -444,7 +444,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         </div>
                     <div class="form-group col-md-6">
                       <label for="leraning_mistake">Learning Mistakes</label>
-                        <textarea id="birthday" class="form-control" required="required"  type="text" 
+                        <textarea id="birthday" class="form-control"   type="text" 
                           value='{{item1.flearning}}' name="mistake_uvalue">{{item1.flearning}}
                         </textarea>
                         </div>
