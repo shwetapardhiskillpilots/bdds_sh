@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render ,get_object_or_404
 from .models import *
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -1617,194 +1617,100 @@ def dalam_api(request):
         return Response(serilization_obj.data)
 
 #--------------form_api-------------------
-
-#parser_classes = (MultiPartParser, )
-
-
-
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def form_api(request):
-    if request.method=="POST":
-       request.data
-       serilizer=form_serilization(data=request.data)
-       serial_data=request.data['fserial']
-       if  not serilizer.is_valid():
-           return Response({"msg":"No Valid Data","status":403})
-       else:
-           if Form_data.objects.filter(fserial=serial_data).exists():
-               return Response({"message":"searial year already exists","status":403})
-           else:
-                   serilizer.save()
-                   serial_data=request.data['fserial']
-                   f_key=Form_data.objects.filter(fserial=serial_data).values("id")[0]
-                   f_key=f_key['id']
-                   #-----------------death_data-------------------------
-                   d=request.data['death']
+    fserial_no = request.data.get('fserial')
+    if Form_data.objects.filter(fserial=fserial_no).exists():
+        return Response({"msg": "Serial number already exists"}, status=status.HTTP_400_BAD_REQUEST)
+    serialize = form_serilization(data=request.data)
+    if serialize.is_valid():
+        obj_id = serialize.save()
+    death_person = request.data.get('death',[])
+    if death_person  and obj_id is not None:
+        death_person = [{"form":obj_id.id,**item} for item in death_person]
+        serialize_death = death_serilizer(data= death_person,many=True)
+        if serialize_death.is_valid():
+            serialize_death.save()
+    injured_person_data = request.data.get('injured',[])
+    if injured_person_data and obj_id is not None:
+        injured_person_data = [{"form":obj_id.id,**item} for item in injured_person_data]
+        serialize_injured = injured_serilizer(data=injured_person_data,many=True)
+        if serialize_injured.is_valid():
+            serialize_injured.save()
+    exploded_data = request.data.get('explode') 
+    if exploded_data and obj_id is not None:
+        exploded_data = [{'form':obj_id.id,**item} for item in exploded_data]
+        serialize_explode = exploded_serilizer(data=exploded_data,many=True)
+        if serialize_explode.is_valid():
+            serialize_explode.save()
+            return Response({"msg":"form have been save successfully"},status=status.HTTP_200_OK)
+      
+   
+  
 
-                   for i in range(0,len(d)):
-                          death_person.objects.create(form_id=f_key,death_name=d[i]['name'],  death_contact=d[i]['contacts']).save()
-                   #-----------------injured-----------------
-                   j=request.data['injured']
-                   for i in range(0,len(j)):
-                          injured_person.objects.create(form_id=f_key,injured_name=j[i]['name'],injured_contact=j[i]['contacts']).save
-                   #-------------------explplode----------------------
-                   e=request.data['explode']
-                   for i in range(0,len(e)):
-                       exploded.objects.create(form_id=f_key, exploded_name=e[i]['name'],explode_contact=e[i]['contacts'])
-
-                   return Response({"status":200, "id":f_key,"message":"sent"})
 
 
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def list_view(request):
-
-        id=request.data['id']
-
-        if Form_data.objects.filter(id=id).exists():
-
-                form_view=Form_data.objects.filter(id=id).values()
-                serilization_obj=form_serilization(form_view,many=True)
-                death=death_person.objects.filter(form_id=id).values()
-                serialization_death=death_serilizer(death,many=True)
-                injured=injured_person.objects.filter(form_id=id).values()
-                serialization_injured=injured_serilizer(injured,many=True)
-                explode=exploded.objects.filter(form_id=id)
-                serialization_explodet=exploded_serilizer(explode,many=True)
-                image=images.objects.filter(form_id=id).values()
-
-                serialization_image=image_serilizer(image,many=True)
-                reports=s_report.objects.filter(form_id=id).values()
-                serialization_reports=reports_serilizer(reports,many=True)
-                sketch=sk_report.objects.filter(form_id=id).values()
-                serialization_sketch=sketch_serializer(sketch,many=True)
-                all_data=join_all_data(id)
-
-
-
-                return Response(
-                  {
-                    'form_data': serilization_obj.data,
-                    'death_data':serialization_death.data,
-                    'injure_data':serialization_injured.data,
-                    'explode_data':serialization_explodet.data,
-                    'image_data':image,
-                    'reports_data': reports,
-                    'sketch_data':sketch,
-                    "all_data":list(all_data)
-
-                  }
-                )
-        else:
-            return Response({"message":"form does not exist","status":403})
-
+    id  = request.data.get('id')
+    form_instance = get_object_or_404(Form_data, pk=id)
+    serialize_form_data = form_serilization(form_instance).data
+    data = {
+        'form_data': serialize_form_data,   # Include Form_data fields
+        'death_data': list(form_instance.death_person_set.values()),  # Related Death_person instances
+        'injured_data': list(form_instance.injured_person_set.values()),  # Related Injured_person instances
+        'explode_data': list(form_instance.exploded_set.values()),  # Related Exploded instances
+        'image_data': list(form_instance.images_set.values()),  # Related Images instances
+        'reports_data': list(form_instance.s_report_set.values()),  # Related S_report instances
+        'sketch_data': list(form_instance.sk_report_set.values()),  # Related Sk_report instances
+    }
+    return Response(data)  
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def list_only(request):
-    id=request.data['user_id']
-
-    if request.method=="POST":
-        form_view=Form_data.objects.filter(user_id=id).values()
-        serilization_obj=form_list(form_view,many=True)
-        return Response(
-  {
-    'form_data': serilization_obj.data,
-
-
-  }
-)
-
-
-
-
+    id=request.data.get('id')
+    form_instance = get_object_or_404(Form_data,pk=id)
+    serializers = form_serilization(form_instance).data
+    return Response(serializers,status=status.HTTP_200_OK)
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def images_api(request):
-     data=request.data
-     data1=request.FILES.getlist('im_vi',None)
-     data2=request.FILES.getlist("special_reports", None)
-     data3=request.FILES.getlist("sketch_scences", None)
-     # path1='E:/Gadcchiroli_BDDS/static/images/image1_folder/'
-     # path2='E:/Gadcchiroli_BDDS/static/images/image2_folder/'
-     # path3='E:/Gadcchiroli_BDDS/static/images/image3_folder/'
-     path1,path2,path3=path_x()
-
-     if data1 is not None:
-
-             try:
-                 for x in request.FILES.getlist("im_vi"):
-                     ts = my_timestamp()
-                     tv=my_timestamp_video()
-                     x_str=str(x)
-                     split_img=x_str.split('.')
-                     if split_img[1]=='mp4':
-                       def process(f):
-                           with open(path1 + tv, 'wb+') as destination:
-                              for chunk in f.chunks():
-                                   destination.write(chunk)
-                       process(x)
-                       status=1
-                       images(form_id=data['form'],im_vi=tv,status=status).save()
-                     else:
-                        def process(f):
-                            with open(path1 + ts, 'wb+') as destination:
-                                for chunk in f.chunks():
-                                    destination.write(chunk)
-                        process(x)
-                        status=0
-                        images(form_id=data["form"],im_vi=ts,status=status).save()
-             except Exception as e:
-                 pass
-
-
-
-
-
-#-----------------------------------special_reports--------------------------------------------------
-     if data2 is not None:
-
-       try:
-            for x in request.FILES.getlist("special_reports"):
-                ts_p=my_timestamp_pdf()
-                def process(f):
-                    with open(path2 + ts_p, 'wb+') as destination:
-                        for chunk in f.chunks():
-                            destination.write(chunk)
-                process(x)
-                s_report(form_id=data['form'],special_report=ts_p).save()
-                #return Response({"status":200, "message":"Report file uploade successfully"})
-       except Exception as e:
-          logger.error(e)
-     else:
-         #return Response({"status":400, "message":"uploade document properly"})
-         pass
-
-#-----------------------------------sketch_images--------------------
-     if data3 is not None:
-        try:
-            for x in request.FILES.getlist('sketch_scences'):
-                ts_p=my_timestamp()
-                def process(f):
-                    with open(path3+ts_p,'wb+') as destination:
-                        for chunk in f.chunks():
-                            destination.write(chunk)
-                process(x)
-                sk_report(form_id=data['form'],sketch_scence=ts_p).save()
-        except Exception as e:
-            logger.error(e)
-     else:
-         pass
-     return Response({'status':200,'msg':'all document upload successfully'})
-
+    try:
+        id=request.data.get('id')
+        for vimg in request.FILES.getlist('im_vi'):
+            data = {'form': id, 'im_vi': vimg}
+            if vimg.name.endswith(('.mp4','avi', 'mov', 'mkv')):
+                data['status'] = 1
+            elif vimg.name.endswith(('.png', '.jpg')):
+                data['status'] = 0
+            else:
+                continue  # Skip files with other extensions
+            serializer = image_serilizer(data=data)
+            if serializer.is_valid():
+                serializer.save()
+        for report in request.FILES.getlist('special_reports'):
+            data_02 = {'form':id,'special_report':report}
+            serializer_02 = reports_serilizer(data=data_02) 
+            if serializer_02.is_valid():
+                serializer_02.save()
+        for sketch in request.FILES.getlist('sketch_scences'):
+            data_03 = {'form':id,'sketch_scence':sketch}
+            serializer_03 = sketch_serializer(data = data_03)
+            if serializer_03.is_valid():
+                serializer_03.save()
+        return Response({'status':200,'msg':'all document upload successfully'})
+    except Exception as e:
+        return Response({'status': 500, 'msg': 'An error occurred while processing the request'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
 
 #----------------------logine_api----------------------------------------
 class CustomAuthToken(ObtainAuthToken):
-
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data,
                                            context={'request': request})
@@ -1834,17 +1740,3 @@ def logout_api(request):
     return Response({"status":200,"message":"successfully logout"})
 
 
-'''def post(self, request):
-    return self.logout(request)
-
-def logout(self, request):
-    try:
-        request.user.auth_token.delete()
-    except (AttributeError, ObjectDoesNotExist):
-        pass
-
-    logout(request)
-
-    return Response({"success": _("Successfully logged out.")},
-                    status=status.HTTP_200_OK)
-'''

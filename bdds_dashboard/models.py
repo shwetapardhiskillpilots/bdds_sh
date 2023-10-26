@@ -109,18 +109,31 @@ class Form_data(models.Model):
 
 
 #---------------image_table----------------------------------------------------
+def image_upload_to(instance, filename):
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    base, extension = os.path.splitext(filename)
+    unique_filename = f"{timestamp}{extension}"
+    return f'file/image1/{unique_filename}'
 class images(models.Model):
-      form=models.ForeignKey(Form_data, on_delete=models.CASCADE)
-      im_vi=models.ImageField(upload_to="image1/",null=True,blank=True)
-      #special_reports=models.ImageField(upload_to="image2/",null=True,blank=True)
-      #sketch_scences=models.ImageField(upload_to="image3/",null=True,blank=True)
-      status=models.IntegerField(null=True,blank=True)
+    form=models.ForeignKey(Form_data, on_delete=models.CASCADE)
+    im_vi=models.FileField(upload_to=image_upload_to,null=True,blank=True)
+    status=models.IntegerField(null=True,blank=True)
+def pdf_upload_to(instance, filename):
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    base, extension = os.path.splitext(filename)
+    unique_filename = f"{timestamp}{extension}"
+    return f'file/image2/{unique_filename}'    
 class s_report(models.Model):
-      form=models.ForeignKey(Form_data, on_delete=models.CASCADE)
-      special_report=models.ImageField(upload_to="image2/",null=True,blank=True)
+    form=models.ForeignKey(Form_data, on_delete=models.CASCADE)
+    special_report=models.FileField(upload_to=pdf_upload_to,null=True,blank=True)
+def sketch_upload_to(instance, filename):
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    base, extension = os.path.splitext(filename)
+    unique_filename = f"{timestamp}{extension}"
+    return f'file/image3/{unique_filename}'    
 class sk_report(models.Model):
-      form=models.ForeignKey(Form_data, on_delete=models.CASCADE)
-      sketch_scence=models.ImageField(upload_to="image3/",null=True,blank=True)
+    form=models.ForeignKey(Form_data, on_delete=models.CASCADE)
+    sketch_scence=models.ImageField(upload_to=sketch_upload_to,null=True,blank=True)
 
 
 #-----------------------death_table----------------------------------
@@ -139,11 +152,21 @@ class exploded(models.Model):
       exploded_name=models.CharField(max_length=200,null=True,blank=True)
       explode_contact=models.CharField(max_length=200,null=True,blank=True)
 
-
+from datetime import datetime
+import os
 class File(models.Model):
   file = models.FileField(blank=False, null=False)
   remark = models.CharField(max_length=20)
   timestamp = models.DateTimeField(auto_now_add=True)
+def video_upload_to(instance, filename):
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    base, extension = os.path.splitext(filename)
+    unique_filename = f"{timestamp}{extension}"
+    return f'videos/{unique_filename}'
+
+class video_image(models.Model):
+     images = models.ImageField(upload_to='images/')  
+     video = models.FileField(upload_to='video/')
 
 '''
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)

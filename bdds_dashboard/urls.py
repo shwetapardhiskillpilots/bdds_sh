@@ -123,6 +123,8 @@ urlpatterns = [
    path('imageapi',views.images_api,name='image and video api'),
 #--------------logine_with_api------------------
     path('logine/', CustomAuthToken.as_view()),
-    path("logoutapi",views.logout_api,name="logout in api")
+    path("logoutapi",views.logout_api,name="logout in api"),
+#--------------testing_video---------------------------
+  
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

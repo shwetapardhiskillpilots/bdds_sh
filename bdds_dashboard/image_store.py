@@ -12,6 +12,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 import matplotlib.pyplot as plt
 import matplotlib
+from django.db import connection
 matplotlib.use('SVG')
 import io
 import urllib,base64
@@ -63,6 +64,7 @@ def join_location(request):
 
 def join_all_data(id):
     user_id=id
+    cursor = connection.cursor()
     #print("id=id===",id)
     #query=('SELECT USER.*, location.l_location FROM `bdds_dashboard_form_data` AS USER LEFT JOIN `bdds_dashboard_n_location` AS location ON location.id = USER.flocation_type WHERE USER.id = 211 ORDER BY USER.id;')
     #query=('SELECT USER.*, location.l_location, jdction.l_juridiction, ident.i_incident, wght.w_weight, texplosive.e_explosive, asmdetails.a_assused, dlm.d_dalam, ds.d_dispose FROM `bdds_dashboard_form_data` AS USER LEFT JOIN `bdds_dashboard_n_location` AS location ON location.id = USER.flocation_type LEFT JOIN `bdds_dashboard_n_juridiction` AS jdction ON jdction.id = USER.fjuridiction LEFT JOIN `bdds_dashboard_n_incident` AS ident ON ident.id = USER.fjuridiction LEFT JOIN `bdds_dashboard_n_weight` AS wght ON wght.id = USER.fweight_data LEFT JOIN `bdds_dashboard_n_explosive` AS texplosive ON texplosive.id = USER.fexplosive LEFT JOIN `bdds_dashboard_n_assused` AS asmdetails ON asmdetails.id = USER.fassume_status_new LEFT JOIN `bdds_dashboard_n_dalam` AS dlm ON dlm.id = USER.fdalam LEFT JOIN `bdds_dashboard_n_dispose` AS ds ON ds.id=USER.detected_dispose WHERE user.id='+"'"+str(user_id)+"'"'ORDER BY user.id')
@@ -81,8 +83,8 @@ def join_all_data(id):
            LEFT JOIN `bdds_dashboard_n_ditection` as ditection ON ditection.id=USER.mode_of_detection
            WHERE USER.id= '%s' ORDER BY USER.id''',[user_id])
 
-
-    #querys=Form_data.objects.raw(query)
+    print("print===>",querys)
+    querys=Form_data.objects.raw(querys)
     return(querys)
     querys=Form_data.objects.raw(query)
     return(querys)

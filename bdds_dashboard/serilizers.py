@@ -73,7 +73,7 @@ class form_serilization(serializers.ModelSerializer):
 class form_list(serializers.ModelSerializer):
     class Meta:
         model=Form_data
-        fields=('fserial','d_bomb','fdate', 'flocation','flocation_type')
+        fields=('id','fserial','d_bomb','fdate', 'flocation','flocation_type')
 #----------------image/video----------------
 class images_serilizer(serializers.ModelSerializer):
 
@@ -85,33 +85,37 @@ class images_serilizer(serializers.ModelSerializer):
 class death_serilizer(serializers.ModelSerializer):
     class Meta:
         model=death_person
-        exclude = ('form', )
+        fields = '__all__'
 
 class injured_serilizer(serializers.ModelSerializer):
     class Meta:
         model=injured_person
-        exclude = ('form', )
+        fields = '__all__'
 #------------exploded------------------
 class exploded_serilizer(serializers.ModelSerializer):
     class Meta:
         model=exploded
-        exclude = ('form', )
+        fields = '__all__'
 
 class image_serilizer(serializers.ModelSerializer):
-
     class Meta:
         model=images
-        exclude = ('form', )
-
+        # exclude = ('form', )
+        fields = '__all__'
 
 class reports_serilizer(serializers.ModelSerializer):
-     class Meta:
-         model=sk_report
-         exclude = ('form', )
+    class Meta:
+        model=s_report
+        fields = '__all__'
 class sketch_serializer(serializers.ModelSerializer):
     class Meta:
         model=sk_report
-        exclude = ('form', )
+        fields = '__all__'
+
+class image_videoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=video_image
+        fields = '__all__'        
 
 ''' def  validate(self, data):
         if data['im_vi']  is not None:
