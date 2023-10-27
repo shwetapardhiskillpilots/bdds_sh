@@ -1,4 +1,4 @@
-from django.shortcuts import render ,get_object_or_404
+from django.shortcuts import render ,get_object_or_404 
 from .models import *
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -359,7 +359,7 @@ def jurisdiction(request):
 @csrf_exempt
 def dlt_jurisdiction(request):
     try:
-        j=request.POST["j_id"];
+        j=request.POST["j_id"]
         N_juridiction.objects.get(id=j).delete()
         messages.success(request,'successfully juridiction deleted')
         return HttpResponse("success")
@@ -942,12 +942,12 @@ def centralise_database(request):
             bomb_value=request.POST.get("bomb_value")
             date_time=request.POST.get("date&time")
             location_data=request.POST.get("location_value")
-            location_type=request.POST.get("location_data")
+            location_type=N_location(id=request.POST.get("location_data"))
             location_description=request.POST.get("location_description")
-            jurisdiction_data=request.POST.get("jurisdiction_data")
-            incident_data=request.POST.get("incident_data")
-            weight_data=request.POST.get("weight_data")
-            explosive_data=request.POST.get("explosive_data")
+            jurisdiction_data=N_juridiction.objects.get(id=request.POST.get("jurisdiction_data"))
+            incident_data=N_incident.objects.get(id=request.POST.get("incident_data"))
+            weight_data=N_weight.objects.get(id=request.POST.get("weight_data"))
+            explosive_data=N_explosive.objects.get(id=request.POST.get("explosive_data"))
             detonator_data=request.POST.get("detonator_data")
             switch_data=request.POST.get("switch_data")
             target_data=request.POST.get("target_data")
@@ -959,24 +959,25 @@ def centralise_database(request):
             i_data=request.POST.get("i_data")
             explode_name=request.POST.getlist("explode_name")
             explode_contact=request.POST.getlist("explode_contact")
-
-            mode_detection=request.POST.get("mode_detection")
+            mode_detection_id=request.POST.get("mode_detection")
+            mode_detection=N_ditection.objects.get(id=mode_detection_id) if mode_detection_id else None
             mode_description=request.POST.get("mode_description")
             detected_name=request.POST.get("detected_name")
             detected_contact=request.POST.get("detected_contact")
-            detcted_despose=request.POST.get("detected_despose")
+            despose_id =request.POST.get("detected_despose")
+            detcted_despose=N_dispose.objects.get(id=despose_id) if despose_id else None
             despose_name=request.POST.get('despose_name')
             despose_contact=request.POST.get("despose_contact")
             assume_data=request.POST.get("assume_data")
-            assume_status=request.POST.get("assume_status")
-            dalam_data=request.POST.get("dalam_data")
+            assume_status= N_assused.objects.get(id=request.POST.get("assume_status"))
+            dalam_data=N_dalam.objects.get(id=request.POST.get("dalam_data"))
             learning_data=request.POST.get("learning_data")
             image1=request.FILES.getlist("incident_image")
             image2=request.FILES.getlist("special_image")
             image3=request.FILES.getlist("sketch_image")
 
             duplicate=Form_data.objects.filter(fserial=serial_data).count()
-            if duplicate >=1:
+            if  Form_data.objects.filter(fserial=serial_data).exists():
                 messages.info(request, 'Already Incident Serial Year Present Please Enter Another Incident Serial year ')
             else:
 
@@ -992,8 +993,8 @@ def centralise_database(request):
                                detected_dispose=detcted_despose,dispose_name=despose_name,dispose_contact=despose_contact,edit_request=0,delete_request=0,
                                user_id=request.user.id)
                sub_data.save()
-               f_key=Form_data.objects.filter(fserial=serial_data).values("id")[0]
-               f_key=f_key['id']
+            #    f_key=Form_data.objects.filter(fserial=serial_data)
+               f_key=sub_data.id
           #--------------death_data--------------------
                if death_data is not None:
 
@@ -1015,67 +1016,22 @@ def centralise_database(request):
                         new_exploded_contact=explode_contact[c]
                         exploded(form_id=f_key, exploded_name=new_exploded_name,explode_contact=new_exploded_contact).save()
 #--------------------------------image---------------------------------------------------------
-
-                #-----------image1----------------
                if image1 is not None:
-                    for img in image1:
-                        str_img=str(img)
-
-                    path1,path2,path3=path_x()
-
-                    for x in request.FILES.getlist("incident_image"):
-                        ts = my_timestamp()
-                        tv=my_timestamp_video()
-                        x_str=str(x)
-                        split_img=x_str.split('.')
-
-                        if split_img[1]=='mp4':
-                            def process(f):
-                                with open(path1 + tv, 'wb+') as destination:
-                                    for chunk in f.chunks():
-                                        destination.write(chunk)
-                            process(x)
-                            status=1
-                            images(form_id=f_key,im_vi=tv,status=status).save()
-                        else:
-
-                            def process(f):
-                                with open(path1 + ts, 'wb+') as destination:
-                                    for chunk in f.chunks():
-                                        destination.write(chunk)
-                            process(x)
-                            status=0
-                            images(form_id=f_key,im_vi=ts,status=status).save()
-
-#----------image2------------
+                   for vimg in image1:
+                       if vimg.name.endswith(('.mp4','avi', 'mov', 'mkv')):
+                           status=1
+                       if vimg.name.endswith(('.png', '.jpg')):
+                           status=0 
+                       images(form_id=f_key,im_vi=vimg,status=status).save()
 
                if image2 is not None:
-
-                     for x in request.FILES.getlist("special_image"):
-                         ts_p=my_timestamp_pdf()
-                         def process(f):
-                             with open(path2 + ts_p, 'wb+') as destination:
-                                 for chunk in f.chunks():
-                                     destination.write(chunk)
-                         process(x)
-                         s_report(form_id=f_key,special_report=ts_p).save()
-
-
-
-            #--------------image3----------------
+                   for  report in image2:
+                        s_report(form_id=f_key,special_report=report).save()
                if image3 is not None:
-
-                    for x in request.FILES.getlist("sketch_image"):
-                        ts = my_timestamp()
-                        def process(f):
-                            with open(path3 + ts, 'wb+') as destination:
-                                for chunk in f.chunks():
-                                    destination.write(chunk)
-                        process(x)
-                        sk_report(form_id=f_key,sketch_scence=ts).save()
-
-                    messages.success(request,"form submited successfully")
-
+                   for sketch in image3:
+                        sk_report(form_id=f_key,sketch_scence=sketch).save()  
+               messages.success(request,"form submited successfully")               
+                       
     ty_location= N_location.objects.all()
     t_jurisdiction=N_juridiction.objects.all()
     t_incident=N_incident.objects.all()
@@ -1172,27 +1128,19 @@ def dlt_subdata(request):
 @login_required(login_url='/error')
 def update_form(request,id):
     #id=request.POST.get('id')
-    try:
-        view_details= join_all_data(id)
-        #content={"data1":view_details}
-        #return render(request,'view_data/update_details.html',content)
+    
+    view_details= get_object_or_404(Form_data, id=id)
+    print(view_details.fserial)
+    death_persons=view_details.death_person_set.values()
+    injured_persons=view_details.injured_person_set.values()
+    exploded_data=view_details.exploded_set.values()
+    image_video=view_details.images_set.values()
+    special_report=view_details.s_report_set.values()
+    sketch_image=view_details.sk_report_set.values()
+    t_detection= N_ditection.objects.all()
+    t_dispose=N_dispose.objects.all()
 
-    except Exception as e:
-        messages.error(request,e)
-    finally:
-        #print("details_id=====",id)
-        view_details= join_all_data(id)
-        #print(view_details)
-        death_persons=death_person.objects.filter(form_id=id)
-        injured_persons=injured_person.objects.filter(form_id=id)
-        exploded_data=exploded.objects.filter(form_id=id)
-        image_video=images.objects.filter(form_id=id)
-        special_report=s_report.objects.filter(form_id=id)
-        sketch_image=sk_report.objects.filter(form_id=id)
-        t_detection= N_ditection.objects.all()
-        t_dispose=N_dispose.objects.all()
-
-        return render(request,'view_data/update_details.html',{"data1":view_details,"data2":death_persons,"data3":injured_persons,
+    return render(request,'view_data/update_details.html',{"item1":view_details,"data2":death_persons,"data3":injured_persons,
                                                              "data4":exploded_data,"data5":image_video,"data6":special_report,
                      "data7":sketch_image,'data8': t_detection,"data9": t_dispose})
 
@@ -1221,19 +1169,7 @@ def update_form_first(request,id):
             mistake_uvalue=request.POST.get('mistake_uvalue')
             dalam_uvalue=request.POST.get('dalam_uvalue')
             i_data=request.POST.get('i_data')
-            #----------------mode_of_detection---------------
-            mode_detection=request.POST.get('mode_detection')
-            mode_description=request.POST.get('mode_description')
-            detcted_name=request.POST.get('detected_name')
-            detected_contact=request.POST.get('detected_contact')
-            detcted_despose=request.POST.get('detected_despose')
-            despose_name=request.POST.get('despose_name')
-            despose_contact=request.POST.get('despose_contact')
-            #-----------------explode_nmae/contacts-------------
-            explode_name=request.POST.getlist('explode_name')
-            explode_contact=request.POST.getlist('explode_contact')
-
-
+          
             Form_data.objects.filter(id=id).update(fserial=seril_number,d_bomb=bomb_uvalue,
                 fdate=date_uvalue,flocation=location_uvalue,flocation_type=location_ty_uvalue,
                 flocation_description=location_dy_uvalue,fjuridiction=juridiction_uvalue,
@@ -1243,7 +1179,7 @@ def update_form_first(request,id):
                 fassume_status_new=assused_status_uvalue,flearning=mistake_uvalue,radio_data=i_data,
               )
             messages.success(request,"form update successfully")
-    view_details= join_all_data(id)
+    view_details=get_object_or_404(Form_data, id=id)
     ty_location= N_location.objects.all()
     t_jurisdiction=N_juridiction.objects.all()
     t_incident=N_incident.objects.all()
@@ -1254,7 +1190,7 @@ def update_form_first(request,id):
     t_detection= N_ditection.objects.all()
     t_dispose=N_dispose.objects.all()
     explode_data=exploded.objects.filter(form_id=id)
-    context={"data1":view_details,"data2":ty_location,
+    context={"item1":view_details,"data2":ty_location,
              "data3":t_jurisdiction,"data4":t_incident,
              'data5':t_explosive,'data6':t_weight,
              "data7":t_c_status,"data8":t_dalam,
@@ -1266,15 +1202,16 @@ def update_form_first(request,id):
 def view_details_data(request,id):
     #id=request.POST['id']
     #print("details_id=====",id)
-    view_details= join_all_data(id)
-    #print(view_details)
-    death_persons=death_person.objects.filter(form_id=id)
-    injured_persons=injured_person.objects.filter(form_id=id)
-    exploded_data=exploded.objects.filter(form_id=id)
-    image_video=images.objects.filter(form_id=id)
-    special_report=s_report.objects.filter(form_id=id)
-    sketch_image=sk_report.objects.filter(form_id=id)
-    return render(request,"view_data/view_details.html",{"data1":view_details,"data2":death_persons,"data3":injured_persons,
+    view_details= get_object_or_404(Form_data, id=id)
+    print(view_details.fserial)
+    death_persons=view_details.death_person_set.values()
+    injured_persons=view_details.injured_person_set.values()
+    exploded_data=view_details.exploded_set.values()
+    image_video=view_details.images_set.values()
+    special_report=view_details.s_report_set.values()
+    sketch_image=view_details.sk_report_set.values()
+   
+    return render(request,"view_data/view_details.html",{"item1":view_details,"data2":death_persons,"data3":injured_persons,
                                                          "data4":exploded_data,"data5":image_video,"data6":special_report,
                                                          "data7":sketch_image})
 #---------------------update_date_persone------------

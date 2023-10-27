@@ -310,7 +310,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   <div class="x_content">
                     <br />
                     <div id="demo-form2" data-parsley-validate class="form-horizontal form-label-right">
-                      {% for item1 in data1 %}
+                    
                       <div class="group-row">
                         <div class="form-group col-md-6">
                           <label class="control-label " for="first-name">Incident Serial/year </label>
@@ -334,7 +334,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       <div class="group-row">
                         <div class="form-group col-md-6">
                         <label for="Type of location">Type Of Location</label>
-                        <input id="birthday" class="form-control" required="required" type="text" value=" {{item1.l_location}}" readonly />
+                        <input id="birthday" class="form-control" required="required" type="text" value=" {{item1.flocation_type.l_location}}" readonly />
                         </div>
                      <div class="form-group col-md-6">
                       <label for="location description">Location Description</label>
@@ -344,22 +344,22 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       <div class="group-row">
                         <div class="form-group col-md-6">
                         <label for='juridiction'>Jurisdiction</label>
-                        <input id="birthday" class="form-control" required="required" type="text" value="{{item1.l_juridiction}}" readonly />
+                        <input id="birthday" class="form-control" required="required" type="text" value="{{item1.fjuridiction.l_juridiction}}" readonly />
                        </div>
                       <div class="form-group col-md-6">
                         <label for="type of incident">Type Of Incident</label>
-                        <input id="birthday" class="form-control" required="required" type="text" value="{{item1.i_incident}}" readonly/>
+                        <input id="birthday" class="form-control" required="required" type="text" value="{{item1.fincident.i_incident}}" readonly/>
                      </div>
                       </div>
                       <div class="group-row">
                       <div class="form-group col-md-6">  
                       <label for="type of explosive">Type Of Explosive</label>
-                      <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required"  type="text" value=" {{item1.e_explosive}}" readonly />
+                      <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required"  type="text" value=" {{item1.fexplosive.e_explosive}}" readonly />
                       </div>
                      <div class="form-group col-md-6">
                         <label for="weight">Weight<span class="required">
                         </label>
-                        <input id="birthday" class="form-control" required="required"  type="text" value="{{item1.w_weight}}" readonly/>
+                        <input id="birthday" class="form-control" required="required"  type="text" value="{{item1.fweight_data.w_weight}}" readonly/>
                         </div>
                       </div>
                       <div class="group-row">
@@ -395,7 +395,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       <div class="form-row">
                       <div class="form-group col-md-6">
                       <label for="status">Accused Current Status</label>
-                     <input id="birthday" class="form-control" required="required"  type="text"value="{{item1.a_assused}}"" readonly /">
+                     <input id="birthday" class="form-control" required="required"  type="text"value="{{item1.fassume_status_new.a_assused}}"" readonly /">
                       </div>
                       <div class="form-group col-md-6">
                       <label for="leraning_mistake">Learning Mistakes</label>
@@ -405,10 +405,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       <div class="form-row">
                       <div class="form-group col-md-6">
                        <label for="dalam" >Dalam</label>
-                      <input id="birthday"class="form-control" value="{{item1.d_dalam}}" readonly/>
+                      <input id="birthday"class="form-control" value="{{item1.fdalam.d_dalam}}" readonly/>
                         </div>
                       </div>
-                   {% endfor %}
+                
                   </div>
                 </div>
               </div>
@@ -575,13 +575,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   <div class="x_content">
                     <br />
                    
-                    {% for item1 in data1 %}
+                
                     {% if item1.mode_of_detection %}
                    <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
                     <label>Mode Of Detection:</label>
                       </div>
                        <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="inputSuccess5" placeholder="detection" value="{{item1.d_ditection}}" readonly/>
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="detection" value="{{item1.mode_of_detection.d_ditection}}" readonly/>
                       </div> 
                       <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
                       <label>Description:</label>
@@ -608,7 +608,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <label>How Dispose:</label>
                       </div>
                        <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.d_dispose}}" readonly/>
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.detected_dispose.d_dispose}}" readonly/>
                       </div> 
                       <div>
                       <label><u> Dispose By Whome:</u></label>
@@ -628,7 +628,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       {% else %}
                        <h4>-----------NO Data Available------------</h4>
                         {% endif %}
-                        {% endfor %}
+                       
                       </div><!-- ENd of x content---->
                      </div><!-- ENd of x panel---->
                        </div><!-- ENd of div x-6 content---->
@@ -670,11 +670,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
                    {% for item5 in data5 %}
                   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                     {% if item5.status is 0 %}
-                    <img id="{{item5.id}}" onclick="zoomimg('{{item5.id}}','{{item5.im_vi}}','{{item5.status}}')"  src="/static/images/image1_folder/{{item5.im_vi}}"
+                    <img id="{{item5.id}}" onclick="zoomimg('{{item5.id}}','{{item5.im_vi}}','{{item5.status}}')"  src="/media/{{item5.im_vi}}"
                     width="100" height="100" style="border: solid;"  >
                     {% else %}
                     <video width="100" height="100" controls>
-                    <source src="/static/images/image1_folder/{{item5.im_vi}}" type="video/mp4"></video>
+                    <source src="/media/{{item5.im_vi}}" type="video/mp4"></video>
                     {% endif %}
                    
                   </div>
@@ -710,7 +710,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   <div class="row">
                    {% for item6 in data6 %}
                    <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <a href="/static/images/image2_folder/{{item6.special_report}}"target="_blank"><i class="fa fa-file-pdf-o" style="font-size:48px;color:red"></i>{{item6.special_report}}</a>
+                  <a href="/media/{{item6.special_report}}"target="_blank"><i class="fa fa-file-pdf-o" style="font-size:48px;color:red"></i>{{item6.special_report}}
+                  </a>
                   </div>
                   {% endfor %}
 		  </div>
@@ -745,7 +746,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   <div class="row">
                    {% for item7 in data7 %}
                   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <img id="{{item7.id}}0" onclick="zoomimg('{{item7.id}}0','{{item7.sketch_scence}}',0)"  src="/static/images/image3_folder/{{item7.sketch_scence}}" style="border:solid;" 
+                  <img id="{{item7.id}}0" onclick="zoomimg('{{item7.id}}0','{{item7.sketch_scence}}',0)"  
+                   src="/media/{{item7.sketch_scence}}" style="border:solid;" 
                     width="100" height="100"  >
                     </div>
 

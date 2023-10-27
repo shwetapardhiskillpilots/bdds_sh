@@ -79,12 +79,12 @@ class Form_data(models.Model):
     d_bomb=models.CharField(max_length=200,null=True,blank=True)
     fdate=models.CharField(max_length=200,null=True,blank=True)
     flocation=models.CharField(max_length=200,null=True,blank=True)
-    flocation_type=models.CharField(max_length=200,null=True,blank=True)
+    flocation_type=models.ForeignKey(N_location,on_delete=models.SET_NULL,blank=True,null=True)
     flocation_description=models.TextField(null=True,blank=True)
-    fjuridiction=models.CharField(max_length=200,null=True,blank=True)
-    fincident=models.CharField(max_length=200,null=True,blank=True)
-    fweight_data=models.CharField(max_length=200,null=True,blank=True)
-    fexplosive=models.CharField(max_length=200,null=True,blank=True)
+    fjuridiction=models.ForeignKey(N_juridiction,  on_delete=models.SET_NULL,blank=True,null=True)
+    fincident=models.ForeignKey(N_incident,on_delete=models.SET_NULL,null=True,blank=True)
+    fweight_data=models.ForeignKey(N_weight,on_delete=models.SET_NULL,null=True,blank=True)
+    fexplosive=models.ForeignKey(N_explosive, on_delete=models.SET_NULL,blank=True,null=True)
     fdetonator=models.CharField(max_length=200,null=True,blank=True)
     fswitch=models.TextField(null=True,blank=True)
     ftarget=models.CharField(max_length=200,null=True,blank=True)
@@ -92,15 +92,15 @@ class Form_data(models.Model):
     fdistruction=models.TextField(null=True,blank=True)
     fassume=models.TextField(null=True,blank=True)
     radio_data=models.CharField(max_length=200,null=True,blank=True)
-    fdalam=models.CharField(max_length=200,null=True,blank=True)
+    fdalam=models.ForeignKey(N_dalam,on_delete=models.SET_NULL,blank=True,null=True)
     flearning=models.TextField(null=True,blank=True)
-    fassume_status_new=models.CharField(max_length=200,null=True,blank=True)
+    fassume_status_new=models.ForeignKey(N_assused, on_delete=models.SET_NULL,blank=True,null=True)
 #-------------------------------if detected-----------------------------------------------------------
-    mode_of_detection=models.CharField(max_length=200,null=True,blank=True)
+    mode_of_detection=models.ForeignKey(N_ditection,on_delete=models.SET_NULL,blank=True,null=True)
     detected_description=models.TextField(max_length=200,null=True,blank=True)
     detected_pname=models.CharField(max_length=200,null=True,blank=True)
     detcted_contact=models.CharField(max_length=200,null=True,blank=True)
-    detected_dispose=models.CharField(max_length=200,null=True,blank=True)
+    detected_dispose=models.ForeignKey(N_dispose, on_delete=models.SET_NULL,blank=True,null=True)
     dispose_name=models.CharField(max_length=200,blank=True,null=True)
     dispose_contact=models.CharField(max_length=200,blank=True,null=True)
     edit_request=models.IntegerField(null=True,blank=True)
@@ -121,7 +121,7 @@ class images(models.Model):
 def pdf_upload_to(instance, filename):
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
     base, extension = os.path.splitext(filename)
-    unique_filename = f"{timestamp}{extension}"
+    unique_filename = f"{timestamp}_{base}{extension}"
     return f'file/image2/{unique_filename}'    
 class s_report(models.Model):
     form=models.ForeignKey(Form_data, on_delete=models.CASCADE)

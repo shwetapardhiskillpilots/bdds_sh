@@ -279,9 +279,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   <div class="x_title">
                     <h2>Edit Form </h2>
                     <div class="nav navbar-right panel_toolbox">
-                      {% for item1 in data1 %}
+                   
                       <a href="updatefirst/{{item1.id}}"class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit</a>
-                      {% endfor %}
+                   
                       
                     </div>
                     <div class="clearfix"></div>
@@ -290,7 +290,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   <div class="x_content" >
                     <br />
                     <div id="demo-form2" data-parsley-validate class="form-horizontal form-label-right" >
-                      {% for item1 in data1 %}
+                     
                       <div class=" form-row">
                         <div class="col-md-4 mb-3 ">
                          <label  for="first-name">Incident/serial year </label>
@@ -317,7 +317,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       <div class="col-md-4 mb-3">
                       <label for="Type_of_location">Type Of Location
                         </label>
-                      <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="select" value="  {{item1.l_location}}" readonly></input>
+                      <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="select" value="  {{item1.flocation_type.l_location}}" readonly></input>
                         </div>
                       </div>
 
@@ -331,7 +331,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       <div class="col-md-4 mb-3">
                         <label for="juridiction">Jurisdiction
                         </label>
-                        <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="  {{item1.l_juridiction}}" readonly>
+                        <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="  {{item1.fjuridiction.l_juridiction}}" readonly>
                         </input>
                         </div>
                       </div>
@@ -340,12 +340,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <div class="col-md-4 mb-3">
                         <label class="type_of_incident">Type Of Incident
                         </label>
-                       <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="{{item1.i_incident}}" readonly></label>
+                       <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="{{item1.fincident.i_incident}}" readonly></label>
                         </div>
                      <div class="col-md-4 mb-3">
                         <label for="explosive">Type Of Explosive
                         </label>
-                        <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required"  type="text" value=' {{item1.e_explosive}}' readonly>
+                        <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required"  type="text" value=' {{item1.fexplosive.e_explosive}}' readonly>
                          </input>
                         </div>
                       </div>
@@ -354,7 +354,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                          <div class="col-md-4 mb-3"> 
                         <label  for="weight_label">Weight
                         </label>
-                        <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required"  type="text" value=" {{item1.w_weight}}" readonly></input>
+                        <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required"  type="text" value=" {{item1.fweight_data.w_weight}}" readonly></input>
                         </div>
                         <div class="col-md-4 mb-3">
                         <label for='detenotaor'>Detonator
@@ -372,12 +372,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <div class="col-md-4 mb-3"> 
                     <label for="Assused_current_status">Accused Current Status 
                     </label>
-                    <input id="birthday" class="form-control" required="required"  type="text" value="{{item1.a_assused}}" readonly>
+                    <input id="birthday" class="form-control" required="required"  type="text" 
+                    value="{{item1.fassume_status_new.a_assused}}" readonly>
                     </div>
                     <div class="col-md-4 mb-3 ">
                       <label for='dalam_value'>Dalam
                         </label>
-                       <input id="birthday" class="form-control" required="required"  type="text" value="{{item1.d_dalam}}" readonly />
+                       <input id="birthday" class="form-control" required="required"  type="text" value="{{item1.fdalam.d_dalam}}" readonly />
                     </div>
 
 
@@ -413,7 +414,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       </div>
                       </div>
                       </div>
-                   {% endfor %}
+                
                   </div>
                 </div>
               </div>
@@ -555,7 +556,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   <div class="x_content">
                     <br />
                     
-                    {% for item1 in data1 %}
+                  
                     {% if item1.mode_of_detection %}
                    <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
                     <label>Mode Of Detection:</label>
@@ -611,7 +612,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       {% else %}
                        <h4>-----------NO Data Available------------</h4>
                         {% endif %}
-                         {% endfor %}
+                    
                       </div><!-- ENd of x content---->
                      </div><!-- ENd of x panel---->
                        </div><!-- ENd of div x-6 content---->
@@ -639,7 +640,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                    {% for item5 in data5 %}
                   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                      {% if item5.status is 0 %}
-                    <img id="{{item5.id}}" onclick=zoomimg('{{item5.id}}','{{item5.im_vi}}','{{item5.status}}')  src="/static/images/image1_folder/{{item5.im_vi}}"
+                    <img id="{{item5.id}}" onclick=zoomimg('{{item5.id}}','{{item5.im_vi}}','{{item5.status}}')  src="/media/{{item5.im_vi}}"
                     width="100" height="100"  style="border: solid;">
                      {% else %}
                     <video width="100" height="100" controls>
@@ -676,7 +677,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   <div class="row">
                    {% for item6 in data6 %}
                    <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <a href="/static/images/image2_folder/{{item6.special_report}}"target="_blank"><i class="fa fa-file-pdf-o" style="font-size:48px;color:red">
+                  <a href="/media/{{item6.special_report}}"target="_blank"><i class="fa fa-file-pdf-o" style="font-size:48px;color:red">
                   </a></i>
                     <div>
                     <button type="button" class="btn btn-link a-btn-slide-text" 
@@ -711,7 +712,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   <div class="row">
                    {% for item7 in data7 %}
                   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                    <img id="{{item7.id}}" onclick=zoomimg('{{item7.id}}','{{item7.Sketch_scence}}','{{0}}')  src="/static/images/image3_folder/{{item7.sketch_scence}}"
+                    <img id="{{item7.id}}" onclick=zoomimg('{{item7.id}}','{{item7.Sketch_scence}}','{{0}}')  src="/media/{{item7.sketch_scence}}"
                     width="100" height="100" alt="{{item7.sketch_scence}}"
                     style="border: solid;">
                     <div>
@@ -819,7 +820,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     </div>
     {% endfor %}
       {% endif %}
-    {%for item1 in data1 %} <input type="hidden" name='form_id' value={{item1.id}}>{% endfor %}
+    <input type="hidden" name='form_id' value={{item1.id}}>
       <div class="death_dataDiv">
         </div>  
     
@@ -865,7 +866,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
        </div>
       {% endfor %}
       {% endif %}
-        {%for item1 in data1 %} <input type="hidden" name='form_id' value={{item1.id}}>{% endfor %}
+        <input type="hidden" name='form_id' value={{item1.id}}>
       <div class="injured_dataDiv">
         </div>  
       <div class="ln_solid"></div>
@@ -907,7 +908,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
        </div>
       {% endfor %}
       {% endif %}
-        {%for item1 in data1 %} <input type="hidden" name='form_id' value={{item1.id}}>{% endfor %}
+         <input type="hidden" name='form_id' value={{item1.id}}>
       <div class="injured_dataDiv">
         </div>  
       <div class="ln_solid"></div>
@@ -937,7 +938,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
          <div class="row">
               
                     {% if data1 %}
-                    {% for item1 in data1 %}
+                  
                    <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
                     <label>Mode Of Detection:</label>
                       </div>
@@ -1002,7 +1003,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value='{{item1.dispose_contact}}' 
                         name='despose_contacts'></input>
                       </div>
-                       {% endfor %}
+                      
                       {% else %}
                        <h4>-----------NO Data Available------------</h4>
                         {% endif %}
@@ -1031,9 +1032,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
       </div>
       <form method="post" action="/addimg" name='upload_form' id='upload_form' enctype="multipart/form-data" >{% csrf_token %}
       <div class=" modal-body col-md-6 ">
-      {%  for item1 in data1 %}  
+    
       <input type="hidden" name='form_id' value={{item1.id}}>
-      {% endfor %}
+     
       <input class="form-control" type="file" id="formFileMultiple" name="image_name" multiple required />
      </div>
       <div class="modal-footer">
@@ -1056,9 +1057,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
       </div>
       <form method="post" action="/addreports" name='upload_form' id='upload_form' enctype="multipart/form-data" >{% csrf_token %}
       <div class=" modal-body col-md-6 ">
-      {%  for item1 in data1 %}  
+    
       <input type="hidden" name='id' value={{item1.id}}>
-      {% endfor %}
+    
       <input class="form-control" type="file" id="formFileMultiple" name="reports_name" multiple  required />
      </div>
       <div class="modal-footer">
@@ -1081,9 +1082,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
       </div>
       <form method="post" action="/addsketch" name='upload_form' id='upload_form' enctype="multipart/form-data" >{% csrf_token %}
       <div class=" modal-body col-md-6 ">
-      {%  for item1 in data1 %}  
+   
       <input type="hidden" name='id' value={{item1.id}}>
-      {% endfor %}
+  
       <input class="form-control" type="file" id="formFileMultiple" name="sketch_name" multiple  required />
      </div>
       <div class="modal-footer">

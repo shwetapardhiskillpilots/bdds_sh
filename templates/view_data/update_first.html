@@ -291,7 +291,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     
                     <br />
                     <div id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" >
-                      {% for item1 in data1 %}
+                    
                        <form action="/updfdata/updatefirst/{{item1.id}}" method='post'> 
                        {% csrf_token %}
                      
@@ -322,11 +322,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Type Of Location<span class="required text-danger">*</span></label>
                 <select type="text" class="form-control" name='location_ty_uvalue'>
-                   <option value={{item1.flocation_type}} selected>{{item1.l_location}} </option>
+                   <option value={{item1.flocation_type.id}} selected>{{item1.flocation_type.l_location}} </option>
                            {%for item2 in data2 %}
                     <option value={{item2.id}}>{{item2.l_location}}</option>
                           {% endfor %}
-                    <option value=None>None</option>
+                    <!-- <option value=None>None</option> -->
                 </select>  
               </div>
               <div class="form-group col-md-6">
@@ -338,23 +338,23 @@ body {font-family: Arial, Helvetica, sans-serif;}
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Jurisdiction <span class="required text-danger">*</span></label>
                 <select type="select" class="form-control" id="inputEmail4" name="juridiction_uvalue">
-                  <option value={{item1.fjuridiction}}>{{item1.l_juridiction}}
+                  <option value={{item1.fjuridiction.id}}>{{item1.fjuridiction.l_juridiction}}
                   </option>
                   {% for item3 in data3 %}
                   <option value={{item3.id}}>{{item3.l_juridiction}}</option>
                   {% endfor %}
-                  <option value=None>None</option>
+                  <!-- <option value=None>None</option> -->
                 </select>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Type Of Incident<span class="required text-danger">*</span></label>
                 <select type="text" class="form-control" value='{{item1.i_incident}}' 
                 name="incident_uvalue">
-                <option value={{item1.fincident}} selected>{{item1.i_incident}}</option>
+                <option value={{item1.fincident.id}} selected>{{item1.fincident.i_incident}}</option>
                 {% for item4 in data4 %}
                 <option value={{item4.id}}>{{item4.i_incident}}</option>
                 {% endfor %}
-                <option value=None>None</option>
+                <!-- <option value=None>None</option> -->
               </select>
               </div>
             </div>
@@ -362,21 +362,21 @@ body {font-family: Arial, Helvetica, sans-serif;}
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Type Of Explosive <span class="required text-danger">*</span></label>
                 <select type="select" class="form-control" name="explosive_uvalue">
-                  <option value={{item1.fexplosive}}>{{item1.e_explosive}}</option>
+                  <option value={{item1.fexplosive.id}}>{{item1.fexplosive.e_explosive}}</option>
                   {% for item5 in data5 %}
                   <option value={{item5.id}}>{{item5.e_explosive}}</option>
                   {% endfor %}
-                  <option>None</option>
+                  <!-- <option>None</option> -->
                   </select>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Weight<span class="required text-danger">*</span></label>
                 <select type="password" class="form-control" name="weight_uvalue">
-                <option value={{item1.fweight_data}} selected>{{item1.w_weight}}</option>
+                <option value={{item1.fweight_data.id}} selected>{{item1.fweight_data.w_weight}}</option>
                           {% for item6 in data6 %}
                           <option value={{item6.id}}>{{item6.w_weight}}</option>
                           {% endfor %}
-                          <option value=None>None</option>
+                          <!-- <option value=None>None</option> -->
                          </select>
                  </select> 
               </div>
@@ -435,11 +435,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <label for='assused_current_status'>Accused Current Status <span class="required text-danger" >*</span></label>
                         <select id="birthday" class="form-control" required="required"  type="text" 
                           value='{{item1.a_assused}}' name="assused_status_uvalue" required>
-                            <option value={{item1.fassume_status_new}}>{{item1.a_assused}}</option>
+                            <option value={{item1.fassume_status_new.id}}>{{item1.fassume_status_new.a_assused}}</option>
                             {% for item7 in data7 %}
                             <option {{item7.id}}>{{item7.a_assused}}</option>
                             {% endfor %}
-                            <option value=None>None</option>
+                            <!-- <option value=None>None</option> -->
                          </select>
                         </div>
                     <div class="form-group col-md-6">
@@ -454,15 +454,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <label for="dalam">Dalam</label>
                           <select id="birthday" class="form-control" type="text" 
                           value={{item1.d_dalam}} name="dalam_uvalue">
-                            <option value={{item1.fdalam}}>{{item1.d_dalam}}</option>
+                            <option value={{item1.fdalam.id}}>{{item1.fdalam.d_dalam}}</option>
                             {% for item8 in data8 %}
                              <option value={{item8.id}}>{{item8.d_dalam}}</option>
                              {% endfor %}
-                             <option value=None>None</option>
+                             <!-- <option value=None>None</option> -->
                           </select>
                         </div>
                       </div>
-                      {% endfor %}
+                  
                     </div>
                     <div class="ln_solid"></div>
                       <div class="form-group">
