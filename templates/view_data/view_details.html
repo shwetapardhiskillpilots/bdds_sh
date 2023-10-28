@@ -80,7 +80,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+/*  z-index: 1; /* Sit on top */*/
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
@@ -840,7 +840,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">YouTube Video</h5>
+                    <h5 class="modal-title">Video</h5>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -899,7 +899,9 @@ function zoomimg(id,url,status) {
 
  // When the user clicks on <span> (x), close the modal
  span.onclick = function() { 
+   console.log("test")
    modal.style.display = "none";
+
  }
 }
  else{

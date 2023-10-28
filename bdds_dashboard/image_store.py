@@ -19,9 +19,9 @@ import urllib,base64
 import numpy as np
 from io import BytesIO
 def path_x():
-    path1='C:/Cluematrix/bdds/static/images/image1_folder/'
-    path2='C:/Cluematrix/bdds/static/images/image2_folder/'
-    path3='C:/Cluematrix/bdds/static/images/image3_folder/'
+    path1='C:/Cluematrix/bdds/media/'
+    path2='C:/Cluematrix/bdds/media/'
+    path3='C:/Cluematrix/bdds/media/'
     return (path1,path2,path3)
 
 

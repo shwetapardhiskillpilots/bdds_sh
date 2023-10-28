@@ -437,7 +437,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                           value='{{item1.a_assused}}' name="assused_status_uvalue" required>
                             <option value={{item1.fassume_status_new.id}}>{{item1.fassume_status_new.a_assused}}</option>
                             {% for item7 in data7 %}
-                            <option {{item7.id}}>{{item7.a_assused}}</option>
+                            <option value="{{item7.id}}">{{item7.a_assused}}</option>
                             {% endfor %}
                             <!-- <option value=None>None</option> -->
                          </select>
@@ -452,13 +452,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       
                       <div class="form-group col-md-6">
                         <label for="dalam">Dalam</label>
-                          <select id="birthday" class="form-control" type="text" 
-                          value={{item1.d_dalam}} name="dalam_uvalue">
+                          <select id="birthday" class="form-control"
+                          name="dalam_uvalue">
                             <option value={{item1.fdalam.id}}>{{item1.fdalam.d_dalam}}</option>
                             {% for item8 in data8 %}
-                             <option value={{item8.id}}>{{item8.d_dalam}}</option>
+                             <option value="{{item8.id}}">{{item8.d_dalam}}</option>
                              {% endfor %}
-                             <!-- <option value=None>None</option> -->
+                           
                           </select>
                         </div>
                       </div>

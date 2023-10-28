@@ -1168,6 +1168,7 @@ def update_form_first(request,id):
             assused_status_uvalue=request.POST.get('assused_status_uvalue')
             mistake_uvalue=request.POST.get('mistake_uvalue')
             dalam_uvalue=request.POST.get('dalam_uvalue')
+            print(dalam_uvalue)
             i_data=request.POST.get('i_data')
           
             Form_data.objects.filter(id=id).update(fserial=seril_number,d_bomb=bomb_uvalue,
@@ -1335,39 +1336,21 @@ def dlt_img(request):
 @login_required(login_url='/error')
 def add_img(request):
   id=request.POST.get('form_id')
-  file_image = request.FILES.getlist("image_name")
-  path1,path2,path3=path_x()
   if request.method=="POST":
-      try:
-
-              for x in request.FILES.getlist("image_name"):
-                  ts = my_timestamp()
-                  tv=my_timestamp_video()
-                  x_str=str(x)
-                  split_img=x_str.split('.')
-                  if split_img[1]=='mp4':
-                      def process(f):
-                          with open(path1 + tv, 'wb+') as destination:
-                              for chunk in f.chunks():
-                                  destination.write(chunk)
-                      process(x)
-                      status=1
-                      images(form_id=id,im_vi=tv,status=status).save()
-                  else:
-
-                      def process(f):
-                          with open(path1 + ts, 'wb+') as destination:
-                              for chunk in f.chunks():
-                                  destination.write(chunk)
-                      process(x)
-                      status=0
-                      images(form_id=id,im_vi=ts,status=status).save()
-              messages.success(request, "image upload successfully")
-      except Exception as e:
-             messages.error(request,"something wrong  try again")
-      finally:
-
-          return redirect('updfdata/'+id)
+    try:
+        for vimg in request.FILES.getlist('image_name'):
+            if vimg.name.endswith(('.mp4','avi', 'mov', 'mkv')):
+                status=1
+            elif vimg.name.endswith(('.png', '.jpg')):
+                status=0
+            else:
+                messages.warning(request,"file uploaded in proper format")    
+            images(form_id=id,im_vi=vimg,status=status).save() 
+        messages.success(request,"image has been uploaded successfully")
+    except Exception as e:
+            messages.error(request,str(e))
+    finally:
+        return redirect('updfdata/'+id)
 #-------------dlt_special_reports--------------
 @login_required(login_url='/error')
 def dlt_special_report(request):
@@ -1388,23 +1371,14 @@ def dlt_special_report(request):
 @login_required(login_url='/error')
 def add_special_reports(request):
   id=request.POST.get('id')
-  path1,path2,path3=path_x()
-
   if request.method=='POST':
-     try:
-
-          for x in request.FILES.getlist("reports_name"):
-              ts_p=my_timestamp_pdf()
-              def process(f):
-                  with open(path2 + ts_p, 'wb+') as destination:
-                      for chunk in f.chunks():
-                          destination.write(chunk)
-              process(x)
-              s_report(form_id=id,special_report=ts_p).save()
-          messages.success(request,'reports upload successfully')
-     except Exception as e:
+    try:
+        for report in  request.FILES.getlist("reports_name"):
+             s_report(form_id=id,special_report=report).save()
+        messages.success(request,"report has been uploaded successfully")     
+    except Exception as e:
           messages.error(request,'something wron please try againe')
-     finally:
+    finally:
               return redirect('updfdata/'+id)
 #----------------dlt_sketch_scence----------
 @login_required(login_url='/error')
@@ -1415,7 +1389,7 @@ def dlt_sketch_scence(request):
     full_path=path3+sketch_path
     if request.method=='POST':
         try:
-            sk_report.objects.filter(id=id).delete()
+            get_object_or_404(sk_report,pk=id).delete()
             if os.path.isfile(full_path):
                 os.remove(full_path)
             messages.success(request,'successfully deleted')
@@ -1425,24 +1399,17 @@ def dlt_sketch_scence(request):
            return  HttpResponse('success')
 @login_required(login_url='/error')
 def add_sketch(request):
-    path1,path2,path3=path_x()
     id=request.POST.get('id')
-    a=request.FILES.getlist("sketch_name")
-
     if request.method=='POST':
         try:
-
-            for x in request.FILES.getlist("sketch_name"):
-                ts = my_timestamp()
-                def process(f):
-                    with open(path3 + ts, 'wb+') as destination:
-                        for chunk in f.chunks():
-                            destination.write(chunk)
-                process(x)
-                sk_report(form_id=id,sketch_scence=ts).save()
-            messages.success(request, "successfully add sketch")
+            for sketch in request.FILES.getlist("sketch_name"):
+                if sketch.name.endswith(('.png', '.jpg')):
+                   sk_report(form_id=id,sketch_scence=sketch).save()
+                else:
+                    messages.warning("image uploade in png/jpg formate only")   
+            messages.success(request,"sketch  has been uploaded sucessfully")    
         except Exception as e:
-            messages.error(request,'something wrong please try againe')
+            messages.error(request,str(e))
         finally:
                 return redirect('updfdata/'+id)
 
