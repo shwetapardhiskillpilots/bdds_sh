@@ -1053,7 +1053,7 @@ def view_submitdata(request):
     if super_user is False:
         serial_data=request.POST.get("serial_value")
         x,y= permission(request)
-        t_form_module=join_location(request)
+        t_form_module=Form_data.objects.filter(user=user_id)
         context={"x":x,"y":y,"data":t_form_module}
         return render(request,"view_data/view_data.html",context)
     else:
@@ -1405,9 +1405,13 @@ def add_sketch(request):
             for sketch in request.FILES.getlist("sketch_name"):
                 if sketch.name.endswith(('.png', '.jpg')):
                    sk_report(form_id=id,sketch_scence=sketch).save()
+                   success_flag = True
                 else:
-                    messages.warning("image uploade in png/jpg formate only")   
-            messages.success(request,"sketch  has been uploaded sucessfully")    
+                    success_flag = False
+            if success_flag:
+               messages.success(request,"sketch  has been uploaded sucessfully") 
+            if not success_flag: 
+                 messages.warning(request,"image uploade in png/jpg formate only")         
         except Exception as e:
             messages.error(request,str(e))
         finally:

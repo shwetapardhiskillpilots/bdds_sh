@@ -562,7 +562,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <label>Mode Of Detection:</label>
                       </div>
                        <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.d_ditection}}" readonly></input>
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.mode_of_detection.d_ditection}}" readonly></input>
                       </div> 
                       <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
                       <label>Description:</label>
@@ -590,7 +590,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <label>How Dispose:</label>
                       </div>
                        <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.d_dispose}}" readonly></input>
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.detected_dispose.d_dispose}}" readonly></input>
                       </div> 
                       <div>
                       <label><u> Dispose By Whome:</u></label>
@@ -638,11 +638,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
               <div class="x_content">
                   <div class="row">
                    {% for item5 in data5 %}
-                  <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <div class="col-md-3 col-sm-12 col-xs-12 form-group" style="display: grid; place-items: center;">
                      {% if item5.status is 0 %}
                     <img id="{{item5.id}}" onclick=zoomimg('{{item5.id}}','{{item5.im_vi}}','{{item5.status}}')  src="/media/{{item5.im_vi}}"
                     width="100" height="100"  style="border: solid;">
-                     {% else %}
+                     {% elif item5.status is 1 %}
                     <video width="100" height="100" controls>
                    <source src="/media/{{item5.im_vi}}" type="video/mp4"></video>
                     {% endif %}
@@ -651,7 +651,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     onclick="dltimg({{item5.id}},'{{item5.im_vi}}')">
                      <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;"></span><span style="color:red"><strong>Delete</strong></span> 
                   </div>   
-
                   </div>
                   {% endfor %}
                   {% else %}
@@ -933,11 +932,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
         </button>
          
       </div>
-      <form method='post' action="/updeatedispose"'>{% csrf_token %}
+      <form method='post' action="/updeatedispose">{% csrf_token %}
       <div class="modal-body">
          <div class="row">
               
-                    {% if data1 %}
+                    {% if item1 %}
                   
                    <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
                     <label>Mode Of Detection:</label>
@@ -945,11 +944,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
                        <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
                          <select type="text" id="first-name2" placeholder="Enter Mode of Detection" class="form-control col-md-7 col-xs-12" 
                               name="mode_detection">
-                        <option value={{item1.mode_of_detection}}>{{item1.d_ditection}}</option>
+                        <option value={{item1.mode_of_detection.id}}>{{item1.mode_of_detection.d_ditection}}</option>
                               {% for item8 in data8 %}
                               <option value={{item8.id}}>{{item8.d_ditection}}</option>
                               {% endfor %}
-                              <option value=''>None</option>
+                              <!-- <option value=''>None</option> -->
                             </select>
                       </div> 
                       <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
@@ -980,11 +979,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
                        <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
                         <select  id="first-name2" placeholder="Enter Designation" class="form-control col-md-7 col-xs-12" 
                               name="detected_despose">
-                              <option >{{item1.d_dispose}}</option>
+                              <option value="{{item1.detected_dispose.id}}" >{{item1.detected_dispose.d_dispose}}</option>
                               {% for item9 in data9 %}
                               <option value="{{item9.id}}">{{item9.d_dispose}}</option>
                               {% endfor %}
-                              <option value="">None</option>
+                              <!-- <option value="">None</option> -->
                               </select>
                       </div> 
                       <div>
@@ -1105,7 +1104,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <!----------------------->
 <!-- The Modal -->
 <div id="myModal" class="modal">
-  <span class="close" id="spn">&times;</span>
+  <button type="button" class="close_img" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
   <img class="modal-content" id="img01">
   <div id="caption"></div>
 </div>
@@ -1136,7 +1137,7 @@ function zoomimg(id,url,status) {
   captionText.innerHTML = this.alt;
  }
 // Get the <span> element that closes the modal
- var span = document.getElementsById("spn")[0];
+ var span = document.getElementsByClassName("close_img")[0];
  console.log(span)
 
  // When the user clicks on <span> (x), close the modal

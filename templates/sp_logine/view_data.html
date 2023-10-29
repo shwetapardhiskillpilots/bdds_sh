@@ -403,7 +403,7 @@ function edit_request(id){
   //alert(req);
   let req=confirm("Are You Sure?");
    //variable = (condition) ? expressionTrue : expressionFalse;
-    var reqs=(req==true)? 2:3;
+    var reqs=(req==true)? 2:0;
     $.ajax({
       method:'POST',
       url:'/editrequest',
@@ -427,7 +427,7 @@ function edit_request(id){
 function dlt_request(id){
   let req=confirm("Are You Sure?");
    //variable = (condition) ? expressionTrue : expressionFalse;
-  var reqs=(req==true)? 2:3;
+  var reqs=(req==true)? 2:0;
   $.ajax({
     method:"POST",
     url:"/dltrequest",
