@@ -1566,7 +1566,7 @@ def form_api(request):
 def list_view(request):
     id  = request.data.get('id')
     form_instance = get_object_or_404(Form_data, pk=id)
-    serialize_form_data = form_serilization(form_instance).data
+    serialize_form_data = UpdateFormSerializer(form_instance).data
     data = {
         'form_data': serialize_form_data,   # Include Form_data fields
         'death_data': list(form_instance.death_person_set.values()),  # Related Death_person instances

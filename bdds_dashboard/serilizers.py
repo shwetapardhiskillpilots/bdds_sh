@@ -117,23 +117,11 @@ class image_videoSerializer(serializers.ModelSerializer):
         model=video_image
         fields = '__all__'        
 
-''' def  validate(self, data):
-        if data['im_vi']  is not None:
-
-         raise serializers.ValidationError("hi")
-        else:
-            raise serializers.ValidationError("No")
-        return data'''
-
-#class FileSerializer(serializers.Serializer):
-#    file = serializers.FileField(max_length=None, allow_empty_file=False)
-
-'''class FileSerializer(serializers.ModelSerializer):
-  class Meta():
-    model = File
-    fields = ('file', 'remark', 'timestamp')'''
-
-
+class UpdateFormSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Form_data
+        depth=1
+        fields = '__all__'
 
 
 
