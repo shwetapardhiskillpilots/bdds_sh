@@ -88,7 +88,6 @@ class Form_data(models.Model):
     fdetonator=models.CharField(max_length=200,null=True,blank=True)
     fswitch=models.TextField(null=True,blank=True)
     ftarget=models.CharField(max_length=200,null=True,blank=True)
-
     fdistruction=models.TextField(null=True,blank=True)
     fassume=models.TextField(null=True,blank=True)
     radio_data=models.CharField(max_length=200,null=True,blank=True)

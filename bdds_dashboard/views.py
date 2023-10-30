@@ -1553,13 +1553,10 @@ def form_api(request):
         serialize_explode = exploded_serilizer(data=exploded_data,many=True)
         if serialize_explode.is_valid():
             serialize_explode.save()
-            return Response({"msg":"form have been save successfully"},status=status.HTTP_200_OK)
+    return Response({"msg":"form have been save successfully"},status=status.HTTP_200_OK)
       
    
   
-
-
-
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
@@ -1581,10 +1578,10 @@ def list_view(request):
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def list_only(request):
-    id=request.data.get('id')
-    form_instance = get_object_or_404(Form_data,pk=id)
-    serializers = form_serilization(form_instance).data
-    return Response(serializers,status=status.HTTP_200_OK)
+    id=request.data.get('user_id')
+    form_instance = Form_data.objects.filter(user=id)
+    serializers = form_serilization(form_instance,many=True).data
+    return Response({"form_data":serializers},status=status.HTTP_200_OK)
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
