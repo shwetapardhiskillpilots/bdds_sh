@@ -942,12 +942,17 @@ def centralise_database(request):
             bomb_value=request.POST.get("bomb_value")
             date_time=request.POST.get("date&time")
             location_data=request.POST.get("location_value")
-            location_type=N_location(id=request.POST.get("location_data"))
-            location_description=request.POST.get("location_description")
-            jurisdiction_data=N_juridiction.objects.get(id=request.POST.get("jurisdiction_data"))
-            incident_data=N_incident.objects.get(id=request.POST.get("incident_data"))
-            weight_data=N_weight.objects.get(id=request.POST.get("weight_data"))
-            explosive_data=N_explosive.objects.get(id=request.POST.get("explosive_data"))
+            f_location_id = request.POST.get("location_data")
+            location_type=N_location.objects.get(id=f_location_id)if f_location_id else None
+            location_description=request.POST.get("location_description") 
+            juridiction_data_id = request.POST.get("jurisdiction_data") 
+            jurisdiction_data=N_juridiction.objects.get(id=juridiction_data_id)if juridiction_data_id else None
+            incident_data_id = request.POST.get("incident_data")
+            incident_data=N_incident.objects.get(id=incident_data_id) if incident_data_id else None
+            weight_data_id = request.POST.get("weight_data") 
+            weight_data=N_weight.objects.get(id=weight_data_id) if weight_data_id else None
+            explosive_data_id = request.POST.get("explosive_data")
+            explosive_data=N_explosive.objects.get(id=explosive_data_id) if explosive_data_id else None
             detonator_data=request.POST.get("detonator_data")
             switch_data=request.POST.get("switch_data")
             target_data=request.POST.get("target_data")
@@ -969,14 +974,16 @@ def centralise_database(request):
             despose_name=request.POST.get('despose_name')
             despose_contact=request.POST.get("despose_contact")
             assume_data=request.POST.get("assume_data")
-            assume_status= N_assused.objects.get(id=request.POST.get("assume_status"))
-            dalam_data=N_dalam.objects.get(id=request.POST.get("dalam_data"))
+            assume_status_data_id = request.POST.get("assume_status")
+            assume_status= N_assused.objects.get(id=assume_status_data_id) if assume_status_data_id else None
+            dalam_id = request.POST.get("dalam_data")
+            dalam_data=N_dalam.objects.get(id=dalam_id) if dalam_id else None
             learning_data=request.POST.get("learning_data")
             image1=request.FILES.getlist("incident_image")
             image2=request.FILES.getlist("special_image")
             image3=request.FILES.getlist("sketch_image")
 
-            duplicate=Form_data.objects.filter(fserial=serial_data).count()
+            # duplicate=Form_data.objects.filter(fserial=serial_data).count()
             if  Form_data.objects.filter(fserial=serial_data).exists():
                 messages.info(request, 'Already Incident Serial Year Present Please Enter Another Incident Serial year ')
             else:
@@ -1565,7 +1572,7 @@ def list_view(request):
     form_instance = get_object_or_404(Form_data, pk=id)
     serialize_form_data = UpdateFormSerializer(form_instance).data
     data = {
-        'form_data': serialize_form_data,   # Include Form_data fields
+        'form_data': [serialize_form_data],   # Include Form_data fields
         'death_data': list(form_instance.death_person_set.values()),  # Related Death_person instances
         'injured_data': list(form_instance.injured_person_set.values()),  # Related Injured_person instances
         'explode_data': list(form_instance.exploded_set.values()),  # Related Exploded instances
