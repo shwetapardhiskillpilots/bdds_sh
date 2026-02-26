@@ -14,6 +14,11 @@ from pathlib import Path
 import os
 from datetime import datetime, timedelta
 import pymysql
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 pymysql.version_info = (1, 4, 6, 'final', 0)
 pymysql.install_as_MySQLdb()
 
@@ -28,12 +33,12 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-47n%or0%j#4isn=27%8u^tj#ad8eq090n5dvz%(r0+v348%v_p"
+SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-default-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -100,30 +105,30 @@ WSGI_APPLICATION = "BDDS.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-#DATABASES = {
-#    "default": {
-#       "ENGINE": "django.db.backends.sqlite3",
-#       "NAME": BASE_DIR / "db.sqlite3",
-
-#    }
-#}
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'sql_mode': 'traditional',
-        },
-        'NAME': 'bdds',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONs':{
-            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
-            }
+if os.getenv("USE_SQLITE", "False") == "True":
+    DATABASES = {
+        "default": {
+           "ENGINE": "django.db.backends.sqlite3",
+           "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': os.getenv("DB_ENGINE", "django.db.backends.mysql"),
+            'OPTIONS': {
+                'sql_mode': 'traditional',
+            },
+            'NAME': os.getenv("DB_NAME", "bdds"),
+            'USER': os.getenv("DB_USER", "root"),
+            'PASSWORD': os.getenv("DB_PASSWORD", ""),
+            'HOST': os.getenv("DB_HOST", "localhost"),
+            'PORT': os.getenv("DB_PORT", "3306"),
+            'OPTIONs':{
+                'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
+                }
+        }
+    }
 
 
 # Password validation

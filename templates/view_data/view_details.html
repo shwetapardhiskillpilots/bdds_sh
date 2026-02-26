@@ -195,8 +195,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
                  <li><a><i class="fa fa-table"></i> Master <span class="fa fa-chevron-down"></span></a>
                    <ul class="nav child_menu">
                      <li><a href="/tlocation">Type Of Location</a></li>
-                     <li><a href="/jrusdiction">Jurisdiction</a></li>
-                     <li><a href="incident">Type OF Incidence</a></li>
+                     <li><a href="/jurisdiction">Jurisdiction</a></li>
+                     <li><a href="incident">Type Of Incident</a></li>
                      <li><a href="/weight">Weight</a></li>
                      <li><a href="/explosive">Type Of Explosive</a></li>
                      <li><a href="/a_status">Accused Current Status</a></li>
@@ -208,13 +208,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
                    </ul>
                  </li>
                  {% if user.is_superuser %}
-                 <li><a><i class="fa fa-desktop"></i> Authentication <span class="fa fa-chevron-down"></span></a>
-                   <ul class="nav child_menu">
-                     <li><a href="/clogin">Logine Creation</a></li>
-                     <li><a href="/spauthority">SP Authority</a></li>
-                     <li><a href="/users">Users</a></li>
-                   </ul>
-                 </li>
+                  <li><a><i class="fa fa-desktop"></i> Authentication <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/clogin">Login Creation</a></li>
+                      <li><a href="/spauthority">SP Authority</a></li>
+                      <li><a href="/users">Users</a></li>
+                    </ul>
+                  </li>
                  {% endif %}
                  <li><a href="/cdatabase"><i class="fa fa-laptop"></i>Form </a></li>
                   <li><a href="/fdata"><i class="fa fa-laptop"></i>View </a></li>
@@ -316,19 +316,31 @@ body {font-family: Arial, Helvetica, sans-serif;}
                           <label class="control-label " for="first-name">Incident Serial/year </label>
                         <input  type="text" class="form-control" value="{{item1.fserial}}" readonly/>
                         </div>
-                        <div class="form-group col-md-6">
-                          <label class="control-label " for="last-name">Cr No OR Bomb Call </label>
-                        <input  class="form-control" value="{{item1.d_bomb}}" readonly>
-                        </div>
-                        </div>
+                         <div class="form-group col-md-6">
+                           <label class="control-label " for="last-name">Cr No OR Bomb Call </label>
+                         <input  class="form-control" value="{{item1.d_bomb}}" readonly>
+                         </div>
+                         <div class="form-group col-md-6">
+                           <label class="control-label " for="fir-name">FIR No </label>
+                         <input  class="form-control" value="{{item1.fir}}" readonly>
+                         </div>
+                         </div>
                       <div class="group-row">
                       <div class="form-group col-md-6">
                       <label for="date&time" >Date & Time</label>
-                      <input id="middle-name" class="form-control " type="text" name="middle-name" value="{{item1.fdate}}" readonly />
+                       <input id="middle-name" class="form-control " type="text" name="middle-name" value="{{item1.fdate|date:'Y-m-d H:i'}}" readonly />
                       </div>
-                     <div class="form-group col-md-6">
+                     <div class="form-group col-md-4">
                       <label for="location">Location</label>
                       <input id="birthday" class="form-control" required="required" type="text" value="{{item1.flocation}}" readonly />
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="lat">Latitude</label>
+                        <input id="lat" class="form-control" type="text" value="{{item1.latitude}}" readonly />
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="long">Longitude</label>
+                        <input id="long" class="form-control" type="text" value="{{item1.longitude}}" readonly />
                       </div>
                       </div>
                       <div class="group-row">
@@ -343,7 +355,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       </div>
                       <div class="group-row">
                         <div class="form-group col-md-6">
-                        <label for='juridiction'>Jurisdiction</label>
+                        <label for='jurisdiction'>Jurisdiction</label>
                         <input id="birthday" class="form-control" required="required" type="text" value="{{item1.fjuridiction.l_juridiction}}" readonly />
                        </div>
                       <div class="form-group col-md-6">
@@ -378,7 +390,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <textarea id="birthday" class="form-control" required="required"  type="text" readonly>{{item1.ftarget}}</textarea>
                         </div>
                         <div class="form-group col-md-6">
-                        <label for="distruction property">Distruction Of Property</label>
+                        <label for="destruction property">Destruction Of Property</label>
                         <textarea id="birthday" class="form-control" required="required"  type="text" readonly>{{item1.fdistruction}}</textarea>
                         </div>
                       </div>
@@ -388,7 +400,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <input id="birthday" class="form-control" required="required"  type="text" value="{{item1.radio_data}}" readonly/>
                         </div>
                        <div class="form-group col-md-6">
-                        <label for="assused details">Accused Details</label>
+                        <label for="accused details">Accused Details</label>
                         <textarea id="birthday" class="form-control" required="required"  type="text" readonly>{{item1.fassume}}</textarea>
                         </div>
                       </div>
@@ -403,10 +415,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       </div>
                       </div>
                       <div class="form-row">
-                      <div class="form-group col-md-6">
-                       <label for="dalam" >Dalam</label>
-                      <input id="birthday"class="form-control" value="{{item1.fdalam.d_dalam}}" readonly/>
+                       <div class="form-group col-md-6">
+                        <label for="dalam" >Dalam</label>
+                        <div class="form-control" style="background-color: #eee; height: auto; min-height: 34px;">
+                          {% for d in item1.fdalam.all %}
+                            {{ d.d_dalam }}{% if not forloop.last %}, {% endif %}
+                          {% empty %}
+                            None
+                          {% endfor %}
                         </div>
+                         </div>
                       </div>
                 
                   </div>
@@ -590,7 +608,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <textarea type="text" class="form-control" id="inputSuccess5" readonly >{{item1.detected_description}}</textarea>
                       </div>
                       <div>
-                      <label><u> Detcted By Whome:</u></label>
+                      <label><u> Detected By Whom:</u></label>
                       </div> 
                       <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
                     <label>Person Name</label>
@@ -611,7 +629,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.detected_dispose.d_dispose}}" readonly/>
                       </div> 
                       <div>
-                      <label><u> Dispose By Whome:</u></label>
+                      <label><u> Disposed By Whom:</u></label>
                       </div> 
                        <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
                     <label>Person Name:</label>
@@ -778,7 +796,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-           <a href="https://cluematrix.com">Cluematrix Technologies Private Limited</a>
+           <a href="https://cluematrix.com">Cluematrix Technology Private Limited</a>
           </div>
           <div class="clearfix"></div>
         </footer>

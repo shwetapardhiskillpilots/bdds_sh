@@ -77,7 +77,7 @@ class N_dalam(models.Model):
 class Form_data(models.Model):
     fserial=models.CharField(max_length=200,null=True,blank=True)
     d_bomb=models.CharField(max_length=200,null=True,blank=True)
-    fdate=models.CharField(max_length=200,null=True,blank=True)
+    fdate=models.DateTimeField(null=True,blank=True)
     flocation=models.CharField(max_length=200,null=True,blank=True)
     flocation_type=models.ForeignKey(N_location,on_delete=models.SET_NULL,blank=True,null=True)
     flocation_description=models.TextField(null=True,blank=True)
@@ -91,7 +91,10 @@ class Form_data(models.Model):
     fdistruction=models.TextField(null=True,blank=True)
     fassume=models.TextField(null=True,blank=True)
     radio_data=models.CharField(max_length=200,null=True,blank=True)
-    fdalam=models.ForeignKey(N_dalam,on_delete=models.SET_NULL,blank=True,null=True)
+    fir=models.CharField(max_length=200,null=True,blank=True)
+    latitude=models.DecimalField(max_digits=12, decimal_places=9, null=True, blank=True)
+    longitude=models.DecimalField(max_digits=12, decimal_places=9, null=True, blank=True)
+    fdalam=models.ManyToManyField(N_dalam, blank=True)
     flearning=models.TextField(null=True,blank=True)
     fassume_status_new=models.ForeignKey(N_assused, on_delete=models.SET_NULL,blank=True,null=True)
 #-------------------------------if detected-----------------------------------------------------------

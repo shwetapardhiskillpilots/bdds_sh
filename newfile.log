@@ -1,0 +1,957 @@
+2026-02-23 14:56:54,303 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-23 14:58:29,356 Bad Request: /logine/ log_response
+2026-02-23 14:58:46,752 --- LOGIN ATTEMPT --- Data: {'username': '9876543210', 'password': 'bdds_user'} post
+2026-02-23 14:58:50,759 LOGIN FAILED. Errors: {'non_field_errors': [ErrorDetail(string='Unable to log in with provided credentials.', code='authorization')]} post
+2026-02-23 14:58:50,759 Bad Request: /logine/ log_response
+2026-02-23 14:58:55,082 Test API hit with method: GET test_api
+2026-02-23 15:03:04,958 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-23 15:05:04,236 Method Not Allowed: /testapi log_response
+2026-02-23 15:06:21,867 Test API hit with method: GET test_api
+2026-02-23 15:06:24,760 Successfully imported extension module "markdown.extensions.toc". build_extension
+2026-02-23 15:06:24,760 Successfully loaded extension "markdown.extensions.toc.TocExtension". registerExtensions
+2026-02-23 15:06:26,317 Not Found: /favicon.ico log_response
+2026-02-23 15:06:47,753 Method Not Allowed: /logine/ log_response
+2026-02-23 15:07:21,822 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-23 15:11:27,899 D:\Skillpilots\bdds\bdds\bdds_dashboard\models.py changed, reloading. trigger_reload
+2026-02-23 15:12:52,090 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-23 15:12:59,797 D:\Skillpilots\bdds\bdds\bdds_dashboard\urls.py changed, reloading. trigger_reload
+2026-02-23 15:17:12,732 D:\Skillpilots\bdds\bdds\bdds_dashboard\urls.py changed, reloading. trigger_reload
+2026-02-23 15:17:49,423 Test API hit with method: POST test_api
+2026-02-23 15:19:44,847 Final login data being processed: {'username': '9876543210', 'password': 'bdds2026'} post
+2026-02-23 15:19:50,623 Successful login: 9876543210 post
+2026-02-23 15:20:41,058 Master API hit master_api
+2026-02-23 15:23:11,721 Final login data being processed: {'username': '9876543210', 'password': 'bdds2026'} post
+2026-02-23 15:23:16,243 Successful login: 9876543210 post
+2026-02-23 15:27:53,297 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-23 15:33:01,676 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-23 15:46:53,387 Final login data being processed: {'username': '9876543210', 'password': 'checking_connection'} post
+2026-02-23 15:46:58,317 Login validation failed: {'non_field_errors': [ErrorDetail(string='Unable to log in with provided credentials.', code='authorization')]} post
+2026-02-23 15:46:58,357 Bad Request: /logine/ log_response
+2026-02-23 16:05:03,711 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-23 16:23:20,749 Unauthorized: /master/postapi log_response
+2026-02-23 16:23:52,188 Method Not Allowed: /master/postapi log_response
+2026-02-23 16:25:05,288 Not Found: /master/postapi/ log_response
+2026-02-23 16:25:09,070 Not Found: /logoutapi log_response
+2026-02-23 16:26:58,011 Not Found: /logoutapi/ log_response
+2026-02-23 16:27:08,625 Not Found: /logoutapi log_response
+2026-02-23 16:27:25,177 D:\Skillpilots\bdds\bdds\BDDS\settings.py changed, reloading. trigger_reload
+2026-02-23 16:28:19,671 Unauthorized: /logoutapi log_response
+2026-02-23 16:28:24,676 Unauthorized: /masterapi log_response
+2026-02-23 16:28:59,565 Final login data being processed: {} post
+2026-02-23 16:28:59,566 Login validation failed: {'username': [ErrorDetail(string='This field is required.', code='required')], 'password': [ErrorDetail(string='This field is required.', code='required')]} post
+2026-02-23 16:28:59,566 Bad Request: /logine/ log_response
+2026-02-23 16:29:07,078 Unauthorized: /master/postapi log_response
+2026-02-23 16:29:10,408 Unauthorized: /apilocation log_response
+2026-02-23 16:29:13,926 Unauthorized: /apijuridiction log_response
+2026-02-23 16:29:17,430 Unauthorized: /apiincident log_response
+2026-02-23 16:29:20,884 Unauthorized: /apiweight log_response
+2026-02-23 16:29:24,779 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:29:28,254 Unauthorized: /master/dalam log_response
+2026-02-23 16:29:31,432 Unauthorized: /master/despose log_response
+2026-02-23 16:29:35,015 Unauthorized: /master/ditectionapi log_response
+2026-02-23 16:29:38,506 Unauthorized: /master/assusedapi log_response
+2026-02-23 16:29:41,056 Unauthorized: /master/assusedapi log_response
+2026-02-23 16:29:41,061 Unauthorized: /apiweight log_response
+2026-02-23 16:29:41,065 Unauthorized: /apiincident log_response
+2026-02-23 16:29:41,066 Unauthorized: /master/despose log_response
+2026-02-23 16:29:41,067 Unauthorized: /apilocation log_response
+2026-02-23 16:29:41,071 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:29:41,071 Unauthorized: /apiincident log_response
+2026-02-23 16:29:41,073 Unauthorized: /apilocation log_response
+2026-02-23 16:29:41,073 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:29:41,073 Unauthorized: /apijuridiction log_response
+2026-02-23 16:29:41,075 Unauthorized: /master/assusedapi log_response
+2026-02-23 16:29:41,076 Unauthorized: /apiweight log_response
+2026-02-23 16:29:41,076 Unauthorized: /master/dalam log_response
+2026-02-23 16:29:41,078 Unauthorized: /master/despose log_response
+2026-02-23 16:29:41,079 Unauthorized: /apijuridiction log_response
+2026-02-23 16:29:41,079 Unauthorized: /listonly log_response
+2026-02-23 16:29:41,081 Unauthorized: /master/ditectionapi log_response
+2026-02-23 16:29:41,081 Unauthorized: /master/dalam log_response
+2026-02-23 16:29:41,485 Unauthorized: /master/ditectionapi log_response
+2026-02-23 16:29:42,088 Unauthorized: /serdesignation log_response
+2026-02-23 16:29:45,459 Unauthorized: /formapi log_response
+2026-02-23 16:29:48,740 Unauthorized: /imageapi log_response
+2026-02-23 16:29:50,991 Unauthorized: /apiweight log_response
+2026-02-23 16:29:50,991 Unauthorized: /apilocation log_response
+2026-02-23 16:29:50,993 Unauthorized: /apiincident log_response
+2026-02-23 16:29:50,993 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:29:50,995 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:29:50,995 Unauthorized: /apijuridiction log_response
+2026-02-23 16:29:50,995 Unauthorized: /apijuridiction log_response
+2026-02-23 16:29:51,604 Unauthorized: /apiincident log_response
+2026-02-23 16:29:51,609 Unauthorized: /apiweight log_response
+2026-02-23 16:29:51,609 Unauthorized: /apilocation log_response
+2026-02-23 16:29:52,015 Unauthorized: /listonly log_response
+2026-02-23 16:29:55,803 Unauthorized: /formviewapi log_response
+2026-02-23 16:30:14,137 Unauthorized: /apiincident log_response
+2026-02-23 16:30:14,140 Unauthorized: /master/despose log_response
+2026-02-23 16:30:14,140 Unauthorized: /apiweight log_response
+2026-02-23 16:30:14,142 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:30:14,143 Unauthorized: /master/ditectionapi log_response
+2026-02-23 16:30:14,144 Unauthorized: /apijuridiction log_response
+2026-02-23 16:30:14,145 Unauthorized: /apilocation log_response
+2026-02-23 16:30:14,145 Unauthorized: /apilocation log_response
+2026-02-23 16:30:14,147 Unauthorized: /master/assusedapi log_response
+2026-02-23 16:30:14,149 Unauthorized: /master/ditectionapi log_response
+2026-02-23 16:30:14,149 Unauthorized: /master/dalam log_response
+2026-02-23 16:30:14,450 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:30:15,034 Unauthorized: /master/dalam log_response
+2026-02-23 16:30:15,045 Unauthorized: /master/despose log_response
+2026-02-23 16:30:15,047 Unauthorized: /apiweight log_response
+2026-02-23 16:30:15,947 Unauthorized: /apijuridiction log_response
+2026-02-23 16:30:15,979 Unauthorized: /master/assusedapi log_response
+2026-02-23 16:30:15,992 Unauthorized: /apiincident log_response
+2026-02-23 16:30:16,052 Unauthorized: /listonly log_response
+2026-02-23 16:30:24,373 Unauthorized: /apilocation log_response
+2026-02-23 16:30:24,373 Unauthorized: /apijuridiction log_response
+2026-02-23 16:30:24,376 Unauthorized: /apiincident log_response
+2026-02-23 16:30:24,377 Unauthorized: /apiweight log_response
+2026-02-23 16:30:24,378 Unauthorized: /apilocation log_response
+2026-02-23 16:30:24,381 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:30:24,385 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:30:24,385 Unauthorized: /apijuridiction log_response
+2026-02-23 16:30:24,388 Unauthorized: /apiincident log_response
+2026-02-23 16:30:24,392 Unauthorized: /apiweight log_response
+2026-02-23 16:30:46,798 Unauthorized: /apiweight log_response
+2026-02-23 16:30:46,799 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:30:46,802 Unauthorized: /listonly log_response
+2026-02-23 16:30:46,804 Unauthorized: /apiincident log_response
+2026-02-23 16:30:46,808 Unauthorized: /apijuridiction log_response
+2026-02-23 16:30:46,809 Unauthorized: /master/despose log_response
+2026-02-23 16:30:46,811 Unauthorized: /master/assusedapi log_response
+2026-02-23 16:30:46,812 Unauthorized: /master/ditectionapi log_response
+2026-02-23 16:30:46,813 Unauthorized: /master/dalam log_response
+2026-02-23 16:30:46,815 Unauthorized: /master/ditectionapi log_response
+2026-02-23 16:30:46,816 Unauthorized: /master/dalam log_response
+2026-02-23 16:30:46,818 Unauthorized: /apilocation log_response
+2026-02-23 16:30:46,818 Unauthorized: /master/despose log_response
+2026-02-23 16:30:46,822 Unauthorized: /apijuridiction log_response
+2026-02-23 16:30:46,832 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:30:46,833 Unauthorized: /apiweight log_response
+2026-02-23 16:30:46,835 Unauthorized: /apiincident log_response
+2026-02-23 16:30:46,839 Unauthorized: /apilocation log_response
+2026-02-23 16:30:46,840 Unauthorized: /master/assusedapi log_response
+2026-02-23 16:33:45,480 Unauthorized: /listonly log_response
+2026-02-23 16:33:45,481 Unauthorized: /master/ditectionapi log_response
+2026-02-23 16:33:45,484 Unauthorized: /master/dalam log_response
+2026-02-23 16:33:45,487 Unauthorized: /apilocation log_response
+2026-02-23 16:33:45,488 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:33:45,490 Unauthorized: /master/assusedapi log_response
+2026-02-23 16:33:45,490 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:33:45,495 Unauthorized: /apiweight log_response
+2026-02-23 16:33:45,497 Unauthorized: /apijuridiction log_response
+2026-02-23 16:33:45,498 Unauthorized: /apiweight log_response
+2026-02-23 16:33:45,499 Unauthorized: /apiincident log_response
+2026-02-23 16:33:45,500 Unauthorized: /apijuridiction log_response
+2026-02-23 16:33:45,511 Unauthorized: /apilocation log_response
+2026-02-23 16:33:45,512 Unauthorized: /master/dalam log_response
+2026-02-23 16:33:45,517 Unauthorized: /master/ditectionapi log_response
+2026-02-23 16:33:45,648 Unauthorized: /master/despose log_response
+2026-02-23 16:33:45,650 Unauthorized: /apiincident log_response
+2026-02-23 16:33:45,659 Unauthorized: /master/assusedapi log_response
+2026-02-23 16:33:46,701 Unauthorized: /master/despose log_response
+2026-02-23 16:33:57,646 Unauthorized: /apiweight log_response
+2026-02-23 16:33:57,658 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:33:57,662 Unauthorized: /apiweight log_response
+2026-02-23 16:33:57,664 Unauthorized: /apijuridiction log_response
+2026-02-23 16:33:57,665 Unauthorized: /apiincident log_response
+2026-02-23 16:33:57,670 Unauthorized: /apijuridiction log_response
+2026-02-23 16:33:57,678 Unauthorized: /apilocation log_response
+2026-02-23 16:33:57,681 Unauthorized: /apiincident log_response
+2026-02-23 16:33:57,689 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:33:57,694 Unauthorized: /apilocation log_response
+2026-02-23 16:34:10,949 Final login data being processed: {'username': '9876543210', 'password': 'bdds2026'} post
+2026-02-23 16:34:14,995 Successful login: 9876543210 post
+2026-02-23 16:34:15,871 Unauthorized: /apilocation log_response
+2026-02-23 16:34:15,873 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:34:15,877 Unauthorized: /master/apiexplosive log_response
+2026-02-23 16:34:15,878 Unauthorized: /apijuridiction log_response
+2026-02-23 16:34:15,879 Unauthorized: /apijuridiction log_response
+2026-02-23 16:34:15,884 Unauthorized: /apiincident log_response
+2026-02-23 16:34:15,885 Unauthorized: /apiweight log_response
+2026-02-23 16:34:15,888 Unauthorized: /apiweight log_response
+2026-02-23 16:34:15,891 Unauthorized: /apiincident log_response
+2026-02-23 16:34:16,025 Unauthorized: /apilocation log_response
+2026-02-23 16:56:02,245 Unauthorized: /apilocation log_response
+2026-02-23 16:56:51,893 Unauthorized: /apilocation log_response
+2026-02-23 17:02:53,578 Unauthorized: /apilocation log_response
+2026-02-23 17:03:30,971 Unauthorized: /apilocation log_response
+2026-02-23 17:05:11,758 Unauthorized: /apilocation log_response
+2026-02-23 17:05:17,228 Unauthorized: /apilocation log_response
+2026-02-23 17:05:21,254 Unauthorized: /apilocation log_response
+2026-02-23 17:05:22,758 Unauthorized: /apilocation log_response
+2026-02-23 17:05:29,790 Unauthorized: /apilocation log_response
+2026-02-23 17:08:31,083 Unauthorized: /apilocation log_response
+2026-02-23 17:09:09,633 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-23 17:09:22,304 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-23 17:12:24,672 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-23 17:13:10,764 Unauthorized: /apilocation log_response
+2026-02-23 17:13:19,241 Unauthorized: /apilocation log_response
+2026-02-23 17:13:35,632 Unauthorized: /apilocation log_response
+2026-02-23 17:13:53,226 Unauthorized: /apilocation log_response
+2026-02-23 17:15:40,451 Final login data being processed: {'username': '9876543210', 'password': 'bdds_user'} post
+2026-02-23 17:15:45,709 Login validation failed: {'non_field_errors': [ErrorDetail(string='Unable to log in with provided credentials.', code='authorization')]} post
+2026-02-23 17:15:45,711 Bad Request: /logine/ log_response
+2026-02-23 17:16:23,361 Final login data being processed: {'username': '9876543210', 'password': 'bdds_user'} post
+2026-02-23 17:16:23,433 Final login data being processed: {'username': '9876543210', 'password': 'bdds_user'} post
+2026-02-23 17:16:27,399 Login validation failed: {'non_field_errors': [ErrorDetail(string='Unable to log in with provided credentials.', code='authorization')]} post
+2026-02-23 17:16:27,399 Bad Request: /logine/ log_response
+2026-02-23 17:16:27,405 Login validation failed: {'non_field_errors': [ErrorDetail(string='Unable to log in with provided credentials.', code='authorization')]} post
+2026-02-23 17:16:27,405 Bad Request: /logine/ log_response
+2026-02-23 17:17:09,256 Final login data being processed: {'username': '9876543210', 'password': 'bdds2026'} post
+2026-02-23 17:17:13,626 Successful login: 9876543210 post
+2026-02-23 17:17:17,651 Method Not Allowed: /apilocation log_response
+2026-02-23 17:17:17,654 Method Not Allowed: /apilocation log_response
+2026-02-23 17:17:34,008 Method Not Allowed: /apilocation log_response
+2026-02-23 17:17:34,015 Method Not Allowed: /apilocation log_response
+2026-02-23 17:18:14,330 Method Not Allowed: /apilocation log_response
+2026-02-23 17:18:14,333 Method Not Allowed: /apilocation log_response
+2026-02-23 17:19:41,266 Unauthorized: /apilocation log_response
+2026-02-23 17:19:58,834 Unauthorized: /apilocation log_response
+2026-02-23 17:53:58,516 Method Not Allowed: /apilocation log_response
+2026-02-24 11:00:10,202 Not Found: /favicon.ico log_response
+2026-02-24 11:09:07,358 Method Not Allowed: /logine/ log_response
+2026-02-24 11:15:18,475 Not Found: /logine_auth log_response
+2026-02-24 11:15:58,792 Not Found: /logine_auth log_response
+2026-02-24 11:16:26,798 Not Found: /logine_auth log_response
+2026-02-24 11:16:39,272 Method Not Allowed: /logine/ log_response
+2026-02-24 11:17:21,898 Method Not Allowed: /logine/ log_response
+2026-02-24 11:17:27,146 Not Found: /login log_response
+2026-02-24 11:28:16,396 Not Found: /favicon.ico log_response
+2026-02-24 11:30:17,557 Method Not Allowed: /logine/ log_response
+2026-02-24 11:32:38,667 Not Found: /logine_auth log_response
+2026-02-24 11:33:31,371 Not Found: /logine_auth log_response
+2026-02-24 11:35:56,700 Not Found: /logine_auth log_response
+2026-02-24 11:35:56,737 Not Found: /logine_auth log_response
+2026-02-24 12:12:14,179 Not Found: /favicon.ico log_response
+2026-02-24 12:20:19,943 Method Not Allowed: /apilocation log_response
+2026-02-24 12:28:18,421 Not Found: /logine_auth log_response
+2026-02-24 14:30:23,910 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2022', 'd_bomb': '22222', 'fdate': '2026-2-24 14:25:25', 'flocation': '21.1205687,79.1441542', 'flocation_type': '5', 'flocation_description': 'w2qwqwq', 'fjuridiction': '7', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'wqweqwe', 'fswitch': 'wewqewq', 'ftarget': 'vbhh', 'fdistruction': 'gggvgv', 'fassume': 'hjunui7', 'radio_data': '', 'fdalam': '4', 'flearning': 'jnjnkkkk', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '10', 'detected_description': 'cvghhh', 'detected_pname': 'huujjj', 'detcted_contact': '9958598996', 'detected_dispose': '3', 'dispose_name': 'bnjjhnhb', 'dispose_contact': '9969999998', 'explode': [], 'death': [{'death_contact': '3956596998', 'death_name': 'SkillPilots Cluematrix'}], 'injured': [{'injured_contact': '0596666665', 'injured_name': 'SkillPilots Cluematrix'}]} form_api
+2026-02-24 14:30:26,970 Form submission validation failed: {'fdalam': [ErrorDetail(string='Expected a list of items but got type "str".', code='not_a_list')]} form_api
+2026-02-24 14:30:26,974 Bad Request: /formapi log_response
+2026-02-24 14:32:58,235 Method Not Allowed: /formapi log_response
+2026-02-24 14:33:10,548 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "2",'], '"fserial"': [' "2022",'], '"d_bomb"': [' "22222",'], '"fdate"': [' "2026-2-24 14:25:25",'], '"flocation"': [' "21.1205687,79.1441542",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "w2qwqwq",'], '"fjuridiction"': [' "7",'], '"fincident"': [' "4",'], '"fweight_data"': [' "4",'], '"fexplosive"': [' "5",'], '"fdetonator"': [' "wqweqwe",'], '"fswitch"': [' "wewqewq",'], '"ftarget"': [' "vbhh",'], '"fdistruction"': [' "gggvgv",'], '"fassume"': [' "hjunui7",'], '"radio_data"': [' "",'], '"fdalam"': [' "4",'], '"flearning"': [' "jnjnkkkk",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "10",'], '"detected_description"': [' "cvghhh",'], '"detected_pname"': [' "huujjj",'], '"detcted_contact"': [' "9958598996",'], '"detected_dispose"': [' "3",'], '"dispose_name"': [' "bnjjhnhb",'], '"dispose_contact"': [' "9969999998",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3956596998",'], '"death_name"': [' "SkillPilots Cluematrix"'], '} ]': [''], '}': ['']}> form_api
+2026-02-24 14:34:39,705 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2022', 'd_bomb': '22222', 'fdate': '2026-2-24 14:25:25', 'flocation': '21.1205687,79.1441542', 'flocation_type': '5', 'flocation_description': 'w2qwqwq', 'fjuridiction': '7', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'wqweqwe', 'fswitch': 'wewqewq', 'ftarget': 'vbhh', 'fdistruction': 'gggvgv', 'fassume': 'hjunui7', 'radio_data': '', 'fdalam': '4', 'flearning': 'jnjnkkkk', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '10', 'detected_description': 'cvghhh', 'detected_pname': 'huujjj', 'detcted_contact': '9958598996', 'detected_dispose': '3', 'dispose_name': 'bnjjhnhb', 'dispose_contact': '9969999998', 'explode': [], 'death': [{'death_contact': '3956596998', 'death_name': 'SkillPilots Cluematrix'}], 'injured': [{'injured_contact': '0596666665', 'injured_name': 'SkillPilots Cluematrix'}]} form_api
+2026-02-24 14:34:42,729 Form submission validation failed: {'fdalam': [ErrorDetail(string='Expected a list of items but got type "str".', code='not_a_list')]} form_api
+2026-02-24 14:34:42,733 Bad Request: /formapi log_response
+2026-02-24 14:36:32,815 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-24 14:36:55,711 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-24 14:39:23,083 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2022', 'd_bomb': '22222', 'fdate': '2026-2-24 14:25:25', 'flocation': '21.1205687,79.1441542', 'flocation_type': '5', 'flocation_description': 'w2qwqwq', 'fjuridiction': '7', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'wqweqwe', 'fswitch': 'wewqewq', 'ftarget': 'vbhh', 'fdistruction': 'gggvgv', 'fassume': 'hjunui7', 'radio_data': '', 'fdalam': '4', 'flearning': 'jnjnkkkk', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '10', 'detected_description': 'cvghhh', 'detected_pname': 'huujjj', 'detcted_contact': '9958598996', 'detected_dispose': '3', 'dispose_name': 'bnjjhnhb', 'dispose_contact': '9969999998', 'explode': [], 'death': [{'death_contact': '3956596998', 'death_name': 'SkillPilots Cluematrix'}], 'injured': [{'injured_contact': '0596666665', 'injured_name': 'SkillPilots Cluematrix'}]} form_api
+2026-02-24 14:47:20,679 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-24 14:47:44,769 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'TEST_1771924661', 'd_bomb': '22222', 'fdate': '2026-2-24 14:25:25', 'flocation': '21.1205687,79.1441542', 'flocation_type': '5', 'flocation_description': 'w2qwqwq', 'fjuridiction': '7', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'wqweqwe', 'fswitch': 'wewqewq', 'ftarget': 'vbhh', 'fdistruction': 'gggvgv', 'fassume': 'hjunui7', 'radio_data': '', 'fdalam': '4', 'flearning': 'jnjnkkkk', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '10', 'detected_description': 'cvghhh', 'detected_pname': 'huujjj', 'detcted_contact': '9958598996', 'detected_dispose': '3', 'dispose_name': 'bnjjhnhb', 'dispose_contact': '9969999998', 'explode': [], 'death': [{'death_contact': '3956596998', 'death_name': 'SkillPilots Cluematrix'}]} form_api
+2026-02-24 14:47:45,080 Extracted coordinates from flocation: 21.1205687, 79.1441542 form_api
+2026-02-24 15:44:52,949 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2022', 'd_bomb': '2022', 'fdate': '2026-2-24 15:35:43', 'flocation': '21.1205809,79.1441654', 'flocation_type': '4', 'flocation_description': 'ddddd', 'fjuridiction': '5', 'fincident': '3', 'fweight_data': '3', 'fexplosive': '5', 'fdetonator': 'rrrrrr', 'fswitch': 'drddd', 'ftarget': 'rerwer', 'fdistruction': 'eeeeee', 'fassume': 'dwdfw', 'radio_data': '', 'fdalam': '3', 'flearning': 'rwerwerwerwe', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '5', 'detected_description': 'qweg', 'detected_pname': 'qwe', 'detcted_contact': '7654323456', 'detected_dispose': '4', 'dispose_name': 'fdsfd', 'dispose_contact': '2131231231', 'explode': [], 'death': [{'death_contact': '7865443245', 'death_name': 'ewqewq'}], 'injured': [{'injured_contact': '3423423423', 'injured_name': 'erwe'}]} form_api
+2026-02-24 15:44:53,350 Extracted coordinates from flocation: 21.1205809, 79.1441654 form_api
+2026-02-24 15:49:19,259 tag: ImageWidth (256) - type: short (3) - value: b'\x02\xd0' load
+2026-02-24 15:49:19,259 tag: ImageLength (257) - type: short (3) - value: b'\x06@' load
+2026-02-24 15:49:19,259 tag: Software (305) - type: string (2) Tag Location: 46 - Data Location: 74 - value: <table: 36 bytes> load
+2026-02-24 15:49:19,261 tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00n' load
+2026-02-24 15:49:19,261 tag: Orientation (274) - type: long (4) - value: b'\x00\x00\x00\x00' load
+2026-02-24 15:49:19,262 Importing BlpImagePlugin init
+2026-02-24 15:49:19,275 Importing BmpImagePlugin init
+2026-02-24 15:49:19,275 Importing BufrStubImagePlugin init
+2026-02-24 15:49:19,278 Importing CurImagePlugin init
+2026-02-24 15:49:19,282 Importing DcxImagePlugin init
+2026-02-24 15:49:19,289 Importing DdsImagePlugin init
+2026-02-24 15:49:19,302 Importing EpsImagePlugin init
+2026-02-24 15:49:19,309 Importing FitsImagePlugin init
+2026-02-24 15:49:19,309 Importing FliImagePlugin init
+2026-02-24 15:49:19,312 Importing FpxImagePlugin init
+2026-02-24 15:49:19,335 Importing FtexImagePlugin init
+2026-02-24 15:49:19,339 Importing GbrImagePlugin init
+2026-02-24 15:49:19,342 Importing GifImagePlugin init
+2026-02-24 15:49:19,342 Importing GribStubImagePlugin init
+2026-02-24 15:49:19,346 Importing Hdf5StubImagePlugin init
+2026-02-24 15:49:19,348 Importing IcnsImagePlugin init
+2026-02-24 15:49:19,358 Importing IcoImagePlugin init
+2026-02-24 15:49:19,368 Importing ImImagePlugin init
+2026-02-24 15:49:19,373 Importing ImtImagePlugin init
+2026-02-24 15:49:19,378 Importing IptcImagePlugin init
+2026-02-24 15:49:19,381 Importing JpegImagePlugin init
+2026-02-24 15:49:19,383 Importing Jpeg2KImagePlugin init
+2026-02-24 15:49:19,383 Importing McIdasImagePlugin init
+2026-02-24 15:49:19,387 Importing MicImagePlugin init
+2026-02-24 15:49:19,389 Importing MpegImagePlugin init
+2026-02-24 15:49:19,394 Importing MpoImagePlugin init
+2026-02-24 15:49:19,399 Importing MspImagePlugin init
+2026-02-24 15:49:19,402 Importing PalmImagePlugin init
+2026-02-24 15:49:19,417 Importing PcdImagePlugin init
+2026-02-24 15:49:19,422 Importing PcxImagePlugin init
+2026-02-24 15:49:19,422 Importing PdfImagePlugin init
+2026-02-24 15:49:19,455 Importing PixarImagePlugin init
+2026-02-24 15:49:19,458 Importing PngImagePlugin init
+2026-02-24 15:49:19,458 Importing PpmImagePlugin init
+2026-02-24 15:49:19,458 Importing PsdImagePlugin init
+2026-02-24 15:49:19,465 Importing QoiImagePlugin init
+2026-02-24 15:49:19,469 Importing SgiImagePlugin init
+2026-02-24 15:49:19,473 Importing SpiderImagePlugin init
+2026-02-24 15:49:19,477 Importing SunImagePlugin init
+2026-02-24 15:49:19,481 Importing TgaImagePlugin init
+2026-02-24 15:49:19,484 Importing TiffImagePlugin init
+2026-02-24 15:49:19,484 Importing WebPImagePlugin init
+2026-02-24 15:49:19,544 Importing WmfImagePlugin init
+2026-02-24 15:49:19,548 Importing XbmImagePlugin init
+2026-02-24 15:49:19,551 Importing XpmImagePlugin init
+2026-02-24 15:49:19,552 Importing XVThumbImagePlugin init
+2026-02-24 16:10:09,234 Unauthorized: /apilocation log_response
+2026-02-24 16:10:10,123 Not Found: /favicon.ico log_response
+2026-02-24 16:10:25,556 Not Found: /image1/20231017171205_eDQuygV.mp4 log_response
+2026-02-24 16:11:22,618 D:\Skillpilots\bdds\bdds\BDDS\settings.py changed, reloading. trigger_reload
+2026-02-24 16:12:19,395 Not Found: /media/file/image1 log_response
+2026-02-24 16:12:32,138 Not Found: /favicon.ico log_response
+2026-02-24 16:13:09,402 Not Found: /image1/20260224154917.mp4 log_response
+2026-02-24 16:13:34,116 Not Found: /image1/20231017171205_eDQuygV.mp4 log_response
+2026-02-24 16:16:47,324 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-24 16:17:02,823 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-24 16:21:58,572 Not Found: /image1/20260224154917.jpg log_response
+2026-02-24 16:22:58,015 Not Found: /media/file/image1/20260224154917.jpg" log_response
+2026-02-24 16:38:21,561 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2026', 'd_bomb': '1234', 'fdate': '2026-2-24 16:34:57', 'flocation': '21.1205791,79.1441663', 'flocation_type': '2', 'flocation_description': 'frigihi', 'fjuridiction': '2', 'fincident': '2', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fluf', 'fswitch': 'ifufuvk', 'ftarget': 'yrurutgj', 'fdistruction': 'fufigjf', 'fassume': 'zhxhvj', 'radio_data': '', 'fdalam': '3', 'flearning': 'jfjgjgchch', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '1', 'detected_description': 'ey run ittif', 'detected_pname': 'sydufgj', 'detcted_contact': '865656889', 'detected_dispose': '2', 'dispose_name': 'riyggjchchxg', 'dispose_contact': '535685', 'explode': [], 'death': [{'death_contact': '7586868985', 'death_name': 'dydufgj'}], 'injured': [{'injured_contact': '865656898', 'injured_name': 'hdhfjgj'}]} form_api
+2026-02-24 16:38:21,978 Extracted coordinates from flocation: 21.1205791, 79.1441663 form_api
+2026-02-24 16:40:20,702 Importing BlpImagePlugin init
+2026-02-24 16:40:20,707 Importing BmpImagePlugin init
+2026-02-24 16:40:20,707 Importing BufrStubImagePlugin init
+2026-02-24 16:40:20,711 Importing CurImagePlugin init
+2026-02-24 16:40:20,713 Importing DcxImagePlugin init
+2026-02-24 16:40:20,719 Importing DdsImagePlugin init
+2026-02-24 16:40:20,731 Importing EpsImagePlugin init
+2026-02-24 16:40:20,735 Importing FitsImagePlugin init
+2026-02-24 16:40:20,738 Importing FliImagePlugin init
+2026-02-24 16:40:20,741 Importing FpxImagePlugin init
+2026-02-24 16:40:20,752 Importing FtexImagePlugin init
+2026-02-24 16:40:20,757 Importing GbrImagePlugin init
+2026-02-24 16:40:20,759 Importing GifImagePlugin init
+2026-02-24 16:40:20,759 Importing GribStubImagePlugin init
+2026-02-24 16:40:20,762 Importing Hdf5StubImagePlugin init
+2026-02-24 16:40:20,765 Importing IcnsImagePlugin init
+2026-02-24 16:40:20,771 Importing IcoImagePlugin init
+2026-02-24 16:40:20,774 Importing ImImagePlugin init
+2026-02-24 16:40:20,779 Importing ImtImagePlugin init
+2026-02-24 16:40:20,783 Importing IptcImagePlugin init
+2026-02-24 16:40:20,788 Importing JpegImagePlugin init
+2026-02-24 16:40:20,788 Importing Jpeg2KImagePlugin init
+2026-02-24 16:40:20,788 Importing McIdasImagePlugin init
+2026-02-24 16:40:20,792 Importing MicImagePlugin init
+2026-02-24 16:40:20,806 Importing MpegImagePlugin init
+2026-02-24 16:40:20,809 Importing MpoImagePlugin init
+2026-02-24 16:40:20,812 Importing MspImagePlugin init
+2026-02-24 16:40:20,812 Importing PalmImagePlugin init
+2026-02-24 16:40:20,825 Importing PcdImagePlugin init
+2026-02-24 16:40:20,828 Importing PcxImagePlugin init
+2026-02-24 16:40:20,828 Importing PdfImagePlugin init
+2026-02-24 16:40:20,849 Importing PixarImagePlugin init
+2026-02-24 16:40:20,853 Importing PngImagePlugin init
+2026-02-24 16:40:20,855 Importing PpmImagePlugin init
+2026-02-24 16:40:20,855 Importing PsdImagePlugin init
+2026-02-24 16:40:20,858 Importing QoiImagePlugin init
+2026-02-24 16:40:20,862 Importing SgiImagePlugin init
+2026-02-24 16:40:20,864 Importing SpiderImagePlugin init
+2026-02-24 16:40:20,869 Importing SunImagePlugin init
+2026-02-24 16:40:20,871 Importing TgaImagePlugin init
+2026-02-24 16:40:20,874 Importing TiffImagePlugin init
+2026-02-24 16:40:20,875 Importing WebPImagePlugin init
+2026-02-24 16:40:20,884 Importing WmfImagePlugin init
+2026-02-24 16:40:20,887 Importing XbmImagePlugin init
+2026-02-24 16:40:20,892 Importing XpmImagePlugin init
+2026-02-24 16:40:20,896 Importing XVThumbImagePlugin init
+2026-02-24 16:47:51,122 Not Found: /formviewapi log_response
+2026-02-24 16:49:44,775 Not Found: /formviewapi log_response
+2026-02-24 16:50:57,379 Not Found: /formviewapi log_response
+2026-02-24 16:51:17,762 Not Found: /formviewapi log_response
+2026-02-24 16:53:35,195 Not Found: /formviewapi log_response
+2026-02-24 16:55:50,989 Unauthorized: /formviewapi log_response
+2026-02-24 16:56:06,221 Not Found: /formviewapi log_response
+2026-02-24 17:54:56,844 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-24 17:58:08,448 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.jpg log_response
+2026-02-24 17:58:08,450 Not Found: /media/http://192.168.1.29:8000/media/file/image3/20260224154919.jpg log_response
+2026-02-24 17:58:29,809 Not Found: /media/http://192.168.1.29:8000/media/file/image2/20260224154918_Maharashtra-board-class-5-English-Textbook.pdf log_response
+2026-02-24 17:58:38,032 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 17:58:38,079 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 17:58:39,164 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 17:58:41,207 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 17:58:42,315 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 17:58:42,359 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 17:58:43,425 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 17:58:45,481 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 17:58:46,596 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 17:58:46,646 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 17:58:47,715 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 17:58:49,051 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.jpg log_response
+2026-02-24 17:58:52,629 Not Found: /media/http://192.168.1.29:8000/media/file/image3/20260224154919.jpg log_response
+2026-02-24 17:59:10,264 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.jpg log_response
+2026-02-24 17:59:10,273 Not Found: /media/http://192.168.1.29:8000/media/file/image3/20260224154919.jpg log_response
+2026-02-24 17:59:10,355 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.jpg log_response
+2026-02-24 17:59:10,383 Not Found: /media/http://192.168.1.29:8000/media/file/image3/20260224154919.jpg log_response
+2026-02-24 18:00:48,762 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164018.jpg log_response
+2026-02-24 18:00:48,788 Not Found: /media/http://192.168.1.29:8000/media/file/image3/20260224164021.jpeg log_response
+2026-02-24 18:00:49,079 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164018.jpg log_response
+2026-02-24 18:00:49,102 Not Found: /media/http://192.168.1.29:8000/media/file/image3/20260224164021.jpeg log_response
+2026-02-24 18:01:18,250 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:01:18,293 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:01:19,379 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:01:21,425 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:15,202 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:15,402 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:16,629 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:18,798 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:21,035 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:21,075 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:22,166 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:23,496 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:23,545 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:24,618 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:25,852 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:25,888 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:26,947 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:29,028 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164019.mp4 log_response
+2026-02-24 18:05:50,643 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224164018.jpg log_response
+2026-02-24 18:07:52,703 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.jpg log_response
+2026-02-24 18:07:52,723 Not Found: /media/http://192.168.1.29:8000/media/file/image3/20260224154919.jpg log_response
+2026-02-24 18:08:04,571 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.jpg log_response
+2026-02-24 18:08:04,588 Not Found: /media/http://192.168.1.29:8000/media/file/image3/20260224154919.jpg log_response
+2026-02-24 18:08:16,376 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 18:08:16,439 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 18:08:17,581 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 18:08:19,727 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 18:14:07,717 Not Found: /media/http://192.168.1.29:8000/media/file/image3/20260224154919.jpg log_response
+2026-02-24 18:14:07,720 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.jpg log_response
+2026-02-24 18:14:13,222 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 18:14:13,274 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 18:14:14,443 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 18:14:16,596 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.mp4 log_response
+2026-02-24 18:17:41,739 Not Found: /media/http://192.168.1.29:8000/media/file/image3/20260224154919.jpg log_response
+2026-02-24 18:17:41,739 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.jpg log_response
+2026-02-24 18:17:42,011 Not Found: /media/http://192.168.1.29:8000/media/file/image1/20260224154917.jpg log_response
+2026-02-24 18:17:42,042 Not Found: /media/http://192.168.1.29:8000/media/file/image3/20260224154919.jpg log_response
+2026-02-24 18:22:35,609 D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-25 10:00:14,515 D:\Skillpilots\bdds\bdds\bdds_dashboard\urls.py changed, reloading. trigger_reload
+2026-02-25 10:03:35,180 D:\Skillpilots\bdds\bdds\bdds_dashboard\urls.py changed, reloading. trigger_reload
+2026-02-25 10:07:47,226 Final login data being processed: {'username': '9876543210', 'password': 'bdds20266'} post
+2026-02-25 10:07:50,807 Login validation failed: {'non_field_errors': [ErrorDetail(string='Unable to log in with provided credentials.', code='authorization')]} post
+2026-02-25 10:07:50,815 Bad Request: /logine/ log_response
+2026-02-25 10:09:28,589 Final login data being processed: {'username': '9876543210', 'password': 'bdds2026'} post
+2026-02-25 10:09:33,184 Successful login: 9876543210 post
+2026-02-25 10:11:03,196 Final login data being processed: {'username': '9876543210', 'password': 'bdds2026'} post
+2026-02-25 10:11:07,700 Successful login: 9876543210 post
+2026-02-25 10:27:58,011 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 10:27:58,416 Extracted coordinates from flocation: 21.1205928, 79.1441698 form_api
+2026-02-25 10:28:10,491 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 10:28:10,811 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 10:28:10,811 Bad Request: /formapi log_response
+2026-02-25 10:28:33,417 Not Found: /formviewapi log_response
+2026-02-25 10:29:46,654 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 10:29:47,072 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 10:29:47,073 Bad Request: /formapi log_response
+2026-02-25 10:29:58,878 Internal Server Error: /master/dalam log_response
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 661, in connect
+    sock = socket.create_connection(
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\socket.py", line 845, in create_connection
+    raise err
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\socket.py", line 833, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 256, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 365, in __init__
+    self.connect()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 723, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '91.98.152.25' (timed out)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py", line 54, in authenticate
+    result = super().authenticate(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 631, in get
+    num = len(clone)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 368, in __len__
+    self._fetch_all()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor = self.connection.cursor()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 256, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 365, in __init__
+    self.connect()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 723, in connect
+    raise exc
+django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on '91.98.152.25' (timed out)")
+2026-02-25 10:30:22,513 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 10:30:22,854 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 10:30:22,856 Bad Request: /formapi log_response
+2026-02-25 10:30:36,236 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 10:30:36,608 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 10:30:36,612 Bad Request: /formapi log_response
+2026-02-25 10:32:00,575 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 10:32:00,982 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 10:32:00,985 Bad Request: /formapi log_response
+2026-02-25 11:02:32,370 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 11:02:32,717 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 11:02:32,723 Bad Request: /formapi log_response
+2026-02-25 11:08:04,854 Not Found: /formviewapi log_response
+2026-02-25 11:10:04,809 Not Found: /favicon.ico log_response
+2026-02-25 11:10:10,418 Method Not Allowed: /logine/ log_response
+2026-02-25 11:11:02,967 Not Found: /logine_auth log_response
+2026-02-25 11:12:10,626 Not Found: /favicon.ico log_response
+2026-02-25 11:13:38,540 Method Not Allowed: /logine/ log_response
+2026-02-25 11:19:25,607 Not Found: /logine_auth log_response
+2026-02-25 11:19:27,161 Not Found: /logine_auth log_response
+2026-02-25 11:19:27,458 Not Found: /logine_auth log_response
+2026-02-25 11:19:27,781 Not Found: /logine_auth log_response
+2026-02-25 11:19:27,791 Not Found: /logine_auth log_response
+2026-02-25 11:24:46,905 Not Found: /logine_auth log_response
+2026-02-25 11:24:46,916 Not Found: /logine_auth log_response
+2026-02-25 11:24:46,937 Not Found: /logine_auth log_response
+2026-02-25 11:24:46,951 Not Found: /logine_auth log_response
+2026-02-25 11:24:46,968 Not Found: /logine_auth log_response
+2026-02-25 11:25:13,329 Method Not Allowed: /logine/ log_response
+2026-02-25 11:26:45,529 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-25 11:28:55,165 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-25 11:29:12,750 Not Found: /logine_auth log_response
+2026-02-25 11:29:29,679 Not Found: /logine_auth log_response
+2026-02-25 11:31:13,380 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-25 11:31:24,053 Not Found: /formviewapi log_response
+2026-02-25 11:33:24,608 Not Found: /formviewapi log_response
+2026-02-25 12:16:49,243 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-25 12:21:31,062 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 12:21:31,367 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 12:21:31,374 Bad Request: /formapi log_response
+2026-02-25 12:25:29,483 Not Found: /formviewapi log_response
+2026-02-25 12:39:57,175 Not Found: /logine_auth log_response
+2026-02-25 12:40:15,557 Method Not Allowed: /logine/ log_response
+2026-02-25 12:48:01,383 D:\Skillpilots\bdds\bdds\bdds_dashboard\urls.py changed, reloading. trigger_reload
+2026-02-25 12:48:01,578 D:\Skillpilots\bdds\bdds\bdds_dashboard\urls.py changed, reloading. trigger_reload
+2026-02-25 12:49:02,445 Not Found: /favicon.ico log_response
+2026-02-25 14:10:16,398 Method Not Allowed: /logine/ log_response
+2026-02-25 14:10:16,535 Not Found: /favicon.ico log_response
+2026-02-25 14:22:37,109 Not Found: /favicon.ico log_response
+2026-02-25 14:23:46,986 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 14:23:47,183 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2022', 'd_bomb': '123232', 'fdate': '2026-2-25 13:49:11', 'flocation': '21.120587,79.144165', 'flocation_type': '4', 'flocation_description': 'errr\n', 'fjuridiction': '6', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '3', 'fdetonator': 'sssss', 'fswitch': 'degggdgd', 'ftarget': 'csg', 'fdistruction': 'fsgdghd', 'fassume': 'vdvdvdvv', 'radio_data': '', 'fdalam': '4', 'flearning': 'xascdvv', 'fassume_status_new': '5', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '6', 'detected_description': 'vdvdvdb', 'detected_pname': 'vddvdvdv', 'detcted_contact': '8005855955', 'detected_dispose': '5', 'dispose_name': 'dvvdvdv', 'dispose_contact': '8959595959', 'explode': [], 'death': [{'death_contact': '8759594894', 'death_name': 'vdbcbce'}], 'injured': [{'injured_contact': '5584859598', 'injured_name': 'vdbdbbbfb'}]} form_api
+2026-02-25 14:23:47,292 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 14:23:47,295 Bad Request: /formapi log_response
+2026-02-25 14:23:47,517 Submission failed: Serial number 2022 already exists form_api
+2026-02-25 14:23:47,517 Bad Request: /formapi log_response
+2026-02-25 14:23:48,479 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 14:23:48,532 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2022', 'd_bomb': '123232', 'fdate': '2026-2-25 13:49:11', 'flocation': '21.120587,79.144165', 'flocation_type': '4', 'flocation_description': 'errr\n', 'fjuridiction': '6', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '3', 'fdetonator': 'sssss', 'fswitch': 'degggdgd', 'ftarget': 'csg', 'fdistruction': 'fsgdghd', 'fassume': 'vdvdvdvv', 'radio_data': '', 'fdalam': '4', 'flearning': 'xascdvv', 'fassume_status_new': '5', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '6', 'detected_description': 'vdvdvdb', 'detected_pname': 'vddvdvdv', 'detcted_contact': '8005855955', 'detected_dispose': '5', 'dispose_name': 'dvvdvdv', 'dispose_contact': '8959595959', 'explode': [], 'death': [{'death_contact': '8759594894', 'death_name': 'vdbcbce'}], 'injured': [{'injured_contact': '5584859598', 'injured_name': 'vdbdbbbfb'}]} form_api
+2026-02-25 14:23:48,795 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 14:23:48,795 Bad Request: /formapi log_response
+2026-02-25 14:23:48,852 Submission failed: Serial number 2022 already exists form_api
+2026-02-25 14:23:48,854 Bad Request: /formapi log_response
+2026-02-25 14:27:32,258 Not Found: /formviewapi log_response
+2026-02-25 14:31:14,773 Not Found: /formviewapi log_response
+2026-02-25 14:39:56,295 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-25 14:50:59,252 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 14:50:59,656 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2022', 'd_bomb': '123232', 'fdate': '2026-2-25 13:49:11', 'flocation': '21.120587,79.144165', 'flocation_type': '4', 'flocation_description': 'errr\n', 'fjuridiction': '6', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '3', 'fdetonator': 'sssss', 'fswitch': 'degggdgd', 'ftarget': 'csg', 'fdistruction': 'fsgdghd', 'fassume': 'vdvdvdvv', 'radio_data': '', 'fdalam': '4', 'flearning': 'xascdvv', 'fassume_status_new': '5', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '6', 'detected_description': 'vdvdvdb', 'detected_pname': 'vddvdvdv', 'detcted_contact': '8005855955', 'detected_dispose': '5', 'dispose_name': 'dvvdvdv', 'dispose_contact': '8959595959', 'explode': [], 'death': [{'death_contact': '8759594894', 'death_name': 'vdbcbce'}], 'injured': [{'injured_contact': '5584859598', 'injured_name': 'vdbdbbbfb'}]} form_api
+2026-02-25 14:51:00,006 Submission failed: Serial number 2022 already exists form_api
+2026-02-25 14:51:00,007 Bad Request: /formapi log_response
+2026-02-25 14:51:00,230 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 14:51:00,230 Bad Request: /formapi log_response
+2026-02-25 15:02:49,592 D:\Skillpilots\bdds\bdds\bdds_dashboard\urls.py changed, reloading. trigger_reload
+2026-02-25 15:02:50,084 D:\Skillpilots\bdds\bdds\bdds_dashboard\urls.py changed, reloading. trigger_reload
+2026-02-25 15:11:29,151 Not Found: /apijuridiction log_response
+2026-02-25 15:11:29,154 Not Found: /master/ditectionapi log_response
+2026-02-25 15:11:29,154 Not Found: /apijuridiction log_response
+2026-02-25 15:11:29,171 Not Found: /master/ditectionapi log_response
+2026-02-25 15:11:29,196 Not Found: /apijuridiction log_response
+2026-02-25 15:11:31,392 Not Found: /master/ditectionapi log_response
+2026-02-25 15:11:32,293 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2022', 'd_bomb': '123232', 'fdate': '2026-2-25 13:49:11', 'flocation': '21.120587,79.144165', 'flocation_type': '4', 'flocation_description': 'errr\n', 'fjuridiction': '6', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '3', 'fdetonator': 'sssss', 'fswitch': 'degggdgd', 'ftarget': 'csg', 'fdistruction': 'fsgdghd', 'fassume': 'vdvdvdvv', 'radio_data': '', 'fdalam': '4', 'flearning': 'xascdvv', 'fassume_status_new': '5', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '6', 'detected_description': 'vdvdvdb', 'detected_pname': 'vddvdvdv', 'detcted_contact': '8005855955', 'detected_dispose': '5', 'dispose_name': 'dvvdvdv', 'dispose_contact': '8959595959', 'explode': [], 'death': [{'death_contact': '8759594894', 'death_name': 'vdbcbce'}], 'injured': [{'injured_contact': '5584859598', 'injured_name': 'vdbdbbbfb'}]} form_api
+2026-02-25 15:11:32,417 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 15:11:32,598 Submission failed: Serial number 2022 already exists form_api
+2026-02-25 15:11:32,599 Bad Request: /formapi log_response
+2026-02-25 15:11:32,737 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 15:11:32,738 Bad Request: /formapi log_response
+2026-02-25 15:12:45,727 Not Found: /apijuridiction log_response
+2026-02-25 15:12:45,749 Not Found: /master/ditectionapi log_response
+2026-02-25 15:12:45,762 Not Found: /apijuridiction log_response
+2026-02-25 15:12:45,790 Not Found: /master/ditectionapi log_response
+2026-02-25 15:12:48,921 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2022', 'd_bomb': '123232', 'fdate': '2026-2-25 13:49:11', 'flocation': '21.120587,79.144165', 'flocation_type': '4', 'flocation_description': 'errr\n', 'fjuridiction': '6', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '3', 'fdetonator': 'sssss', 'fswitch': 'degggdgd', 'ftarget': 'csg', 'fdistruction': 'fsgdghd', 'fassume': 'vdvdvdvv', 'radio_data': '', 'fdalam': '4', 'flearning': 'xascdvv', 'fassume_status_new': '5', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '6', 'detected_description': 'vdvdvdb', 'detected_pname': 'vddvdvdv', 'detcted_contact': '8005855955', 'detected_dispose': '5', 'dispose_name': 'dvvdvdv', 'dispose_contact': '8959595959', 'explode': [], 'death': [{'death_contact': '8759594894', 'death_name': 'vdbcbce'}], 'injured': [{'injured_contact': '5584859598', 'injured_name': 'vdbdbbbfb'}]} form_api
+2026-02-25 15:12:49,249 Submission failed: Serial number 2022 already exists form_api
+2026-02-25 15:12:49,251 Bad Request: /formapi log_response
+2026-02-25 15:12:51,537 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 15:12:51,857 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 15:12:51,857 Bad Request: /formapi log_response
+2026-02-25 15:12:56,722 Not Found: /apijuridiction log_response
+2026-02-25 15:14:04,751 Not Found: /master/ditectionapi log_response
+2026-02-25 15:15:14,990 Not Found: /master/ditectionapi log_response
+2026-02-25 15:16:29,289 Not Found: /apijuridiction log_response
+2026-02-25 15:16:29,328 Not Found: /master/ditectionapi log_response
+2026-02-25 15:16:29,391 Not Found: /apijuridiction log_response
+2026-02-25 15:16:29,467 Not Found: /master/ditectionapi log_response
+2026-02-25 15:16:32,185 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 15:16:32,494 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 15:16:32,494 Bad Request: /formapi log_response
+2026-02-25 15:16:32,511 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2022', 'd_bomb': '123232', 'fdate': '2026-2-25 13:49:11', 'flocation': '21.120587,79.144165', 'flocation_type': '4', 'flocation_description': 'errr\n', 'fjuridiction': '6', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '3', 'fdetonator': 'sssss', 'fswitch': 'degggdgd', 'ftarget': 'csg', 'fdistruction': 'fsgdghd', 'fassume': 'vdvdvdvv', 'radio_data': '', 'fdalam': '4', 'flearning': 'xascdvv', 'fassume_status_new': '5', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '6', 'detected_description': 'vdvdvdb', 'detected_pname': 'vddvdvdv', 'detcted_contact': '8005855955', 'detected_dispose': '5', 'dispose_name': 'dvvdvdv', 'dispose_contact': '8959595959', 'explode': [], 'death': [{'death_contact': '8759594894', 'death_name': 'vdbcbce'}], 'injured': [{'injured_contact': '5584859598', 'injured_name': 'vdbdbbbfb'}]} form_api
+2026-02-25 15:16:32,838 Submission failed: Serial number 2022 already exists form_api
+2026-02-25 15:16:32,838 Bad Request: /formapi log_response
+2026-02-25 15:16:39,806 Not Found: /apijuridiction log_response
+2026-02-25 15:18:38,068 Not Found: /master/ditectionapi log_response
+2026-02-25 15:24:51,097 Not Found: /master/ditectionapi log_response
+2026-02-25 15:25:23,866 Not Found: /master/ditectionapi log_response
+2026-02-25 15:26:28,773 D:\Skillpilots\bdds\bdds\bdds_dashboard\urls.py changed, reloading. trigger_reload
+2026-02-25 15:26:29,454 D:\Skillpilots\bdds\bdds\bdds_dashboard\urls.py changed, reloading. trigger_reload
+2026-02-25 15:26:45,597 D:\Skillpilots\bdds\bdds\bdds_dashboard\urls.py changed, reloading. trigger_reload
+2026-02-25 15:26:45,625 D:\Skillpilots\bdds\bdds\bdds_dashboard\urls.py changed, reloading. trigger_reload
+2026-02-25 15:37:35,190 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "2",'], '"fserial"': [' "2022",'], '"d_bomb"': [' "22222",'], '"fdate"': [' "2026-2-24 14:25:25",'], '"flocation"': [' "21.1205687,79.1441542",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "w2qwqwq",'], '"fjuridiction"': [' "7",'], '"fincident"': [' "4",'], '"fweight_data"': [' "4",'], '"fexplosive"': [' "5",'], '"fdetonator"': [' "wqweqwe",'], '"fswitch"': [' "wewqewq",'], '"ftarget"': [' "vbhh",'], '"fdistruction"': [' "gggvgv",'], '"fassume"': [' "hjunui7",'], '"radio_data"': [' "",'], '"fdalam"': [' "4",'], '"flearning"': [' "jnjnkkkk",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "10",'], '"detected_description"': [' "cvghhh",'], '"detected_pname"': [' "huujjj",'], '"detcted_contact"': [' "9958598996",'], '"detected_dispose"': [' "3",'], '"dispose_name"': [' "bnjjhnhb",'], '"dispose_contact"': [' "9969999998",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3956596998",'], '"death_name"': [' "SkillPilots Cluematrix"'], '} ]': [''], '}': ['']}> form_api
+2026-02-25 15:37:39,685 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'v', 'd_bomb': 'j uvbbbh', 'fdate': '2026-2-25 15:18:22', 'flocation': '21.1205945,79.1442089', 'flocation_type': '4', 'flocation_description': 'jjj', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '2', 'fexplosive': '5', 'fdetonator': 'bhhh', 'fswitch': 'uujj', 'ftarget': 'qwe', 'fdistruction': 'gfvc', 'fassume': 'dasdsa', 'radio_data': '', 'fdalam': '2', 'flearning': 'sdasdasd', 'fassume_status_new': '6', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '1', 'detected_description': 'fdsfsdf', 'detected_pname': 'sfsfas', 'detcted_contact': '4312432343', 'detected_dispose': '7', 'dispose_name': 'eeeee', 'dispose_contact': '', 'explode': [], 'death': [{'death_contact': '7654325676', 'death_name': 'dsf'}], 'injured': [{'injured_contact': '6543245432', 'injured_name': 'rdfgdf'}]} form_api
+2026-02-25 15:37:40,065 Extracted coordinates from flocation: 21.1205945, 79.1442089 form_api
+2026-02-25 15:38:00,778 Not Found: /apijuridiction log_response
+2026-02-25 15:38:00,817 Not Found: /apijuridiction log_response
+2026-02-25 15:38:03,586 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 15:38:03,615 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2022', 'd_bomb': '123232', 'fdate': '2026-2-25 13:49:11', 'flocation': '21.120587,79.144165', 'flocation_type': '4', 'flocation_description': 'errr\n', 'fjuridiction': '6', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '3', 'fdetonator': 'sssss', 'fswitch': 'degggdgd', 'ftarget': 'csg', 'fdistruction': 'fsgdghd', 'fassume': 'vdvdvdvv', 'radio_data': '', 'fdalam': '4', 'flearning': 'xascdvv', 'fassume_status_new': '5', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '6', 'detected_description': 'vdvdvdb', 'detected_pname': 'vddvdvdv', 'detcted_contact': '8005855955', 'detected_dispose': '5', 'dispose_name': 'dvvdvdv', 'dispose_contact': '8959595959', 'explode': [], 'death': [{'death_contact': '8759594894', 'death_name': 'vdbcbce'}], 'injured': [{'injured_contact': '5584859598', 'injured_name': 'vdbdbbbfb'}]} form_api
+2026-02-25 15:38:03,893 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 15:38:03,894 Bad Request: /formapi log_response
+2026-02-25 15:38:03,951 Submission failed: Serial number 2022 already exists form_api
+2026-02-25 15:38:03,954 Bad Request: /formapi log_response
+2026-02-25 15:38:33,673 Not Found: /apijuridiction log_response
+2026-02-25 15:48:52,354 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '3456', 'd_bomb': 'tggy', 'fdate': '2026-2-18 10:26:24', 'flocation': '21.1205928,79.1441698', 'flocation_type': '3', 'flocation_description': 'gg', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'hhg', 'ftarget': 'cvvv', 'fdistruction': 'cvv', 'fassume': 'vgh', 'radio_data': '', 'fdalam': '4', 'flearning': 'gghh', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'ggv', 'detected_pname': 'vvv', 'detcted_contact': '8958999988', 'detected_dispose': '3', 'dispose_name': 'vgg', 'dispose_contact': '5569999666', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-25 15:48:52,763 Submission failed: Serial number 3456 already exists form_api
+2026-02-25 15:48:52,774 Bad Request: /formapi log_response
+2026-02-25 15:49:41,415 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "2",'], '"fserial"': [' "2022",'], '"d_bomb"': [' "22222",'], '"fdate"': [' "2026-2-24 14:25:25",'], '"flocation"': [' "21.1205687,79.1441542",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "w2qwqwq",'], '"fjuridiction"': [' "7",'], '"fincident"': [' "4",'], '"fweight_data"': [' "4",'], '"fexplosive"': [' "5",'], '"fdetonator"': [' "wqweqwe",'], '"fswitch"': [' "wewqewq",'], '"ftarget"': [' "vbhh",'], '"fdistruction"': [' "gggvgv",'], '"fassume"': [' "hjunui7",'], '"radio_data"': [' "",'], '"fdalam"': [' "4",'], '"flearning"': [' "jnjnkkkk",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "10",'], '"detected_description"': [' "cvghhh",'], '"detected_pname"': [' "huujjj",'], '"detcted_contact"': [' "9958598996",'], '"detected_dispose"': [' "3",'], '"dispose_name"': [' "bnjjhnhb",'], '"dispose_contact"': [' "9969999998",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3956596998",'], '"death_name"': [' "SkillPilots Cluematrix"'], '} ]': [''], '}': ['']}> form_api
+2026-02-25 15:49:41,812 Submission failed: Serial number None already exists form_api
+2026-02-25 15:49:41,812 Bad Request: /formapi log_response
+2026-02-25 15:49:48,942 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2022', 'd_bomb': '123232', 'fdate': '2026-2-25 13:49:11', 'flocation': '21.120587,79.144165', 'flocation_type': '4', 'flocation_description': 'errr\n', 'fjuridiction': '6', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '3', 'fdetonator': 'sssss', 'fswitch': 'degggdgd', 'ftarget': 'csg', 'fdistruction': 'fsgdghd', 'fassume': 'vdvdvdvv', 'radio_data': '', 'fdalam': '4', 'flearning': 'xascdvv', 'fassume_status_new': '5', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '6', 'detected_description': 'vdvdvdb', 'detected_pname': 'vddvdvdv', 'detcted_contact': '8005855955', 'detected_dispose': '5', 'dispose_name': 'dvvdvdv', 'dispose_contact': '8959595959', 'explode': [], 'death': [{'death_contact': '8759594894', 'death_name': 'vdbcbce'}], 'injured': [{'injured_contact': '5584859598', 'injured_name': 'vdbdbbbfb'}]} form_api
+2026-02-25 15:49:49,288 Submission failed: Serial number 2022 already exists form_api
+2026-02-25 15:49:49,289 Bad Request: /formapi log_response
+2026-02-25 15:50:58,688 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "2",'], '"fserial"': [' "2022",'], '"d_bomb"': [' "22222",'], '"fdate"': [' "2026-2-24 14:25:25",'], '"flocation"': [' "21.1205687,79.1441542",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "w2qwqwq",'], '"fjuridiction"': [' "7",'], '"fincident"': [' "4",'], '"fweight_data"': [' "4",'], '"fexplosive"': [' "5",'], '"fdetonator"': [' "wqweqwe",'], '"fswitch"': [' "wewqewq",'], '"ftarget"': [' "vbhh",'], '"fdistruction"': [' "gggvgv",'], '"fassume"': [' "hjunui7",'], '"radio_data"': [' "",'], '"fdalam"': [' "4",'], '"flearning"': [' "jnjnkkkk",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "10",'], '"detected_description"': [' "cvghhh",'], '"detected_pname"': [' "huujjj",'], '"detcted_contact"': [' "9958598996",'], '"detected_dispose"': [' "3",'], '"dispose_name"': [' "bnjjhnhb",'], '"dispose_contact"': [' "9969999998",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3956596998",'], '"death_name"': [' "SkillPilots Cluematrix"'], '} ]': [''], '}': ['']}> form_api
+2026-02-25 15:50:59,021 Submission failed: Serial number None already exists form_api
+2026-02-25 15:50:59,023 Bad Request: /formapi log_response
+2026-02-25 15:51:03,530 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '1233', 'd_bomb': '332312', 'fdate': '2026-2-25 15:38:34', 'flocation': '21.1205857,79.1442156', 'flocation_type': '5', 'flocation_description': 'faerara', 'fjuridiction': '5', 'fincident': '4', 'fweight_data': '2', 'fexplosive': '4', 'fdetonator': 'ewrtr', 'fswitch': 'dtstt', 'ftarget': 'dsdfasda', 'fdistruction': 'aasdsdadas', 'fassume': 'dddddd', 'radio_data': '', 'fdalam': '1', 'flearning': 'ddasdasdas', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'eqwr', 'detected_pname': 'asdssa', 'detcted_contact': '4321123432', 'detected_dispose': '5', 'dispose_name': 'tttt', 'dispose_contact': '5555552312', 'explode': [], 'death': [{'death_contact': '3123123123', 'death_name': 'dasdas'}], 'injured': [{'injured_contact': '2343143242', 'injured_name': 'sdasdasd'}]} form_api
+2026-02-25 15:51:03,951 Extracted coordinates from flocation: 21.1205857, 79.1442156 form_api
+2026-02-25 15:51:18,811 Not Found: /apijuridiction log_response
+2026-02-25 15:51:18,879 Not Found: /apijuridiction log_response
+2026-02-25 15:53:27,161 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "2",'], '"fserial"': [' "2022",'], '"d_bomb"': [' "22222",'], '"fdate"': [' "2026-2-24 14:25:25",'], '"flocation"': [' "21.1205687,79.1441542",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "w2qwqwq",'], '"fjuridiction"': [' "7",'], '"fincident"': [' "4",'], '"fweight_data"': [' "4",'], '"fexplosive"': [' "5",'], '"fdetonator"': [' "wqweqwe",'], '"fswitch"': [' "wewqewq",'], '"ftarget"': [' "vbhh",'], '"fdistruction"': [' "gggvgv",'], '"fassume"': [' "hjunui7",'], '"radio_data"': [' "",'], '"fdalam"': [' "4",'], '"flearning"': [' "jnjnkkkk",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "10",'], '"detected_description"': [' "cvghhh",'], '"detected_pname"': [' "huujjj",'], '"detcted_contact"': [' "9958598996",'], '"detected_dispose"': [' "3",'], '"dispose_name"': [' "bnjjhnhb",'], '"dispose_contact"': [' "9969999998",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3956596998",'], '"death_name"': [' "SkillPilots Cluematrix"'], '} ]': [''], '}': ['']}> form_api
+2026-02-25 15:53:27,471 Submission failed: Serial number None already exists form_api
+2026-02-25 15:53:27,471 Bad Request: /formapi log_response
+2026-02-25 15:53:34,417 Importing BlpImagePlugin init
+2026-02-25 15:53:34,423 Importing BmpImagePlugin init
+2026-02-25 15:53:34,424 Importing BufrStubImagePlugin init
+2026-02-25 15:53:34,428 Importing CurImagePlugin init
+2026-02-25 15:53:34,433 Importing DcxImagePlugin init
+2026-02-25 15:53:34,441 Importing DdsImagePlugin init
+2026-02-25 15:53:34,454 Importing EpsImagePlugin init
+2026-02-25 15:53:34,461 Importing FitsImagePlugin init
+2026-02-25 15:53:34,465 Importing FliImagePlugin init
+2026-02-25 15:53:34,471 Importing FpxImagePlugin init
+2026-02-25 15:53:34,489 Importing FtexImagePlugin init
+2026-02-25 15:53:34,495 Importing GbrImagePlugin init
+2026-02-25 15:53:34,500 Importing GifImagePlugin init
+2026-02-25 15:53:34,500 Importing GribStubImagePlugin init
+2026-02-25 15:53:34,504 Importing Hdf5StubImagePlugin init
+2026-02-25 15:53:34,508 Importing IcnsImagePlugin init
+2026-02-25 15:53:34,521 Importing IcoImagePlugin init
+2026-02-25 15:53:34,530 Importing ImImagePlugin init
+2026-02-25 15:53:34,535 Importing ImtImagePlugin init
+2026-02-25 15:53:34,540 Importing IptcImagePlugin init
+2026-02-25 15:53:34,545 Importing JpegImagePlugin init
+2026-02-25 15:53:34,545 Importing Jpeg2KImagePlugin init
+2026-02-25 15:53:34,545 Importing McIdasImagePlugin init
+2026-02-25 15:53:34,550 Importing MicImagePlugin init
+2026-02-25 15:53:34,567 Importing MpegImagePlugin init
+2026-02-25 15:53:34,573 Importing MpoImagePlugin init
+2026-02-25 15:53:34,578 Importing MspImagePlugin init
+2026-02-25 15:53:34,579 Importing PalmImagePlugin init
+2026-02-25 15:53:34,591 Importing PcdImagePlugin init
+2026-02-25 15:53:34,595 Importing PcxImagePlugin init
+2026-02-25 15:53:34,595 Importing PdfImagePlugin init
+2026-02-25 15:53:34,623 Importing PixarImagePlugin init
+2026-02-25 15:53:34,626 Importing PngImagePlugin init
+2026-02-25 15:53:34,629 Importing PpmImagePlugin init
+2026-02-25 15:53:34,629 Importing PsdImagePlugin init
+2026-02-25 15:53:34,634 Importing QoiImagePlugin init
+2026-02-25 15:53:34,637 Importing SgiImagePlugin init
+2026-02-25 15:53:34,643 Importing SpiderImagePlugin init
+2026-02-25 15:53:34,645 Importing SunImagePlugin init
+2026-02-25 15:53:34,652 Importing TgaImagePlugin init
+2026-02-25 15:53:34,657 Importing TiffImagePlugin init
+2026-02-25 15:53:34,657 Importing WebPImagePlugin init
+2026-02-25 15:53:34,784 Importing WmfImagePlugin init
+2026-02-25 15:53:34,787 Importing XbmImagePlugin init
+2026-02-25 15:53:34,794 Importing XpmImagePlugin init
+2026-02-25 15:53:34,799 Importing XVThumbImagePlugin init
+2026-02-25 15:53:45,157 Not Found: /apijuridiction log_response
+2026-02-25 15:55:48,721 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "2",'], '"fserial"': [' "3456",'], '"d_bomb"': [' "tggy",'], '"fdate"': [' "2026-2-18 10:26:24",'], '"flocation"': [' "21.1205928,79.1441698",'], '"flocation_type"': [' "3",'], '"flocation_description"': [' "gg",'], '"fjuridiction"': [' "3",'], '"fincident"': [' "3",'], '"fweight_data"': [' "4",'], '"fexplosive"': [' "5",'], '"fdetonator"': [' "hhh",'], '"fswitch"': [' "hhg",'], '"ftarget"': [' "cvvv",'], '"fdistruction"': [' "cvv",'], '"fassume"': [' "vgh",'], '"radio_data"': [' "",'], '"fdalam"': [' "4",'], '"flearning"': [' "gghh",'], '"fassume_status_new"': [' "4",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "3",'], '"detected_description"': [' "ggv",'], '"detected_pname"': [' "vvv",'], '"detcted_contact"': [' "8958999988",'], '"detected_dispose"': [' "3",'], '"dispose_name"': [' "vgg",'], '"dispose_contact"': [' "5569999666",'], '"explode"': [' [ ],'], '"death"': [' [ ],'], '"injured"': [' [ ]'], '}': ['']}> form_api
+2026-02-25 15:55:49,123 Submission failed: Serial number None already exists form_api
+2026-02-25 15:55:49,124 Bad Request: /formapi log_response
+2026-02-25 15:56:22,819 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "2",'], '"fserial"': [' "1233",'], '"d_bomb"': [' "332312",'], '"fdate"': [' "2026-2-25 15:38:34",'], '"flocation"': [' "21.1205857,79.1442156",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "faerara",'], '"fjuridiction"': [' "5",'], '"fincident"': [' "4",'], '"fweight_data"': [' "2",'], '"fexplosive"': [' "4",'], '"fdetonator"': [' "ewrtr",'], '"fswitch"': [' "dtstt",'], '"ftarget"': [' "dsdfasda",'], '"fdistruction"': [' "aasdsdadas",'], '"fassume"': [' "dddddd",'], '"radio_data"': [' "",'], '"fdalam"': [' "1",'], '"flearning"': [' "ddasdasdas",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "3",'], '"detected_description"': [' "eqwr",'], '"detected_pname"': [' "asdssa",'], '"detcted_contact"': [' "4321123432",'], '"detected_dispose"': [' "5",'], '"dispose_name"': [' "tttt",'], '"dispose_contact"': [' "5555552312",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3123123123",'], '"death_name"': [' "dasdas"'], '} ],': [''], '"injured"': [' [ {'], '"injured_contact"': [' "2343143242",'], '"injured_name"': [' "sdasdasd"'], '} ]': [''], '}': ['']}> form_api
+2026-02-25 15:56:23,131 Submission failed: Serial number None already exists form_api
+2026-02-25 15:56:23,131 Bad Request: /formapi log_response
+2026-02-25 15:58:14,862 Not Found: /apijuridiction log_response
+2026-02-25 15:59:48,557 D:\Skillpilots\bdds\bdds\bdds_dashboard\urls.py changed, reloading. trigger_reload
+2026-02-25 16:06:56,491 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "2",'], '"fserial"': [' "1233",'], '"d_bomb"': [' "332312",'], '"fdate"': [' "2026-2-25 15:38:34",'], '"flocation"': [' "21.1205857,79.1442156",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "faerara",'], '"fjuridiction"': [' "5",'], '"fincident"': [' "4",'], '"fweight_data"': [' "2",'], '"fexplosive"': [' "4",'], '"fdetonator"': [' "ewrtr",'], '"fswitch"': [' "dtstt",'], '"ftarget"': [' "dsdfasda",'], '"fdistruction"': [' "aasdsdadas",'], '"fassume"': [' "dddddd",'], '"radio_data"': [' "",'], '"fdalam"': [' "1",'], '"flearning"': [' "ddasdasdas",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "3",'], '"detected_description"': [' "eqwr",'], '"detected_pname"': [' "asdssa",'], '"detcted_contact"': [' "4321123432",'], '"detected_dispose"': [' "5",'], '"dispose_name"': [' "tttt",'], '"dispose_contact"': [' "5555552312",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3123123123",'], '"death_name"': [' "dasdas"'], '} ],': [''], '"injured"': [' [ {'], '"injured_contact"': [' "2343143242",'], '"injured_name"': [' "sdasdasd"'], '} ]': [''], '}': ['']}> form_api
+2026-02-25 16:06:56,876 Submission failed: Serial number None already exists form_api
+2026-02-25 16:06:56,885 Bad Request: /formapi log_response
+2026-02-25 16:09:46,675 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "2",'], '"fserial"': [' "1233",'], '"d_bomb"': [' "332312",'], '"fdate"': [' "2026-2-25 15:38:34",'], '"flocation"': [' "21.1205857,79.1442156",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "faerara",'], '"fjuridiction"': [' "5",'], '"fincident"': [' "4",'], '"fweight_data"': [' "2",'], '"fexplosive"': [' "4",'], '"fdetonator"': [' "ewrtr",'], '"fswitch"': [' "dtstt",'], '"ftarget"': [' "dsdfasda",'], '"fdistruction"': [' "aasdsdadas",'], '"fassume"': [' "dddddd",'], '"radio_data"': [' "",'], '"fdalam"': [' "1",'], '"flearning"': [' "ddasdasdas",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "3",'], '"detected_description"': [' "eqwr",'], '"detected_pname"': [' "asdssa",'], '"detcted_contact"': [' "4321123432",'], '"detected_dispose"': [' "5",'], '"dispose_name"': [' "tttt",'], '"dispose_contact"': [' "5555552312",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3123123123",'], '"death_name"': [' "dasdas"'], '} ],': [''], '"injured"': [' [ {'], '"injured_contact"': [' "2343143242",'], '"injured_name"': [' "sdasdasd"'], '} ]': [''], '}': ['']}> form_api
+2026-02-25 16:09:47,167 Submission failed: Serial number None already exists form_api
+2026-02-25 16:09:47,167 Bad Request: /formapi log_response
+2026-02-25 16:10:00,875 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "3",'], '"fserial"': [' "1233",'], '"d_bomb"': [' "332312",'], '"fdate"': [' "2026-2-25 15:38:34",'], '"flocation"': [' "21.1205857,79.1442156",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "faerara",'], '"fjuridiction"': [' "5",'], '"fincident"': [' "4",'], '"fweight_data"': [' "2",'], '"fexplosive"': [' "4",'], '"fdetonator"': [' "ewrtr",'], '"fswitch"': [' "dtstt",'], '"ftarget"': [' "dsdfasda",'], '"fdistruction"': [' "aasdsdadas",'], '"fassume"': [' "dddddd",'], '"radio_data"': [' "",'], '"fdalam"': [' "1",'], '"flearning"': [' "ddasdasdas",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "3",'], '"detected_description"': [' "eqwr",'], '"detected_pname"': [' "asdssa",'], '"detcted_contact"': [' "4321123432",'], '"detected_dispose"': [' "5",'], '"dispose_name"': [' "tttt",'], '"dispose_contact"': [' "5555552312",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3123123123",'], '"death_name"': [' "dasdas"'], '} ],': [''], '"injured"': [' [ {'], '"injured_contact"': [' "2343143242",'], '"injured_name"': [' "sdasdasd"'], '} ]': [''], '}': ['']}> form_api
+2026-02-25 16:10:01,195 Submission failed: Serial number None already exists form_api
+2026-02-25 16:10:01,201 Bad Request: /formapi log_response
+2026-02-25 16:10:14,755 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "4",'], '"fserial"': [' "1233",'], '"d_bomb"': [' "332312",'], '"fdate"': [' "2026-2-25 15:38:34",'], '"flocation"': [' "21.1205857,79.1442156",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "faerara",'], '"fjuridiction"': [' "5",'], '"fincident"': [' "4",'], '"fweight_data"': [' "2",'], '"fexplosive"': [' "4",'], '"fdetonator"': [' "ewrtr",'], '"fswitch"': [' "dtstt",'], '"ftarget"': [' "dsdfasda",'], '"fdistruction"': [' "aasdsdadas",'], '"fassume"': [' "dddddd",'], '"radio_data"': [' "",'], '"fdalam"': [' "1",'], '"flearning"': [' "ddasdasdas",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "3",'], '"detected_description"': [' "eqwr",'], '"detected_pname"': [' "asdssa",'], '"detcted_contact"': [' "4321123432",'], '"detected_dispose"': [' "5",'], '"dispose_name"': [' "tttt",'], '"dispose_contact"': [' "5555552312",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3123123123",'], '"death_name"': [' "dasdas"'], '} ],': [''], '"injured"': [' [ {'], '"injured_contact"': [' "2343143242",'], '"injured_name"': [' "sdasdasd"'], '} ]': [''], '}': ['']}> form_api
+2026-02-25 16:10:15,125 Submission failed: Serial number None already exists form_api
+2026-02-25 16:10:15,126 Bad Request: /formapi log_response
+2026-02-25 16:10:37,761 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "2",'], '"fserial"': [' "1233",'], '"d_bomb"': [' "332312",'], '"fdate"': [' "2026-2-25 15:38:34",'], '"flocation"': [' "21.1205857,79.1442156",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "faerara",'], '"fjuridiction"': [' "5",'], '"fincident"': [' "4",'], '"fweight_data"': [' "2",'], '"fexplosive"': [' "4",'], '"fdetonator"': [' "ewrtr",'], '"fswitch"': [' "dtstt",'], '"ftarget"': [' "dsdfasda",'], '"fdistruction"': [' "aasdsdadas",'], '"fassume"': [' "dddddd",'], '"radio_data"': [' "",'], '"fdalam"': [' "1",'], '"flearning"': [' "ddasdasdas",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "3",'], '"detected_description"': [' "eqwr",'], '"detected_pname"': [' "asdssa",'], '"detcted_contact"': [' "4321123432",'], '"detected_dispose"': [' "5",'], '"dispose_name"': [' "tttt",'], '"dispose_contact"': [' "5555552312",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3123123123",'], '"death_name"': [' "dasdas"'], '} ],': [''], '"injured"': [' [ {'], '"injured_contact"': [' "2343143242",'], '"injured_name"': [' "sdasdasd"'], '} ]': [''], '}': ['']}> form_api
+2026-02-25 16:10:38,061 Submission failed: Serial number None already exists form_api
+2026-02-25 16:10:38,063 Bad Request: /formapi log_response
+2026-02-25 16:21:01,511 Final login data being processed: {'username': '9876543210', 'password': 'BDDS2026'} post
+2026-02-25 16:21:06,457 Login validation failed: {'non_field_errors': [ErrorDetail(string='Unable to log in with provided credentials.', code='authorization')]} post
+2026-02-25 16:21:06,461 Bad Request: /logine/ log_response
+2026-02-25 16:21:41,928 Final login data being processed: {'username': '9876543210', 'password': 'BDDS2026'} post
+2026-02-25 16:21:46,786 Login validation failed: {'non_field_errors': [ErrorDetail(string='Unable to log in with provided credentials.', code='authorization')]} post
+2026-02-25 16:21:46,787 Bad Request: /logine/ log_response
+2026-02-25 16:21:55,451 Final login data being processed: {'username': '9876543210', 'password': 'BDDS2026'} post
+2026-02-25 16:22:00,299 Login validation failed: {'non_field_errors': [ErrorDetail(string='Unable to log in with provided credentials.', code='authorization')]} post
+2026-02-25 16:22:00,299 Bad Request: /logine/ log_response
+2026-02-25 16:22:07,840 Final login data being processed: {'username': '9876543210', 'password': 'BDDS2026'} post
+2026-02-25 16:22:12,973 Login validation failed: {'non_field_errors': [ErrorDetail(string='Unable to log in with provided credentials.', code='authorization')]} post
+2026-02-25 16:22:12,975 Bad Request: /logine/ log_response
+2026-02-25 16:23:25,475 Final login data being processed: {'username': '9876543210', 'password': 'bdds2026'} post
+2026-02-25 16:23:30,679 Successful login: 9876543210 post
+2026-02-25 16:23:47,839 Internal Server Error: /listonly log_response
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 661, in connect
+    sock = socket.create_connection(
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\socket.py", line 845, in create_connection
+    raise err
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\socket.py", line 833, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 256, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 365, in __init__
+    self.connect()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 723, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '91.98.152.25' (timed out)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py", line 54, in authenticate
+    result = super().authenticate(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 631, in get
+    num = len(clone)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 368, in __len__
+    self._fetch_all()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor = self.connection.cursor()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 256, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 365, in __init__
+    self.connect()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 723, in connect
+    raise exc
+django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on '91.98.152.25' (timed out)")
+2026-02-25 17:57:29,995 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'We jh cbn', 'd_bomb': 'bhbb', 'fdate': '2026-2-25 17:44:0', 'flocation': '21.1205857,79.1442156', 'flocation_type': '4', 'flocation_description': 'uhh', 'fjuridiction': '3', 'fincident': '2', 'fweight_data': '2', 'fexplosive': '3', 'fdetonator': 'hhhhh', 'fswitch': 'nnnn', 'ftarget': '   j ', 'fdistruction': 'gvgvv', 'fassume': 'hhhhhhh', 'radio_data': '', 'fdalam': '4', 'flearning': 'vjjjjjkk', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '4', 'detected_description': '  b nnnnnnhbnhh', 'detected_pname': ' bbbbjn', 'detcted_contact': '9999', 'detected_dispose': '5', 'dispose_name': 'hjjjj', 'dispose_contact': '9959596858', 'explode': [], 'death': [{'death_contact': '5880999999', 'death_name': 'hhhnh'}], 'injured': [{'injured_contact': '8558585588', 'injured_name': 'ghvvv'}]} form_api
+2026-02-25 17:57:30,313 Extracted coordinates from flocation: 21.1205857, 79.1442156 form_api
+2026-02-25 17:59:54,745 tag: ImageWidth (256) - type: short (3) - value: b'\x02\xd0' load
+2026-02-25 17:59:54,745 tag: ImageLength (257) - type: short (3) - value: b'\x06@' load
+2026-02-25 17:59:54,745 tag: Software (305) - type: string (2) Tag Location: 46 - Data Location: 74 - value: <table: 36 bytes> load
+2026-02-25 17:59:54,745 tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00n' load
+2026-02-25 17:59:54,745 tag: Orientation (274) - type: long (4) - value: b'\x00\x00\x00\x00' load
+2026-02-25 17:59:54,745 Importing BlpImagePlugin init
+2026-02-25 17:59:54,751 Importing BmpImagePlugin init
+2026-02-25 17:59:54,751 Importing BufrStubImagePlugin init
+2026-02-25 17:59:54,752 Importing CurImagePlugin init
+2026-02-25 17:59:54,752 Importing DcxImagePlugin init
+2026-02-25 17:59:54,754 Importing DdsImagePlugin init
+2026-02-25 17:59:54,757 Importing EpsImagePlugin init
+2026-02-25 17:59:54,757 Importing FitsImagePlugin init
+2026-02-25 17:59:54,760 Importing FliImagePlugin init
+2026-02-25 17:59:54,761 Importing FpxImagePlugin init
+2026-02-25 17:59:54,765 Importing FtexImagePlugin init
+2026-02-25 17:59:54,767 Importing GbrImagePlugin init
+2026-02-25 17:59:54,767 Importing GifImagePlugin init
+2026-02-25 17:59:54,767 Importing GribStubImagePlugin init
+2026-02-25 17:59:54,771 Importing Hdf5StubImagePlugin init
+2026-02-25 17:59:54,771 Importing IcnsImagePlugin init
+2026-02-25 17:59:54,775 Importing IcoImagePlugin init
+2026-02-25 17:59:54,775 Importing ImImagePlugin init
+2026-02-25 17:59:54,775 Importing ImtImagePlugin init
+2026-02-25 17:59:54,778 Importing IptcImagePlugin init
+2026-02-25 17:59:54,779 Importing JpegImagePlugin init
+2026-02-25 17:59:54,779 Importing Jpeg2KImagePlugin init
+2026-02-25 17:59:54,779 Importing McIdasImagePlugin init
+2026-02-25 17:59:54,779 Importing MicImagePlugin init
+2026-02-25 17:59:54,779 Importing MpegImagePlugin init
+2026-02-25 17:59:54,779 Importing MpoImagePlugin init
+2026-02-25 17:59:54,779 Importing MspImagePlugin init
+2026-02-25 17:59:54,779 Importing PalmImagePlugin init
+2026-02-25 17:59:54,789 Importing PcdImagePlugin init
+2026-02-25 17:59:54,790 Importing PcxImagePlugin init
+2026-02-25 17:59:54,790 Importing PdfImagePlugin init
+2026-02-25 17:59:54,798 Importing PixarImagePlugin init
+2026-02-25 17:59:54,799 Importing PngImagePlugin init
+2026-02-25 17:59:54,799 Importing PpmImagePlugin init
+2026-02-25 17:59:54,799 Importing PsdImagePlugin init
+2026-02-25 17:59:54,801 Importing QoiImagePlugin init
+2026-02-25 17:59:54,802 Importing SgiImagePlugin init
+2026-02-25 17:59:54,803 Importing SpiderImagePlugin init
+2026-02-25 17:59:54,804 Importing SunImagePlugin init
+2026-02-25 17:59:54,805 Importing TgaImagePlugin init
+2026-02-25 17:59:54,806 Importing TiffImagePlugin init
+2026-02-25 17:59:54,806 Importing WebPImagePlugin init
+2026-02-25 17:59:54,809 Importing WmfImagePlugin init
+2026-02-25 17:59:54,810 Importing XbmImagePlugin init
+2026-02-25 17:59:54,811 Importing XpmImagePlugin init
+2026-02-25 17:59:54,812 Importing XVThumbImagePlugin init
+2026-02-25 18:38:16,579 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'tg', 'd_bomb': 'fgg', 'fdate': '2026-2-25 18:35:37', 'flocation': '21.1205732,79.144166', 'flocation_type': '3', 'flocation_description': 'rfg', 'fjuridiction': '4', 'fincident': '2', 'fweight_data': '4', 'fexplosive': '6', 'fdetonator': 'f7ggi', 'fswitch': 'h8g8', 'ftarget': 'gf', 'fdistruction': 'hhc', 'fassume': 'fcvvbb', 'radio_data': '', 'fdalam': '2', 'flearning': 'gghj', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'fgvb', 'detected_pname': 'xcv', 'detcted_contact': '5580051234', 'detected_dispose': '1', 'dispose_name': 'gcc', 'dispose_contact': '5878821453', 'explode': [], 'death': [{'death_contact': '58', 'death_name': 'ghh'}], 'injured': []} form_api
+2026-02-25 18:38:16,695 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'tg', 'd_bomb': 'fgg', 'fdate': '2026-2-25 18:35:37', 'flocation': '21.1205732,79.144166', 'flocation_type': '3', 'flocation_description': 'rfg', 'fjuridiction': '4', 'fincident': '2', 'fweight_data': '4', 'fexplosive': '6', 'fdetonator': 'f7ggi', 'fswitch': 'h8g8', 'ftarget': 'gf', 'fdistruction': 'hhc', 'fassume': 'fcvvbb', 'radio_data': '', 'fdalam': '2', 'flearning': 'gghj', 'fassume_status_new': '4', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'fgvb', 'detected_pname': 'xcv', 'detcted_contact': '5580051234', 'detected_dispose': '1', 'dispose_name': 'gcc', 'dispose_contact': '5878821453', 'explode': [], 'death': [{'death_contact': '58', 'death_name': 'ghh'}], 'injured': []} form_api
+2026-02-25 18:38:16,873 Extracted coordinates from flocation: 21.1205732, 79.144166 form_api
+2026-02-25 18:38:17,149 Extracted coordinates from flocation: 21.1205732, 79.144166 form_api
+2026-02-25 18:38:17,485 Not Found: /formviewapi log_response
+2026-02-25 18:38:29,395 tag: ImageWidth (256) - type: short (3) - value: b'\x02\xd0' load
+2026-02-25 18:38:29,397 tag: ImageLength (257) - type: short (3) - value: b'\x06@' load
+2026-02-25 18:38:29,397 tag: Software (305) - type: string (2) Tag Location: 46 - Data Location: 74 - value: <table: 36 bytes> load
+2026-02-25 18:38:29,398 tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00n' load
+2026-02-25 18:38:29,398 tag: Orientation (274) - type: long (4) - value: b'\x00\x00\x00\x00' load
+2026-02-25 18:38:30,273 tag: ImageWidth (256) - type: short (3) - value: b'\x02\xd0' load
+2026-02-25 18:38:30,274 tag: ImageLength (257) - type: short (3) - value: b'\x06@' load
+2026-02-25 18:38:30,274 tag: Software (305) - type: string (2) Tag Location: 46 - Data Location: 74 - value: <table: 36 bytes> load
+2026-02-25 18:38:30,274 tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00n' load
+2026-02-25 18:38:30,275 tag: Orientation (274) - type: long (4) - value: b'\x00\x00\x00\x00' load
+2026-02-26 10:06:55,911 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "2",'], '"fserial"': [' "1233",'], '"d_bomb"': [' "332312",'], '"fdate"': [' "2026-2-25 15:38:34",'], '"flocation"': [' "21.1205857,79.1442156",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "faerara",'], '"fjuridiction"': [' "5",'], '"fincident"': [' "4",'], '"fweight_data"': [' "2",'], '"fexplosive"': [' "4",'], '"fdetonator"': [' "ewrtr",'], '"fswitch"': [' "dtstt",'], '"ftarget"': [' "dsdfasda",'], '"fdistruction"': [' "aasdsdadas",'], '"fassume"': [' "dddddd",'], '"radio_data"': [' "",'], '"fdalam"': [' "1",'], '"flearning"': [' "ddasdasdas",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "3",'], '"detected_description"': [' "eqwr",'], '"detected_pname"': [' "asdssa",'], '"detcted_contact"': [' "4321123432",'], '"detected_dispose"': [' "5",'], '"dispose_name"': [' "tttt",'], '"dispose_contact"': [' "5555552312",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3123123123",'], '"death_name"': [' "dasdas"'], '} ],': [''], '"injured"': [' [ {'], '"injured_contact"': [' "2343143242",'], '"injured_name"': [' "sdasdasd"'], '} ]': [''], '}': ['']}> form_api
+2026-02-26 10:36:11,689 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "2",'], '"fserial"': [' "1233",'], '"d_bomb"': [' "332312",'], '"fdate"': [' "2026-2-25 15:38:34",'], '"flocation"': [' "21.1205857,79.1442156",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "faerara",'], '"fjuridiction"': [' "5",'], '"fincident"': [' "4",'], '"fweight_data"': [' "2",'], '"fexplosive"': [' "4",'], '"fdetonator"': [' "ewrtr",'], '"fswitch"': [' "dtstt",'], '"ftarget"': [' "dsdfasda",'], '"fdistruction"': [' "aasdsdadas",'], '"fassume"': [' "dddddd",'], '"radio_data"': [' "",'], '"fdalam"': [' "1",'], '"flearning"': [' "ddasdasdas",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "3",'], '"detected_description"': [' "eqwr",'], '"detected_pname"': [' "asdssa",'], '"detcted_contact"': [' "4321123432",'], '"detected_dispose"': [' "5",'], '"dispose_name"': [' "tttt",'], '"dispose_contact"': [' "5555552312",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3123123123",'], '"death_name"': [' "dasdas"'], '} ],': [''], '"injured"': [' [ {'], '"injured_contact"': [' "2343143242",'], '"injured_name"': [' "sdasdasd"'], '} ]': [''], '}': ['']}> form_api
+2026-02-26 10:36:12,189 Submission failed: Serial number None already exists form_api
+2026-02-26 10:36:12,209 Bad Request: /formapi log_response
+2026-02-26 10:38:44,073 Not Found: /formviewapi log_response
+2026-02-26 10:42:34,150 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "2",'], '"fserial"': [' "1233",'], '"d_bomb"': [' "332312",'], '"fdate"': [' "2026-2-25 15:38:34",'], '"flocation"': [' "21.1205857,79.1442156",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "faerara",'], '"fjuridiction"': [' "5",'], '"fincident"': [' "4",'], '"fweight_data"': [' "2",'], '"fexplosive"': [' "4",'], '"fdetonator"': [' "ewrtr",'], '"fswitch"': [' "dtstt",'], '"ftarget"': [' "dsdfasda",'], '"fdistruction"': [' "aasdsdadas",'], '"fassume"': [' "dddddd",'], '"radio_data"': [' "",'], '"fdalam"': [' "1",'], '"flearning"': [' "ddasdasdas",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "3",'], '"detected_description"': [' "eqwr",'], '"detected_pname"': [' "asdssa",'], '"detcted_contact"': [' "4321123432",'], '"detected_dispose"': [' "5",'], '"dispose_name"': [' "tttt",'], '"dispose_contact"': [' "5555552312",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3123123123",'], '"death_name"': [' "dasdas"'], '} ],': [''], '"injured"': [' [ {'], '"injured_contact"': [' "2343143242",'], '"injured_name"': [' "sdasdasd"'], '} ]': [''], '}': ['']}> form_api
+2026-02-26 10:42:34,670 Submission failed: Serial number None already exists form_api
+2026-02-26 10:42:34,694 Bad Request: /formapi log_response
+2026-02-26 10:43:46,966 Not Found: /formviewapi log_response
+2026-02-26 10:53:18,834 Not Found: /formviewapi log_response
+2026-02-26 11:02:07,850 Not Found: /formviewapi log_response
+2026-02-26 11:04:04,876 form_api (API) hit by user: 9876543210, data: <QueryDict: {'{': [''], '"user"': [' "2",'], '"fserial"': [' "1263",'], '"d_bomb"': [' "332312",'], '"fdate"': [' "2026-2-25 15:38:34",'], '"flocation"': [' "21.1205857,79.1442156",'], '"flocation_type"': [' "5",'], '"flocation_description"': [' "faerara",'], '"fjuridiction"': [' "5",'], '"fincident"': [' "4",'], '"fweight_data"': [' "2",'], '"fexplosive"': [' "4",'], '"fdetonator"': [' "ewrtr",'], '"fswitch"': [' "dtstt",'], '"ftarget"': [' "dsdfasda",'], '"fdistruction"': [' "aasdsdadas",'], '"fassume"': [' "dddddd",'], '"radio_data"': [' "",'], '"fdalam"': [' "1",'], '"flearning"': [' "ddasdasdas",'], '"fassume_status_new"': [' "3",'], '"edit_request"': [' "0",'], '"delete_request"': [' "0",'], '"mode_of_detection"': [' "3",'], '"detected_description"': [' "eqwr",'], '"detected_pname"': [' "asdssa",'], '"detcted_contact"': [' "4321123432",'], '"detected_dispose"': [' "5",'], '"dispose_name"': [' "tttt",'], '"dispose_contact"': [' "5555552312",'], '"explode"': [' [ ],'], '"death"': [' [ {'], '"death_contact"': [' "3123123123",'], '"death_name"': [' "dasdas"'], '} ],': [''], '"injured"': [' [ {'], '"injured_contact"': [' "2343143242",'], '"injured_name"': [' "sdasdasd"'], '} ]': [''], '}': ['']}> form_api
+2026-02-26 11:16:55,428 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 11:16:55,782 Extracted coordinates from flocation: 21.120593, 79.1441586 form_api
+2026-02-26 11:16:59,020 Form submission validation failed: {'fdate': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')]} form_api
+2026-02-26 11:16:59,038 Bad Request: /formapi log_response
+2026-02-26 11:17:05,396 Not Found: /formviewapi log_response

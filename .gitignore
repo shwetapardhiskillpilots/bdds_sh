@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Media / Static
+media/
+# static/  <- Keep static if you want them in the repo, otherwise ignore them.
+# In this case, static contains many files, maybe better to ignore or selectively add.
+# I'll ignore static/ if it's large.
+# static/
+
+# Environments
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables
+.env
+
+# VS Code / IDE stuff
+.vscode/
+.idea/
+.spyproject/
+
+# Logs
+*.log

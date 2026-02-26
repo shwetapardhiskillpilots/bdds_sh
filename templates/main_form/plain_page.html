@@ -70,7 +70,7 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/logine_auth">Dashboard</a></li>
+                      <li><a href="/login_auth">Dashboard</a></li>
 
                     </ul>
                   </li>
@@ -79,11 +79,11 @@
                   <li><a><i class="fa fa-table"></i> Master <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="tlocation">Type Of Location</a></li>
-                      <li><a href="/jrusdiction">Jurisdiction</a></li>
-                      <li><a href="incident">Type OF Incidence</a></li>
+                      <li><a href="/jurisdiction">Jurisdiction</a></li>
+                      <li><a href="incident">Type Of Incident</a></li>
                       <li><a href="/weight">Weight</a></li>
                       <li><a href="/explosive">Type Of Explosive</a></li>
-                      <li><a href="/a_status">Assused Current Status</a></li>
+                      <li><a href="/a_status">Accused Current Status</a></li>
                       <li><a href="/post">Post</a></li>
                       <li><a href="/designation">Designation</a></li>
                       <li><a href="/detection">Name of Detection</a></li>
@@ -92,9 +92,9 @@
                     </ul>
                   </li>
                   {% if user.is_superuser %}
-                  <li><a><i class="fa fa-desktop"></i> Authontication <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-desktop"></i> Authentication <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/clogin">Logine Creation</a></li>
+                      <li><a href="/clogin">Login Creation</a></li>
                       <li><a href="/spauthority">SP Authority</a></li>
                       <li><a href="/users">Users</a></li>
                     </ul>
@@ -218,9 +218,16 @@
                         </div>
                       </div>
                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="fir-name">FIR No
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="fir-name" name="fir_value" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="form-group">
                         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Date & Time<span class="required text-danger">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="date" name="date&time" required="required">
+                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="datetime-local" name="date&time" required="required">
                         </div>
                       </div>
                       <div class="form-group">
@@ -228,6 +235,20 @@
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="location_value" required="required">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lat-val">Latitude
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="lat-val" name="latitude_value" class="form-control col-md-7 col-xs-12" placeholder="e.g. 19.0760">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="long-val">Longitude
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="long-val" name="longitude_value" class="form-control col-md-7 col-xs-12" placeholder="e.g. 72.8777">
                         </div>
                       </div>
                       <div class="form-group">
@@ -251,18 +272,18 @@
                         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Jurisdiction<span class="required text-danger">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                          <select id="middle-name" class="form-control col-md-7 col-xs-12"  name="jurisdiction_data" required="required">
-                          <option value=''>----------Select Type Of juridiction----------</option>
+                          <option value=''>----------Select Type Of jurisdiction----------</option>
                              {% for item2 in data2 %}
-                            <option value="{{item2.id}}">{{item2.l_juridiction}}</option>
+                            <option value="{{item2.id}}">{{item2.l_jurisdiction}}</option>
                              {% endfor %}  
                           </select>
                          </div>
                         </div>
                       <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Type Of Incidence<span class="required text-danger">*</span></label>
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Type Of Incident<span class="required text-danger">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <select id="middle-name" class="form-control col-md-7 col-xs-12"  name="incident_data" required="required">
-                            <option value=''>------select Type Of Incidence-------</option>
+                            <option value=''>------select Type Of Incident-------</option>
                             {% for item3 in data3 %}
                             <option value="{{item3.id}}">{{item3.i_incident}}</option>
                             {% endfor %}
@@ -325,7 +346,7 @@
                       <div class="form-group">
                         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Destruction Of Property</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <textarea id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="distruction_data"></textarea>
+                          <textarea id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="destruction_data"></textarea>
                         </div>
                       </div>
                       <div class="form-group">
@@ -366,7 +387,7 @@
                               name="mode_detection">
                               <option value="">-----select mode of detection------</option>
                               {% for item in data9 %}
-                              <option value={{item.id}}>{{item.d_ditection}}</option>
+                              <option value={{item.id}}>{{item.d_detection}}</option>
                               {% endfor %}
                             </select>
                             </div>
@@ -413,7 +434,7 @@
                             <label class="control-label col-md-3" for="first-name">Person Name<span >*</span>
                             </label>
                             <div class="col-md-7">
-                              <input type="text" id="first-name2"  placeholder="Enter Persone Name" class="form-control col-md-7 col-xs-12" 
+                              <input type="text" id="first-name2"  placeholder="Enter Person Name" class="form-control col-md-7 col-xs-12" 
                               name="despose_name">
                             </div>
                           </div>
@@ -459,7 +480,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Accused  Current Status<span class="required text-danger">*</span></label>
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Accused Current Status<span class="required text-danger">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <select id="middle-name" class="form-control col-md-7 col-xs-12" name="assume_status" required="required">
                             <option value="">-------Select Accused Current Status------</option>
@@ -470,10 +491,9 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Dalame Involved </label>
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Dalam Involved </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="dalam_data">
-                          <option value="" >---------select dalam------</option>
+                          <select id="middle-name" class="form-control col-md-7 col-xs-12 select2_multiple" multiple="multiple" name="dalam_data">
                               {% for item in data7 %}
                             <option value="{{item.id}}">{{item.d_dalam}}</option>
                             {% endfor %}

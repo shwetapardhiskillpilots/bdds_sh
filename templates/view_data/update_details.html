@@ -162,17 +162,17 @@ body {font-family: Arial, Helvetica, sans-serif;}
                <ul class="nav side-menu">
                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                    <ul class="nav child_menu">
-                     <li><a href="/logine_auth">Dashboard</a></li>
+                     <li><a href="/login_auth">Dashboard</a></li>
 
                    </ul>
                  </li>
 
 
                  <li><a><i class="fa fa-table"></i> Master <span class="fa fa-chevron-down"></span></a>
-                   <ul class="nav child_menu">
+                     <ul class="nav child_menu">
                      <li><a href="/tlocation">Type Of Location</a></li>
-                     <li><a href="/jrusdiction">Jurisdiction</a></li>
-                     <li><a href="incident">Type OF Incidence</a></li>
+                     <li><a href="/jurisdiction">Jurisdiction</a></li>
+                     <li><a href="incident">Type Of Incident</a></li>
                      <li><a href="/weight">Weight</a></li>
                      <li><a href="/explosive">Type Of Explosive</a></li>
                      <li><a href="/a_status">Accused Current Status</a></li>
@@ -186,7 +186,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                  {% if user.is_superuser %}
                  <li><a><i class="fa fa-desktop"></i> Authentication <span class="fa fa-chevron-down"></span></a>
                    <ul class="nav child_menu">
-                     <li><a href="/clogin">Logine Creation</a></li>
+                     <li><a href="/clogin">Login Creation</a></li>
                      <li><a href="/spauthority">SP Authority</a></li>
                      <li><a href="/users">Users</a></li>
                    </ul>
@@ -329,7 +329,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                      
                     
                       <div class="col-md-4 mb-3">
-                        <label for="juridiction">Jurisdiction
+                        <label for="jurisdiction">Jurisdiction
                         </label>
                         <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="  {{item1.fjuridiction.l_juridiction}}" readonly>
                         </input>
@@ -370,7 +370,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       </div>
                       <div class='form-row'>
                         <div class="col-md-4 mb-3"> 
-                    <label for="Assused_current_status">Accused Current Status 
+                    <label for="accused_current_status">Accused Current Status 
                     </label>
                     <input id="birthday" class="form-control" required="required"  type="text" 
                     value="{{item1.fassume_status_new.a_assused}}" readonly>
@@ -389,7 +389,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <textarea class="form-control" required="required"  type="text" readonly>{{item1.ftarget}}</textarea>
                         </div>
                      <div class="col-md-4 mb-3">
-                        <label for='distruction_property'>Distruction Of Property
+                        <label for='destruction_property'>Destruction Of Property
                         </label>
                 <textarea  class="form-control" required="required"  type="textarea" readonly>{{item1.fdistruction}}</textarea>
                         </div>
@@ -398,7 +398,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
                     <div class="form-row">
                     <div class="col-md-4 mb-3">
-                    <label for='assused_details'>Accused Details </label>
+                    <label for='accused_details'>Accused Details </label>
                     <textarea id="birthday" class="form-control" required="required"  type="text" readonly>{{item1.fassume}}</textarea>
                       </div>
                      
@@ -639,10 +639,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   <div class="row">
                    {% for item5 in data5 %}
                   <div class="col-md-3 col-sm-12 col-xs-12 form-group" style="display: grid; place-items: center;">
-                     {% if item5.status is 0 %}
-                    <img id="{{item5.id}}" onclick=zoomimg('{{item5.id}}','{{item5.im_vi}}','{{item5.status}}')  src="/media/{{item5.im_vi}}"
+                    {% if item5.status == 0 %}
+                    <img id="{{item5.id}}" onclick="zoomimg('{{item5.id}}','{{item5.im_vi}}','{{item5.status}}')"  src="/media/{{item5.im_vi}}"
                     width="100" height="100"  style="border: solid;">
-                     {% elif item5.status is 1 %}
+                    {% elif item5.status is 1 %}
                     <video width="100" height="100" controls>
                    <source src="/media/{{item5.im_vi}}" type="video/mp4"></video>
                     {% endif %}
@@ -711,7 +711,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   <div class="row">
                    {% for item7 in data7 %}
                   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                    <img id="{{item7.id}}" onclick=zoomimg('{{item7.id}}','{{item7.Sketch_scence}}','{{0}}')  src="/media/{{item7.sketch_scence}}"
+                    <img id="{{item7.id}}" onclick="zoomimg('{{item7.id}}','{{item7.sketch_scence}}','0')" src="/media/{{item7.sketch_scence}}"
                     width="100" height="100" alt="{{item7.sketch_scence}}"
                     style="border: solid;">
                     <div>
@@ -745,7 +745,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-          <a href="https://cluematrix.com">Cluematrix Technologies Private Limited</a>
+          <a href="https://cluematrix.com">Cluematrix Technology Private Limited</a>
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -797,9 +797,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <a href="javascript:;" ><span style="color:blue ;text-decoration: underline"; class="Adddeath_dataDiv">Add Person
+        <a href="javascript:;" ><span style="color:blue ;text-decoration: underline;" class="Adddeath_dataDiv">Add Person</span></a>
       </div>
-      <form method='post' action="/upddeath"'>{% csrf_token %}
+      <form method='post' action="/upddeath">{% csrf_token %}
       <div class="modal-body">
          {% if  data2 %}
       {% for item2 in data2 %}
@@ -845,9 +845,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-         <a href="javascript:;" ><span style="color:blue ;text-decoration: underline"; class="Addinjured_dataDiv">Add Person
+         <a href="javascript:;" ><span style="color:blue ;text-decoration: underline;" class="Addinjured_dataDiv">Add Person</span></a>
       </div>
-      <form method='post' action="/updinjured"'>{% csrf_token %}
+      <form method='post' action="/updinjured">{% csrf_token %}
       <div class="modal-body">
          {% if  data3 %}
       {% for item3 in data3 %}
@@ -887,9 +887,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-         <a href="javascript:;" ><span style="color:blue ;text-decoration: underline"; class="Addexploded_dataDiv">Add Person
+         <a href="javascript:;" ><span style="color:blue ;text-decoration: underline;" class="Addexploded_dataDiv">Add Person</span></a>
       </div>
-      <form method='post' action="/updexploded"'>{% csrf_token %}
+      <form method='post' action="/updexploded">{% csrf_token %}
       <div class="modal-body">
          {% if  data4 %}
       {% for item4 in data4 %}

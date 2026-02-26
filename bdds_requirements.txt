@@ -1,0 +1,173 @@
+--- Page 1 ---
+For  Gadchiroli Police Department
+Presented By: Cluematrix Technologies Pvt. Ltd.
+Incident Management 
+System -BDDS
+
+--- Page 2 ---
+INDEX
+Project Overview
+Features
+How it Works
+Working Methods
+Future Scope
+Technology Stack
+Benefits of System
+2
+
+
+--- Page 3 ---
+Project Overview1
+
+
+--- Page 4 ---
+Overview
+▪This isCloud based Database Management System with the
+useofpolice department infrastructure .
+▪BDDS Incident Management System is aCentralized
+Database System Designed foraccuracy and transparency of
+theIncident .
+▪The storing process ofdata canbedone using twomethods
+❖On spot data gathering using Mobile Application 
+❖Backend data entries using web application
+4
+
+
+--- Page 5 ---
+Project Features2
+
+
+--- Page 6 ---
+Features
+▪Centralized Database System with Encrypted Data
+▪To link the crime with the criminal
+▪To ensure the safety of people and property
+▪Proper documentation
+▪Investigations
+▪Transparency
+▪Accuracy
+6
+
+
+--- Page 7 ---
+How it Works3
+
+
+--- Page 8 ---
+Process 
+8
+Notify to
+BDD S
+BDDS Sent to the Local Police or 
+Investigation Team
+Gather andCreate
+Database Fortheincident
+
+--- Page 9 ---
+Initial Response to Information
+9
+Create
+
+--- Page 10 ---
+Initial Response to Information:
+10
+Listing
+
+--- Page 11 ---
+Initial Response to Information:
+11
+View
+
+
+--- Page 12 ---
+Working Method s 4
+
+
+--- Page 13 ---
+Working Methods
+13
+Methods
+On Spot Data 
+GatheringBackend Data 
+EntryData Collection Based on Explode or Diffused
+
+--- Page 14 ---
+On Spot Data Gathering
+▪WeuseMobile apptoGather Information related toIncident
+▪Accuracy and Transparency is high
+▪Time Efficient Approach
+▪Efficient System that will help to Police Department
+▪Paper Less System
+▪WecanCapture accurate Latitude andLongitude
+14
+
+
+--- Page 15 ---
+Back -end Data Entry
+▪Backend System that can only used by BDDS to Create information 
+related to Incident
+▪Accuracy and Transparency is low
+▪Time Consuming Approach
+▪Some how we can use Paper
+▪Wecan not Capture accurate Latitude andLongitude
+15
+
+
+--- Page 16 ---
+Future Scope5
+
+
+--- Page 17 ---
+Future Scope
+▪Mobile App –For People to awareness. 
+▪Peoples can Capture Image  and information about incident with
+current latitude and longitude forthefaster process ofIncident.
+▪User Hierarchy Should bemaintain forthe Data Security.
+▪Toensure thesafety of people and property
+▪This Can be remove: as Explosive investigation is a difficult task 
+as most of the evidences would have already been lost.
+17
+
+
+--- Page 18 ---
+Technology Stack6
+
+
+--- Page 19 ---
+Technology Stack
+19
+▪Database: PostgreSQL -PostgreSQL is a powerful, strong reputation for reliability, feature robustness, and performance.
+▪Mobile Db:Couchbase Lite -Couchbase Lite is a powerful NoSQL embedded JSON database. It is a highly scalable DB 
+with enterprise -level security.
+▪Mobile App -Backend: Java  -Object Oriented, Secure, Platform Independent, Dynamic and many More.
+▪Mobile App -Frontend: xml -XML provides a standard method to access information, making it easier for applications 
+and devices of all kinds to use, store, transmit, and display data.
+▪Cloud Based -Backend: Java –Object Oriented, Secure, Platform Independent, Dynamic and many more.
+▪Cloud Based -Frontend: ReactJS, Html, CSS –Design, Simple, Attractive, Powerful.
+
+--- Page 20 ---
+Benifits7
+
+
+--- Page 21 ---
+Benifits
+▪Reduce efforts to identify Incidence
+▪Time Efficient Approach
+▪Centralized Database System that will help to Police Department to 
+find any record.
+▪Secure  and Confidential data can be searched
+▪Data Security and Proper Data management
+▪Paper less Syste m
+21
+
+
+--- Page 22 ---
+Thanking You!!!
+Cluematrix Technologies Private Limited
+Plot No. 25, Vaishnavi Nagar, Vikasanand
+Mission Co -Opp Society Kharbi , 
+Nagpur.440034
+www.Cluematrix.com | info@cluematrix.com
++91-899 961 0381 | +91 -712 4054190
+
+

@@ -11,13 +11,15 @@ from rest_framework.authtoken.views import ObtainAuthToken
 urlpatterns = [
 
     path('api-token-auth/', ObtainAuthToken.as_view()),
-    path("",views.logine_page,name="login page"),
-    path("logine_auth",views.index_page2,name="logine_authuntication"),
+    path("login",views.logine_page,name="login page"),
+    path("logine",views.logine_page,name="logine page"),
+    path("login_auth",views.index_page2,name="login_authentication"),
+    path("logine_auth",views.index_page2,name="logine_authentication"),
     path("index",views.index_page,name="index page"),
     path("logout",views.logout_page,name=" logout user"),
     path("error",views.error_page,name="error page"),
     #-----------user------------
-    path("clogin",views.logine_creation,name="logine creation"),
+    path("clogin",views.logine_creation,name="login creation"),
     path("spauthority",views.sp_authority,name="sp authority"),
     path("users",views.all_user,name="all_users_data"),
     path('dltuser',views.dlt_user,name='delete user'),
@@ -26,7 +28,7 @@ urlpatterns = [
     path('chngepwd',views.forget_passwd,name='forgete'),
     #-------------request_edit/delete data--------
     path("editrequest",views.edit_request,name='edit_request'),
-    path('dltrequest',views.dlt_request,name='delete requeste'),
+    path('dltrequest',views.dlt_request,name='delete request'),
 
     #--------------location---------------------
     path("tlocation",views.t_location,name="tlocation"),
@@ -35,10 +37,14 @@ urlpatterns = [
     path("apilocation",views.location_api,name='location api'),
     #----------------end location-------------------------
     #---------------start jurisdiction----------------
-    path("jrusdiction",views.jurisdiction,name="jurisdiction"),
+    path("jurisdiction",views.jurisdiction,name="jurisdiction"),
+    path("jrusdiction",views.jurisdiction,name="jurisdiction_alias"),
     path("dltjurisdiction",views.dlt_jurisdiction,name="delate jurisdiction"),
-    path("updjuridiction",views.upd_juridiction,name="update juridiction"),
-    path("apijuridiction",views.juridiction_api,name='api_juridiction'),
+    path("dltjuridiction",views.dlt_jurisdiction,name="delate_jurisdiction_alias"),
+    path("updjurisdiction",views.upd_juridiction,name="update jurisdiction"),
+    path("updjuridiction",views.upd_juridiction,name="update_jurisdiction_alias"),
+    path("apijurisdiction",views.juridiction_api,name='api_jurisdiction'),
+    path("apijuridiction",views.juridiction_api,name='api_jurisdiction_alias'),
 
     #----------------end jurisdiction-----------------------
     #-----------------start incident------------------
@@ -62,31 +68,35 @@ urlpatterns = [
     path("a_status",views.a_current_status,name="assured current status"),
     path("dltstatus",views.dlt_c_status,name="delete status"),
     path('updstatus',views.upd_status,name="delate status"),
-    path("master/assusedapi",views.assused_api,name="assused api"),
+    path("master/accusedapi",views.assused_api,name="accused api"),
+    path("master/assusedapi",views.assused_api,name="accused_api_alias"),
     #---------------end-----------
     #-------------start post---------
     path("post",views.post,name="post"),
     path("dltpost",views.dlt_post,name="delete post"),
     path("updpost",views.upd_post,name="update post"),
-    path("master/postapi",views.post_api,name="post api"),
+    path("master/postapi",views.master_api,name="post api consolidated"),
     #----------end post----------------
     #-----------start designation---------------
     path("designation",views.designation,name="designation"),
     path("dltdesignation",views.dlt_designation,name="delete designation"),
     path("upddesignation",views.upd_designation,name="update designation"),
-    path("master/serdesignation",views.designation_api,name="serilize_designation"),
+    path("serdesignation",views.designation_api,name="serilize_designation"),
+    path("master/serdesignation",views.designation_api,name="serilize_designation_master"),
     #----------end designation---------------------
     #---------start detection---------------
     path("detection",views.n_detection,name="name of detection"),
     path("dltdetection",views.dlt_detection,name="delete detection"),
     path("upddetection",views.upd_detection,name="update detection"),
-    path("master/ditectionapi",views.ditection_api,name="api detection"),
+    path("master/detectionapi",views.ditection_api,name="api detection"),
+    path("master/ditectionapi",views.ditection_api,name="api_detection_alias"),
     #--------------------end detectipn--------------------
     #--------------start dispose-----------------
     path("dispose",views.h_dispose,name="how dispose"),
     path("dltdispose",views.dlt_dispose,name="delete dispose"),
     path('upddispose',views.upd_disposes,name="update dispose"),
-    path('master/despose',views.despose_api,name="despose api"),
+    path('master/dispose',views.despose_api,name="dispose api master"),
+    path('master/despose',views.despose_api,name="despose api alias"),
     #---------------start dispose----------------------
     path("dalam",views.dalam,name="master dalam"),
     path("dltdalam",views.dlt_dalam,name="delete dalam"),
@@ -118,13 +128,13 @@ urlpatterns = [
    path('dltinjured',views.dlt_injured_persone,name='injured persone'),
    path('updexploded',views.upd_exploded,name="exploded name"),
    path('dltexploded',views.dlt_exploded,name='delete exploded'),
-   path('updeatedispose',views.update_disposes,name='despose_update'),
+   path('updatedispose',views.update_disposes,name='dispose_update'),
     #_______________________mage_api_url_____________
    path('imageapi',views.images_api,name='image and video api'),
 #--------------logine_with_api------------------
+    path('login/', CustomAuthToken.as_view()),
     path('logine/', CustomAuthToken.as_view()),
-    path("logoutapi",views.logout_api,name="logout in api"),
-#--------------testing_video---------------------------
-  
-
+    path('testapi', views.test_api, name='test_api'),
+    path('masterapi', views.master_api, name='master_api'),
+    path('logoutapi', views.logout_api, name='logout_api'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

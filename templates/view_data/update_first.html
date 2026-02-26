@@ -162,7 +162,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                <ul class="nav side-menu">
                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                    <ul class="nav child_menu">
-                     <li><a href="/logine_auth">Dashboard</a></li>
+                     <li><a href="/login_auth">Dashboard</a></li>
 
                    </ul>
                  </li>
@@ -171,8 +171,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
                  <li><a><i class="fa fa-table"></i> Master <span class="fa fa-chevron-down"></span></a>
                    <ul class="nav child_menu">
                      <li><a href="/tlocation">Type Of Location</a></li>
-                     <li><a href="/jrusdiction">Jurisdiction</a></li>
-                     <li><a href="incident">Type OF Incidence</a></li>
+                     <li><a href="/jurisdiction">Jurisdiction</a></li>
+                     <li><a href="incident">Type Of Incident</a></li>
                      <li><a href="/weight">Weight</a></li>
                      <li><a href="/explosive">Type Of Explosive</a></li>
                      <li><a href="/a_status">Accused Current Status</a></li>
@@ -186,7 +186,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                    {% if user.is_superuser %}
                  <li><a><i class="fa fa-desktop"></i> Authentication <span class="fa fa-chevron-down"></span></a>
                    <ul class="nav child_menu">
-                     <li><a href="/clogin">Logine Creation</a></li>
+                     <li><a href="/clogin">Login Creation</a></li>
                      <li><a href="/spauthority">SP Authority</a></li>
                      <li><a href="/users">Users</a></li>
                    </ul>
@@ -300,22 +300,34 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 <label for="first-name">Incident/serial year <span class="required text-danger">*</span></label>
                 <input type="text" class="form-control" value="{{item1.fserial}}" name="serial_uvalue" required>
               </div>
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-4">
                 <label for="inputPassword4">Cr No OR Bomb Call <span class="required text-danger">*</span></label>
                 <input type="text" class="form-control" value="{{item1.d_bomb}}"
                 name="bomb_uvalue" required>
               </div>
-            
+              <div class="form-group col-md-4">
+                <label for="fir-name">FIR No</label>
+                <input type="text" id="fir-name" class="form-control" value="{{item1.fir|default:''}}" name="fir_uvalue">
+              </div>
+            </div>
               <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Date & Time <span class="required text-danger">*</span></label>
-                <input type="date" class="form-control" name="date_uvalue" 
-                value='{{item1.fdate}}' required>
+                <input type="datetime-local" class="form-control" name="date_uvalue" 
+                value='{{item1.fdate|date:"Y-m-d\TH:i"}}' required>
               </div>
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-4">
                 <label for="inputPassword4">Location<span class="required">*</span></label>
                 <input type="text" class="form-control" value="{{item1.flocation}}" 
                 name="loacation_uvalue" required>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="lat-val">Latitude</label>
+                <input type="text" id="lat-val" class="form-control" value="{{item1.latitude|default:''}}" name="latitude_uvalue">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="long-val">Longitude</label>
+                <input type="text" id="long-val" class="form-control" value="{{item1.longitude|default:''}}" name="longitude_uvalue">
               </div>
             </div>
               <div class="form-row">
@@ -452,11 +464,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
                       
                       <div class="form-group col-md-6">
                         <label for="dalam">Dalam</label>
-                          <select id="birthday" class="form-control"
+                          <select id="birthday" class="form-control select2_multiple" multiple="multiple"
                           name="dalam_uvalue">
-                            <option value={{item1.fdalam.id}}>{{item1.fdalam.d_dalam}}</option>
                             {% for item8 in data8 %}
-                             <option value="{{item8.id}}">{{item8.d_dalam}}</option>
+                             <option value="{{item8.id}}" {% if item8 in item1.fdalam.all %}selected{% endif %}>{{item8.d_dalam}}</option>
                              {% endfor %}
                            
                           </select>
@@ -497,7 +508,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-           <a href="https://cluematrix.com"> Cluematrix Technologies Private Limited</a>
+           <a href="https://cluematrix.com"> Cluematrix Technology Private Limited</a>
           </div>
           <div class="clearfix"></div>
         </footer>

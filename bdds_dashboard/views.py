@@ -16,7 +16,7 @@ from rest_framework.decorators import api_view
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 from rest_framework.authentication import TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.parsers import JSONParser
 from rest_framework import status
@@ -35,9 +35,25 @@ import logging
 # Create and configure logger
 logging.basicConfig(filename="newfile.log",
                     format='%(asctime)s %(message)s %(funcName)s',
-                    filemode='w')
+                    filemode='a')
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
+
+
+# Custom authentication class that accepts both 'Token' and 'Bearer' prefixes
+# Mobile apps commonly use 'Bearer' but Django REST Framework expects 'Token'
+class BearerTokenAuthentication(TokenAuthentication):
+    keyword = 'Bearer'  # Accept 'Bearer <token>'
+
+    def authenticate(self, request):
+        # Try 'Bearer' first, then fall back to 'Token'
+        result = super().authenticate(request)
+        if result is None:
+            # Try with 'Token' keyword as fallback
+            self.keyword = 'Token'
+            result = super().authenticate(request)
+            self.keyword = 'Bearer'  # Reset for next request
+        return result
 
 
 def logine_page(request):
@@ -936,8 +952,9 @@ def upd_dalam(request):
 #------------centralise database system---------------
 @login_required(login_url='/error')
 def centralise_database(request):
-
+    logger.info(f"centralise_database view hit by user: {request.user.username}, method: {request.method}")
     if request.method=="POST":
+            logger.info(f"POST Data: {request.POST}")
             serial_data=request.POST.get("serial_value")
             bomb_value=request.POST.get("bomb_value")
             date_time=request.POST.get("date&time")
@@ -976,8 +993,10 @@ def centralise_database(request):
             assume_data=request.POST.get("assume_data")
             assume_status_data_id = request.POST.get("assume_status")
             assume_status= N_assused.objects.get(id=assume_status_data_id) if assume_status_data_id else None
-            dalam_id = request.POST.get("dalam_data")
-            dalam_data=N_dalam.objects.get(id=dalam_id) if dalam_id else None
+            dalam_ids = request.POST.getlist("dalam_data")
+            fir_data = request.POST.get("fir_value")
+            lat_data = request.POST.get("latitude_value")
+            long_data = request.POST.get("longitude_value")
             learning_data=request.POST.get("learning_data")
             image1=request.FILES.getlist("incident_image")
             image2=request.FILES.getlist("special_image")
@@ -994,12 +1013,15 @@ def centralise_database(request):
                                fincident=incident_data,fweight_data=weight_data,fexplosive=explosive_data,
                                fdetonator=detonator_data,fswitch=switch_data,ftarget=target_data,
                                fdistruction=distruction_data,fassume=assume_data,fassume_status_new=assume_status,
-                               radio_data=i_data,fdalam=dalam_data,flearning=learning_data,
+                               radio_data=i_data,flearning=learning_data,
+                               fir=fir_data, latitude=lat_data, longitude=long_data,
                                mode_of_detection=mode_detection,detected_description=mode_description,
                                detected_pname=detected_name,detcted_contact=detected_contact,
                                detected_dispose=detcted_despose,dispose_name=despose_name,dispose_contact=despose_contact,edit_request=0,delete_request=0,
                                user_id=request.user.id)
                sub_data.save()
+               if dalam_ids:
+                   sub_data.fdalam.set(dalam_ids)
             #    f_key=Form_data.objects.filter(fserial=serial_data)
                f_key=sub_data.id
           #--------------death_data--------------------
@@ -1174,8 +1196,10 @@ def update_form_first(request,id):
             assused_uvalue=request.POST.get('assused_uvalue')
             assused_status_uvalue=request.POST.get('assused_status_uvalue')
             mistake_uvalue=request.POST.get('mistake_uvalue')
-            dalam_uvalue=request.POST.get('dalam_uvalue')
-            print(dalam_uvalue)
+            dalam_uvalues = request.POST.getlist('dalam_uvalue')
+            fir_uvalue = request.POST.get('fir_uvalue')
+            lat_uvalue = request.POST.get('latitude_uvalue')
+            long_uvalue = request.POST.get('longitude_uvalue')
             i_data=request.POST.get('i_data')
           
             Form_data.objects.filter(id=id).update(fserial=seril_number,d_bomb=bomb_uvalue,
@@ -1183,9 +1207,15 @@ def update_form_first(request,id):
                 flocation_description=location_dy_uvalue,fjuridiction=juridiction_uvalue,
                 fincident=incident_uvalue,fweight_data=weight_uvalue,fexplosive= explosive_uvalue,
                 fdetonator=detonator_uvalue,fswitch=switch_uvalue,ftarget=target_uvalue,
-                fdistruction=distruction_uvalue,fassume=assused_uvalue,fdalam=dalam_uvalue,
+                fdistruction=distruction_uvalue,fassume=assused_uvalue,
+                fir=fir_uvalue, latitude=lat_uvalue, longitude=long_uvalue,
                 fassume_status_new=assused_status_uvalue,flearning=mistake_uvalue,radio_data=i_data,
               )
+            sub_data = Form_data.objects.get(id=id)
+            if dalam_uvalues:
+                sub_data.fdalam.set(dalam_uvalues)
+            else:
+                sub_data.fdalam.clear()
             messages.success(request,"form update successfully")
     view_details=get_object_or_404(Form_data, id=id)
     ty_location= N_location.objects.all()
@@ -1430,7 +1460,7 @@ def add_sketch(request):
 #-----------------------------api_start--------------------------------------------------------
 #-------------designation_api---------------
 @api_view(['GET'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def designation_api(request):
     if (request.method=='GET'):
@@ -1439,18 +1469,18 @@ def designation_api(request):
         return Response(serilize_obj.data)
 
 #-----------location_api----------------
-@api_view(['GET'])
-@authentication_classes((TokenAuthentication,))
+@api_view(['POST'])
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def location_api(request):
-    if(request.method=='GET'):
+    if(request.method=='POST'):
         location_obj=N_location.objects.all()
         serilize_obj=location_serilization(location_obj,many=True)
         return Response(serilize_obj.data)
 #-----------juridiction_api--------------
 
 @api_view(['GET'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def juridiction_api(request):
 
@@ -1460,7 +1490,7 @@ def juridiction_api(request):
          return Response(serilizer_obj.data)
 #-------------incident_api-------------
 @api_view(['GET'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def incident_api(request):
     if(request.method=="GET"):
@@ -1469,7 +1499,7 @@ def incident_api(request):
         return Response(serilizer_obj.data)
 #---------------------weight--------------
 @api_view(['GET'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def weight_api(request):
   if(request.method=="GET"):
@@ -1478,7 +1508,7 @@ def weight_api(request):
       return Response(serilizer_obj.data)
 #--------------------explosive_api-------------
 @api_view(['GET'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def explosive_api(request):
     if(request.method=="GET"):
@@ -1487,7 +1517,7 @@ def explosive_api(request):
         return Response(serilizer_obj.data)
 #--------------assused-----------
 @api_view(['GET'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def assused_api(request):
         if(request.method=="GET"):
@@ -1496,7 +1526,7 @@ def assused_api(request):
             return Response(serilizer_obj.data)
 #------------------post_api--------------
 @api_view(['GET'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def post_api(request):
      if(request.method=="GET"):
@@ -1505,7 +1535,7 @@ def post_api(request):
          return Response(serilizer_obj.data)
 #----------------detection_api---------
 @api_view(['GET'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def ditection_api(request):
       if(request.method=="GET"):
@@ -1514,7 +1544,7 @@ def ditection_api(request):
           return Response(serilization_obj.data)
 #------------------despose_api-------------
 @api_view(['GET'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def despose_api(request):
     if request.method=='GET':
@@ -1523,7 +1553,7 @@ def despose_api(request):
         return Response(serilization_obj.data)
 #--------------------dalam------------------
 @api_view(['GET'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def dalam_api(request):
     if request.method=="GET":
@@ -1533,31 +1563,126 @@ def dalam_api(request):
 
 #--------------form_api-------------------
 @api_view(['POST'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def form_api(request):
-    fserial_no = request.data.get('fserial')
+    # Handle data sent as a list (common in some mobile frameworks)
+    if isinstance(request.data, list) and len(request.data) > 0:
+        data = request.data[0]
+    else:
+        data = request.data
+
+    logger.info(f"form_api (API) hit by user: {request.user.username}, data: {data}")
+    
+    # NEW: Robust cleaning for cases where mobile apps send quoted keys/values in a QueryDict
+    clean_data = {}
+    if isinstance(data, (dict, QueryDict)):
+        for k, v in data.items():
+            # Strip quotes and whitespace from keys
+            clean_k = k.strip(' "\'{}:')
+            
+            # Handle values (could be a list if it's a QueryDict)
+            if isinstance(v, list) and len(v) > 0:
+                val = v[0]
+            else:
+                val = v
+            
+            # Strip quotes and whitespace from values if they are strings
+            if isinstance(val, str):
+                val = val.strip(' "\',}:')
+                
+            if clean_k:
+                clean_data[clean_k] = val
+        data = clean_data
+    
+    # Create a mutable copy if it's a QueryDict (not needed for our new clean_data dict, but kept for logic)
+    if not isinstance(data, dict):
+        data = dict(data)
+
+    fserial_no = data.get('fserial')
     if Form_data.objects.filter(fserial=fserial_no).exists():
+        logger.warning(f"Submission failed: Serial number {fserial_no} already exists")
         return Response({"msg": "Serial number already exists"}, status=status.HTTP_400_BAD_REQUEST)
-    serialize = form_serilization(data=request.data)
+    
+    # Pre-process fdate: Handle 'T' separator or space separator
+    fdate_val = data.get('fdate')
+    if fdate_val:
+        try:
+            if 'T' in fdate_val:
+                data['fdate'] = datetime.strptime(fdate_val, '%Y-%m-%dT%H:%M')
+            elif ' ' in fdate_val:
+                # Handle "2026-2-24 14:25:25" or similar
+                try:
+                    data['fdate'] = datetime.strptime(fdate_val, '%Y-%m-%d %H:%M:%S')
+                except ValueError:
+                    data['fdate'] = datetime.strptime(fdate_val, '%Y-%m-%d %H:%M')
+        except:
+            pass
+
+    # Extract coordinates from flocation if latitude/longitude are missing
+    floc = data.get('flocation')
+    if floc and (not data.get('latitude') or not data.get('longitude')):
+        if ',' in str(floc):
+            try:
+                # Try to extract "21.1205,79.1441"
+                parts = str(floc).split(',')
+                if len(parts) >= 2:
+                    data['latitude'] = float(parts[0].strip())
+                    data['longitude'] = float(parts[1].strip())
+                    logger.info(f"Extracted coordinates from flocation: {data['latitude']}, {data['longitude']}")
+            except (ValueError, TypeError):
+                pass
+
+    # Normalize fdalam: ManyToMany expects a list, but mobile might send a string (e.g. "1" or "1,2")
+    fdalam_val = data.get('fdalam')
+    if isinstance(fdalam_val, str) and fdalam_val:
+        try:
+            if ',' in fdalam_val:
+                data['fdalam'] = [int(i.strip()) for i in fdalam_val.split(',') if i.strip()]
+            elif str(fdalam_val).strip().isdigit():
+                data['fdalam'] = [int(fdalam_val)]
+            else:
+                 data['fdalam'] = [] 
+        except ValueError:
+            data['fdalam'] = []
+            logger.warning(f"Could not parse fdalam string: {fdalam_val}")
+
+    # Robust handling for ForeignKeys and Decimals (avoid empty string errors)
+    nullable_fields = [
+        'flocation_type', 'fjuridiction', 'fincident', 'fweight_data', 
+        'fexplosive', 'fassume_status_new', 'mode_of_detection', 
+        'detected_dispose', 'latitude', 'longitude'
+    ]
+    for field in nullable_fields:
+        val = data.get(field)
+        if val == "" or val == "null" or val == "None":
+            data[field] = None
+
+    serialize = form_serilization(data=data)
     if serialize.is_valid():
-        obj_id = serialize.save()
-    death_person = request.data.get('death',[])
-    if death_person  and obj_id is not None:
-        death_person = [{"form":obj_id.id,**item} for item in death_person]
-        serialize_death = death_serilizer(data= death_person,many=True)
+        obj_id = serialize.save(user=request.user)
+    else:
+        logger.error(f"Form submission validation failed: {serialize.errors}")
+        return Response(serialize.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    death_person_data = request.data.get('death',[])
+    if death_person_data and obj_id is not None:
+        death_person_data = [{"form":obj_id.id,**item} for item in death_person_data]
+        serialize_death = death_serilizer(data= death_person_data,many=True)
         if serialize_death.is_valid():
             serialize_death.save()
+
     injured_person_data = request.data.get('injured',[])
     if injured_person_data and obj_id is not None:
         injured_person_data = [{"form":obj_id.id,**item} for item in injured_person_data]
         serialize_injured = injured_serilizer(data=injured_person_data,many=True)
         if serialize_injured.is_valid():
             serialize_injured.save()
-    exploded_data = request.data.get('explode') 
-    if exploded_data and obj_id is not None:
-        exploded_data = [{'form':obj_id.id,**item} for item in exploded_data]
-        serialize_explode = exploded_serilizer(data=exploded_data,many=True)
+
+    exploded_person_data = request.data.get('explode') 
+    if exploded_person_data and obj_id is not None:
+        exploded_person_data = [{'form':obj_id.id,**item} for item in exploded_person_data]
+        serialize_explode = exploded_serilizer(data=exploded_person_data,many=True)
         if serialize_explode.is_valid():
             serialize_explode.save()
     return Response({"msg":"form have been save successfully","id":obj_id.id,"status":200})
@@ -1565,32 +1690,58 @@ def form_api(request):
    
   
 @api_view(['POST'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def list_view(request):
-    id  = request.data.get('id')
+    id = request.data.get('id')
     form_instance = get_object_or_404(Form_data, pk=id)
+    
+    # Pass context=None (or just don't pass it) to get relative paths
     serialize_form_data = UpdateFormSerializer(form_instance).data
+    
+    # Flatten fdalam from list to object (Mobile App requirement)
+    if isinstance(serialize_form_data.get('fdalam'), list) and len(serialize_form_data['fdalam']) > 0:
+        serialize_form_data['fdalam'] = serialize_form_data['fdalam'][0]
+    elif serialize_form_data.get('fdalam') == []:
+        serialize_form_data['fdalam'] = None
+
+    image_data = image_serilizer(form_instance.images_set.all(), many=True).data
+    reports_data = reports_serilizer(form_instance.s_report_set.all(), many=True).data
+    sketch_data = sketch_serializer(form_instance.sk_report_set.all(), many=True).data
+
+    # Strip /media/ prefix to provide only the relative endpoint as requested
+    for img in image_data:
+        if img.get('im_vi') and img['im_vi'].startswith(settings.MEDIA_URL):
+            img['im_vi'] = img['im_vi'].replace(settings.MEDIA_URL, "", 1)
+    
+    for rpt in reports_data:
+        if rpt.get('special_report') and rpt['special_report'].startswith(settings.MEDIA_URL):
+            rpt['special_report'] = rpt['special_report'].replace(settings.MEDIA_URL, "", 1)
+            
+    for sk in sketch_data:
+        if sk.get('sketch_scence') and sk['sketch_scence'].startswith(settings.MEDIA_URL):
+            sk['sketch_scence'] = sk['sketch_scence'].replace(settings.MEDIA_URL, "", 1)
+
     data = {
-        'form_data': [serialize_form_data],   # Include Form_data fields
-        'death_data': list(form_instance.death_person_set.values()),  # Related Death_person instances
-        'injured_data': list(form_instance.injured_person_set.values()),  # Related Injured_person instances
-        'explode_data': list(form_instance.exploded_set.values()),  # Related Exploded instances
-        'image_data': list(form_instance.images_set.values()),  # Related Images instances
-        'reports_data': list(form_instance.s_report_set.values()),  # Related S_report instances
-        'sketch_data': list(form_instance.sk_report_set.values()),  # Related Sk_report instances
+        'form_data': [serialize_form_data],
+        'death_data': death_serilizer(form_instance.death_person_set.all(), many=True).data,
+        'injured_data': injured_serilizer(form_instance.injured_person_set.all(), many=True).data,
+        'explode_data': exploded_serilizer(form_instance.exploded_set.all(), many=True).data,
+        'image_data': image_data,
+        'reports_data': reports_data,
+        'sketch_data': sketch_data,
     }
-    return Response(data)  
+    return Response(data)
 @api_view(['POST'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def list_only(request):
     id=request.data.get('user_id')
     form_instance = Form_data.objects.filter(user=id)
-    serializers = form_serilization(form_instance,many=True).data
+    serializers = form_serilization(form_instance, many=True, context={'request': request}).data
     return Response({"form_data":serializers},status=status.HTTP_200_OK)
 @api_view(['POST'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def images_api(request):
     try:
@@ -1623,29 +1774,74 @@ def images_api(request):
 
 #----------------------logine_api----------------------------------------
 class CustomAuthToken(ObtainAuthToken):
+    permission_classes = [AllowAny]
     def post(self, request, *args, **kwargs):
-        serializer = self.serializer_class(data=request.data,
+        # Handle various mobile app request formats
+        raw_data = request.data
+        if isinstance(raw_data, list) and len(raw_data) > 0:
+            raw_data = raw_data[0]
+            
+        # Create a mutable copy to normalize field names
+        data = raw_data.copy() if hasattr(raw_data, 'copy') else dict(raw_data)
+        
+        # Support common mobile field names
+        if 'Mobile_No' in data and 'username' not in data:
+            data['username'] = data['Mobile_No']
+        elif 'mobile' in data and 'username' not in data:
+            data['username'] = data['mobile']
+            
+        logger.info(f"Final login data being processed: {data}")
+        
+        serializer = self.serializer_class(data=data,
                                            context={'request': request})
-        serializer.is_valid(raise_exception=True)
+        if not serializer.is_valid():
+            logger.error(f"Login validation failed: {serializer.errors}")
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            
         user = serializer.validated_data['user']
+        token, created = Token.objects.get_or_create(user=user)
+        
+        logger.info(f"Successful login: {user.username}")
+        
+        return Response({
+            'token': token.key,
+            'user_id': user.pk,
+            'email': user.email,
+            'Mobile_No':user.username,
+            'User_Name':user.first_name,
+            'status':200,
+          })
 
-        if user.is_superuser:
-            return Response({"msg":"invalied credential","status":400})
-        else:
-            token, created = Token.objects.get_or_create(user=user)
-            return Response({
-                'token': token.key,
-                'user_id': user.pk,
-                'email': user.email,
-                'Mobile_No':user.username,
-                'User_Name':user.first_name,
-                'status':200,
-              })
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def test_api(request):
+    logger.info(f"Test API hit with method: {request.method}")
+    return Response({"msg": "Connection successful", "status": 200})
+
+@api_view(['POST'])
+@authentication_classes((BearerTokenAuthentication,))
+@permission_classes((IsAuthenticated,))
+def master_api(request):
+    logger.info("Master API hit")
+    data = {
+        "designations": designation_serilizer(N_degignation.objects.all(), many=True).data,
+        "locations": location_serilization(N_location.objects.all(), many=True).data,
+        "jurisdictions": juridiction_serilization(N_juridiction.objects.all(), many=True).data,
+        "incidents": incident_serilization(N_incident.objects.all(), many=True).data,
+        "weights": weight_serilization(N_weight.objects.all(), many=True).data,
+        "explosives": explosive_serilization(N_explosive.objects.all(), many=True).data,
+        "accused_statuses": assused_serilization(N_assused.objects.all(), many=True).data,
+        "posts": post_serilization(N_post.objects.all(), many=True).data,
+        "detections": detection_serilization(N_ditection.objects.all(), many=True).data,
+        "disposals": despose_serilization(N_dispose.objects.all(), many=True).data,
+        "dalams": dalam_serilization(N_dalam.objects.all(), many=True).data,
+    }
+    return Response(data, status=status.HTTP_200_OK)
 
 
 #-----------logout_api----------------------------------
 @api_view(['POST'])
-@authentication_classes((TokenAuthentication,))
+@authentication_classes((BearerTokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def logout_api(request):
     request.user.auth_token.delete()
