@@ -112,21 +112,18 @@ if os.getenv("USE_SQLITE", "False") == "True":
            "NAME": BASE_DIR / "db.sqlite3",
         }
     }
+else:
     DATABASES = {
         'default': {
             'ENGINE': os.getenv("DB_ENGINE", "django.db.backends.mysql"),
-            'OPTIONS': {
-                'sql_mode': 'traditional',
-            },
             'NAME': os.getenv("DB_NAME", "bdds"),
             'USER': os.getenv("DB_USER", "root"),
             'PASSWORD': os.getenv("DB_PASSWORD", ""),
             'HOST': os.getenv("DB_HOST", "localhost"),
             'PORT': os.getenv("DB_PORT", "3306"),
-            'CONN_MAX_AGE': 600,  # Enable connection pooling (10 minutes)
-            'OPTIONs':{
+            'OPTIONS': {
                 'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
-                }
+            }
         }
     }
 

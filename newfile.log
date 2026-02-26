@@ -955,3 +955,929 @@ django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on '91.9
 2026-02-26 11:16:59,020 Form submission validation failed: {'fdate': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')]} form_api
 2026-02-26 11:16:59,038 Bad Request: /formapi log_response
 2026-02-26 11:17:05,396 Not Found: /formviewapi log_response
+2026-02-26 11:22:37,975 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 11:22:38,329 Extracted coordinates from flocation: 21.120593, 79.1441586 form_api
+2026-02-26 11:22:41,333 Form submission validation failed: {'fdate': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')]} form_api
+2026-02-26 11:22:41,350 Bad Request: /formapi log_response
+2026-02-26 11:24:57,147 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 11:24:57,482 Extracted coordinates from flocation: 21.120593, 79.1441586 form_api
+2026-02-26 11:25:00,536 Form submission validation failed: {'fdate': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')]} form_api
+2026-02-26 11:25:00,543 Bad Request: /formapi log_response
+2026-02-26 11:25:09,381 Internal Server Error: /master/ditectionapi log_response
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 661, in connect
+    sock = socket.create_connection(
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\socket.py", line 845, in create_connection
+    raise err
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\socket.py", line 833, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 256, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 365, in __init__
+    self.connect()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 723, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '91.98.152.25' (timed out)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 555, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 504, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 559, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py", line 54, in authenticate
+    result = super().authenticate(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 631, in get
+    num = len(clone)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 368, in __len__
+    self._fetch_all()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor = self.connection.cursor()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 256, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 365, in __init__
+    self.connect()
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 723, in connect
+    raise exc
+django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on '91.98.152.25' (timed out)")
+2026-02-26 11:26:45,952 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 11:26:46,273 Extracted coordinates from flocation: 21.120593, 79.1441586 form_api
+2026-02-26 11:26:49,265 Form submission validation failed: {'fdate': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')]} form_api
+2026-02-26 11:26:49,277 Bad Request: /formapi log_response
+2026-02-26 11:29:06,758 Not Found: /formviewapi log_response
+2026-02-26 11:29:22,439 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 11:29:22,859 Extracted coordinates from flocation: 21.120593, 79.1441586 form_api
+2026-02-26 11:29:26,023 Form submission validation failed: {'fdate': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')]} form_api
+2026-02-26 11:29:26,047 Bad Request: /formapi log_response
+2026-02-26 11:30:24,123 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 11:30:24,203 Internal Server Error: /formapi log_response
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 555, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 504, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 559, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py", line 1579, in form_api
+    if isinstance(data, (dict, QueryDict)):
+NameError: name 'QueryDict' is not defined
+2026-02-26 11:33:46,402 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 11:33:46,710 Extracted coordinates from flocation: 21.120593, 79.1441586 form_api
+2026-02-26 11:33:49,911 Form submission validation failed: {'fdate': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')]} form_api
+2026-02-26 11:33:49,917 Bad Request: /formapi log_response
+2026-02-26 11:34:34,359 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 11:34:34,663 Extracted coordinates from flocation: 21.120593, 79.1441586 form_api
+2026-02-26 11:34:38,058 Form submission validation failed: {'fdate': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')]} form_api
+2026-02-26 11:34:38,067 Bad Request: /formapi log_response
+2026-02-26 11:36:04,264 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 11:36:04,397 Internal Server Error: /formapi log_response
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 555, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 504, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 559, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py", line 1579, in form_api
+    if isinstance(data, (dict, QueryDict)):
+NameError: name 'QueryDict' is not defined
+2026-02-26 11:39:27,427 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 11:39:27,728 Extracted coordinates from flocation: 21.120593, 79.1441586 form_api
+2026-02-26 11:39:30,801 Form submission validation failed: {'fdate': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')]} form_api
+2026-02-26 11:39:30,807 Bad Request: /formapi log_response
+2026-02-26 11:45:32,208 Not Found: /static/vendors/bootstrap/dist/css/bootstrap.min.css log_response
+2026-02-26 11:45:32,279 Not Found: /static/vendors/font-awesome/css/font-awesome.min.css log_response
+2026-02-26 11:45:32,294 Not Found: /static/vendors/fastclick/lib/fastclick.js log_response
+2026-02-26 11:45:32,299 Not Found: /static/vendors/nprogress/nprogress.css log_response
+2026-02-26 11:45:32,341 Not Found: /static/build/js/custom.min.js log_response
+2026-02-26 11:45:32,345 Not Found: /static/vendors/nprogress/nprogress.js log_response
+2026-02-26 11:45:32,391 Not Found: /static/vendors/bootstrap/dist/js/bootstrap.min.js log_response
+2026-02-26 11:45:32,458 Not Found: /static/vendors/jquery/dist/jquery.min.js log_response
+2026-02-26 11:45:32,556 Not Found: /static/build/css/custom.min.css log_response
+2026-02-26 11:45:32,653 Not Found: /favicon.ico log_response
+2026-02-26 11:45:45,060 Not Found: / log_response
+2026-02-26 11:45:51,981 Not Found: / log_response
+2026-02-26 11:47:24,333 Not Found: / log_response
+2026-02-26 11:47:42,189 Not Found: / log_response
+2026-02-26 11:47:54,289 Not Found: /static/vendors/jquery/dist/jquery.min.js log_response
+2026-02-26 11:47:54,287 Not Found: /static/vendors/bootstrap/dist/css/bootstrap.min.css log_response
+2026-02-26 11:47:54,293 Not Found: /static/build/css/custom.min.css log_response
+2026-02-26 11:47:54,330 Not Found: /static/vendors/bootstrap/dist/js/bootstrap.min.js log_response
+2026-02-26 11:47:54,346 Not Found: /static/vendors/fastclick/lib/fastclick.js log_response
+2026-02-26 11:47:54,347 Not Found: /static/vendors/nprogress/nprogress.js log_response
+2026-02-26 11:47:54,378 Not Found: /static/build/js/custom.min.js log_response
+2026-02-26 11:47:54,378 Not Found: /static/vendors/font-awesome/css/font-awesome.min.css log_response
+2026-02-26 11:47:54,475 Not Found: /static/vendors/nprogress/nprogress.css log_response
+2026-02-26 11:48:51,600 Not Found: /favicon.ico log_response
+2026-02-26 11:49:42,752 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 11:54:22,715 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 11:54:22,761 Internal Server Error: /formapi log_response
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 555, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 504, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 559, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py", line 1579, in form_api
+    if isinstance(data, (dict, QueryDict)):
+NameError: name 'QueryDict' is not defined
+2026-02-26 11:56:09,509 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 11:56:09,767 Internal Server Error: /formapi log_response
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 555, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 504, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 559, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py", line 1579, in form_api
+    if isinstance(data, (dict, QueryDict)):
+NameError: name 'QueryDict' is not defined
+2026-02-26 11:56:46,936 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 11:56:47,273 Extracted coordinates from flocation: 21.120593, 79.1441586 form_api
+2026-02-26 11:56:50,574 Form submission validation failed: {'fdate': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')]} form_api
+2026-02-26 11:56:50,579 Bad Request: /formapi log_response
+2026-02-26 11:57:15,371 Not Found: /formviewapi log_response
+2026-02-26 11:59:49,125 Final login data being processed: {'username': '9876543210', 'password': 'bdds2026'} post
+2026-02-26 11:59:53,666 Successful login: 9876543210 post
+2026-02-26 12:01:25,953 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 12:01:26,741 Internal Server Error: /formapi log_response
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 555, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 504, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 559, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py", line 1579, in form_api
+    if isinstance(data, (dict, QueryDict)):
+NameError: name 'QueryDict' is not defined
+2026-02-26 12:02:59,123 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2000', 'd_bomb': 'Tanmay Khotele', 'fdate': '2026-2-26 12:1:8', 'flocation': '21.1205589,79.1441521', 'flocation_type': '1', 'flocation_description': 'online ', 'fjuridiction': '3', 'fincident': '9', 'fweight_data': '2', 'fexplosive': '4', 'fdetonator': 'Tanmay Khotele', 'fswitch': 'Tanmay ', 'ftarget': 'tt', 'fdistruction': 'ghh', 'fassume': 'ghhh', 'radio_data': '', 'fdalam': '2', 'flearning': 'ghg', 'fassume_status_new': '2', 'edit_request': '0', 'delete_request': '0', 'detected_description': '', 'detected_pname': '', 'detcted_contact': '', 'dispose_name': '', 'dispose_contact': '', 'explode': [], 'death': [{'death_contact': '808888888', 'death_name': 'tkk'}], 'injured': []} form_api
+2026-02-26 12:02:59,538 Extracted coordinates from flocation: 21.1205589, 79.1441521 form_api
+2026-02-26 12:04:34,125 Importing BlpImagePlugin init
+2026-02-26 12:04:34,125 Importing BmpImagePlugin init
+2026-02-26 12:04:34,125 Importing BufrStubImagePlugin init
+2026-02-26 12:04:34,125 Importing CurImagePlugin init
+2026-02-26 12:04:34,125 Importing DcxImagePlugin init
+2026-02-26 12:04:34,138 Importing DdsImagePlugin init
+2026-02-26 12:04:34,147 Importing EpsImagePlugin init
+2026-02-26 12:04:34,150 Importing FitsImagePlugin init
+2026-02-26 12:04:34,153 Importing FliImagePlugin init
+2026-02-26 12:04:34,157 Importing FpxImagePlugin init
+2026-02-26 12:04:34,176 Importing FtexImagePlugin init
+2026-02-26 12:04:34,181 Importing GbrImagePlugin init
+2026-02-26 12:04:34,181 Importing GifImagePlugin init
+2026-02-26 12:04:34,181 Importing GribStubImagePlugin init
+2026-02-26 12:04:34,188 Importing Hdf5StubImagePlugin init
+2026-02-26 12:04:34,191 Importing IcnsImagePlugin init
+2026-02-26 12:04:34,197 Importing IcoImagePlugin init
+2026-02-26 12:04:34,200 Importing ImImagePlugin init
+2026-02-26 12:04:34,204 Importing ImtImagePlugin init
+2026-02-26 12:04:34,209 Importing IptcImagePlugin init
+2026-02-26 12:04:34,209 Importing JpegImagePlugin init
+2026-02-26 12:04:34,209 Importing Jpeg2KImagePlugin init
+2026-02-26 12:04:34,209 Importing McIdasImagePlugin init
+2026-02-26 12:04:34,211 Importing MicImagePlugin init
+2026-02-26 12:04:34,220 Importing MpegImagePlugin init
+2026-02-26 12:04:34,223 Importing MpoImagePlugin init
+2026-02-26 12:04:34,226 Importing MspImagePlugin init
+2026-02-26 12:04:34,227 Importing PalmImagePlugin init
+2026-02-26 12:04:34,230 Importing PcdImagePlugin init
+2026-02-26 12:04:34,235 Importing PcxImagePlugin init
+2026-02-26 12:04:34,235 Importing PdfImagePlugin init
+2026-02-26 12:04:34,243 Importing PixarImagePlugin init
+2026-02-26 12:04:34,247 Importing PngImagePlugin init
+2026-02-26 12:04:34,247 Importing PpmImagePlugin init
+2026-02-26 12:04:34,247 Importing PsdImagePlugin init
+2026-02-26 12:04:34,247 Importing QoiImagePlugin init
+2026-02-26 12:04:34,250 Importing SgiImagePlugin init
+2026-02-26 12:04:34,251 Importing SpiderImagePlugin init
+2026-02-26 12:04:34,254 Importing SunImagePlugin init
+2026-02-26 12:04:34,256 Importing TgaImagePlugin init
+2026-02-26 12:04:34,258 Importing TiffImagePlugin init
+2026-02-26 12:04:34,258 Importing WebPImagePlugin init
+2026-02-26 12:04:34,309 Importing WmfImagePlugin init
+2026-02-26 12:04:34,314 Importing XbmImagePlugin init
+2026-02-26 12:04:34,314 Importing XpmImagePlugin init
+2026-02-26 12:04:34,314 Importing XVThumbImagePlugin init
+2026-02-26 12:13:23,057 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2023', 'd_bomb': '2011', 'fdate': '2026-2-26 12:1:27', 'flocation': '21.1205572,79.1441511', 'flocation_type': '1', 'flocation_description': 'qqq', 'fjuridiction': '3', 'fincident': '4', 'fweight_data': '1', 'fexplosive': '1', 'fdetonator': 'www', 'fswitch': 'asa', 'ftarget': 'qwe', 'fdistruction': 'qwew', 'fassume': 'vvv', 'radio_data': '', 'fdalam': '2', 'flearning': 'yyy', 'fassume_status_new': '1', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '1', 'detected_description': 'zzz', 'detected_pname': 'ttt', 'detcted_contact': '3333333333', 'detected_dispose': '1', 'dispose_name': 'rrr', 'dispose_contact': '0000000000', 'explode': [], 'death': [{'death_contact': '987654320', 'death_name': 'sss'}], 'injured': [{'injured_contact': '8888888888', 'injured_name': 'ppp'}]} form_api
+2026-02-26 12:13:23,476 Extracted coordinates from flocation: 21.1205572, 79.1441511 form_api
+2026-02-26 12:14:18,901 tag: ImageWidth (256) - type: short (3) - value: b'\x02\xd0' load
+2026-02-26 12:14:18,906 tag: ImageLength (257) - type: short (3) - value: b'\x06@' load
+2026-02-26 12:14:18,906 tag: Software (305) - type: string (2) Tag Location: 46 - Data Location: 74 - value: <table: 36 bytes> load
+2026-02-26 12:14:18,906 tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00n' load
+2026-02-26 12:14:18,906 tag: Orientation (274) - type: long (4) - value: b'\x00\x00\x00\x00' load
+2026-02-26 12:14:18,908 Importing BlpImagePlugin init
+2026-02-26 12:14:18,908 Importing BmpImagePlugin init
+2026-02-26 12:14:18,908 Importing BufrStubImagePlugin init
+2026-02-26 12:14:18,916 Importing CurImagePlugin init
+2026-02-26 12:14:18,916 Importing DcxImagePlugin init
+2026-02-26 12:14:18,922 Importing DdsImagePlugin init
+2026-02-26 12:14:18,926 Importing EpsImagePlugin init
+2026-02-26 12:14:18,926 Importing FitsImagePlugin init
+2026-02-26 12:14:18,926 Importing FliImagePlugin init
+2026-02-26 12:14:18,926 Importing FpxImagePlugin init
+2026-02-26 12:14:18,972 Importing FtexImagePlugin init
+2026-02-26 12:14:18,975 Importing GbrImagePlugin init
+2026-02-26 12:14:18,975 Importing GifImagePlugin init
+2026-02-26 12:14:18,977 Importing GribStubImagePlugin init
+2026-02-26 12:14:18,979 Importing Hdf5StubImagePlugin init
+2026-02-26 12:14:18,979 Importing IcnsImagePlugin init
+2026-02-26 12:14:18,988 Importing IcoImagePlugin init
+2026-02-26 12:14:18,991 Importing ImImagePlugin init
+2026-02-26 12:14:18,994 Importing ImtImagePlugin init
+2026-02-26 12:14:18,997 Importing IptcImagePlugin init
+2026-02-26 12:14:18,997 Importing JpegImagePlugin init
+2026-02-26 12:14:18,997 Importing Jpeg2KImagePlugin init
+2026-02-26 12:14:18,997 Importing McIdasImagePlugin init
+2026-02-26 12:14:19,000 Importing MicImagePlugin init
+2026-02-26 12:14:19,000 Importing MpegImagePlugin init
+2026-02-26 12:14:19,000 Importing MpoImagePlugin init
+2026-02-26 12:14:19,003 Importing MspImagePlugin init
+2026-02-26 12:14:19,005 Importing PalmImagePlugin init
+2026-02-26 12:14:19,013 Importing PcdImagePlugin init
+2026-02-26 12:14:19,016 Importing PcxImagePlugin init
+2026-02-26 12:14:19,016 Importing PdfImagePlugin init
+2026-02-26 12:14:19,034 Importing PixarImagePlugin init
+2026-02-26 12:14:19,038 Importing PngImagePlugin init
+2026-02-26 12:14:19,038 Importing PpmImagePlugin init
+2026-02-26 12:14:19,038 Importing PsdImagePlugin init
+2026-02-26 12:14:19,042 Importing QoiImagePlugin init
+2026-02-26 12:14:19,042 Importing SgiImagePlugin init
+2026-02-26 12:14:19,045 Importing SpiderImagePlugin init
+2026-02-26 12:14:19,047 Importing SunImagePlugin init
+2026-02-26 12:14:19,047 Importing TgaImagePlugin init
+2026-02-26 12:14:19,049 Importing TiffImagePlugin init
+2026-02-26 12:14:19,050 Importing WebPImagePlugin init
+2026-02-26 12:14:19,050 Importing WmfImagePlugin init
+2026-02-26 12:14:19,050 Importing XbmImagePlugin init
+2026-02-26 12:14:19,055 Importing XpmImagePlugin init
+2026-02-26 12:14:19,058 Importing XVThumbImagePlugin init
+2026-02-26 12:15:10,357 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2958', 'd_bomb': 'ggg', 'fdate': '2026-2-26 12:13:20', 'flocation': '21.120561,79.1441523', 'flocation_type': '1', 'flocation_description': 'hh', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'bbb', 'fswitch': 'ghb', 'ftarget': 'ggg', 'fdistruction': 'vhv', 'fassume': 'gg', 'radio_data': '', 'fdalam': '3', 'flearning': 'hhh', 'fassume_status_new': '1', 'edit_request': '0', 'delete_request': '0', 'detected_description': '', 'detected_pname': '', 'detcted_contact': '', 'dispose_name': '', 'dispose_contact': '', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-26 12:15:10,628 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '2958', 'd_bomb': 'ggg', 'fdate': '2026-2-26 12:13:20', 'flocation': '21.120561,79.1441523', 'flocation_type': '1', 'flocation_description': 'hh', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'bbb', 'fswitch': 'ghb', 'ftarget': 'ggg', 'fdistruction': 'vhv', 'fassume': 'gg', 'radio_data': '', 'fdalam': '3', 'flearning': 'hhh', 'fassume_status_new': '1', 'edit_request': '0', 'delete_request': '0', 'detected_description': '', 'detected_pname': '', 'detcted_contact': '', 'dispose_name': '', 'dispose_contact': '', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-26 12:15:10,689 Extracted coordinates from flocation: 21.120561, 79.1441523 form_api
+2026-02-26 12:15:10,922 Extracted coordinates from flocation: 21.120561, 79.1441523 form_api
+2026-02-26 12:15:14,689 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 12:15:14,750 Internal Server Error: /formapi log_response
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 555, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 504, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 559, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\Skillpilots\bdds\bdds\bdds_dashboard\views.py", line 1579, in form_api
+    if isinstance(data, (dict, QueryDict)):
+NameError: name 'QueryDict' is not defined
+2026-02-26 12:15:22,721 Importing BlpImagePlugin init
+2026-02-26 12:15:22,725 Importing BmpImagePlugin init
+2026-02-26 12:15:22,725 Importing BufrStubImagePlugin init
+2026-02-26 12:15:22,725 Importing CurImagePlugin init
+2026-02-26 12:15:22,725 Importing DcxImagePlugin init
+2026-02-26 12:15:22,725 Importing DdsImagePlugin init
+2026-02-26 12:15:22,739 Importing EpsImagePlugin init
+2026-02-26 12:15:22,741 Importing FitsImagePlugin init
+2026-02-26 12:15:22,741 Importing FliImagePlugin init
+2026-02-26 12:15:22,744 Importing FpxImagePlugin init
+2026-02-26 12:15:22,747 Importing FtexImagePlugin init
+2026-02-26 12:15:22,750 Importing GbrImagePlugin init
+2026-02-26 12:15:22,750 Importing GifImagePlugin init
+2026-02-26 12:15:22,752 Importing GribStubImagePlugin init
+2026-02-26 12:15:22,752 Importing Hdf5StubImagePlugin init
+2026-02-26 12:15:22,752 Importing IcnsImagePlugin init
+2026-02-26 12:15:22,758 Importing IcoImagePlugin init
+2026-02-26 12:15:22,759 Importing ImImagePlugin init
+2026-02-26 12:15:22,761 Importing ImtImagePlugin init
+2026-02-26 12:15:22,761 Importing IptcImagePlugin init
+2026-02-26 12:15:22,765 Importing JpegImagePlugin init
+2026-02-26 12:15:22,765 Importing Jpeg2KImagePlugin init
+2026-02-26 12:15:22,765 Importing McIdasImagePlugin init
+2026-02-26 12:15:22,765 Importing MicImagePlugin init
+2026-02-26 12:15:22,773 Importing MpegImagePlugin init
+2026-02-26 12:15:22,775 Importing MpoImagePlugin init
+2026-02-26 12:15:22,775 Importing MspImagePlugin init
+2026-02-26 12:15:22,775 Importing PalmImagePlugin init
+2026-02-26 12:15:22,775 Importing PcdImagePlugin init
+2026-02-26 12:15:22,775 Importing PcxImagePlugin init
+2026-02-26 12:15:22,775 Importing PdfImagePlugin init
+2026-02-26 12:15:22,790 Importing PixarImagePlugin init
+2026-02-26 12:15:22,791 Importing PngImagePlugin init
+2026-02-26 12:15:22,791 Importing PpmImagePlugin init
+2026-02-26 12:15:22,791 Importing PsdImagePlugin init
+2026-02-26 12:15:22,791 Importing QoiImagePlugin init
+2026-02-26 12:15:22,791 Importing SgiImagePlugin init
+2026-02-26 12:15:22,791 Importing BlpImagePlugin init
+2026-02-26 12:15:22,795 Importing SpiderImagePlugin init
+2026-02-26 12:15:22,795 Importing SunImagePlugin init
+2026-02-26 12:15:22,797 Importing TgaImagePlugin init
+2026-02-26 12:15:22,797 Importing TiffImagePlugin init
+2026-02-26 12:15:22,797 Importing WebPImagePlugin init
+2026-02-26 12:15:22,797 Importing BmpImagePlugin init
+2026-02-26 12:15:22,797 Importing BufrStubImagePlugin init
+2026-02-26 12:15:22,800 Importing CurImagePlugin init
+2026-02-26 12:15:22,800 Importing WmfImagePlugin init
+2026-02-26 12:15:22,801 Importing DcxImagePlugin init
+2026-02-26 12:15:22,801 Importing XbmImagePlugin init
+2026-02-26 12:15:22,803 Importing XpmImagePlugin init
+2026-02-26 12:15:22,803 Importing DdsImagePlugin init
+2026-02-26 12:15:22,803 Importing XVThumbImagePlugin init
+2026-02-26 12:15:22,810 Importing EpsImagePlugin init
+2026-02-26 12:15:22,810 Importing FitsImagePlugin init
+2026-02-26 12:15:22,816 Importing FliImagePlugin init
+2026-02-26 12:15:22,816 Importing FpxImagePlugin init
+2026-02-26 12:15:22,841 Importing FtexImagePlugin init
+2026-02-26 12:15:22,844 Importing GbrImagePlugin init
+2026-02-26 12:15:22,844 Importing GifImagePlugin init
+2026-02-26 12:15:22,844 Importing GribStubImagePlugin init
+2026-02-26 12:15:22,847 Importing Hdf5StubImagePlugin init
+2026-02-26 12:15:22,849 Importing IcnsImagePlugin init
+2026-02-26 12:15:22,856 Importing IcoImagePlugin init
+2026-02-26 12:15:22,859 Importing ImImagePlugin init
+2026-02-26 12:15:22,859 Importing ImtImagePlugin init
+2026-02-26 12:15:22,865 Importing IptcImagePlugin init
+2026-02-26 12:15:22,865 Importing JpegImagePlugin init
+2026-02-26 12:15:22,865 Importing Jpeg2KImagePlugin init
+2026-02-26 12:15:22,865 Importing McIdasImagePlugin init
+2026-02-26 12:15:22,865 Importing MicImagePlugin init
+2026-02-26 12:15:22,882 Importing MpegImagePlugin init
+2026-02-26 12:15:22,883 Importing MpoImagePlugin init
+2026-02-26 12:15:22,886 Importing MspImagePlugin init
+2026-02-26 12:15:22,886 Importing PalmImagePlugin init
+2026-02-26 12:15:22,891 Importing PcdImagePlugin init
+2026-02-26 12:15:22,891 Importing PcxImagePlugin init
+2026-02-26 12:15:22,891 Importing PdfImagePlugin init
+2026-02-26 12:15:22,905 Importing PixarImagePlugin init
+2026-02-26 12:15:22,908 Importing PngImagePlugin init
+2026-02-26 12:15:22,908 Importing PpmImagePlugin init
+2026-02-26 12:15:22,908 Importing PsdImagePlugin init
+2026-02-26 12:15:22,908 Importing QoiImagePlugin init
+2026-02-26 12:15:22,908 Importing SgiImagePlugin init
+2026-02-26 12:15:22,908 Importing SpiderImagePlugin init
+2026-02-26 12:15:22,908 Importing SunImagePlugin init
+2026-02-26 12:15:22,908 Importing TgaImagePlugin init
+2026-02-26 12:15:22,908 Importing TiffImagePlugin init
+2026-02-26 12:15:22,908 Importing WebPImagePlugin init
+2026-02-26 12:15:22,908 Importing WmfImagePlugin init
+2026-02-26 12:15:22,908 Importing XbmImagePlugin init
+2026-02-26 12:15:22,908 Importing XpmImagePlugin init
+2026-02-26 12:15:22,908 Importing XVThumbImagePlugin init
+2026-02-26 12:20:01,408 Not Found: /formviewapi log_response
+2026-02-26 12:20:19,124 Not Found: /formviewapi log_response
+2026-02-26 12:22:48,047 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '0000', 'd_bomb': 'hvhvv', 'fdate': '2026-2-16 12:21:4', 'flocation': '21.120561,79.1441523', 'flocation_type': '3', 'flocation_description': 'cvv', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '1', 'fexplosive': '4', 'fdetonator': 'hh', 'fswitch': 'bjj', 'ftarget': 'hhhh', 'fdistruction': 'hhhh', 'fassume': 'huh', 'radio_data': '', 'fdalam': '2', 'flearning': 'jjj', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'detected_description': '', 'detected_pname': '', 'detcted_contact': '', 'dispose_name': '', 'dispose_contact': '', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-26 12:22:48,309 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '0000', 'd_bomb': 'hvhvv', 'fdate': '2026-2-16 12:21:4', 'flocation': '21.120561,79.1441523', 'flocation_type': '3', 'flocation_description': 'cvv', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '1', 'fexplosive': '4', 'fdetonator': 'hh', 'fswitch': 'bjj', 'ftarget': 'hhhh', 'fdistruction': 'hhhh', 'fassume': 'huh', 'radio_data': '', 'fdalam': '2', 'flearning': 'jjj', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'detected_description': '', 'detected_pname': '', 'detcted_contact': '', 'dispose_name': '', 'dispose_contact': '', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-26 12:22:48,346 Extracted coordinates from flocation: 21.120561, 79.1441523 form_api
+2026-02-26 12:22:48,612 Extracted coordinates from flocation: 21.120561, 79.1441523 form_api
+2026-02-26 12:31:22,260 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '1999', 'd_bomb': 'gghh', 'fdate': '2026-2-26 17:25:38', 'flocation': '21.1206073,79.1441705', 'flocation_type': '3', 'flocation_description': 'yyy', 'fjuridiction': '4', 'fincident': '2', 'fweight_data': '3', 'fexplosive': '3', 'fdetonator': 'vvv', 'fswitch': 'ghhh', 'ftarget': 'vvvv', 'fdistruction': 'vvvv', 'fassume': 'hhh', 'radio_data': '', 'fdalam': '3', 'flearning': 'hhhh', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'detected_description': '', 'detected_pname': '', 'detcted_contact': '', 'dispose_name': '', 'dispose_contact': '', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-26 12:31:22,726 Extracted coordinates from flocation: 21.1206073, 79.1441705 form_api
+2026-02-26 12:31:34,415 tag: ImageWidth (256) - type: long (4) - value: b'\x00\x00\x10@' load
+2026-02-26 12:31:34,415 tag: ImageLength (257) - type: long (4) - value: b'\x00\x00\x0c0' load
+2026-02-26 12:31:34,415 tag: Copyright (33432) - type: string (2) Tag Location: 46 - Data Location: 206 - value: b'Copyright,Spreadtrum,2011\x00' load
+2026-02-26 12:31:34,415 tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02' load
+2026-02-26 12:31:34,415 tag: ImageDescription (270) - type: string (2) Tag Location: 70 - Data Location: 232 - value: b'Exif_JPEG_420\x00' load
+2026-02-26 12:31:34,415 tag: Make (271) - type: string (2) Tag Location: 82 - Data Location: 246 - value: b'realme\x00' load
+2026-02-26 12:31:34,415 tag: Model (272) - type: string (2) Tag Location: 94 - Data Location: 253 - value: b'C21Y\x00' load
+2026-02-26 12:31:34,415 tag: Software (305) - type: string (2) Tag Location: 106 - Data Location: 258 - value: b'Software Version v1.1.0\x00' load
+2026-02-26 12:31:34,415 tag: Orientation (274) - type: short (3) - value: b'\x00\x00' load
+2026-02-26 12:31:34,415 tag: DateTime (306) - type: string (2) Tag Location: 130 - Data Location: 282 - value: b'2026:02:19 21:03:05\x00' load
+2026-02-26 12:31:34,415 tag: YCbCrPositioning (531) - type: short (3) - value: b'\x00\x01' load
+2026-02-26 12:31:34,415 tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x01K' load
+2026-02-26 12:31:34,415 tag: GPSInfoIFD (34853) - type: long (4) - value: b'\x00\x00\x03H' load
+2026-02-26 12:31:34,415 tag: XResolution (282) - type: rational (5) Tag Location: 178 - Data Location: 302 - value: b'\x00\x00\x00H\x00\x00\x00\x01' load
+2026-02-26 12:31:34,415 tag: YResolution (283) - type: rational (5) Tag Location: 190 - Data Location: 310 - value: b'\x00\x00\x00H\x00\x00\x00\x01' load
+2026-02-26 12:31:34,415 tag: Artist (315) - type: string (2) Tag Location: 202 - Data Location: 318 - value: b'Artist-freed\x00' load
+2026-02-26 12:31:34,420 Importing BlpImagePlugin init
+2026-02-26 12:31:34,441 Importing BmpImagePlugin init
+2026-02-26 12:31:34,441 Importing BufrStubImagePlugin init
+2026-02-26 12:31:34,441 Importing CurImagePlugin init
+2026-02-26 12:31:34,446 Importing DcxImagePlugin init
+2026-02-26 12:31:34,451 Importing DdsImagePlugin init
+2026-02-26 12:31:34,459 Importing EpsImagePlugin init
+2026-02-26 12:31:34,472 Importing FitsImagePlugin init
+2026-02-26 12:31:34,478 Importing FliImagePlugin init
+2026-02-26 12:31:34,478 Importing FpxImagePlugin init
+2026-02-26 12:31:34,516 Importing FtexImagePlugin init
+2026-02-26 12:31:34,519 Importing GbrImagePlugin init
+2026-02-26 12:31:34,520 Importing GifImagePlugin init
+2026-02-26 12:31:34,520 Importing GribStubImagePlugin init
+2026-02-26 12:31:34,523 Importing Hdf5StubImagePlugin init
+2026-02-26 12:31:34,525 Importing IcnsImagePlugin init
+2026-02-26 12:31:34,532 Importing IcoImagePlugin init
+2026-02-26 12:31:34,541 Importing ImImagePlugin init
+2026-02-26 12:31:34,541 Importing ImtImagePlugin init
+2026-02-26 12:31:34,641 Importing IptcImagePlugin init
+2026-02-26 12:31:34,644 Importing JpegImagePlugin init
+2026-02-26 12:31:34,644 Importing Jpeg2KImagePlugin init
+2026-02-26 12:31:34,644 Importing McIdasImagePlugin init
+2026-02-26 12:31:34,647 Importing MicImagePlugin init
+2026-02-26 12:31:34,647 Importing MpegImagePlugin init
+2026-02-26 12:31:34,650 Importing MpoImagePlugin init
+2026-02-26 12:31:34,652 Importing MspImagePlugin init
+2026-02-26 12:31:34,656 Importing PalmImagePlugin init
+2026-02-26 12:31:34,668 Importing PcdImagePlugin init
+2026-02-26 12:31:34,672 Importing PcxImagePlugin init
+2026-02-26 12:31:34,672 Importing PdfImagePlugin init
+2026-02-26 12:31:34,700 Importing PixarImagePlugin init
+2026-02-26 12:31:34,701 Importing PngImagePlugin init
+2026-02-26 12:31:34,701 Importing PpmImagePlugin init
+2026-02-26 12:31:34,701 Importing PsdImagePlugin init
+2026-02-26 12:31:34,704 Importing QoiImagePlugin init
+2026-02-26 12:31:34,704 Importing SgiImagePlugin init
+2026-02-26 12:31:34,707 Importing SpiderImagePlugin init
+2026-02-26 12:31:34,710 Importing SunImagePlugin init
+2026-02-26 12:31:34,710 Importing TgaImagePlugin init
+2026-02-26 12:31:34,710 Importing TiffImagePlugin init
+2026-02-26 12:31:34,710 Importing WebPImagePlugin init
+2026-02-26 12:31:34,710 Importing WmfImagePlugin init
+2026-02-26 12:31:34,710 Importing XbmImagePlugin init
+2026-02-26 12:31:34,718 Importing XpmImagePlugin init
+2026-02-26 12:31:34,718 Importing XVThumbImagePlugin init
+2026-02-26 12:39:04,202 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '1800', 'd_bomb': 'njjn', 'fdate': '2026-2-26 12:37:3', 'flocation': '21.1205578,79.144156', 'flocation_type': '1', 'flocation_description': 'gh', 'fjuridiction': '5', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'ggg', 'ftarget': 'jhh', 'fdistruction': 'bbb', 'fassume': 'ijj', 'radio_data': '', 'fdalam': '2', 'flearning': 'ju', 'fassume_status_new': '2', 'edit_request': '0', 'delete_request': '0', 'detected_description': '', 'detected_pname': '', 'detcted_contact': '', 'dispose_name': '', 'dispose_contact': '', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-26 12:39:04,497 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '1800', 'd_bomb': 'njjn', 'fdate': '2026-2-26 12:37:3', 'flocation': '21.1205578,79.144156', 'flocation_type': '1', 'flocation_description': 'gh', 'fjuridiction': '5', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'hhh', 'fswitch': 'ggg', 'ftarget': 'jhh', 'fdistruction': 'bbb', 'fassume': 'ijj', 'radio_data': '', 'fdalam': '2', 'flearning': 'ju', 'fassume_status_new': '2', 'edit_request': '0', 'delete_request': '0', 'detected_description': '', 'detected_pname': '', 'detcted_contact': '', 'dispose_name': '', 'dispose_contact': '', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-26 12:39:04,569 Extracted coordinates from flocation: 21.1205578, 79.144156 form_api
+2026-02-26 12:39:04,806 Extracted coordinates from flocation: 21.1205578, 79.144156 form_api
+2026-02-26 12:39:17,873 Importing BlpImagePlugin init
+2026-02-26 12:39:17,878 Importing BmpImagePlugin init
+2026-02-26 12:39:17,878 Importing BufrStubImagePlugin init
+2026-02-26 12:39:17,878 Importing CurImagePlugin init
+2026-02-26 12:39:17,878 Importing DcxImagePlugin init
+2026-02-26 12:39:17,878 Importing DdsImagePlugin init
+2026-02-26 12:39:17,891 Importing EpsImagePlugin init
+2026-02-26 12:39:17,891 Importing FitsImagePlugin init
+2026-02-26 12:39:17,894 Importing FliImagePlugin init
+2026-02-26 12:39:17,894 Importing BlpImagePlugin init
+2026-02-26 12:39:17,897 Importing FpxImagePlugin init
+2026-02-26 12:39:17,897 Importing BmpImagePlugin init
+2026-02-26 12:39:17,899 Importing BufrStubImagePlugin init
+2026-02-26 12:39:17,900 Importing CurImagePlugin init
+2026-02-26 12:39:17,901 Importing DcxImagePlugin init
+2026-02-26 12:39:17,901 Importing DdsImagePlugin init
+2026-02-26 12:39:17,910 Importing EpsImagePlugin init
+2026-02-26 12:39:17,910 Importing FitsImagePlugin init
+2026-02-26 12:39:17,910 Importing FliImagePlugin init
+2026-02-26 12:39:17,910 Importing FpxImagePlugin init
+2026-02-26 12:39:17,910 Importing FtexImagePlugin init
+2026-02-26 12:39:17,910 Importing GbrImagePlugin init
+2026-02-26 12:39:17,923 Importing GifImagePlugin init
+2026-02-26 12:39:17,923 Importing GribStubImagePlugin init
+2026-02-26 12:39:17,923 Importing Hdf5StubImagePlugin init
+2026-02-26 12:39:17,926 Importing IcnsImagePlugin init
+2026-02-26 12:39:17,926 Importing IcoImagePlugin init
+2026-02-26 12:39:17,926 Importing ImImagePlugin init
+2026-02-26 12:39:17,934 Importing ImtImagePlugin init
+2026-02-26 12:39:17,936 Importing IptcImagePlugin init
+2026-02-26 12:39:17,937 Importing JpegImagePlugin init
+2026-02-26 12:39:17,937 Importing Jpeg2KImagePlugin init
+2026-02-26 12:39:17,937 Importing McIdasImagePlugin init
+2026-02-26 12:39:17,939 Importing MicImagePlugin init
+2026-02-26 12:39:17,941 Importing FtexImagePlugin init
+2026-02-26 12:39:17,943 Importing GbrImagePlugin init
+2026-02-26 12:39:17,943 Importing GifImagePlugin init
+2026-02-26 12:39:17,943 Importing GribStubImagePlugin init
+2026-02-26 12:39:17,943 Importing Hdf5StubImagePlugin init
+2026-02-26 12:39:17,947 Importing IcnsImagePlugin init
+2026-02-26 12:39:17,947 Importing MpegImagePlugin init
+2026-02-26 12:39:17,950 Importing MpoImagePlugin init
+2026-02-26 12:39:17,951 Importing MspImagePlugin init
+2026-02-26 12:39:17,951 Importing IcoImagePlugin init
+2026-02-26 12:39:17,951 Importing PalmImagePlugin init
+2026-02-26 12:39:17,956 Importing ImImagePlugin init
+2026-02-26 12:39:17,959 Importing ImtImagePlugin init
+2026-02-26 12:39:17,959 Importing PcdImagePlugin init
+2026-02-26 12:39:17,959 Importing IptcImagePlugin init
+2026-02-26 12:39:17,959 Importing PcxImagePlugin init
+2026-02-26 12:39:17,959 Importing PdfImagePlugin init
+2026-02-26 12:39:17,959 Importing JpegImagePlugin init
+2026-02-26 12:39:17,959 Importing Jpeg2KImagePlugin init
+2026-02-26 12:39:17,959 Importing McIdasImagePlugin init
+2026-02-26 12:39:17,959 Importing MicImagePlugin init
+2026-02-26 12:39:17,967 Importing MpegImagePlugin init
+2026-02-26 12:39:17,967 Importing PixarImagePlugin init
+2026-02-26 12:39:17,967 Importing MpoImagePlugin init
+2026-02-26 12:39:17,967 Importing MspImagePlugin init
+2026-02-26 12:39:17,967 Importing PngImagePlugin init
+2026-02-26 12:39:17,967 Importing PpmImagePlugin init
+2026-02-26 12:39:17,973 Importing PsdImagePlugin init
+2026-02-26 12:39:17,973 Importing PalmImagePlugin init
+2026-02-26 12:39:17,973 Importing QoiImagePlugin init
+2026-02-26 12:39:17,975 Importing SgiImagePlugin init
+2026-02-26 12:39:17,978 Importing SpiderImagePlugin init
+2026-02-26 12:39:17,978 Importing SunImagePlugin init
+2026-02-26 12:39:17,978 Importing PcdImagePlugin init
+2026-02-26 12:39:17,978 Importing TgaImagePlugin init
+2026-02-26 12:39:17,978 Importing PcxImagePlugin init
+2026-02-26 12:39:17,978 Importing PdfImagePlugin init
+2026-02-26 12:39:17,978 Importing TiffImagePlugin init
+2026-02-26 12:39:17,978 Importing WebPImagePlugin init
+2026-02-26 12:39:17,983 Importing WmfImagePlugin init
+2026-02-26 12:39:17,985 Importing XbmImagePlugin init
+2026-02-26 12:39:17,987 Importing XpmImagePlugin init
+2026-02-26 12:39:17,987 Importing XVThumbImagePlugin init
+2026-02-26 12:39:17,989 Importing PixarImagePlugin init
+2026-02-26 12:39:17,991 Importing PngImagePlugin init
+2026-02-26 12:39:17,991 Importing PpmImagePlugin init
+2026-02-26 12:39:17,991 Importing PsdImagePlugin init
+2026-02-26 12:39:17,991 Importing QoiImagePlugin init
+2026-02-26 12:39:17,991 Importing SgiImagePlugin init
+2026-02-26 12:39:17,991 Importing SpiderImagePlugin init
+2026-02-26 12:39:17,996 Importing SunImagePlugin init
+2026-02-26 12:39:17,996 Importing TgaImagePlugin init
+2026-02-26 12:39:17,996 Importing TiffImagePlugin init
+2026-02-26 12:39:17,996 Importing WebPImagePlugin init
+2026-02-26 12:39:18,001 Importing WmfImagePlugin init
+2026-02-26 12:39:18,001 Importing XbmImagePlugin init
+2026-02-26 12:39:18,001 Importing XpmImagePlugin init
+2026-02-26 12:39:18,001 Importing XVThumbImagePlugin init
+2026-02-26 12:49:28,621 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '1500', 'd_bomb': 'vgg', 'fdate': '2026-2-26 12:47:37', 'flocation': '21.1205587,79.1441497', 'flocation_type': '3', 'flocation_description': 'jj', 'fjuridiction': '4', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'vh', 'fswitch': 'hhhh', 'ftarget': 'vv', 'fdistruction': 'bbb', 'fassume': 'hhh', 'radio_data': '', 'fdalam': '3', 'flearning': 'bh', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'detected_description': '', 'detected_pname': '', 'detcted_contact': '', 'dispose_name': '', 'dispose_contact': '', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-26 12:49:28,927 Extracted coordinates from flocation: 21.1205587, 79.1441497 form_api
+2026-02-26 12:49:29,888 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '1500', 'd_bomb': 'vgg', 'fdate': '2026-2-26 12:47:37', 'flocation': '21.1205587,79.1441497', 'flocation_type': '3', 'flocation_description': 'jj', 'fjuridiction': '4', 'fincident': '3', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'vh', 'fswitch': 'hhhh', 'ftarget': 'vv', 'fdistruction': 'bbb', 'fassume': 'hhh', 'radio_data': '', 'fdalam': '3', 'flearning': 'bh', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'detected_description': '', 'detected_pname': '', 'detcted_contact': '', 'dispose_name': '', 'dispose_contact': '', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-26 12:49:30,195 Extracted coordinates from flocation: 21.1205587, 79.1441497 form_api
+2026-02-26 12:49:43,800 tag: ImageWidth (256) - type: long (4) - value: b'\x00\x00\x0c\xc0' load
+2026-02-26 12:49:43,800 tag: ImageWidth (256) - type: long (4) - value: b'\x00\x00\x0c\xc0' load
+2026-02-26 12:49:43,800 tag: ImageLength (257) - type: long (4) - value: b'\x00\x00\t\x90' load
+2026-02-26 12:49:43,800 tag: ImageLength (257) - type: long (4) - value: b'\x00\x00\t\x90' load
+2026-02-26 12:49:43,800 tag: Copyright (33432) - type: string (2) Tag Location: 46 - Data Location: 206 - value: b'Copyright,Spreadtrum,2011\x00' load
+2026-02-26 12:49:43,800 tag: Copyright (33432) - type: string (2) Tag Location: 46 - Data Location: 206 - value: b'Copyright,Spreadtrum,2011\x00' load
+2026-02-26 12:49:43,800 tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02' load
+2026-02-26 12:49:43,800 tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02' load
+2026-02-26 12:49:43,800 tag: ImageDescription (270) - type: string (2) Tag Location: 70 - Data Location: 232 - value: b'Exif_JPEG_420\x00' load
+2026-02-26 12:49:43,800 tag: ImageDescription (270) - type: string (2) Tag Location: 70 - Data Location: 232 - value: b'Exif_JPEG_420\x00' load
+2026-02-26 12:49:43,800 tag: Make (271) - type: string (2) Tag Location: 82 - Data Location: 246 - value: b'realme\x00' load
+2026-02-26 12:49:43,800 tag: Make (271) - type: string (2) Tag Location: 82 - Data Location: 246 - value: b'realme\x00' load
+2026-02-26 12:49:43,800 tag: Model (272) - type: string (2) Tag Location: 94 - Data Location: 253 - value: b'C21Y\x00' load
+2026-02-26 12:49:43,806 tag: Model (272) - type: string (2) Tag Location: 94 - Data Location: 253 - value: b'C21Y\x00' load
+2026-02-26 12:49:43,806 tag: Software (305) - type: string (2) Tag Location: 106 - Data Location: 258 - value: b'Software Version v1.1.0\x00' load
+2026-02-26 12:49:43,806 tag: Software (305) - type: string (2) Tag Location: 106 - Data Location: 258 - value: b'Software Version v1.1.0\x00' load
+2026-02-26 12:49:43,806 tag: Orientation (274) - type: short (3) - value: b'\x00\x00' load
+2026-02-26 12:49:43,806 tag: Orientation (274) - type: short (3) - value: b'\x00\x00' load
+2026-02-26 12:49:43,806 tag: DateTime (306) - type: string (2) Tag Location: 130 - Data Location: 282 - value: b'2026:02:15 09:43:58\x00' load
+2026-02-26 12:49:43,806 tag: DateTime (306) - type: string (2) Tag Location: 130 - Data Location: 282 - value: b'2026:02:15 09:43:58\x00' load
+2026-02-26 12:49:43,806 tag: YCbCrPositioning (531) - type: short (3) - value: b'\x00\x01' load
+2026-02-26 12:49:43,806 tag: YCbCrPositioning (531) - type: short (3) - value: b'\x00\x01' load
+2026-02-26 12:49:43,806 tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x01K' load
+2026-02-26 12:49:43,806 tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x01K' load
+2026-02-26 12:49:43,806 tag: GPSInfoIFD (34853) - type: long (4) - value: b'\x00\x00\x03H' load
+2026-02-26 12:49:43,806 tag: GPSInfoIFD (34853) - type: long (4) - value: b'\x00\x00\x03H' load
+2026-02-26 12:49:43,806 tag: XResolution (282) - type: rational (5) Tag Location: 178 - Data Location: 302 - value: b'\x00\x00\x00H\x00\x00\x00\x01' load
+2026-02-26 12:49:43,806 tag: XResolution (282) - type: rational (5) Tag Location: 178 - Data Location: 302 - value: b'\x00\x00\x00H\x00\x00\x00\x01' load
+2026-02-26 12:49:43,806 tag: YResolution (283) - type: rational (5) Tag Location: 190 - Data Location: 310 - value: b'\x00\x00\x00H\x00\x00\x00\x01' load
+2026-02-26 12:49:43,806 tag: YResolution (283) - type: rational (5) Tag Location: 190 - Data Location: 310 - value: b'\x00\x00\x00H\x00\x00\x00\x01' load
+2026-02-26 12:49:43,806 tag: Artist (315) - type: string (2) Tag Location: 202 - Data Location: 318 - value: b'Artist-freed\x00' load
+2026-02-26 12:49:43,806 tag: Artist (315) - type: string (2) Tag Location: 202 - Data Location: 318 - value: b'Artist-freed\x00' load
+2026-02-26 13:02:50,563 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '1000', 'd_bomb': 'vh', 'fdate': '2026-2-26 12:56:15', 'flocation': '21.1205648,79.1441532', 'flocation_type': '4', 'flocation_description': 'vv', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '4', 'fexplosive': '5', 'fdetonator': 'vv', 'fswitch': 'ghh', 'ftarget': 'bbb', 'fdistruction': 'bbb', 'fassume': 'bb', 'radio_data': '', 'fdalam': '3', 'flearning': 'vh', 'fassume_status_new': '2', 'edit_request': '0', 'delete_request': '0', 'detected_description': '', 'detected_pname': '', 'detcted_contact': '', 'dispose_name': '', 'dispose_contact': '', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-26 13:02:50,864 Extracted coordinates from flocation: 21.1205648, 79.1441532 form_api
+2026-02-26 14:01:20,541 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 14:01:20,859 Extracted coordinates from flocation: 21.120593, 79.1441586 form_api
+2026-02-26 14:01:23,958 Form submission validation failed: {'fdate': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')]} form_api
+2026-02-26 14:01:29,010 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'wee3333', 'd_bomb': 'eeee', 'fdate': 'Date Time *', 'flocation': '21.120593,79.1441586', 'flocation_type': '4', 'flocation_description': 'eeee', 'fjuridiction': '4', 'fincident': '4', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'fddd', 'fswitch': 'rrrtt', 'ftarget': 'rrrtrr', 'fdistruction': 'ggyyhyh', 'fassume': ' xxxdcdxddd', 'radio_data': '', 'fdalam': '3', 'flearning': 'eeeee', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '2', 'detected_description': 'eedffgf', 'detected_pname': 'rfggcgf', 'detcted_contact': '5588788888', 'detected_dispose': '3', 'dispose_name': 'fcxcf', 'dispose_contact': '2855558588', 'explode': [], 'death': [{'death_contact': '2255555888', 'death_name': 'httt'}], 'injured': [{'injured_contact': '1155858888', 'injured_name': 'fffgf'}]} form_api
+2026-02-26 14:01:29,333 Extracted coordinates from flocation: 21.120593, 79.1441586 form_api
+2026-02-26 14:01:32,442 Form submission validation failed: {'fdate': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')]} form_api
+2026-02-26 14:01:32,458 Bad Request: /formapi log_response
+2026-02-26 14:01:44,619 Not Found: /formviewapi log_response
+2026-02-26 14:09:35,094 Final login data being processed: {'username': '9876543210', 'password': 'bdds2026'} post
+2026-02-26 14:09:39,686 Successful login: 9876543210 post
+2026-02-26 14:12:20,774 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': '9000', 'd_bomb': 'jjjj', 'fdate': '2026-2-26 14:10:0', 'flocation': '21.1205737,79.1441545', 'flocation_type': '3', 'flocation_description': 'hhh', 'fjuridiction': '3', 'fincident': '4', 'fweight_data': '2', 'fexplosive': '2', 'fdetonator': 'hhhh', 'fswitch': 'hjjj', 'ftarget': 'bhhh', 'fdistruction': 'hhh', 'fassume': 'jjjjj', 'radio_data': '', 'fdalam': '4', 'flearning': 'jjjj', 'fassume_status_new': '2', 'edit_request': '0', 'delete_request': '0', 'detected_description': '', 'detected_pname': '', 'detcted_contact': '', 'dispose_name': '', 'dispose_contact': '', 'explode': [], 'death': [], 'injured': []} form_api
+2026-02-26 14:12:21,089 Extracted coordinates from flocation: 21.1205737, 79.1441545 form_api
+2026-02-26 14:12:29,701 tag: ImageWidth (256) - type: short (3) - value: b'\x08p' load
+2026-02-26 14:12:29,701 tag: ImageLength (257) - type: short (3) - value: b'\x0f\x00' load
+2026-02-26 14:12:29,701 tag: Make (271) - type: string (2) Tag Location: 46 - Data Location: 146 - value: b'Xiaomi\x00' load
+2026-02-26 14:12:29,701 tag: Model (272) - type: string (2) Tag Location: 58 - Data Location: 154 - value: b'24116PCC1I\x00' load
+2026-02-26 14:12:29,701 tag: XResolution (282) - type: rational (5) Tag Location: 70 - Data Location: 166 - value: b'\x00\x00\x00H\x00\x00\x00\x01' load
+2026-02-26 14:12:29,701 tag: YResolution (283) - type: rational (5) Tag Location: 82 - Data Location: 174 - value: b'\x00\x00\x00H\x00\x00\x00\x01' load
+2026-02-26 14:12:29,701 tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02' load
+2026-02-26 14:12:29,701 tag: DateTime (306) - type: string (2) Tag Location: 106 - Data Location: 182 - value: b'2026:02:25 09:56:37\x00' load
+2026-02-26 14:12:29,701 tag: YCbCrPositioning (531) - type: short (3) - value: b'\x00\x01' load
+2026-02-26 14:12:29,701 tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xca' load
+2026-02-26 14:12:29,701 tag: GPSInfoIFD (34853) - type: long (4) - value: b'\x00\x00\x03\n' load
+2026-02-26 14:15:11,940 Final login data being processed: {'username': '9876543210', 'password': 'bdds2026'} post
+2026-02-26 14:15:16,576 Successful login: 9876543210 post
+2026-02-26 14:21:17,862 Not Found: /formviewapi log_response
+2026-02-26 14:21:17,866 Not Found: /formviewapi log_response
+2026-02-26 14:26:28,650 form_api (API) hit by user: 9876543210, data: {'user': '2', 'fserial': 'sh', 'd_bomb': 'ghh', 'fdate': '2026-2-26 14:22:57', 'flocation': '21.1205507,79.144151', 'flocation_type': '2', 'flocation_description': 'fgh', 'fjuridiction': '3', 'fincident': '3', 'fweight_data': '3', 'fexplosive': '4', 'fdetonator': 'vvjb', 'fswitch': 'xcbb', 'ftarget': 'ghj', 'fdistruction': 'fgh', 'fassume': 'zxv', 'radio_data': '', 'fdalam': '3', 'flearning': 'cvbbc', 'fassume_status_new': '3', 'edit_request': '0', 'delete_request': '0', 'mode_of_detection': '3', 'detected_description': 'fghv', 'detected_pname': 'xcv', 'detcted_contact': '5214635247', 'detected_dispose': '3', 'dispose_name': 'fggx', 'dispose_contact': '8589908732', 'explode': [], 'death': [{'death_contact': '2134567890', 'death_name': 'fgh'}], 'injured': [{'injured_contact': '1234568798', 'injured_name': 'xfv'}]} form_api
+2026-02-26 14:26:29,068 Extracted coordinates from flocation: 21.1205507, 79.144151 form_api
+2026-02-26 14:34:06,502 Not Found: /static/admin/js/theme.js log_response
+2026-02-26 14:34:06,502 Not Found: /static/admin/css/base.css log_response
+2026-02-26 14:34:06,545 Not Found: /static/admin/css/nav_sidebar.css log_response
+2026-02-26 14:34:06,589 Not Found: /static/admin/css/dashboard.css log_response
+2026-02-26 14:34:06,606 Not Found: /static/admin/css/dark_mode.css log_response
+2026-02-26 14:34:06,665 Not Found: /static/admin/css/nav_sidebar.css log_response
+2026-02-26 14:34:06,672 Not Found: /static/admin/js/nav_sidebar.js log_response
+2026-02-26 14:34:06,677 Not Found: /static/admin/css/dashboard.css log_response
+2026-02-26 14:34:06,773 Not Found: /static/admin/css/responsive.css log_response
+2026-02-26 14:34:06,973 Not Found: /favicon.ico log_response
+2026-02-26 14:34:19,211 Not Found: / log_response
+2026-02-26 14:34:19,925 Not Found: / log_response
+2026-02-26 14:34:59,817 Not Found: / log_response
+2026-02-26 14:35:00,608 Not Found: / log_response
+2026-02-26 14:35:18,194 Not Found: /static/admin/css/dashboard.css log_response
+2026-02-26 14:35:18,265 Not Found: /static/admin/css/base.css log_response
+2026-02-26 14:35:18,277 Not Found: /static/admin/css/responsive.css log_response
+2026-02-26 14:35:18,277 Not Found: /static/admin/css/nav_sidebar.css log_response
+2026-02-26 14:35:18,284 Not Found: /static/admin/js/theme.js log_response
+2026-02-26 14:35:18,337 Not Found: /static/admin/css/dark_mode.css log_response
+2026-02-26 14:35:18,353 Not Found: /static/admin/js/nav_sidebar.js log_response
+2026-02-26 14:35:18,409 Not Found: /static/admin/css/nav_sidebar.css log_response
+2026-02-26 14:35:18,441 Not Found: /static/admin/css/dashboard.css log_response
+2026-02-26 14:35:18,441 Not Found: /static/admin/css/responsive.css log_response
+2026-02-26 14:36:18,220 Not Found: / log_response
+2026-02-26 14:36:18,751 Not Found: / log_response
+2026-02-26 14:52:23,973 Final login data being processed: {'username': '9876543210', 'password': 'bdds2026'} post
+2026-02-26 14:52:29,498 Successful login: 9876543210 post
+2026-02-26 15:41:46,811 Not Found: /static/vendors/bootstrap/dist/css/bootstrap.min.css log_response
+2026-02-26 15:41:46,876 Not Found: /static/vendors/bootstrap/dist/js/bootstrap.min.js log_response
+2026-02-26 15:41:46,926 Not Found: /static/vendors/fastclick/lib/fastclick.js log_response
+2026-02-26 15:41:46,971 Not Found: /static/vendors/nprogress/nprogress.js log_response
+2026-02-26 15:41:46,984 Not Found: /static/vendors/animate.css/animate.min.css log_response
+2026-02-26 15:41:47,023 Not Found: /static/vendors/iCheck/icheck.min.js log_response
+2026-02-26 15:41:47,047 Not Found: /static/vendors/datatables.net/js/jquery.dataTables.min.js log_response
+2026-02-26 15:41:47,076 Not Found: /static/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js log_response
+2026-02-26 15:41:47,095 Not Found: /static/vendors/datatables.net-buttons/js/dataTables.buttons.min.js log_response
+2026-02-26 15:41:47,091 Not Found: /static/vendors/font-awesome/css/font-awesome.min.css log_response
+2026-02-26 15:41:47,098 Not Found: /static/vendors/jquery/dist/jquery.min.js log_response
+2026-02-26 15:41:47,121 Not Found: /static/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js log_response
+2026-02-26 15:41:47,125 Not Found: /static/build/css/custom.min.css log_response
+2026-02-26 15:41:47,144 Not Found: /static/vendors/datatables.net-buttons/js/buttons.flash.min.js log_response
+2026-02-26 15:41:47,159 Not Found: /static/vendors/datatables.net-buttons/js/buttons.html5.min.js log_response
+2026-02-26 15:41:47,154 Not Found: /static/vendors/nprogress/nprogress.css log_response
+2026-02-26 15:41:47,169 Not Found: /static/vendors/datatables.net-buttons/js/buttons.print.min.js log_response
+2026-02-26 15:41:47,169 Not Found: /static/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js log_response
+2026-02-26 15:41:47,197 Not Found: /static/vendors/datatables.net-responsive/js/dataTables.responsive.min.js log_response
+2026-02-26 15:41:47,209 Not Found: /static/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js log_response
+2026-02-26 15:41:47,209 Not Found: /static/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js log_response
+2026-02-26 15:41:47,215 Not Found: /static/vendors/datatables.net-scroller/js/dataTables.scroller.min.js log_response
+2026-02-26 15:41:47,229 Not Found: /static/vendors/jszip/dist/jszip.min.js log_response
+2026-02-26 15:41:47,241 Not Found: /static/vendors/pdfmake/build/pdfmake.min.js log_response
+2026-02-26 15:41:47,242 Not Found: /static/vendors/pdfmake/build/vfs_fonts.js log_response
+2026-02-26 15:41:47,254 Not Found: /static/build/js/custom.min.js log_response
+2026-02-26 15:46:40,425 Not Found: /static/vendors/animate.css/animate.min.css log_response
+2026-02-26 15:46:40,425 Not Found: /static/vendors/font-awesome/css/font-awesome.min.css log_response
+2026-02-26 15:46:40,454 Not Found: /static/build/css/custom.min.css log_response
+2026-02-26 15:46:40,461 Not Found: /static/vendors/bootstrap/dist/css/bootstrap.min.css log_response
+2026-02-26 15:46:40,474 Not Found: /static/vendors/bootstrap/dist/js/bootstrap.min.js log_response
+2026-02-26 15:46:40,497 Not Found: /static/vendors/fastclick/lib/fastclick.js log_response
+2026-02-26 15:46:40,501 Not Found: /static/vendors/nprogress/nprogress.js log_response
+2026-02-26 15:46:40,519 Not Found: /static/vendors/iCheck/icheck.min.js log_response
+2026-02-26 15:46:40,542 Not Found: /static/vendors/datatables.net/js/jquery.dataTables.min.js log_response
+2026-02-26 15:46:40,542 Not Found: /static/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js log_response
+2026-02-26 15:46:40,547 Not Found: /static/vendors/datatables.net-buttons/js/dataTables.buttons.min.js log_response
+2026-02-26 15:46:40,567 Not Found: /static/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js log_response
+2026-02-26 15:46:40,590 Not Found: /static/vendors/datatables.net-buttons/js/buttons.flash.min.js log_response
+2026-02-26 15:46:40,593 Not Found: /static/vendors/datatables.net-buttons/js/buttons.html5.min.js log_response
+2026-02-26 15:46:40,602 Not Found: /static/vendors/datatables.net-buttons/js/buttons.print.min.js log_response
+2026-02-26 15:46:40,630 Not Found: /static/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js log_response
+2026-02-26 15:46:40,641 Not Found: /static/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js log_response
+2026-02-26 15:46:40,641 Not Found: /static/vendors/datatables.net-responsive/js/dataTables.responsive.min.js log_response
+2026-02-26 15:46:40,657 Not Found: /static/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js log_response
+2026-02-26 15:46:40,676 Not Found: /static/vendors/datatables.net-scroller/js/dataTables.scroller.min.js log_response
+2026-02-26 15:46:40,697 Not Found: /static/vendors/pdfmake/build/pdfmake.min.js log_response
+2026-02-26 15:46:40,697 Not Found: /static/vendors/jszip/dist/jszip.min.js log_response
+2026-02-26 15:46:40,708 Not Found: /static/vendors/pdfmake/build/vfs_fonts.js log_response
+2026-02-26 15:46:40,711 Not Found: /static/vendors/jquery/dist/jquery.min.js log_response
+2026-02-26 15:46:40,711 Not Found: /static/vendors/nprogress/nprogress.css log_response
+2026-02-26 15:46:40,725 Not Found: /static/build/js/custom.min.js log_response
+2026-02-26 15:47:04,152 Internal Server Error: /index log_response
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 555, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 265, in _get_response_async
+    self.check_response(response, callback)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view bdds_dashboard.views.index_page didn't return an HttpResponse object. It returned None instead.
+2026-02-26 15:57:07,701 Internal Server Error: /index log_response
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view bdds_dashboard.views.index_page didn't return an HttpResponse object. It returned None instead.
+2026-02-26 15:57:10,723 Internal Server Error: /index log_response
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view bdds_dashboard.views.index_page didn't return an HttpResponse object. It returned None instead.
+2026-02-26 17:54:53,992 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 17:54:56,344 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 17:57:00,115 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 18:01:52,293 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 18:02:27,517 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 18:03:20,225 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 18:06:50,485 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 18:07:37,401 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 18:08:03,599 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 19:20:40,363 Not Found: /favicon.ico log_response
+2026-02-26 19:22:32,387 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 19:33:50,521 Not Found: /favicon.ico log_response
+2026-02-26 19:35:31,869 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 19:43:30,668 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 19:43:51,207 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 19:53:50,701 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 19:53:52,661 Not Found: /favicon.ico log_response
+2026-02-26 19:56:36,128 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 20:00:24,690 centralise_database view hit by user: admin, method: POST centralise_database
+2026-02-26 20:00:25,051 POST Data: <QueryDict: {'csrfmiddlewaretoken': ['VnQ3a58rEDBoJDZJtXbTMOPzZTHg6Vzt20zD6pGiOshBj8nuOOw1cTRRKRLRSzki'], 'serial_value': ['shhhh'], 'bomb_value': ['jhjhue'], 'fir_value': ['2'], 'date&time': ['2026-02-26T19:57'], 'location_value': ['hugv'], 'latitude_value': ['56.98765'], 'longitude_value': ['45.84657'], 'location_data': ['18'], 'location_description': ['bfjyguygiu'], 'jurisdiction_data': ['18'], 'incident_data': ['15'], 'weight_data': ['3'], 'explosive_data': ['14'], 'detonator_data': ['fnkjh'], 'switch_data': ['fhiugfiuguihli'], 'target_data': ['hyuioioj'], 'death_value': ['nfoihiuh', 'fjjfbkb'], 'death_contact': ['5457687658', '545768858'], 'destruction_data': ['ifihiugfiygiu'], 'injured_value': ['njfiuhyiug'], 'injured_contact': ['4856975215'], 'i_data': ['Detected'], 'mode_detection': ['14'], 'mode_description': ['mflkhkhkj'], 'detected_name': ['knkjhkhv'], 'detected_contact': ['nvkjbh'], 'detected_despose': ['16'], 'despose_name': ['knkhh'], 'despose_contact': ['nklkjhku'], 'explode_name': ['huhuheiufv'], 'explode_contact': ['7845124145'], 'assume_data': ['mn v,jbkj'], 'assume_status': ['5'], 'dalam_data': ['3'], 'learning_data': ['mnvkjbjk']}> centralise_database
+2026-02-26 20:00:58,205 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 20:01:01,919 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 20:01:06,208 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 20:01:15,107 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 20:01:15,940 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 20:15:51,056 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-26 20:18:56,189 centralise_database view hit by user: admin, method: GET centralise_database

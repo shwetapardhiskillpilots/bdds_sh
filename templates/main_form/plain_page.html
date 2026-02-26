@@ -158,7 +158,7 @@
                  </ul>
                </li>
 
-                </ul>
+                </ul>  
                </li>
              </ul>
            </nav>
@@ -262,8 +262,9 @@
                             </select>
                          </div>
                       </div>
+                      
                         <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Location Description</label>
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12"> Location Description</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <textarea id="middle-name" class="form-control col-md-7 col-xs-12" type="textarea" rows="3" cols="20" name="location_description"></textarea>
                         </div>
@@ -274,7 +275,7 @@
                          <select id="middle-name" class="form-control col-md-7 col-xs-12"  name="jurisdiction_data" required="required">
                           <option value=''>----------Select Type Of jurisdiction----------</option>
                              {% for item2 in data2 %}
-                            <option value="{{item2.id}}">{{item2.l_jurisdiction}}</option>
+                            <option value="{{item2.id}}">{{item2.l_juridiction}}</option>
                              {% endfor %}  
                           </select>
                          </div>
@@ -387,7 +388,7 @@
                               name="mode_detection">
                               <option value="">-----select mode of detection------</option>
                               {% for item in data9 %}
-                              <option value={{item.id}}>{{item.d_detection}}</option>
+                              <option value={{item.id}}>{{item.d_ditection}}</option>
                               {% endfor %}
                             </select>
                             </div>
@@ -493,7 +494,8 @@
                       <div class="form-group">
                         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Dalam Involved </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select id="middle-name" class="form-control col-md-7 col-xs-12 select2_multiple" multiple="multiple" name="dalam_data">
+                          <select id="middle-name" class="form-control col-md-7 col-xs-12" name="dalam_data">
+                              <option value="">-------Select Dalam Involved-------</option>
                               {% for item in data7 %}
                             <option value="{{item.id}}">{{item.d_dalam}}</option>
                             {% endfor %}
@@ -708,6 +710,14 @@
   
   </body>
   <script type="text/javascript">
+    // Initialize Select2 for Dalam Involved multi-select dropdown
+    $(document).ready(function() {
+      $('.select2_multiple').select2({
+        placeholder: "Select Dalam Involved",
+        allowClear: true
+      });
+    });
+
     function ShowHideDiv(name) {
     var d=document.getElementById('genderM');
     alert(name);
