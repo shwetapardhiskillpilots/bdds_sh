@@ -241,14 +241,14 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lat-val">Latitude
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="lat-val" name="latitude_value" class="form-control col-md-7 col-xs-12" placeholder="e.g. 19.0760">
+                          <input type="text" id="lat-val" name="latitude_value" class="form-control col-md-7 col-xs-12" placeholder="e.g. 19.0760" required min="-90" max="90" step="any" title="Latitude must be between -90 and 90" >
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="long-val">Longitude
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="long-val" name="longitude_value" class="form-control col-md-7 col-xs-12" placeholder="e.g. 72.8777">
+                          <input type="text" id="long-val" name="longitude_value" class="form-control col-md-7 col-xs-12" placeholder="e.g. 72.8777" required min="-180" max="180" step="any" title="Longitude must be between -180 and 180" >
                         </div>
                       </div>
                       <div class="form-group">
@@ -414,7 +414,7 @@
                             </label>
                             <div class="col-md-7">
                               <input type="text" id="first-name2" placeholder="Enter Contact" class="form-control col-md-7 col-xs-12" 
-                              name="detected_contact">
+                              name="detected_contact" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
                             </div>
                           </div>
                           <div class="form-group">
@@ -444,7 +444,7 @@
                             </label>
                             <div class="col-md-7">
                               <input type="text" id="first-name2"  placeholder="Enter Contact" class="form-control col-md-7 col-xs-12" 
-                              name="despose_contact">
+                              name="despose_contact" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
                             </div>
                           </div>
                         </div>
@@ -466,7 +466,7 @@
                               </label>
                               <div class="col-md-7">
                                 <input type="text" id="first-name2"  placeholder="Enter contact" class="form-control col-md-7 col-xs-12" 
-                                name="explode_contact">
+                                name="explode_contact" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
                               </div>
                             </div>
 
@@ -494,7 +494,7 @@
                       <div class="form-group">
                         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Dalam Involved </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select id="middle-name" class="form-control col-md-7 col-xs-12" name="dalam_data">
+                          <select id="middle-name" class="form-control col-md-7 col-xs-12" name="dalam_data" required >
                               <option value="">-------Select Dalam Involved-------</option>
                               {% for item in data7 %}
                             <option value="{{item.id}}">{{item.d_dalam}}</option>
@@ -572,7 +572,7 @@
                     </label>
                     <div class="col-md-7">
                       <input type="text" id="first-name2" required="required" placeholder="Enter Designation" class="form-control col-md-7 col-xs-12" 
-                      name="designation_value">
+                      name="designation_value" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
                     </div>
                   </div>
                   <div class="form-group">
@@ -588,7 +588,7 @@
                     </label>
                     <div class="col-md-7">
                       <input type="text" id="first-name2" required="required" placeholder="Enter Designation" class="form-control col-md-7 col-xs-12" 
-                      name="designation_value">
+                      name="designation_value" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
                     </div>
                   </div>
                   <div class="form-group">
@@ -604,7 +604,7 @@
                     </label>
                     <div class="col-md-7">
                       <input type="text" id="first-name2" required="required" placeholder="Enter Designation" class="form-control col-md-7 col-xs-12" 
-                      name="designation_value">
+                      name="designation_value" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
                     </div>
                   </div>
                 </div>
@@ -643,7 +643,7 @@
                     </label>
                     <div class="col-md-7">
                       <input type="text" id="first-name2" required="required" placeholder="Enter contact" class="form-control col-md-7 col-xs-12" 
-                      name="designation_value">
+                      name="designation_value" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
                     </div>
                   </div>
                 </div>
@@ -708,7 +708,81 @@
     <!-- Custom Theme Scripts -->
     <script src="{%static 'build/js/custom.min.js' %}"></script>
   
-  </body>
+  
+<script type="text/javascript">
+document.getElementById('demo-form2').addEventListener('submit', function(e) {
+    let isValid = true;
+    let msg = "";
+
+    function checkVal(name, err, isSelect=false) {
+        let el = document.querySelector(`[name="${name}"]`);
+        if (!el) return;
+        let val = el.value.trim();
+        if (!val || (isSelect && val.toLowerCase().includes("select"))) {
+            isValid = false;
+            if(!msg) msg = err;
+            el.style.borderColor = "red";
+        } else {
+            el.style.borderColor = "";
+        }
+    }
+
+    // Checking exact required fields from FastAPI
+    checkVal("serial_value", "Please enter incidence serial/year");
+    checkVal("fir_value", "Please enter CR no. or bomb call"); // Assuming fir_value maps to CR no
+    checkVal("date&time", "Please enter date time");
+    checkVal("location_value", "Please enter location");
+    checkVal("location_data", "Please select type of location", true);
+    checkVal("jurisdiction_data", "Please select type of jurisdiction", true);
+    checkVal("incident_data", "Please select type of incidence", true);
+    checkVal("weight_data", "Please select weight", true);
+    checkVal("explosive_data", "Please select type of explosive", true);
+
+    // Part 2 validations
+    let i_data = document.querySelector('input[name="i_data"]:checked');
+    if (!i_data) {
+        isValid = false;
+        if(!msg) msg = "Please select destruction (Detected or Exploded)";
+    } else {
+        if (i_data.value === "Detected") {
+            checkVal("mode_detection", "Please select mode of detection", true);
+            checkVal("detected_despose", "Please select how dispose", true);
+        } else if (i_data.value === "Exploded") {
+            // Optional checks if they want to require exploded_list here
+        }
+    }
+
+    checkVal("assume_status", "Please select accused current status", true);
+    
+    // Latitude / Longitude Validation
+    let lat = document.querySelector('input[name="latitude_value"]');
+    if(lat && lat.value) {
+        let latVal = parseFloat(lat.value);
+        if(isNaN(latVal) || latVal < -90 || latVal > 90) {
+            isValid = false;
+            if(!msg) msg = "Invalid latitude (-90 to 90)";
+            lat.style.borderColor = "red";
+        } else { lat.style.borderColor = ""; }
+    }
+    
+    let lon = document.querySelector('input[name="longitude_value"]');
+    if(lon && lon.value) {
+        let lonVal = parseFloat(lon.value);
+        if(isNaN(lonVal) || lonVal < -180 || lonVal > 180) {
+            isValid = false;
+            if(!msg) msg = "Invalid longitude (-180 to 180)";
+            lon.style.borderColor = "red";
+        } else { lon.style.borderColor = ""; }
+    }
+
+    if (!isValid) {
+        e.preventDefault();
+        alert(msg);
+    }
+});
+</script>
+</body>
+
   <script type="text/javascript">
     // Initialize Select2 for Dalam Involved multi-select dropdown
     $(document).ready(function() {
@@ -725,7 +799,7 @@
 
   $(document).on('click','.Adddeath_dataDiv',function(){
 
-    $('.death_dataDiv').append('<div class="remDiv"> <div class="form-group"><label class="control-label col-md-3" for="first-name">Name<span>*</span></label><div class="col-md-7"><input type="text" id="first-name2"  placeholder="Enter Name" class="form-control col-md-7 col-xs-12" name="death_value"></div></div><div class="form-group " style="float:right"><a class="text-info remdeath_dataDiv" href="javascript:;">Remove</a></div><div class="form-group"><label class="control-label col-md-3" for="first-name">Contact<span >*</span></label><div class="col-md-7"><input type="text" id="first-name2"  placeholder="Enter death contact" class="form-control col-md-7 col-xs-12" name="death_contact"></div></div></div>');
+    $('.death_dataDiv').append('<div class="remDiv"> <div class="form-group"><label class="control-label col-md-3" for="first-name">Name<span>*</span></label><div class="col-md-7"><input type="text" id="first-name2"  placeholder="Enter Name" class="form-control col-md-7 col-xs-12" name="death_value"></div></div><div class="form-group " style="float:right"><a class="text-info remdeath_dataDiv" href="javascript:;">Remove</a></div><div class="form-group"><label class="control-label col-md-3" for="first-name">Contact<span >*</span></label><div class="col-md-7"><input type="text" id="first-name2"  placeholder="Enter death contact" class="form-control col-md-7 col-xs-12" name="death_contact" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);"></div></div></div>');
   });
 
   $(document).on('click','.remdeath_dataDiv',function(){
@@ -746,7 +820,7 @@ $(document).on('click','#exploded',function(){
 
 
  $(document).on('click','#addExplode',function(){
-  $('.appendExplode').append('<div class="reminjuredDiv"> <div class="form-group"><label class="control-label col-md-3" for="first-name">Name<span >*</span></label><div class="col-md-7"><input type="text" id="first-name2"  placeholder="Enter Data" class="form-control col-md-7 col-xs-12" name="explode_name"></div></div><div class="form-group " style="float:right"><a class="text-info reminjured" href="javascript:;">Remove</a></div><div class="form-group"><label class="control-label col-md-3" for="first-name">Contact<span >*</span></label><div class="col-md-7"><input type="text"  value="None"  id="first-name2" placeholder="Enter Number" class="form-control col-md-7 col-xs-12" name="explode_contact"></div></div></div>');
+  $('.appendExplode').append('<div class="reminjuredDiv"> <div class="form-group"><label class="control-label col-md-3" for="first-name">Name<span >*</span></label><div class="col-md-7"><input type="text" id="first-name2"  placeholder="Enter Data" class="form-control col-md-7 col-xs-12" name="explode_name"></div></div><div class="form-group " style="float:right"><a class="text-info reminjured" href="javascript:;">Remove</a></div><div class="form-group"><label class="control-label col-md-3" for="first-name">Contact<span >*</span></label><div class="col-md-7"><input type="text"  value="None"  id="first-name2" placeholder="Enter Number" class="form-control col-md-7 col-xs-12" name="explode_contact" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);"></div></div></div>');
 
 
  });
@@ -756,7 +830,7 @@ $(document).on('click','#exploded',function(){
   });
 
   $(document).on('click','.AddinjuredDiv',function(){
-    $('.injured_dataDiv').append('<div class="reminjuredDiv"> <div class="form-group"><label class="control-label col-md-3" for="first-name">Name<span >*</span></label><div class="col-md-7"><input type="text" id="first-name2"  placeholder="Enter Data" class="form-control col-md-7 col-xs-12" name="injured_value"></div></div><div class="form-group " style="float:right"><a class="text-info reminjured" href="javascript:;">Remove</a></div><div class="form-group"><label class="control-label col-md-3" for="first-name">Contact<span >*</span></label><div class="col-md-7"><input type="text"    id="first-name2" placeholder="Enter Number" class="form-control col-md-7 col-xs-12" name="injured_contact"></div></div></div>');
+    $('.injured_dataDiv').append('<div class="reminjuredDiv"> <div class="form-group"><label class="control-label col-md-3" for="first-name">Name<span >*</span></label><div class="col-md-7"><input type="text" id="first-name2"  placeholder="Enter Data" class="form-control col-md-7 col-xs-12" name="injured_value"></div></div><div class="form-group " style="float:right"><a class="text-info reminjured" href="javascript:;">Remove</a></div><div class="form-group"><label class="control-label col-md-3" for="first-name">Contact<span >*</span></label><div class="col-md-7"><input type="text"    id="first-name2" placeholder="Enter Number" class="form-control col-md-7 col-xs-12" name="injured_contact" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);"></div></div></div>');
   });
 
   $(document).on('click','.reminjured',function(){

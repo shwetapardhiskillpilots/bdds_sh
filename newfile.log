@@ -1881,3 +1881,25 @@ ValueError: The view bdds_dashboard.views.index_page didn't return an HttpRespon
 2026-02-26 20:01:15,940 centralise_database view hit by user: admin, method: GET centralise_database
 2026-02-26 20:15:51,056 centralise_database view hit by user: admin, method: GET centralise_database
 2026-02-26 20:18:56,189 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-27 02:01:40,713 Not Found: /favicon.ico log_response
+2026-02-27 02:11:22,906 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-27 02:14:08,506 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-27 02:16:39,752 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-27 02:16:41,902 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-27 02:16:44,465 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-27 02:47:20,367 D:\Skillpilots\bdds2\bdds\BDDS\settings.py changed, reloading. trigger_reload
+2026-02-27 02:49:11,600 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-27 02:49:32,766 Forbidden (CSRF token from POST incorrect.): /index log_response
+2026-02-27 02:49:55,017 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-27 02:50:55,023 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-27 02:50:59,632 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-27 02:51:04,241 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-27 02:51:04,661 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-27 02:51:07,618 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-27 02:55:01,501 centralise_database view hit by user: admin, method: POST centralise_database
+2026-02-27 02:55:01,502 POST Data: <QueryDict: {'csrfmiddlewaretoken': ['qQ35KxbzHmm9y60CpSg3joUVCCYPQs76x4RgnhkxNvRUrlNRJrb22xh7lUbvq2Q0'], 'serial_value': ['sh3'], 'bomb_value': ['hiu'], 'fir_value': ['6'], 'date&time': ['2026-02-27T02:51'], 'location_value': ['njhu'], 'latitude_value': ['56.98765'], 'longitude_value': ['45.84657'], 'location_data': ['17'], 'location_description': ['nbjy'], 'jurisdiction_data': ['18'], 'incident_data': ['16'], 'weight_data': ['3'], 'explosive_data': ['14'], 'detonator_data': ['hguy'], 'switch_data': ['uhiu'], 'target_data': ['hbguy'], 'death_value': ['yt'], 'death_contact': ['5457687658'], 'destruction_data': ['jhiug'], 'injured_value': ['jhiuy'], 'injured_contact': ['4856975215'], 'i_data': ['Detected'], 'mode_detection': ['2'], 'mode_description': ['hg'], 'detected_name': ['knkjhkhv'], 'detected_contact': ['5451454546'], 'detected_despose': ['2'], 'despose_name': ['knkhh'], 'despose_contact': ['4768787465'], 'explode_name': [''], 'explode_contact': [''], 'assume_data': ['hiu'], 'assume_status': ['1'], 'dalam_data': ['2'], 'learning_data': ['bhghgc']}> centralise_database
+2026-02-27 09:44:14,902 Not Found: /favicon.ico log_response
+2026-02-27 09:46:14,712 centralise_database view hit by user: admin, method: GET centralise_database
+2026-02-27 09:57:47,556 Not Found: /logib log_response
+2026-02-27 10:23:35,834 centralise_database view hit by user: 9876543210, method: GET centralise_database
+2026-02-27 10:32:34,363 centralise_database view hit by user: 9876543210, method: GET centralise_database
