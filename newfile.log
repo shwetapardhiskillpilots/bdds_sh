@@ -1975,3 +1975,9 @@ ValueError: The view bdds_dashboard.views.index_page didn't return an HttpRespon
 2026-02-27 15:03:21,713 Not Found: /static/vendors/nprogress/nprogress.js log_response
 2026-02-27 15:03:21,713 Not Found: /static/vendors/iCheck/icheck.min.js log_response
 2026-02-27 15:03:21,713 Not Found: /static/build/js/custom.min.js log_response
+2026-02-27 15:55:17,619 Unauthorized: /listonly log_response
+2026-02-27 15:57:47,802 Unauthorized: /listonly log_response
+2026-02-27 15:58:14,336 Unauthorized: /listonly log_response
+2026-02-27 16:00:16,074 Unauthorized: /listonly log_response
+2026-02-27 16:22:53,879 D:\Skillpilots\bdds2\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-27 16:23:04,250 D:\Skillpilots\bdds2\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload

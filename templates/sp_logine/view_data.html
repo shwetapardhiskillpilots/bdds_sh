@@ -249,7 +249,7 @@
                        <tbody>
                         {% for item in data %}
                         <tr>
-                          <td>{{ forloop.counter }}</td>
+                          <td>{{ forloop.counter0|add:page_obj.start_index }}</td>
                           <td>{{item.fserial}}</td>
                           <td>{{item.d_bomb}}</td>
                           <td>{{item.fdate}}</td>
@@ -263,22 +263,48 @@
                           <td align="lefts">
                             <a href="viewdetails/{{item.id}}"class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> View </a>
                             {% if y is 1 %}
-                              <a onclick=dltfdata('{{item.id}}')  class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                              <a onclick="dltfdata('{{item.id}}')"  class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                             {% endif %}
                             {% if x is 1 %} 
                             <a href="updfdata/{{item.id}}"class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit</a>
                             {% endif %}
                             {% if item.edit_request is 1%}
-                             <button type="button" onclick=edit_request('{{item.id}}',2) class="btn btn-info btn-xs" id='buttone'><i class="fa fa-pencil"></i>Request for Edit</button>
+                             <button type="button" onclick="edit_request('{{item.id}}',2)" class="btn btn-info btn-xs" id='buttone'><i class="fa fa-pencil"></i>Request for Edit</button>
                              {% endif %}
                              {% if item.delete_request is 1 %}
-                             <button type="button" id='buttond' onclick=dlt_request('{{item.id}}',2)  class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>Request for Delete </button>
+                             <button type="button" id='buttond' onclick="dlt_request('{{item.id}}',2)"  class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>Request for Delete </button>
                              {% endif %}
                           </td>
                         </tr>
                         {% endfor %}
                         </tbody>
                     </table>
+
+                    <!-- Pagination -->
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <div class="dataTables_info" role="status" aria-live="polite">
+                          Showing {{ page_obj.start_index }} to {{ page_obj.end_index }} of {{ page_obj.paginator.count }} records
+                        </div>
+                      </div>
+                      <div class="col-sm-7 text-right">
+                        <nav aria-label="Page navigation">
+                          <ul class="pagination" style="margin: 0;">
+                            {% if page_obj.has_previous %}
+                              <li><a href="?page=1">&laquo; First</a></li>
+                              <li><a href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                            {% endif %}
+
+                            <li class="active"><span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></li>
+
+                            {% if page_obj.has_next %}
+                              <li><a href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                              <li><a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+                            {% endif %}
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

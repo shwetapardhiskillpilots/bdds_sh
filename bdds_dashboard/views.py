@@ -1,6 +1,7 @@
 from .models import *
 from django.db.models import Count
 from django.db.models.functions import TruncMonth
+from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
@@ -1182,23 +1183,29 @@ def centralise_database(request):
 def view_submitdata(request):
     user = request.user
     user_id = request.user.id
-    super_user=user.is_superuser
+    super_user = user.is_superuser
+    
+    page_number = request.GET.get('page', 1)
+    items_per_page = 15
 
     if super_user is False:
-        serial_data=request.POST.get("serial_value")
-        x,y= permission(request)
-        t_form_module=Form_data.objects.filter(user=user_id)
-        context={"x":x,"y":y,"data":t_form_module}
-        return render(request,"view_data/view_data.html",context)
+        x, y = permission(request)
+        t_form_module = Form_data.objects.filter(user=user_id).order_by('-id')
+        
+        paginator = Paginator(t_form_module, items_per_page)
+        page_obj = paginator.get_page(page_number)
+        
+        context = {"x": x, "y": y, "data": page_obj, "page_obj": page_obj}
+        return render(request, "view_data/view_data.html", context)
     else:
-        serial_data=request.POST.get("serial_value")
-        x,y= permission(request)
-        #t_form_module=join_location(request)
-        t_form_module=Form_data.objects.all().select_related('user')
+        x, y = permission(request)
+        t_form_module = Form_data.objects.all().select_related('user').order_by('-id')
+        
+        paginator = Paginator(t_form_module, items_per_page)
+        page_obj = paginator.get_page(page_number)
 
-
-        context={"x":x,"y":y,"data":t_form_module}
-        return render(request,"sp_logine/view_data.html",context)
+        context = {"x": x, "y": y, "data": page_obj, "page_obj": page_obj}
+        return render(request, "sp_logine/view_data.html", context)
 @login_required(login_url='/error')
 def edit_request(request):
     try:
