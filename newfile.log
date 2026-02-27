@@ -1981,3 +1981,6 @@ ValueError: The view bdds_dashboard.views.index_page didn't return an HttpRespon
 2026-02-27 16:00:16,074 Unauthorized: /listonly log_response
 2026-02-27 16:22:53,879 D:\Skillpilots\bdds2\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
 2026-02-27 16:23:04,250 D:\Skillpilots\bdds2\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-27 16:51:02,145 Forbidden (CSRF token from POST incorrect.): /index log_response
+2026-02-27 16:56:37,497 D:\Skillpilots\bdds2\bdds\BDDS\settings.py changed, reloading. trigger_reload
+2026-02-27 16:58:38,436 D:\Skillpilots\bdds2\bdds\BDDS\settings.py changed, reloading. trigger_reload
