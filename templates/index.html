@@ -6,88 +6,124 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>BDDS | Dashboard</title>
-    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+    <link rel="icon" type="image/png" href="{% static '/images/logo.png' %}">
 
     <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <!-- Bootstrap -->
-    <link href="{% static 'vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static '/vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="{% static 'build/css/custom.min.css' %}" rel="stylesheet">
+    <link href="{% static '/build/css/custom.min.css' %}" rel="stylesheet">
 
     <style>
       :root {
+        --sidebar-bg: #2A3F54;
+        --sidebar-hover: #1abc9c;
+        --sidebar-text: #ECF0F1;
         --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         --secondary-gradient: linear-gradient(135deg, #2af598 0%, #009efd 100%);
         --danger-gradient: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
         --glass-bg: rgba(255, 255, 255, 0.9);
         --glass-border: rgba(255, 255, 255, 0.3);
+        --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
       }
 
       body {
         font-family: 'Inter', sans-serif;
-        background: #f4f7f6;
+        background: #f0f2f5;
       }
 
+      /* Sidebar Enhancements */
+      .left_col {
+        background: var(--sidebar-bg) !important;
+      }
+
+      .nav_title {
+        background: #1d2d3d !important;
+        height: 60px !important;
+        display: flex;
+        align-items: center;
+      }
+
+      .site_title {
+        font-weight: 700 !important;
+        color: white !important;
+        font-size: 18px !important;
+      }
+
+      #sidebar-menu .nav.side-menu > li > a {
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+
+      #sidebar-menu .nav.side-menu > li > a:hover {
+        background: rgba(26, 188, 156, 0.1);
+        color: var(--sidebar-hover);
+      }
+
+      #sidebar-menu .nav.side-menu > li.active > a {
+        background: var(--sidebar-hover) !important;
+        border-right: 5px solid #16a085;
+      }
+
+      /* Dashboard Card Improvements */
       .tile_count {
-        margin-bottom: 20px;
-        padding: 20px;
+        margin-bottom: 25px;
+        padding: 25px;
         background: white;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      }
-
-      .tile_stats_count {
-        border-left: 2px solid #eee !important;
-        padding: 0 15px !important;
-      }
-
-      .tile_stats_count:first-child {
-        border-left: 0 !important;
-      }
-
-      .count {
-        font-size: 28px;
-        font-weight: 700;
-        margin-top: 5px;
+        border-radius: 20px;
+        box-shadow: var(--card-shadow);
+        border: 1px solid rgba(0,0,0,0.03);
       }
 
       .x_panel {
-        border-radius: 15px;
+        border-radius: 20px;
         border: none;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        margin-bottom: 20px;
-        transition: transform 0.3s ease;
+        box-shadow: var(--card-shadow);
+        margin-bottom: 30px;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        background: white;
       }
 
       .x_panel:hover {
-        transform: translateY(-5px);
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.12);
       }
 
       .x_title {
-        border-bottom: 2px solid #f1f1f1;
-        padding-bottom: 15px;
+        border-bottom: 1px solid #f8f9fa;
+        padding: 15px 20px;
       }
 
       .x_title h2 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #2c3e50;
+      }
+
+      .count {
+        font-size: 32px;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+
+      .count_top {
         font-weight: 600;
-        color: #333;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 1px;
       }
 
-      /* Premium Card Accents */
-      .card-accent-primary { border-top: 4px solid #667eea; }
-      .card-accent-success { border-top: 4px solid #2af598; }
-      .card-accent-danger { border-top: 4px solid #ff0844; }
-
-      canvas {
-        max-height: 280px;
+      .right_col {
+        background: #f0f2f5 !important;
       }
 
-      .nav-md .container.body .right_col {
-        padding: 20px 30px;
+      .top_nav {
+        background: white !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       }
     </style>
   </head>
@@ -98,7 +134,7 @@
         <!-- Sidebar & Nav (Omitted for brevity, using existing template structure) -->
             <div class="navbar nav_title" style="border: 0; padding-left: 15px;">
               <a href="/login_auth" class="site_title">
-                <img src="{% static 'images/logo.png' %}" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+                <img src="{% static '/images/logo.png' %}" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
                 <span>BDDS HQ</span>
               </a>
             </div>
@@ -250,10 +286,10 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
-    <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'vendors/Chart.js/dist/Chart.min.js' %}"></script>
-    <script src="{% static 'build/js/custom.min.js' %}"></script>
+    <script src="{% static '/vendors/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static '/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/vendors/Chart.js/dist/Chart.min.js' %}"></script>
+    <script src="{% static '/build/js/custom.min.js' %}"></script>
 
     <script>
       // Global Chart Colors
