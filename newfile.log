@@ -1903,3 +1903,4 @@ ValueError: The view bdds_dashboard.views.index_page didn't return an HttpRespon
 2026-02-27 09:57:47,556 Not Found: /logib log_response
 2026-02-27 10:23:35,834 centralise_database view hit by user: 9876543210, method: GET centralise_database
 2026-02-27 10:32:34,363 centralise_database view hit by user: 9876543210, method: GET centralise_database
+2026-02-27 11:46:19,415 D:\Skillpilots\bdds2\bdds\BDDS\settings.py changed, reloading. trigger_reload
