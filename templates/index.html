@@ -5,9 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BDDS | Dashboard</title>
-    <link rel="icon" type="image/jpeg" href="{% static 'images/logo.jpg' %}">
+    <link rel="icon" type="image/png" href="{% static '/images/logo.jpg' %}">
 
     <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -97,11 +96,9 @@
     <div class="container body">
       <div class="main_container">
         <!-- Sidebar & Nav (Omitted for brevity, using existing template structure) -->
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0; padding: 10px;">
-              <a href="#" class="site_title" style="display: flex; align-items: center;">
-                <img src="{% static 'images/logo.jpg' %}" alt="Logo" style="width: 40px; height: 40px; margin-right: 10px; border-radius: 50%;">
+            <div class="navbar nav_title" style="border: 0; padding-left: 15px;">
+              <a href="/login_auth" class="site_title">
+                <img src="{% static '/images/logo.jpg' %}" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
                 <span>BDDS HQ</span>
               </a>
             </div>
