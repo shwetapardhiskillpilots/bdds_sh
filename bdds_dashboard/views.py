@@ -1002,6 +1002,55 @@ def centralise_database(request):
             image2=request.FILES.getlist("special_image")
             image3=request.FILES.getlist("sketch_image")
 
+            # Mandatory Field Validation (Comprehensive)
+            mandatory_fields = {
+                "serial_value": "Incidence Serial/year",
+                "bomb_value": "Cr No OR Bomb Call",
+                "date&time": "Date & Time",
+                "location_value": "Location",
+                "latitude_value": "Latitude",
+                "longitude_value": "Longitude",
+                "location_data": "Type Of Location",
+                "jurisdiction_data": "Jurisdiction",
+                "incident_data": "Type Of Incident",
+                "weight_data": "Weight",
+                "explosive_data": "Type Of Explosive",
+                "assume_status": "Accused Current Status",
+                "dalam_data": "Dalam Involved",
+                "i_data": "Destruction Type"
+            }
+
+            for field, label in mandatory_fields.items():
+                val = request.POST.get(field) if field != "dalam_data" else request.POST.getlist(field)
+                if not val:
+                    messages.error(request, f'Error: "{label}" is a mandatory field.')
+                    return redirect('centralise_database form')
+
+            # Coordinate range validation
+            if not is_valid_latitude(lat_data) or not is_valid_longitude(long_data):
+                messages.error(request, 'Error: Please enter valid Latitude (-90 to 90) and Longitude (-180 to 180).')
+                return redirect('centralise_database form')
+
+            # Conditional Validation: Detected vs Exploded
+            if i_data == "Detected":
+                detection_mandatory = {
+                    "mode_detection": "Mode Of Detection",
+                    "mode_description": "Description",
+                    "detected_name": "Person Name",
+                    "detected_contact": "Contact",
+                    "detected_despose": "How Disposed",
+                    "despose_name": "Disposed By Person Name",
+                    "despose_contact": "Disposed By Contact"
+                }
+                for field, label in detection_mandatory.items():
+                    if not request.POST.get(field):
+                        messages.error(request, f'Error: "{label}" is mandatory when Destruction Type is "Detected".')
+                        return redirect('centralise_database form')
+            elif i_data == "Exploded":
+                if not explode_name or not explode_contact:
+                    messages.error(request, 'Error: At least one person name and contact is mandatory when Destruction Type is "Exploded".')
+                    return redirect('centralise_database form')
+
             # duplicate=Form_data.objects.filter(fserial=serial_data).count()
             if  Form_data.objects.filter(fserial=serial_data).exists():
                 messages.info(request, 'Already Incident Serial Year Present Please Enter Another Incident Serial year ')
@@ -1201,6 +1250,33 @@ def update_form_first(request,id):
             lat_uvalue = request.POST.get('latitude_uvalue')
             long_uvalue = request.POST.get('longitude_uvalue')
             i_data=request.POST.get('i_data')
+
+            # Mandatory Field Validation (Update)
+            u_mandatory = {
+                "serial_uvalue": "Incidence Serial/year",
+                "bomb_uvalue": "Cr No OR Bomb Call",
+                "date_uvalue": "Date & Time",
+                "loacation_uvalue": "Location",
+                "latitude_uvalue": "Latitude",
+                "longitude_uvalue": "Longitude",
+                "location_ty_uvalue": "Type Of Location",
+                "juridiction_uvalue": "Jurisdiction",
+                "incident_uvalue": "Type Of Incident",
+                "weight_uvalue": "Weight",
+                "explosive_uvalue": "Type Of Explosive",
+                "assused_status_uvalue": "Accused Current Status",
+                "dalam_uvalue": "Dalam Involved",
+                "i_data": "Destruction Type"
+            }
+            for field, label in u_mandatory.items():
+                val = request.POST.get(field) if field != "dalam_uvalue" else request.POST.getlist(field)
+                if not val:
+                    messages.error(request, f'Error: "{label}" is a mandatory field.')
+                    return redirect('/updfdata/'+str(id))
+
+            if not is_valid_latitude(lat_uvalue) or not is_valid_longitude(long_uvalue):
+                messages.error(request, 'Error: Please enter valid Latitude (-90 to 90) and Longitude (-180 to 180).')
+                return redirect('/updfdata/'+str(id))
           
             Form_data.objects.filter(id=id).update(fserial=seril_number,d_bomb=bomb_uvalue,
                 fdate=date_uvalue,flocation=location_uvalue,flocation_type=location_ty_uvalue,
@@ -1647,7 +1723,35 @@ def form_api(request):
             data['fdalam'] = []
             logger.warning(f"Could not parse fdalam string: {fdalam_val}")
 
-    # Robust handling for ForeignKeys and Decimals (avoid empty string errors)
+    # Mandatory Field Validation (API)
+    api_mandatory = {
+        "fserial": "Incidence Serial/year",
+        "d_bomb": "Cr No OR Bomb Call",
+        "fdate": "Date & Time",
+        "flocation": "Location",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "flocation_type": "Type Of Location",
+        "fjuridiction": "Jurisdiction",
+        "fincident": "Type Of Incident",
+        "fweight_data": "Weight",
+        "fexplosive": "Type Of Explosive",
+        "fassume_status_new": "Accused Current Status",
+        "fdalam": "Dalam Involved",
+        "radio_data": "Destruction Type"
+    }
+    
+    for field_name, label in api_mandatory.items():
+        if not data.get(field_name):
+            logger.error(f"API submission failed: Missing mandatory field '{field_name}' ({label})")
+            return Response({"msg": f"'{label}' is a mandatory field"}, status=status.HTTP_400_BAD_REQUEST)
+
+    lat = data.get('latitude')
+    lng = data.get('longitude')
+    
+    if not is_valid_latitude(lat) or not is_valid_longitude(lng):
+        logger.error(f"API submission failed: Invalid coordinates. lat:{lat}, lng:{lng}")
+        return Response({"msg": "Invalid Latitude or Longitude range"}, status=status.HTTP_400_BAD_REQUEST)
     nullable_fields = [
         'flocation_type', 'fjuridiction', 'fincident', 'fweight_data', 
         'fexplosive', 'fassume_status_new', 'mode_of_detection', 
