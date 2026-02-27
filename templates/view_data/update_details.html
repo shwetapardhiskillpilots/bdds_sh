@@ -584,13 +584,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <label>Contact:</label>
                       </div>
                        <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.detcted_contact}}" readonly pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);"></input>
+                         <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.detcted_contact}}" readonly></input>
                       </div> 
                       <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
                     <label>How Dispose:</label>
                       </div>
                        <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.detected_dispose.d_dispose}}" readonly pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);"></input>
+                         <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.detected_dispose.d_dispose}}" readonly></input>
                       </div> 
                       <div>
                       <label><u> Dispose By Whome:</u></label>
@@ -599,14 +599,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <label>Person Name:</label>
                       </div>
                        <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.dispose_name}}" readonly pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
+                         <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.dispose_name}}" readonly>
                       </input>
                       </div> 
                        <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
                     <label>Contact:</label>
                       </div>
                        <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.dispose_contact}}" readonly pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);"></input>
+                         <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value="{{item1.dispose_contact}}" readonly></input>
                       </div>
                       
                       {% else %}
@@ -808,11 +808,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
      <div class="col-md-6 mb-3">
 
         <label for="validationDefault01">Person name</label>
-        <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="{{item2.death_name}}" name="death_name" required pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
+        <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="{{item2.death_name}}" name="death_name" required>
     </div>
     <div class="col-md-6 mb-3">
         <label for="validationDefault02">Person contacts</label>
-        <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="{{item2.death_contact}}" name="death_contacts" required pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
+        <input type="text" class="form-control" id="validationDefault02" placeholder="Phone" value="{{item2.death_contact}}" name="death_contacts" required pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, ''); if(this.value.length > 10) this.value = this.value.slice(0, 10);">
         <button type="button" class="btn btn-link a-btn-slide-text remdeath_dataDiv"
         onclick="dlt_death({{item2.id}})"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button>
       </div>
@@ -858,7 +858,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     </div>
     <div class="col-md-6 mb-3">
         <label for="validationDefault02">Person contacts</label>
-        <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="{{item3.injured_contact}}" name="injured_contacts"  pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
+        <input type="text" class="form-control" id="validationDefault02" placeholder="Phone" value="{{item3.injured_contact}}" name="injured_contacts"  pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, ''); if(this.value.length > 10) this.value = this.value.slice(0, 10);">
          <button type="button" class="btn btn-link a-btn-slide-text remdeath_dataDiv"
         onclick="dlt_injured({{item3.id}})"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button>
        </div>
@@ -900,7 +900,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     </div>
     <div class="col-md-6 mb-3">
         <label for="validationDefault02">Person contacts</label>
-        <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="{{item4.explode_contact}}" name="exploded_contacts"  pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
+        <input type="text" class="form-control" id="validationDefault02" placeholder="Phone" value="{{item4.explode_contact}}" name="exploded_contacts"  pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, ''); if(this.value.length > 10) this.value = this.value.slice(0, 10);">
          <button type="button" class="btn btn-link a-btn-slide-text"
         onclick="dlt_exploded({{item4.id}})"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button>
        </div>
@@ -971,7 +971,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <label>Contact:</label>
                       </div>
                        <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value='{{item1.detcted_contact}}' name="detected_contacts" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);"></input>
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value='{{item1.detcted_contact}}' name="detected_contacts" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, ''); if(this.value.length > 10) this.value = this.value.slice(0, 10);"></input>
                       </div> 
                       <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
                       <label>How Dispose:</label>
@@ -993,14 +993,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <label>Person Name:</label>
                       </div>
                        <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Name" value="{{item1.dispose_name}}" name="dispose_name" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);"></input>
+                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Name" value="{{item1.dispose_name}}" name="dispose_name"></input>
                       </div> 
                        <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
                     <label>Contact:</label>
                       </div>
                        <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
                         <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone" value='{{item1.dispose_contact}}' 
-                        name='despose_contacts' pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);"></input>
+                        name='despose_contacts' pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, ''); if(this.value.length > 10) this.value = this.value.slice(0, 10);"></input>
                       </div>
                       
                       {% else %}
@@ -1032,9 +1032,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
       <form method="post" action="/addimg" name='upload_form' id='upload_form' enctype="multipart/form-data" >{% csrf_token %}
       <div class=" modal-body col-md-6 ">
     
-      <input type="hidden" name='form_id' value={{item1.id}} pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
+      <input type="hidden" name='form_id' value={{item1.id}}>
      
-      <input class="form-control" type="file" id="formFileMultiple" name="image_name" multiple required  pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);" />
+      <input class="form-control" type="file" id="formFileMultiple" name="image_name" multiple required />
      </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary" ><i class="bi bi-images">Upload</i></button>
@@ -1057,9 +1057,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
       <form method="post" action="/addreports" name='upload_form' id='upload_form' enctype="multipart/form-data" >{% csrf_token %}
       <div class=" modal-body col-md-6 ">
     
-      <input type="hidden" name='id' value={{item1.id}} pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
+      <input type="hidden" name='id' value={{item1.id}}>
     
-      <input class="form-control" type="file" id="formFileMultiple" name="reports_name" multiple accept="application/pdf" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);" />
+      <input class="form-control" type="file" id="formFileMultiple" name="reports_name" multiple accept="application/pdf" />
      </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary">Upload</button>
@@ -1082,9 +1082,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
       <form method="post" action="/addsketch" name='upload_form' id='upload_form' enctype="multipart/form-data" >{% csrf_token %}
       <div class=" modal-body col-md-6 ">
    
-      <input type="hidden" name='id' value={{item1.id}} pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);">
+      <input type="hidden" name='id' value={{item1.id}}>
   
-      <input class="form-control" type="file" id="formFileMultiple" name="sketch_name" multiple  required  pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);" />
+      <input class="form-control" type="file" id="formFileMultiple" name="sketch_name" multiple  required />
      </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary">Upload</button>
@@ -1274,7 +1274,7 @@ function dlt_injured(id) {
 <script type="text/javascript">
   $(document).on('click','.Adddeath_dataDiv',function(){
 
-    $('.death_dataDiv').append('<div class="reminjuredDiv"><div class="row"> <div class="col-md-6 mb-3"><label for="validationDefault01">Person name</label><input type="text" class="form-control" id="validationDefault01" placeholder="First name"  name="death_name" required pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);"></div><div class="col-md-6 mb-3"><label for="validationDefault02">Person contacts</label><input type="text" class="form-control" id="validationDefault02" placeholder="Contact" name="death_contacts" required pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);"><button type="button" class="btn btn-link a-btn-slide-text remdeath_dataDiv"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button></div></div>');
+    $('.death_dataDiv').append('<div class="reminjuredDiv"><div class="row"> <div class="col-md-6 mb-3"><label for="validationDefault01">Person name</label><input type="text" class="form-control" id="validationDefault01" placeholder="First name"  name="death_name" required></div><div class="col-md-6 mb-3"><label for="validationDefault02">Person contacts</label><input type="text" class="form-control" id="validationDefault02" placeholder="Contact" name="death_contacts" required pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \'\'); if(this.value.length > 10) this.value = this.value.slice(0, 10);"><button type="button" class="btn btn-link a-btn-slide-text remdeath_dataDiv"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button></div></div>');
   });
    $(document).on('click','.remdeath_dataDiv',function(){
     if($('.reminjuredDiv').length){ $(this).closest('.reminjuredDiv').remove()}
@@ -1283,7 +1283,7 @@ function dlt_injured(id) {
 <script type="text/javascript">
   $(document).on('click','.Addinjured_dataDiv',function(){
 
-    $('.injured_dataDiv').append('<div class="reminjuredDiv"><div class="row"> <div class="col-md-6 mb-3"><label for="validationDefault01">Person name</label><input type="text" class="form-control" id="validationDefault01" placeholder=" Enter Name"  name="injured_name" ></div><div class="col-md-6 mb-3"><label for="validationDefault02">Person contacts</label><input type="text" class="form-control" id="validationDefault02" placeholder="Contact Number" name="injured_contacts"  pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);"><button type="button" class="btn btn-link a-btn-slide-text reminjured_dataDiv"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button></div></div>');
+    $('.injured_dataDiv').append('<div class="reminjuredDiv"><div class="row"> <div class="col-md-6 mb-3"><label for="validationDefault01">Person name</label><input type="text" class="form-control" id="validationDefault01" placeholder=" Enter Name"  name="injured_name" ></div><div class="col-md-6 mb-3"><label for="validationDefault02">Person contacts</label><input type="text" class="form-control" id="validationDefault02" placeholder="Contact Number" name="injured_contacts"  pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \'\'); if(this.value.length > 10) this.value = this.value.slice(0, 10);"><button type="button" class="btn btn-link a-btn-slide-text reminjured_dataDiv"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button></div></div>');
   });
    $(document).on('click','.reminjured_dataDiv',function(){
     if($('.reminjuredDiv').length){ $(this).closest('.reminjuredDiv').remove()}
@@ -1293,7 +1293,7 @@ function dlt_injured(id) {
 <script type="text/javascript">
   $(document).on('click','.Addexploded_dataDiv',function(){
 
-    $('.injured_dataDiv').append('<div class="reminjuredDiv"><div class="row"> <div class="col-md-6 mb-3"><label for="validationDefault01">Person name</label><input type="text" class="form-control" id="validationDefault01" placeholder="First name"  name="exploded_name" ></div><div class="col-md-6 mb-3"><label for="validationDefault02">Person contacts</label><input type="text" class="form-control" id="validationDefault02" placeholder="Contact" name="exploded_contacts"  pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \`\`); if(this.value.length &gt; 10) this.value = this.value.slice(0, 10);"><button type="button" class="btn btn-link a-btn-slide-text remexploded_dataDiv"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button></div></div>');
+    $('.injured_dataDiv').append('<div class="reminjuredDiv"><div class="row"> <div class="col-md-6 mb-3"><label for="validationDefault01">Person name</label><input type="text" class="form-control" id="validationDefault01" placeholder="First name"  name="exploded_name" ></div><div class="col-md-6 mb-3"><label for="validationDefault02">Person contacts</label><input type="text" class="form-control" id="validationDefault02" placeholder="Contact" name="exploded_contacts"  pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, \'\'); if(this.value.length > 10) this.value = this.value.slice(0, 10);"><button type="button" class="btn btn-link a-btn-slide-text remexploded_dataDiv"> <span class="glyphicon glyphicon-trash" aria-hidden="true" style="width:17px ;color:red;margin-left:249px;"></span><span style="color:red; "><strong></strong></span></button></div></div>');
   });
    $(document).on('click','.remexploded_dataDiv',function(){
     if($('.reminjuredDiv').length){ $(this).closest('.reminjuredDiv').remove()}
