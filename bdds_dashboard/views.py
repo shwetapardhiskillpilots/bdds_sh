@@ -1,5 +1,6 @@
-from django.shortcuts import render ,get_object_or_404 
 from .models import *
+from django.db.models import Count
+from django.db.models.functions import TruncMonth
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
@@ -83,46 +84,62 @@ def index_page(request):
             return HttpResponse("error")
 @login_required(login_url='/error')
 def index_page2(request):
-    print(request.user.id)
+    # Initialize all variables to prevent UnboundLocalError
+    Total_Case = Total_Dalam = Total_Exposed = Total_Detected = 0
+    Total_Death = Total_Injured = Total_Incident = Total_Location = 0
+    jur_labels = []
+    jur_counts = []
+    month_labels = []
+    month_counts = []
+
     try:
-            if request.user.is_superuser:
-               Total_Case=Form_data.objects.count()
-               Total_Dalam=N_dalam.objects.count()
-               Total_Exposed=Form_data.objects.filter(radio_data='Exploded').count()
-               Total_Detected=Form_data.objects.filter(radio_data='Detected').count()
-               Total_Death=death_person.objects.count()
-               Total_Injured=injured_person.objects.count()
-               Total_Incident= N_incident.objects.count()
-               Total_Location=N_location.objects.count()
-            else:
+        if request.user.is_superuser:
+            Total_Case = Form_data.objects.count()
+            Total_Dalam = N_dalam.objects.count()
+            Total_Exposed = Form_data.objects.filter(radio_data='Exploded').count()
+            Total_Detected = Form_data.objects.filter(radio_data='Detected').count()
+            Total_Death = death_person.objects.count()
+            Total_Injured = injured_person.objects.count()
+            Total_Incident = N_incident.objects.count()
+            Total_Location = N_location.objects.count()
+            
+            # Additional Dashboard Metrics
+            jur_stats = Form_data.objects.exclude(fjuridiction__isnull=True).values('fjuridiction__l_juridiction').annotate(count=Count('id')).order_by('-count')[:5]
+            month_stats = Form_data.objects.exclude(fdate__isnull=True).annotate(month=TruncMonth('fdate')).values('month').annotate(total=Count('id')).order_by('month')
+        else:
+            Total_Case = Form_data.objects.filter(user_id=request.user.id).count()
+            Total_Dalam = N_dalam.objects.count()
+            Total_Exposed = Form_data.objects.filter(user_id=request.user.id, radio_data='Exploded').count()
+            Total_Detected = Form_data.objects.filter(user_id=request.user.id, radio_data='Detected').count()
+            Total_Incident = N_incident.objects.count()
+            Total_Location = N_location.objects.count()
+            
+            form_ids = Form_data.objects.filter(user_id=request.user.id).values_list('id', flat=True)
+            Total_Death = death_person.objects.filter(form_id__in=form_ids).count()
+            Total_Injured = injured_person.objects.filter(form_id__in=form_ids).count()
 
-                Total_Case=Form_data.objects.filter(user_id=request.user.id).count()
-                Total_Dalam=N_dalam.objects.count()
-                Total_Exposed=Form_data.objects.filter(user_id=request.user.id).filter(radio_data='Exploded').count()
-                #Total_Detected=Form_data.objects.filter(usr_id=request.user.id).filter(radio_data='Detected').count()
-                Total_Detected=Form_data.objects.filter(user_id=request.user.id).filter(radio_data='Detected').count()
-                #Total_Death=death_person.objects.count()
-                #Total_Injured=injured_person.objects.count()
-                Total_Incident= N_incident.objects.count()
-                Total_Location=N_location.objects.count()
-                form_id=Form_data.objects.filter(user_id=request.user.id).values('id')
-                death = [(death_person.objects.filter(form_id=i["id"]).count()) for i in form_id]
-                Total_Death=sum(death)
-                injured = [(injured_person.objects.filter(form_id=i["id"]).count()) for i in form_id]
-                Total_Injured=sum(injured)
+            # Additional Dashboard Metrics
+            jur_stats = Form_data.objects.filter(user_id=request.user.id).exclude(fjuridiction__isnull=True).values('fjuridiction__l_juridiction').annotate(count=Count('id')).order_by('-count')[:5]
+            month_stats = Form_data.objects.filter(user_id=request.user.id).exclude(fdate__isnull=True).annotate(month=TruncMonth('fdate')).values('month').annotate(total=Count('id')).order_by('month')
 
-
+        jur_labels = [item['fjuridiction__l_juridiction'] for item in jur_stats]
+        jur_counts = [item['count'] for item in jur_stats]
+        month_labels = [item['month'].strftime('%b %Y') for item in month_stats]
+        month_counts = [item['total'] for item in month_stats]
 
     except Exception as e:
-          pass
-
+        logger.error(f"Error in index_page2: {e}")
 
     finally:
-           context={'total_case':Total_Case,'total_dalam':Total_Dalam,
-              'total_exposed':Total_Exposed,'total_detected':Total_Detected,
-              'total_death':Total_Death,'total_injured':Total_Injured,'total_incident':Total_Incident,
-              'total_location':Total_Location}
-           return render(request,"index.html", context)
+        context = {
+            'total_case': Total_Case, 'total_dalam': Total_Dalam,
+            'total_exposed': Total_Exposed, 'total_detected': Total_Detected,
+            'total_death': Total_Death, 'total_injured': Total_Injured,
+            'total_incident': Total_Incident, 'total_location': Total_Location,
+            'jur_labels': jur_labels, 'jur_counts': jur_counts,
+            'month_labels': month_labels, 'month_counts': month_counts
+        }
+        return render(request, "index.html", context)
 
 def logout_page(request):
     logout(request)

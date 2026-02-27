@@ -3,405 +3,354 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BDDS | Dashboard</title>
 
-    <title>BDDS| </title>
-
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <!-- Bootstrap -->
-    <link href="{%static '/vendors/bootstrap/dist/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static '/vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="{%static '/vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="{%static '/vendors/nprogress/nprogress.css'%}" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="{%static '/vendors/iCheck/skins/flat/green.css' %}" rel="stylesheet">
-
-    <!-- bootstrap-progressbar -->
-    <link href="{%static '/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css' %}" rel="stylesheet">
-    <!-- JQVMap -->
-    <link href="{%static '/vendors/jqvmap/dist/jqvmap.min.css'%}" rel="stylesheet"/>
-    <!-- bootstrap-daterangepicker -->
-    <link href="{%static '/vendors/bootstrap-daterangepicker/daterangepicker.css'%}" rel="stylesheet">
-
+    <link href="{% static '/vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="{%static '/build/css/custom.min.css' %}" rel="stylesheet">
+    <link href="{% static '/build/css/custom.min.css' %}" rel="stylesheet">
+
+    <style>
+      :root {
+        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --secondary-gradient: linear-gradient(135deg, #2af598 0%, #009efd 100%);
+        --danger-gradient: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
+        --glass-bg: rgba(255, 255, 255, 0.9);
+        --glass-border: rgba(255, 255, 255, 0.3);
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background: #f4f7f6;
+      }
+
+      .tile_count {
+        margin-bottom: 20px;
+        padding: 20px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      }
+
+      .tile_stats_count {
+        border-left: 2px solid #eee !important;
+        padding: 0 15px !important;
+      }
+
+      .tile_stats_count:first-child {
+        border-left: 0 !important;
+      }
+
+      .count {
+        font-size: 28px;
+        font-weight: 700;
+        margin-top: 5px;
+      }
+
+      .x_panel {
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      .x_panel:hover {
+        transform: translateY(-5px);
+      }
+
+      .x_title {
+        border-bottom: 2px solid #f1f1f1;
+        padding-bottom: 15px;
+      }
+
+      .x_title h2 {
+        font-weight: 600;
+        color: #333;
+      }
+
+      /* Premium Card Accents */
+      .card-accent-primary { border-top: 4px solid #667eea; }
+      .card-accent-success { border-top: 4px solid #2af598; }
+      .card-accent-danger { border-top: 4px solid #ff0844; }
+
+      canvas {
+        max-height: 280px;
+      }
+
+      .nav-md .container.body .right_col {
+        padding: 20px 30px;
+      }
+    </style>
   </head>
 
-   <body class="nav-md">
-     <div class="container body">
-       <div class="main_container">
-         <div class="col-md-3 left_col">
-           <div class="left_col scroll-view">
-             <div class="navbar nav_title" style="border: 0;">
-               <a href="#" class="site_title"><i class="fa fa-paw"></i> <span>BDDS</span></a>
-                <hr style="margin-top: 3px;"></hr>
-             </div>
-
-             <div class="clearfix"></div>
-
-             <!-- menu profile quick info -->
-
-             <!-- /menu profile quick info -->
-
-             <br />
-            <!-- sidebar menu -->
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!-- Sidebar & Nav (Omitted for brevity, using existing template structure) -->
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="#" class="site_title"><i class="fa fa-bomb"></i> <span>BDDS HQ</span></a>
+            </div>
+            <div class="clearfix"></div>
+            <br />
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  <li><a href="/login_auth"><i class="fa fa-home"></i> Dashboard</a></li>
+                  <li><a><i class="fa fa-table"></i> Masters <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/login_auth">Dashboard</a></li>
-
-                    </ul>
-                  </li>
-
-
-                  <li><a><i class="fa fa-table"></i> Master <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="tlocation">Type Of Location</a></li>
-                      <li><a href="/jurisdiction">Jurisdiction</a></li>
-                      <li><a href="incident">Type Of Incident</a></li>
-                      <li><a href="/weight">Weight</a></li>
-                      <li><a href="/explosive">Type Of Explosive</a></li>
-                      <li><a href="/a_status">Accused Current Status</a></li>
-                      <li><a href="/post">Post</a></li>
-                      <li><a href="/designation">Designation</a></li>
-                      <li><a href="/detection">Name of Detection</a></li>
-                      <li><a href="/dispose">How Disposed</a></li>
+                      <li><a href="tlocation">Locations</a></li>
+                      <li><a href="/jurisdiction">Jurisdictions</a></li>
+                      <li><a href="incident">Incidents</a></li>
+                      <li><a href="/weight">Weights</a></li>
+                      <li><a href="/explosive">Explosives</a></li>
+                      <li><a href="/a_status">Accused Status</a></li>
+                      <li><a href="/post">Posts</a></li>
+                      <li><a href="/designation">Designations</a></li>
+                      <li><a href="/detection">Detection</a></li>
+                      <li><a href="/dispose">Dispose Methods</a></li>
                       <li><a href="/dalam">Dalam</a></li>
                     </ul>
                   </li>
-                  {% if user.is_superuser %}
-                  <li><a><i class="fa fa-desktop"></i> Authentication <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="/clogin">Login Creation</a></li>
-                      <li><a href="/spauthority">SP Authority</a></li>
-                      <li><a href="/users">Users</a></li>
-                    </ul>
-                  </li>
-                  {% endif %}
-                  <li><a href="/cdatabase"><i class="fa fa-laptop"></i>Form </a></li>
-                  <li><a href="/fdata"><i class="fa fa-laptop"></i>View </a></li>
-                 </ul>
+                  <li><a href="/cdatabase"><i class="fa fa-edit"></i> Submission Form</a></li>
+                  <li><a href="/fdata"><i class="fa fa-list"></i> View Records</a></li>
+                </ul>
               </div>
-             </div>
-            <!-- /sidebar menu -->
-
-          <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-         
-            </div> 
-            <!-- /menu footer buttons -->
+            </div>
           </div>
         </div>
 
-        <!-- top navigation -->
-       <div class="top_nav">
-         <div class="nav_menu">
-           <nav>
-             <div class="nav toggle">
-               <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-             </div>
-
-             <ul class="nav navbar-nav navbar-right">
-               <li class="">
-                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                      {{ user.first_name|upper }}
-                   <span class=" fa fa-angle-down"></span>
-                 </a>
-                 <ul class="dropdown-menu dropdown-usermenu pull-right">
-                   
-                    <li><a href="/profile"> Profile</a></li>
-                   <li><a href="/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                     
-                    <li>
-                 </ul>
-               </li>
-
-                </ul>
-               </li>
-             </ul>
-           </nav>
-         </div>
-       </div>
-        <!-- /top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-user"></i> {{ user.first_name|upper }}
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
 
         <!-- page content -->
         <div class="right_col" role="main">
-          <!-- top tiles -->
+          <!-- Top Statistics -->
           <div class="row tile_count">
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Total Case</span>
-              <div class="count green">{{total_case}}</div>
-            </div>
-          
-            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-bomb "></i>Total Exploded</span>
-              <div class="count green">{{total_exposed}}</div>
-            </div>
-            
-            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-eye"></i>Total  Detected </span>
-              <div class="count green">{{total_detected}}</div>
-             
-            </div>
-            
-            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-medkit"></i> Total Death</span>
-              <div class="count green">{{total_death}}</div>
+              <span class="count_top text-muted"><i class="fa fa-archive"></i> Total Cases</span>
+              <div class="count text-primary">{{total_case}}</div>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-medkit"></i> Total Injured</span>
-              <div class="count green">{{total_injured}}</div>
+              <span class="count_top text-muted"><i class="fa fa-fire"></i> Exploded</span>
+              <div class="count text-danger">{{total_exposed}}</div>
             </div>
-
-          
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user-secret"></i>Total Dalam</span>
-              <div class="count red">{{total_dalam}}</div>
-              
+              <span class="count_top text-muted"><i class="fa fa-search"></i> Detected</span>
+              <div class="count text-success">{{total_detected}}</div>
             </div>
-
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top text-muted"><i class="fa fa-heartbeat"></i> Fatalities</span>
+              <div class="count text-dark">{{total_death}}</div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top text-muted"><i class="fa fa-plus-square"></i> Injured</span>
+              <div class="count text-info">{{total_injured}}</div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top text-muted"><i class="fa fa-users"></i> Dalam</span>
+              <div class="count text-warning">{{total_dalam}}</div>
+            </div>
           </div>
-          <!-- /top tiles -->
 
-           <div class="row">
-
-
-            <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="x_panel tile fixed_height_320">
+          <!-- Main Dashboard Content -->
+          <div class="row">
+            <!-- Row 1 -->
+            <div class="col-md-8 col-sm-8 col-xs-12">
+              <div class="x_panel card-accent-primary">
                 <div class="x_title">
-                  <h2>Death/Injured</h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul>
+                  <h2>Timeline Analysis <small>Monthly Case Distribution</small></h2>
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                <canvas id="myChart"></canvas>
-                   </div>
-
-                 </div>
-
-                </div>
-             
-          
-            <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="x_panel tile fixed_height_320 overflow_hidden">
-                <div class="x_title">
-                  <h2>Exploded/Disposed</h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-                   <canvas id="injuredchart"></canvas>
-                  
+                  <canvas id="timelineChart"></canvas>
                 </div>
               </div>
             </div>
 
-
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="x_panel tile fixed_height_320">
+              <div class="x_panel card-accent-danger">
                 <div class="x_title">
-                  <h2>Dalam/Incidence</h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul>
+                  <h2>Casualties <small>Death vs Injured</small></h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content text-center">
+                  <canvas id="casualtyChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Row 2 -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel card-accent-success">
+                <div class="x_title">
+                  <h2>Incident Outcome</h2>
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                   <canvas id="dalam_incidentchart"></canvas>
-                  
+                  <canvas id="outcomeChart"></canvas>
+                </div>
               </div>
             </div>
 
+            <div class="col-md-8 col-sm-8 col-xs-12">
+              <div class="x_panel card-accent-primary">
+                <div class="x_title">
+                  <h2>Jurisdiction Distribution <small>Top 5 Areas</small></h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <canvas id="jurisdictionChart"></canvas>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-
-
-         
-
-            
-
-
-
-
-
-
-        <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            <a href="https://cluematrix.com"> Cluematrix Technologies Private Limited</a>
+        <!-- Footer -->
+        <footer style="margin-left: 0; background: transparent; border: none;">
+          <div class="pull-right text-muted">
+            &copy; 2026 BDDS Central Database · <a href="https://cluematrix.com" class="text-primary">Cluematrix Technologies</a>
           </div>
           <div class="clearfix"></div>
         </footer>
-        <!-- /footer content -->
       </div>
     </div>
 
-    <!-- jQuery -->
+    <!-- Scripts -->
     <script src="{% static '/vendors/jquery/dist/jquery.min.js' %}"></script>
-    <!-- Bootstrap -->
-    <script src="{%static '/vendors/bootstrap/dist/js/bootstrap.min.js'%}"></script>
-    <!-- FastClick -->
-    <script src="{%static '/vendors/fastclick/lib/fastclick.js'%}"></script>
-    <!-- NProgress -->
-    <script src="{%static '/vendors/nprogress/nprogress.js'%}"></script>
-    <!-- Chart.js -->
-    <script src="{%static '/vendors/Chart.js/dist/Chart.min.js'%}"></script>
-    <!-- gauge.js -->
-    <script src="{%static '/vendors/gauge.js/dist/gauge.min.js'%}"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="{%static '/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js'%}"></script>
-    <!-- iCheck -->
-    <script src="{%static '/vendors/iCheck/icheck.min.js'%}"></script>
-    <!-- Skycons -->
-    <script src="{%static '/vendors/skycons/skycons.js'%}"></script>
-    <!-- Flot -->
-    <script src="{%static '/vendors/Flot/jquery.flot.js'%}"></script>
-    <script src="{%static '/vendors/Flot/jquery.flot.pie.js'%}"></script>
-    <script src="{%static '/vendors/Flot/jquery.flot.time.js'%}"></script>
-    <script src="{%static '/vendors/Flot/jquery.flot.stack.js'%}"></script>
-    <script src="{%static '/vendors/Flot/jquery.flot.resize.js'%}"></script>
-    <!-- Flot plugins -->
-    <script src="{%static '/vendors/flot.orderbars/js/jquery.flot.orderBars.js'%}"></script>
-    <script src="{%static '/vendors/flot-spline/js/jquery.flot.spline.min.js'%}"></script>
-    <script src="{%static '/vendors/flot.curvedlines/curvedLines.js'%}"></script>
-    <!-- DateJS -->
-    <script src="{%static '/vendors/DateJS/build/date.js'%}"></script>
-    <!-- JQVMap -->
-    <script src="{%static '/vendors/jqvmap/dist/jquery.vmap.js'%}"></script>
-    <script src="{%static '/vendors/jqvmap/dist/maps/jquery.vmap.world.js'%}"></script>
-    <script src="{%static '/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js'%}"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="{%static '/vendors/moment/min/moment.min.js'%}"></script>
-    <script src="{%static '/vendors/bootstrap-daterangepicker/daterangepicker.js'%}"></script>
+    <script src="{% static '/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/vendors/Chart.js/dist/Chart.min.js' %}"></script>
+    <script src="{% static '/build/js/custom.min.js' %}"></script>
 
-    <!-- Custom Theme Scripts -->
-    <script src="{%static '/build/js/custom.min.js'%}"></script>
+    <script>
+      // Global Chart Colors
+      const colors = {
+        primary: '#667eea',
+        secondary: '#764ba2',
+        success: '#2af598',
+        info: '#009efd',
+        danger: '#ff0844',
+        warning: '#ffb199',
+        dark: '#2d3436'
+      };
 
+      // 1. Timeline Chart
+      new Chart(document.getElementById('timelineChart'), {
+        type: 'line',
+        data: {
+          labels: {{ month_labels|safe }},
+          datasets: [{
+            label: 'Total Cases',
+            data: {{ month_counts|safe }},
+            borderColor: colors.primary,
+            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+            fill: true,
+            tension: 0.4,
+            pointRadius: 4,
+            borderWidth: 3
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: { display: false },
+          scales: {
+            yAxes: [{ gridLines: { display: false }, ticks: { beginAtZero: true } }],
+            xAxes: [{ gridLines: { display: false } }]
+          }
+        }
+      });
+
+      // 2. Casualty Chart (Death vs Injured)
+      new Chart(document.getElementById('casualtyChart'), {
+        type: 'doughnut',
+        data: {
+          labels: ['Death', 'Injured'],
+          datasets: [{
+            data: [{{total_death}}, {{total_injured}}],
+            backgroundColor: [colors.danger, colors.info],
+            hoverOffset: 10,
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          cutoutPercentage: 70,
+          legend: { position: 'bottom' }
+        }
+      });
+
+      // 3. Outcome Chart (Exploded vs Detected)
+      new Chart(document.getElementById('outcomeChart'), {
+        type: 'pie',
+        data: {
+          labels: ['Exploded', 'Detected'],
+          datasets: [{
+            data: [{{total_exposed}}, {{total_detected}}],
+            backgroundColor: [colors.danger, colors.success],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          legend: { position: 'bottom' }
+        }
+      });
+
+      // 4. Jurisdiction Chart (Horizontal Bar)
+      new Chart(document.getElementById('jurisdictionChart'), {
+        type: 'horizontalBar',
+        data: {
+          labels: {{ jur_labels|safe }},
+          datasets: [{
+            label: 'Incidents',
+            data: {{ jur_counts|safe }},
+            backgroundColor: colors.primary,
+            borderRadius: 10
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: { display: false },
+          scales: {
+            xAxes: [{ ticks: { beginAtZero: true }, gridLines: { display: false } }],
+            yAxes: [{ gridLines: { display: false } }]
+          }
+        }
+      });
+    </script>
   </body>
-   <script>
-  const ctx = document.getElementById('myChart');
-  ctx.height = 250;
-
-  new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: ['Death', 'Injured'],
-      datasets: [{
-    label: 'My First Dataset',
-    data: [{{total_death}}, {{total_injured}}],
-    backgroundColor: [
-      'rgb(246, 144, 120)',
-      'rgb(54, 162, 235)',
-      'rgb(255, 205, 86)'
-    ],
-    hoverOffset: 4
-  }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-   const cty = document.getElementById('injuredchart');
-  cty.height = 250;
-
-  new Chart(cty, {
-    type: 'doughnut',
-    data: {
-      labels: ['Exploded', 'Detected'],
-      datasets: [{
-    label: 'My First Dataset',
-    data: [{{total_exposed}}, {{total_detected}}],
-    backgroundColor: [
-      'rgb(132, 180, 159)',
-      
-      'rgb(255, 205, 86)'
-    ],
-    hoverOffset: 4
-  }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-   const ctz = document.getElementById('dalam_incidentchart');
-  ctz.height = 250;
-
-  new Chart(ctz, {
-    type: 'line',
-    data: {
-      labels: ['Dalam', 'Incident','Location'],
-       datasets: [{
-    
-    data: [{{total_dalam}},{{total_incident}},{{total_location}}],
-    fill: false,
-    borderColor: 'rgb(75, 192, 192)',
-    tension: 0.1
-  }]
-    },
-     options: {
-      legend: {
-         display: false //This will do the task
-      }
-   }
-   
-  });
-</script>
 </html>
