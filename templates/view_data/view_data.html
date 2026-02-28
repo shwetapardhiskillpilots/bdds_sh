@@ -27,52 +27,6 @@
 
     <!-- Custom Theme Style -->
     <link href="{%static  'build/css/custom.min.css' %}" rel="stylesheet">
-    <style>
-      :root {
-        --sidebar-bg: #2A3F54;
-        --sidebar-hover: #1abc9c;
-        --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-      }
-      body {
-        font-family: 'Inter', sans-serif;
-        background: #f0f2f5;
-      }
-      .left_col {
-        background: var(--sidebar-bg) !important;
-      }
-      .nav_title {
-        background: #1d2d3d !important;
-        height: 60px !important;
-        display: flex;
-        align-items: center;
-        padding-left: 15px;
-      }
-      .site_title {
-        font-weight: 700 !important;
-        color: white !important;
-        font-size: 18px !important;
-        display: flex;
-        align-items: center;
-      }
-      .site_title img {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        margin-right: 10px;
-      }
-      .x_panel {
-        border-radius: 15px;
-        border: none;
-        box-shadow: var(--card-shadow);
-      }
-      .right_col {
-        background: #f0f2f5 !important;
-      }
-      .top_nav {
-        background: white !important;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      }
-    </style>
   </head>
 
   <body class="nav-md">
@@ -81,10 +35,8 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="/login_auth" class="site_title">
-                <img src="{% static '/images/logo.png' %}" alt="Logo">
-                <span>BDDS HQ</span>
-              </a>
+              <a href="#" class="site_title"><i class="fa fa-paw"></i> <span>BDDS</span></a>
+               <hr style="margin-top: 3px;"></hr>
             </div>
 
             <div class="clearfix"></div>
@@ -252,7 +204,7 @@
                        <tbody>
                         {% for item in data %}
                         <tr>
-                          <td>{{ forloop.counter0|add:page_obj.start_index }}</td>
+                          <td>{{ data.start_index|add:forloop.counter0 }}</td>
                           <td>{{item.fir|default:"-"}}</td>
                           <td>{{item.fserial}}</td>
                           <td>{{item.d_bomb}}</td>
@@ -280,30 +232,36 @@
                         </tbody>
                     </table>
 
-                    <!-- Pagination -->
+                    <!-- Pagination Controls -->
                     <div class="row">
-                      <div class="col-sm-5">
-                        <div class="dataTables_info" role="status" aria-live="polite">
-                          Showing {{ page_obj.start_index }} to {{ page_obj.end_index }} of {{ page_obj.paginator.count }} records
+                        <div class="col-sm-5">
+                            <div class="dataTables_info" role="status" aria-live="polite">
+                                Showing {{ data.start_index }} to {{ data.end_index }} of {{ data.paginator.count }} entries
+                            </div>
                         </div>
-                      </div>
-                      <div class="col-sm-7 text-right">
-                        <nav aria-label="Page navigation">
-                          <ul class="pagination" style="margin: 0;">
-                            {% if page_obj.has_previous %}
-                              <li><a href="?page=1">&laquo; First</a></li>
-                              <li><a href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
-                            {% endif %}
+                        <div class="col-sm-7">
+                            <div class="dataTables_paginate paging_simple_numbers">
+                                <ul class="pagination">
+                                    {% if data.has_previous %}
+                                        <li class="paginate_button previous"><a href="?page=1">&laquo; first</a></li>
+                                        <li class="paginate_button previous"><a href="?page={{ data.previous_page_number }}">previous</a></li>
+                                    {% else %}
+                                        <li class="paginate_button previous disabled"><span>&laquo; first</span></li>
+                                        <li class="paginate_button previous disabled"><span>previous</span></li>
+                                    {% endif %}
 
-                            <li class="active"><span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></li>
+                                    <li class="paginate_button active"><span>Page {{ data.number }} of {{ data.paginator.num_pages }}</span></li>
 
-                            {% if page_obj.has_next %}
-                              <li><a href="?page={{ page_obj.next_page_number }}">Next</a></li>
-                              <li><a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
-                            {% endif %}
-                          </ul>
-                        </nav>
-                      </div>
+                                    {% if data.has_next %}
+                                        <li class="paginate_button next"><a href="?page={{ data.next_page_number }}">next</a></li>
+                                        <li class="paginate_button next"><a href="?page={{ data.paginator.num_pages }}">last &raquo;</a></li>
+                                    {% else %}
+                                        <li class="paginate_button next disabled"><span>next</span></li>
+                                        <li class="paginate_button next disabled"><span>last &raquo;</span></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                   </div>
                 </div>

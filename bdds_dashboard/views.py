@@ -1,7 +1,6 @@
 from .models import *
 from django.db.models import Count
 from django.db.models.functions import TruncMonth
-from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
@@ -15,6 +14,7 @@ from django.db import connection
 from bdds_dashboard.serilizers import *
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 from rest_framework.authentication import TokenAuthentication
@@ -1184,27 +1184,21 @@ def view_submitdata(request):
     user = request.user
     user_id = request.user.id
     super_user = user.is_superuser
-    
     page_number = request.GET.get('page', 1)
-    items_per_page = 15
 
     if super_user is False:
         x, y = permission(request)
         t_form_module = Form_data.objects.filter(user=user_id).order_by('-id')
-        
-        paginator = Paginator(t_form_module, items_per_page)
+        paginator = Paginator(t_form_module, 10)  # Show 10 records per page
         page_obj = paginator.get_page(page_number)
-        
-        context = {"x": x, "y": y, "data": page_obj, "page_obj": page_obj}
+        context = {"x": x, "y": y, "data": page_obj}
         return render(request, "view_data/view_data.html", context)
     else:
         x, y = permission(request)
         t_form_module = Form_data.objects.all().select_related('user').order_by('-id')
-        
-        paginator = Paginator(t_form_module, items_per_page)
+        paginator = Paginator(t_form_module, 10)  # Show 10 records per page
         page_obj = paginator.get_page(page_number)
-
-        context = {"x": x, "y": y, "data": page_obj, "page_obj": page_obj}
+        context = {"x": x, "y": y, "data": page_obj}
         return render(request, "sp_logine/view_data.html", context)
 @login_required(login_url='/error')
 def edit_request(request):

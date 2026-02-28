@@ -1986,3 +1986,53 @@ ValueError: The view bdds_dashboard.views.index_page didn't return an HttpRespon
 2026-02-27 16:58:38,436 D:\Skillpilots\bdds2\bdds\BDDS\settings.py changed, reloading. trigger_reload
 2026-02-27 17:09:10,517 Not Found: / log_response
 2026-02-27 17:11:44,065 D:\Skillpilots\bdds2\bdds\BDDS\settings.py changed, reloading. trigger_reload
+2026-02-28 10:18:46,895 Internal Server Error: /formviewapi log_response
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\Skillpilots\bdds2\bdds\bdds_dashboard\views.py", line 1942, in list_view
+    form_instance = get_object_or_404(Form_data, pk=id)
+NameError: name 'get_object_or_404' is not defined
+2026-02-28 10:18:47,163 Internal Server Error: /formviewapi log_response
+Traceback (most recent call last):
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\AppData\Local\Programs\Python\Python310\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\Skillpilots\bdds2\bdds\bdds_dashboard\views.py", line 1942, in list_view
+    form_instance = get_object_or_404(Form_data, pk=id)
+NameError: name 'get_object_or_404' is not defined
+2026-02-28 10:36:09,452 D:\Skillpilots\bdds2\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-28 10:58:16,451 D:\Skillpilots\bdds2\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-28 11:01:58,673 D:\Skillpilots\bdds2\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
+2026-02-28 11:02:12,260 D:\Skillpilots\bdds2\bdds\bdds_dashboard\views.py changed, reloading. trigger_reload
